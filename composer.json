@@ -1,0 +1,61 @@
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": [
+    "framework",
+    "laravel"
+  ],
+  "license": "MIT",
+  "require": {
+    "laravel/framework": "4.2.*",
+    "bllim/datatables": "*",
+    "nathanmac/laravel-guid": "dev-master",
+    "aws/aws-sdk-php": "2.*",
+    "vlucas/phpdotenv": "2.4.0",
+    "curl/curl": "1.*",
+    "phpmailer/phpmailer": "~5.2",
+    "barryvdh/laravel-dompdf": "0.4.*",
+    "intervention/image": "^2.2",
+    "symfony/intl": "^2.7",
+    "authorizenet/authorizenet": "~1.8",
+    "inacho/php-credit-card-validator": "1.*",
+    "box/spout": "^2.4",
+    "jenssegers/agent": "2.3.*",
+    "consolibyte/quickbooks": "^3.1",
+    "cartalyst/stripe-laravel": "1.0.*",
+    "chumper/zipper": "0.5.x",
+    "calcinai/xero-php": "1.5.*",
+    "nesbot/carbon": "~1.0"
+  },
+  "require-dev": {
+    "maatwebsite/excel": "~1.3.0",
+    "way/generators": "~2.0",
+    "composer/composer": "^1.10"
+  },
+  "autoload": {
+    "classmap": [
+      "app/commands",
+      "app/controllers",
+      "app/models",
+      "app/tests/TestCase.php",
+      "app/lib"
+    ]
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php artisan clear-compiled",
+      "php artisan optimize"
+    ],
+    "post-update-cmd": [
+      "php artisan clear-compiled",
+      "php artisan optimize"
+    ],
+    "post-create-project-cmd": [
+      "php artisan key:generate"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "stable"
+}
