@@ -73,18 +73,18 @@
                         <h4 class="modal-title">Add New Reseller</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="panel panel-primary" data-collapsed="0">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                        <div class="card shadow card-primary" data-collapsed="0">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Details
                                 </div>
 
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
 
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6  margin-top">
                                         <div class="form-group">
@@ -117,7 +117,7 @@
                                     <div class="col-md-6  margin-top">
                                         <div class="form-group">
                                             <label for="field-1"  class="col-sm-4 control-label">Allow White Label:
-                                                <span data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="If you allow your re seller to white label the panel then please make sure you setup different domain for your reseller." data-original-title="Allow white label" class="label label-info popover-primary">?</span>
+                                                <span data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="If you allow your re seller to white label the card shadow then please make sure you setup different domain for your reseller." data-original-title="Allow white label" class="label label-info popover-primary">?</span>
                                             </label>
                                             <div class="col-md-8">
                                                 <div class="make-switch switch-small">
@@ -143,18 +143,18 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-primary" data-collapsed="0" id="copy_data">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                        <div class="card shadow card-primary" data-collapsed="0" id="copy_data">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Copy Data
                                 </div>
 
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
 
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6  margin-top">
                                         <div class="form-group">
@@ -203,18 +203,18 @@
                         <h4 class="modal-title">Reseller Data</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="panel panel-primary" data-collapsed="0" id="copy_data">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                        <div class="card shadow card-primary" data-collapsed="0" id="copy_data">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Copy Data
                                 </div>
 
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
 
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6  margin-top">
                                         <div class="form-group">

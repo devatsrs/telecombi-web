@@ -45,7 +45,7 @@
 							<i class="entypo-user"></i>
 						</div>
 
-                          {{Form::select('Company', $companies, Input::old('Company') ,array( "id" => "Company_SA", "class"=>"form-control", "style"=>"background:#373e4a" ))}}
+                          {{Form::select('Company', $companies, Input::old('Company') ,array( "id" => "Company_SA", "class"=>"form-control", "style"=>"background:#4e73df" ))}}
 
 					</div>
 

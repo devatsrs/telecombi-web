@@ -60,18 +60,18 @@
     <div class="col-md-12 form-horizontal">
 
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Account Details
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">Account Owner</label>
                         <div class="col-sm-4">
@@ -177,7 +177,7 @@
                             {{$account->TimeZone}}
                         </div>
                     </div>
-                    <div class="panel-title clear">
+                    <div class="card-title clear">
                         Description
                     </div>
                     <div class="form-group">
@@ -194,18 +194,18 @@
                 @include('accountemaillog.index')
             @endif
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Billing
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">Tax Rate</label>
                         <div class="col-sm-4">
@@ -227,18 +227,18 @@
 
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Address Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">Address Line 1</label>
                         <div class="col-sm-4">
@@ -274,19 +274,19 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Payment Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-2 text-right">Payment Method</label>
                             <div class="col-sm-4">
@@ -302,18 +302,18 @@
                  </div>
             </div>
 
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Notes
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     @if(User::checkCategoryPermission('Account','Add'))
                     <div class="form-group">
                             <form role="form" id="notes-from" method="post" action="{{URL::to('accounts/'.$account->AccountID.'/store_note/')}}" class="form-horizontal form-groups-bordered">
@@ -344,7 +344,7 @@
                             <td>
                                 @if(User::checkCategoryPermission('Account','Edit'))
                                     <a href="{{URL::to('accounts/'.$account->AccountID.'/store_note/')}}" class="btn-danger btn-sm deleteNote entypo-cancel" id="{{$note->NoteID}}"></a>
-                                    <a href="{{URL::to('accounts/'.$account->AccountID.'/delete_note/')}}" class="btn-default btn-sm editNote entypo-pencil" id="{{$note->NoteID}}"></a>
+                                    <a href="{{URL::to('accounts/'.$account->AccountID.'/delete_note/')}}" class="btn-primary btn-sm editNote entypo-pencil" id="{{$note->NoteID}}"></a>
                                 @endif
                             </td>
                             <td >
@@ -362,20 +362,20 @@
             </div>
 
 
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Contacts
                     </div>
 
 
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
 
                     <table class="table table-bordered table-hover responsive">
                         <thead>
@@ -396,14 +396,14 @@
                                 <td class="center">
                                     @if(User::checkCategoryPermission('Contacts','Edit'))
                                     <a href="{{ URL::to('contacts/'.$contact->ContactID.'/edit')}}"
-                                       class="btn btn-default btn-sm btn-icon icon-left">
+                                       class="btn btn-primary btn-sm btn-icon icon-left">
                                         <i class="entypo-pencil"></i>
                                         Edit
                                     </a>
                                     @endif
                                     @if(User::checkCategoryPermission('Contacts','View'))
                                     <a href="{{ URL::to('contacts/'.$contact->ContactID.'/show')}}"
-                                       class="btn btn-default btn-sm btn-icon icon-left">
+                                       class="btn btn-primary btn-sm btn-icon icon-left">
                                         <i class="entypo-pencil"></i>
                                         View
                                     </a>

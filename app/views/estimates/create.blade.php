@@ -31,9 +31,9 @@
     </a>
 
 </p>
-<div class="panel panel-primary" data-collapsed="0">
+<div class="card shadow card-primary" data-collapsed="0">
 
-        <div class="panel-body">
+        <div class="card-body">
             <div class="form-group">
 
                 <div class="col-sm-6">

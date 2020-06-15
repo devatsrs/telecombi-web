@@ -99,12 +99,12 @@
     <div class="row hidden" id="add-template">
       <div class="col-md-12">
         <form id="add-template-form" method="post">
-          <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> Payment Mapping </div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> Payment Mapping </div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="form-group">
                 <label for="field-1" class="col-sm-2 control-label">Template Name:</label>
                 <div class="col-sm-4">
@@ -113,12 +113,12 @@
               </div>
               <br />
               <br />
-              <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                  <div class="panel-title"> Payments CSV Importer </div>
-                  <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+              <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                  <div class="card-title"> Payments CSV Importer </div>
+                  <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                   <div class="form-group">
                     <label for="field-1" class="col-sm-2 control-label">Delimiter:</label>
                     <div class="col-sm-4">
@@ -144,12 +144,12 @@
                   </p>
                 </div>
               </div>
-              <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                  <div class="panel-title"> Field Remapping </div>
-                  <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+              <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                  <div class="card-title"> Field Remapping </div>
+                  <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
                 </div>
-                <div class="panel-body" id="mapping">
+                <div class="card-body" id="mapping">
                   <div class="form-group">
                     <label for="field-1" class="col-sm-2 control-label">Account Name*</label>
                     <div class="col-sm-4"> {{Form::select('selection[AccountName]', array(),'',array("class"=>"select2 small"))}} </div>
@@ -179,12 +179,12 @@
                   </div>
                 </div>
               </div>
-              <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                  <div class="panel-title"> CSV File to be loaded </div>
-                  <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+              <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                  <div class="card-title"> CSV File to be loaded </div>
+                  <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                   <div id="table-4_processing" class="dataTables_processing hidden">Processing...</div>
                     <div class="dataTables_wrapper">
                       <table class="table table-bordered datatable" id="tablemapping">
@@ -214,8 +214,8 @@
           <div  class="col-md-12">
               @if(User::can('Payments','Recall') || User::can('Payments','Add'))
               <div class="input-group-btn pull-right" style="width:70px;">
-                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                  <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                  <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                       @if(User::can('Payments','Add'))
                       <li class="li_active">
                           <a id="add-new-payment" class="add-cli" type_ad="active" href="javascript:void(0);" >
@@ -416,15 +416,15 @@
                                         action += '<input type = "hidden"  name = "' + list_fields[i] + '" value = "' + (full[i] != null?full[i]:'')+ '" / >';
                                     }
                                     action += '</div>';
-                                    action += ' <a data-name = "' + full[0] + '" data-id="' + full[0] + '" title="View" class="view-payment btn btn-default btn-sm"><i class="fa fa-eye"></i></a>';
+                                    action += ' <a data-name = "' + full[0] + '" data-id="' + full[0] + '" title="View" class="view-payment btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                                     @if(User::is('BillingAdmin') || User::is_admin())
                                     if(full[7] != "Approved"){
-                                        action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Approve/Reject <span class="caret"></span></button>'
+                                        action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Approve/Reject </button>'
                                         action += '<ul class="dropdown-menu dropdown-green" role="menu"><li><a href="' + Approve_Payment+ '" class="approvepayment" >Approve</a></li><li><a href="' + Reject_Payment + '" class="rejectpayment">Reject</a></li></ul></div>';
                                     }
                                     @endif
 
-                                    //action += ' <a data-name = "' + full[0] + '" data-id="' + full[0] + '" class="edit-payment btn btn-default btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>';
+                                    //action += ' <a data-name = "' + full[0] + '" data-id="' + full[0] + '" class="edit-payment btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>';
                                     <?php if(User::checkCategoryPermission('Payments','Recall')) {?>
                                     if(full[13]==0 && full[7]!='Rejected' ){
                                         action += ' <a href="'+recall_+'" data-redirect="{{ URL::to('payments')}}"  class="btn recall btn-danger btn-sm btn-icon icon-left"><i class="entypo-ccw"></i>Recall </a>';
@@ -1410,7 +1410,7 @@
         </table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

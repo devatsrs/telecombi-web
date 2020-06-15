@@ -192,7 +192,7 @@ div.slider-nav span.left {
     overflow: hidden; }
 
 .orbit-bullets li.active {
-    color: #222;
+    color: #4e73df
     background-position: -8px 0; }
     
 .orbit-bullets li.has-thumb {
@@ -241,7 +241,7 @@ div.slider-nav span.left {
     height: 75px; }
 
 .orbit-bullets li.active {
-    color: #222;
+    color: #4e73df
     background-position: -8px 0; }
 
 .orbit-bullets li.active.has-thumb {

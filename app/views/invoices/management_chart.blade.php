@@ -21,11 +21,11 @@ $reportcount=1;?>
                 <div class="clear-both"></div>
             @endif
             <div class="col-sm-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title"><strong>{{$ManagementReportTemplateRow['UsageName']}}</strong></div>
+        <div class="card shadow card-default">
+            <div class="card-header py-3">
+                <div class="card-title"><strong>{{$ManagementReportTemplateRow['UsageName']}}</strong></div>
             </div>
-            <div class="panel-body with-table">
+            <div class="card-body with-table">
                 <table class="table table-bordered table-responsive" id="LongestCalls">
                     <thead>
                     <tr>

@@ -34,18 +34,18 @@
     <div class="col-md-12">
              <form role="form" id="account-from" method="post" action="{{URL::to('accounts/store')}}" class="form-horizontal form-groups-bordered">
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Account Details
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="col-md-2 control-label">Account Owner</label>
                         <div class="col-md-4">
@@ -226,7 +226,7 @@
                         </div>
                     </div>
 
-                    <div class="panel-title desc clear">
+                    <div class="card-title desc clear">
                         Description
                     </div>
                     <div class="form-group">
@@ -236,18 +236,18 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Address Information
                                 </div>
 
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
 
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label class="col-md-2 control-label">Address Line 1</label>
                                     <div class="col-md-4">
@@ -285,13 +285,13 @@
                                 </div>
                             </div>
                         </div>
-            <div class="panel panel-primary billing-section-hide" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary billing-section-hide" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Billing
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <div class="make-switch switch-small">
                             <input type="checkbox" name="Billing" value="1">
                         </div>
@@ -299,7 +299,7 @@
                     </div>
                 </div>
 
-                <div class="panel-body billing-section">
+                <div class="card-body billing-section">
                     <div class="form-group">
                         <label class="col-md-2 control-label">Billing Class*</label>
                         <div class="col-md-4">

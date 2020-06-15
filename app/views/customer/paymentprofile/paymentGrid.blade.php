@@ -1,14 +1,14 @@
 
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             {{PaymentGateway::getPaymentGatewayNameBYAccount($account->AccountID)}} @lang('routes.CUST_PANEL_PAGE_PAYMENT_METHOD_PROFILES_TITLE')
         </div>
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <div class="text-right">
             <a  id="add-new-card" class=" btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-plus"></i>@lang('routes.CUST_PANEL_PAGE_PAYMENT_METHOD_PROFILES_BUTTON_ADD_NEW')</a>
             <div class="clear clearfix"><br></div>
@@ -91,8 +91,8 @@
                                     action += '<input type = "hidden"  name = "Title" value = "' + full[0] + '" / >';
                                     action += '</div>';
 
-                                    //action += ' <a class="edit-card btn btn-default btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>'
-                                    action += ' <a data-id="'+ id +'" class="delete-card btn delete btn-danger btn-sm"><i class="entypo-trash"></i></a>';
+                                    //action += ' <a class="edit-card shadow btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>'
+                                    action += ' <a data-id="'+ id +'" class="delete-card shadow btn delete btn-danger btn-sm"><i class="entypo-trash"></i></a>';
 
                                     if (full[1]=="1") {
                                         action += ' <button href="' + DeActive_Card + '"  class="btn change_status btn-danger btn-sm disablecard" data-loading-text="@lang('routes.BUTTON_LOADING_CAPTION')">@lang('routes.BUTTON_DEACTIVATE_CAPTION')</button>';

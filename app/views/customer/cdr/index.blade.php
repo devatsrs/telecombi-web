@@ -27,8 +27,8 @@
 <div class="row">
 <div  class="col-md-12">
     <div class="input-group-btn pull-right" style="width:70px;">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+        <ul class="dropdown-menu dropdown-menu-left" role="menu" >
             <li><a class="generate_rate create" id="bulk_clear_cdr" href="javascript:;" style="width:100%">
                     Bulk clear
                 </a>
@@ -56,16 +56,16 @@
         <div class="row">
             <div class="col-md-12">
                 <form novalidate class="form-horizontal form-groups-bordered validate" method="post" id="cdr_filter">
-                    <div id="cdrfilter" data-collapsed="0" class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="panel-title">
+                    <div id="cdrfilter" data-collapsed="0" class="card shadow card-primary">
+                        <div class="card-header py-3">
+                            <div class="card-title">
                                 @lang('routes.CUST_PANEL_FILTER_TITLE')
                             </div>
-                            <div class="panel-options">
+                            <div class="card-options">
                                 <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <div class="form-group">
                                 <label class="col-md-1 control-label small_label" style="width: 8%;" for="field-1">@lang('routes.CUST_PANEL_PAGE_CDR_FILTER_FIELD_START_DATE')</label>
                                 <div class="col-md-2" style="padding-right: 0px; width: 10%;">

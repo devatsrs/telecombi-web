@@ -66,17 +66,17 @@
 <div class="row">
 <div class="col-md-12">
     <form role="form" id="form-upload" name="form-upload" method="post" action="{{URL::to('vendor_rates/'.$id.'/process_upload')}}" class="form-horizontal form-groups-bordered" enctype="multipart/form-data">
-        <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Upload Rate sheet
                 </div>
                 
-                <div class="panel-options">
+                <div class="card-options">
                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label for="field-1" class="col-sm-2 control-label">Upload Template</label>
                     <div class="col-sm-4">
@@ -199,17 +199,17 @@
             <input type="hidden" name="TemplateType" id="TemplateType" value="{{FileUploadTemplateType::getTemplateType(FileUploadTemplate::TEMPLATE_VENDOR_RATE)}}" />
             <input type="hidden" name="FileUploadTemplateID" id="FileUploadTemplateID" value="" />
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Add New Template
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
             <div class="form-group">
                 <label for="field-1" class="col-sm-2 control-label">Template Name:</label>
                 <div class="col-sm-4">
@@ -218,17 +218,17 @@
             </div>
             <br />
             <br />
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Import Options
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Delimiter:</label>
                         <div class="col-sm-4">
@@ -263,34 +263,34 @@
                     </p>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Field Remapping
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body field-remaping" id="mapping">
+                <div class="card-body field-remaping" id="mapping">
                     <?php $columns = array(); ?>
                     @include('fileuploadtemplates.vendorratetemplate')
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         File to be loaded
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body scrollx">
+                <div class="card-body scrollx">
                     <div id="table-4_processing" class="dataTables_processing hidden">Processing...</div>
                     <table class="table table-bordered datatable" id="table-4">
                         <thead>
@@ -1371,7 +1371,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -1413,18 +1413,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <form role="form" id="reviewrates-new-search" method="get" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-                                    <div class="panel panel-primary panel-collapse" data-collapsed="0">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
+                                    <div class="card shadow card-primary card-collapse" data-collapsed="0">
+                                        <div class="card-header py-3">
+                                            <div class="card-title">
                                                 Search
                                             </div>
 
-                                            <div class="panel-options">
+                                            <div class="card-options">
                                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             </div>
                                         </div>
 
-                                        <div class="panel-body" style="display: none;">
+                                        <div class="card-body" style="display: none;">
                                             <div class="form-group">
                                                 <label for="field-1" class="col-sm-1 control-label">Code</label>
                                                 <div class="col-sm-3">
@@ -1472,18 +1472,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <form role="form" id="reviewrates-increased-search" method="get" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-                                    <div class="panel panel-primary panel-collapse" data-collapsed="0">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
+                                    <div class="card shadow card-primary card-collapse" data-collapsed="0">
+                                        <div class="card-header py-3">
+                                            <div class="card-title">
                                                 Search
                                             </div>
 
-                                            <div class="panel-options">
+                                            <div class="card-options">
                                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             </div>
                                         </div>
 
-                                        <div class="panel-body" style="display: none;">
+                                        <div class="card-body" style="display: none;">
                                             <div class="form-group">
                                                 <label for="field-1" class="col-sm-1 control-label">Code</label>
                                                 <div class="col-sm-3">
@@ -1531,18 +1531,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <form role="form" id="reviewrates-decreased-search" method="get" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-                                    <div class="panel panel-primary panel-collapse" data-collapsed="0">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
+                                    <div class="card shadow card-primary card-collapse" data-collapsed="0">
+                                        <div class="card-header py-3">
+                                            <div class="card-title">
                                                 Search
                                             </div>
 
-                                            <div class="panel-options">
+                                            <div class="card-options">
                                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             </div>
                                         </div>
 
-                                        <div class="panel-body" style="display: none;">
+                                        <div class="card-body" style="display: none;">
                                             <div class="form-group">
                                                 <label for="field-1" class="col-sm-1 control-label">Code</label>
                                                 <div class="col-sm-3">
@@ -1590,18 +1590,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <form role="form" id="reviewrates-deleted-search" method="get" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-                                    <div class="panel panel-primary panel-collapse" data-collapsed="0">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
+                                    <div class="card shadow card-primary card-collapse" data-collapsed="0">
+                                        <div class="card-header py-3">
+                                            <div class="card-title">
                                                 Search
                                             </div>
 
-                                            <div class="panel-options">
+                                            <div class="card-options">
                                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             </div>
                                         </div>
 
-                                        <div class="panel-body" style="display: none;">
+                                        <div class="card-body" style="display: none;">
                                             <div class="form-group">
                                                 <label for="field-1" class="col-sm-1 control-label">Code</label>
                                                 <div class="col-sm-3">

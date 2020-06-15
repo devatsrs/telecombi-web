@@ -10,7 +10,7 @@
   <li class="active"> <strong>Edit Group</strong> </li>
 </ol>
 <h3>Edit Group</h3>
-<div class="panel-title"> @include('includes.errors')
+<div class="card-title"> @include('includes.errors')
   @include('includes.success') </div>
 <p style="text-align: right;">
 @if(User::checkCategoryPermission('TicketsGroups','Edit'))  <button type='button' class="save btn btn-primary btn-sm btn-icon icon-left" data-loading-text="Loading..."> <i class="entypo-floppy"></i> Save </button>@endif
@@ -18,12 +18,12 @@
 <br>
 <div class="row">
   <div class="col-md-12">
-    <div class="panel panel-primary" data-collapsed="0">
-      <div class="panel-heading">
-        <div class="panel-title"> Group Detail </div>
-        <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+    <div class="card shadow card-primary" data-collapsed="0">
+      <div class="card-header py-3">
+        <div class="card-title"> Group Detail </div>
+        <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <form role="form" id="form-ticketgroup-edit" method="post" action="{{URL::to('ticketgroups/'.$ticketdata->GroupID.'/update')}}"
                       class="form-horizontal form-groups-bordered">
             <div class="form-group">
@@ -61,7 +61,7 @@
                 <input name='GroupEmailAddress' id="GroupEmailAddress" type="email" class="form-control" placeholder="Email" value="{{$ticketdata->GroupEmailAddress}}">             </div>
                 @if($ticketdata->GroupEmailStatus==0 && !empty($ticketdata->GroupEmailAddress))
                 <br>                
-                  <div class="email-activation"><span>{{$ticketdata->GroupEmailAddress}}</span>&nbsp;<span> Unverified  </span> - <button email_id="{{$ticketdata->GroupID}}" type="button" class="btn btn-default btn-xs Send_activation">Send Activation Email</button></div><br>
+                  <div class="email-activation"><span>{{$ticketdata->GroupEmailAddress}}</span>&nbsp;<span> Unverified  </span> - <button email_id="{{$ticketdata->GroupID}}" type="button" class="btn btn-primary btn-xs Send_activation">Send Activation Email</button></div><br>
                   @endif
             </div>
           </div> 

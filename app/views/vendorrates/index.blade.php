@@ -69,18 +69,18 @@
 <div class="row">
 <div class="col-md-12">
        <form role="form" id="vendor-rate-search" method="get" action="javascript:void(0);" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-        <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Search
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                 </div>
             </div>
 
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label for="field-1" class="col-sm-1 control-label">Code</label>
                     <div class="col-sm-3">
@@ -529,11 +529,11 @@ jQuery(document).ready(function($) {
                                 action += '</div>';
                                 <?php if(User::checkCategoryPermission('VendorRates','Edit')) { ?>
                                 if(DiscontinuedRates == 0) {
-                                    action += ' <a href="Javascript:;" title="Edit" class="edit-vendor-rate btn btn-default btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                    action += ' <a href="Javascript:;" title="Edit" class="edit-vendor-rate btn btn-primary btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>';
                                 }
                                 <?php } ?>
 
-                                        action += ' <a href="Javascript:;" title="History" class="btn btn-default btn-xs btn-history details-control"><i class="entypo-back-in-time"></i>&nbsp;</a>';
+                                        action += ' <a href="Javascript:;" title="History" class="btn btn-primary btn-xs btn-history details-control"><i class="entypo-back-in-time"></i>&nbsp;</a>';
 
                                 if (full[0] > 0) {
                                     <?php if(User::checkCategoryPermission('VendorRates','Delete')) { ?>

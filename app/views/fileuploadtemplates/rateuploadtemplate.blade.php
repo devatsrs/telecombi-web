@@ -98,17 +98,17 @@
                     $ConnectionFeeColumn   = 'ConnectionFee'.$id;
                     $ForbiddenColumn       = 'Forbidden'.$id;
                 ?>
-                <div class="panel panel-primary" data-collapsed="0">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary" data-collapsed="0">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             {{$Title}} Rate Mapping
                         </div>
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         </div>
                     </div>
 
-                    <div class="panel-body field-remaping" id="mapping-{{$id}}">
+                    <div class="card-body field-remaping" id="mapping-{{$id}}">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Rate 1</label>
                             <div class="col-sm-4">

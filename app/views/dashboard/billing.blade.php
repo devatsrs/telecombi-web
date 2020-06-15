@@ -47,8 +47,8 @@
     <?php if(User::checkCategoryPermission('BillingDashboardSummaryWidgets','View')){ ?>
         <div class="row">
         <div class="col-md-12">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div id="invoice-widgets" class="panel-body">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div id="invoice-widgets" class="card-body">
                     @if((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardTotalOutstanding',$BillingDashboardWidgets))
                     <div class="col-sm-3 col-xs-6">
                         <div class="tile-stats tile-blue"><a target="_blank" class="undefined"
@@ -188,15 +188,15 @@
     @if(((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardPaybleWidget',$BillingDashboardWidgets))&&User::checkCategoryPermission('BillingDashboardPaybleWidget','View'))
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-primary panel-table">
-                    <div class="panel-heading">
-                        <div id="Sales_Manager" class="pull-right panel-box panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
-                        <div class="panel-title forecase_title">
+                <div class="card shadow card-primary card-table">
+                    <div class="card-header py-3">
+                        <div id="Sales_Manager" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
+                        <div class="card-title forecase_title">
                             <h3>Payable & Receivable  </h3>
                             <div class="PayableReceivable"></div>
                         </div>
                     </div>
-                    <div class="form_Sales panel-body white-bg">
+                    <div class="form_Sales card-body white-bg">
                         <form novalidate class="form-horizontal form-groups-bordered"  id="PayableReceivableForm">
                             <div class="form-group form-group-border-none">
                                 <div class="col-sm-8">
@@ -219,15 +219,15 @@
     @if(((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardProfitWidget',$BillingDashboardWidgets))&&User::checkCategoryPermission('BillingDashboardProfitWidget','View'))
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-primary panel-table">
-                    <div class="panel-heading">
-                        <div id="Sales_Manager" class="pull-right panel-box panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
-                        <div class="panel-title forecase_title">
+                <div class="card shadow card-primary card-table">
+                    <div class="card-header py-3">
+                        <div id="Sales_Manager" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
+                        <div class="card-title forecase_title">
                             <h3>Profit & Loss  </h3>
                             <div class="ProfitLoss"></div>
                         </div>
                     </div>
-                    <div class="form_Sales panel-body white-bg">
+                    <div class="form_Sales card-body white-bg">
                         <form novalidate class="form-horizontal form-groups-bordered"  id="ProfitLossForm">
                             <div class="form-group form-group-border-none">
                                 <div class="col-sm-8">
@@ -249,15 +249,15 @@
     @if(((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardInvoiceExpense',$BillingDashboardWidgets)) && User::checkCategoryPermission('BillingDashboardInvoiceExpenseWidgets','View'))
     <div class="row">
         <div class="col-md-12">
-            <div class="invoice_expsense panel panel-primary panel-table">
+            <div class="invoice_expsense card shadow card-primary card-table">
                 <form id="invoiceExpensefilter-form" name="filter-form">
-                    <div class="panel-heading">
-                    <div class="panel-title">
+                    <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>Invoices & Expenses</h3>
 
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
 
                         {{ Form::select('ListType',array("Weekly"=>"Weekly","Monthly"=>"Monthly","Yearly"=>"Yearly"),$monthfilter,array("class"=>"select_gray","id"=>"ListType")) }}
 
@@ -268,7 +268,7 @@
                 </div>
                 </form>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="invoice_expense_bar_chart"></div>
                 </div>
             </div>
@@ -278,13 +278,13 @@
     @if(((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardPincodeWidget',$BillingDashboardWidgets))&& User::checkCategoryPermission('BillingDashboardPincodeWidget','View'))
         <div class="row">
             <div class="col-sm-12">
-                <div class="pin_expsense panel panel-primary panel-table">
+                <div class="pin_expsense card shadow card-primary card-table">
                     <form id="filter-form" name="filter-form" style="display: inline">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             <h3>Top Pincodes</h3>
                         </div>
-                        <div class="panel-options">
+                        <div class="card-options">
 
                                 {{ Form::select('PinExt', array('pincode'=>'By Pincode','extension'=>'By Extension'), 1, array('id'=>'PinExt','class'=>'select_gray')) }}
                                 {{ Form::select('Type', array(1=>'By Cost',2=>'By Duration'), 1, array('id'=>'Type','class'=>'select_gray')) }}
@@ -297,7 +297,7 @@
 
                     </div>
                     </form>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div id="pin_expense_bar_chart"></div>
                     </div>
                 </div>
@@ -305,18 +305,18 @@
         </div>
         <div class="row hidden" id="pin_grid_main">
             <div class="col-sm-12">
-                <div class="pin_expsense_report panel panel-primary" style="position: static;">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="pin_expsense_report card shadow card-primary" style="position: static;">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             <h3>Pincodes Detail Report</h3>
                         </div>
 
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                             <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <table class="table table-bordered datatable" id="pin_grid">
                             <thead>
                             <tr>
@@ -337,14 +337,14 @@
     @if(((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardMissingGatewayWidget',$BillingDashboardWidgets))&&User::checkCategoryPermission('BillingDashboardMissingGatewayWidget','View'))
     <div class="row">
         <div class="col-sm-6">
-            <div class="panel panel-primary panel-table">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-table">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>Missing Gateway Accounts ()</h3>
 
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         {{ Form::select('CompanyGatewayID', $company_gateway, 1, array('id'=>'company_gateway','class'=>'select_gray')) }}
                         <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                         <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a>
@@ -352,7 +352,7 @@
                         <a data-rel="empty" href="#" title="Delete Missing Gateway Accounts"><i class="entypo-trash"></i></a>
                     </div>
                 </div>
-                <div class="panel-body" style="max-height: 450px; overflow-y: auto; overflow-x: hidden;">
+                <div class="card-body" style="max-height: 450px; overflow-y: auto; overflow-x: hidden;">
                     <table id="missingAccounts" class="table table-responsive">
                         <thead>
                         <tr>
@@ -785,13 +785,13 @@
             }
         }
         function loadingUnload(table, bit) {
-            var panel = jQuery(table).closest('.panel');
+            var card shadow = jQuery(table).closest('.card');
             if (bit == 1) {
-                blockUI(panel);
-                panel.addClass('reloading');
+                blockUI(card);
+                card.addClass('reloading');
             } else {
-                unblockUI(panel);
-                panel.removeClass('reloading');
+                unblockUI(card);
+                card.removeClass('reloading');
             }
         }
 
@@ -809,16 +809,16 @@
             }, "html");
             @endif
         }
-        $('body').on('click', '.panel > .panel-heading > .panel-options > a[data-rel="reload"]', function (e) {
+        $('body').on('click', '.card shadow > .card-header py-3 > .card-options > a[data-rel="reload"]', function (e) {
             e.preventDefault();
-            var id = $(this).parents('.panel-primary').find('table').attr('id');
+            var id = $(this).parents('.card-primary').find('table').attr('id');
             if (id == 'missingAccounts') {
                 missingAccounts();
             }
         });
-        $('body').on('click', '.panel > .panel-heading > .panel-options > a[data-rel="empty"]', function (e) {
+        $('body').on('click', '.card shadow > .card-header py-3 > .card-options > a[data-rel="empty"]', function (e) {
             e.preventDefault();
-            var id = $(this).parents('.panel-primary').find('table').attr('id');
+            var id = $(this).parents('.card-primary').find('table').attr('id');
             if (id == 'missingAccounts') {
                 deleteMissingAccounts();
             }
@@ -915,7 +915,7 @@
                 $.get(get_url, data, function (response) {
                     $(".search.btn").button('reset');
                     loadingUnload('#invoice_expense_bar_chart', 0);
-                    $(".panel.invoice_expsense #invoice_expense_bar_chart").html(response);
+                    $(".card.invoice_expsense #invoice_expense_bar_chart").html(response);
                 }, "html");
                 @endif
             }
@@ -1143,7 +1143,7 @@
                 success: function (response) {
                     var accounts = response.missingAccounts;
                     html = '';
-                    table.parents('.panel-primary').find('.panel-title h3').html('Missing Gateway Accounts (' + accounts.length + ')');
+                    table.parents('.card-primary').find('.card-title h3').html('Missing Gateway Accounts (' + accounts.length + ')');
                     table.find('tbody').html('');
                     if (accounts.length > 0) {
                         for (i = 0; i < accounts.length; i++) {
@@ -1405,10 +1405,10 @@
             padding-right:0;
             width:38px;
         }
-        .panel-heading{
+        .card-header py-3{
             border:none !important;
         }
-        #customer .panel-heading{
+        #customer .card-header py-3{
             border-bottom:1px solid transparent !important;
             border-color:#ebebeb !important;
         }

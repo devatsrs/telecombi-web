@@ -9,27 +9,27 @@
         display:block !important;
     }
 </style>
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Services
         </div>
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <div id="service_filter" method="get" action="#" >
-            <div class="panel panel-primary panel-collapse" data-collapsed="1">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-collapse" data-collapsed="1">
+                <div class="card-header py-3">
+                    <div class="card-title">
                             Filter
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body" style="display: none;">
+                <div class="card-body" style="display: none;">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-1 control-label">Name</label>
                         <div class="col-sm-2">
@@ -56,8 +56,8 @@
         <div class="row ropdown">
             <div  class="col-md-12">
                 <div class="input-group-btn pull-right" style="width:70px;">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                    <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                    <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                         @if(User::checkCategoryPermission('AccountService','Add'))
                             <li>
                                 <a href="javascript:void(0)" id="add-services">
@@ -186,9 +186,9 @@
                                  } else {
                                     action += ' <button href="' + Active_Card.replace("{id}",full[0]) + '" title="" class="btn deactiveservice btn-success btn-sm tooltip-primary" data-original-title="Activate" title="" data-placement="top" data-toggle="tooltip" data-loading-text="Loading..."><i class="entypo-check"></i></button>';
                                  }
-                                 action += ' <a href="' + service_edit_url.replace("{id}",full[0]) +'" class="edit-service btn btn-default btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i></a>';
+                                 action += ' <a href="' + service_edit_url.replace("{id}",full[0]) +'" class="edit-service btn btn-primary btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i></a>';
                                 <?php } ?>
-                                        action += ' <a data-id=' +full[0] +' class="clone-service btn-default btn btn-sm tooltip-primary" data-original-title="Clone" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-clone"></i></a>';
+                                        action += ' <a data-id=' +full[0] +' class="clone-service btn-primary btn btn-sm tooltip-primary" data-original-title="Clone" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-clone"></i></a>';
                                 <?php if(User::checkCategoryPermission('AccountService','Delete')) { ?>
                                     action += ' <a href="' + service_delete_url.replace("{id}",full[0]) +'" class="delete-service btn btn-danger btn-sm tooltip-primary" data-original-title="Delete" title="" data-placement="top" data-toggle="tooltip" data-loading-text="Loading..."><i class="entypo-trash"></i></a>';
                                 <?php } ?>

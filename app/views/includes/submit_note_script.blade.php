@@ -45,7 +45,7 @@
                     output = '<p>'+ response.Note.Note+'</p>';
                     $("#Note"+response.NoteID).html(output).fadeIn('slow');
                 }else{
-                    output = '<tr><td><a href="#" class="btn-danger btn-sm deleteNote entypo-cancel" id="'+ response.Note.NoteID + '"></a><a href="#" id="'+ response.Note.NoteID +'" class="btn-default btn-sm editNote entypo-pencil"></a></td><td ><div id="Note'+ response.NoteID+'"><span class="badge badge-secondary badge-roundless">New</span><p>'+ response.Note.Note+'</p></div><h5><a href="#">'+ response.Note.created_by+'</a> &nbsp; '+ response.Note.created_at+'</h5></td></tr>';
+                    output = '<tr><td><a href="#" class="btn-danger btn-sm deleteNote entypo-cancel" id="'+ response.Note.NoteID + '"></a><a href="#" id="'+ response.Note.NoteID +'" class="btn-primary btn-sm editNote entypo-pencil"></a></td><td ><div id="Note'+ response.NoteID+'"><span class="badge badge-secondary badge-roundless">New</span><p>'+ response.Note.Note+'</p></div><h5><a href="#">'+ response.Note.created_by+'</a> &nbsp; '+ response.Note.created_at+'</h5></td></tr>';
                     $(".notes_body").prepend(output).fadeIn('slow'); // Show new record
                     $(".editNote").click(FnEditNote); // Edit Note
                     $(".deleteNote").click(FnDeleteNote);// Delete Note

@@ -32,7 +32,7 @@
         padding: 15px 10px;
     }
 </style>
-<div class="panel">
+<div class="card">
 <form id="rootwizard-2" method="post" action="" class="form-wizard validate form-horizontal form-groups-bordered" enctype="multipart/form-data">
     <div class="steps-progress" style="display:none">
         <div class="progress-indicator"></div>
@@ -180,17 +180,17 @@
             <div class="row hidden" id="add-template">
                 <div class="col-md-12">
                     <div id="add-template-form">
-                        <div class="panel panel-primary" data-collapsed="0">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                        <div class="card shadow card-primary" data-collapsed="0">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Mapping Template
                                 </div>
 
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label for="field-1" class="col-sm-2 control-label">Template Name:</label>
                                     <div class="col-sm-4">
@@ -198,17 +198,17 @@
                                     </div>
                                 </div>
                                 <br />
-                                <div class="panel panel-primary" data-collapsed="0">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary" data-collapsed="0">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             Account Importer
                                         </div>
 
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
-                                    <div class="panel-body">
+                                    <div class="card-body">
                                         <div class="form-group">
                                             <label for="field-1" class="col-sm-2 control-label">Delimiter:</label>
                                             <div class="col-sm-4">
@@ -240,34 +240,34 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="panel panel-primary" data-collapsed="0">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary" data-collapsed="0">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             Field Mapping
                                         </div>
 
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
 
-                                    <div class="panel-body" id="mapping">
+                                    <div class="card-body" id="mapping">
                                         <?php $columns = array(); ?>
                                         @include('fileuploadtemplates.accounttemplate')
                                     </div>
                                 </div>
-                                <div class="panel panel-primary" data-collapsed="0">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary" data-collapsed="0">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             File to be loaded
                                         </div>
 
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
 
-                                    <div class="panel-body scrollx">
+                                    <div class="card-body scrollx">
                                         <div id="table-4_processing" class="dataTables_processing hidden">Processing...</div>
                                         <table class="table table-bordered datatable" id="table-4">
                                             <thead>
@@ -340,13 +340,13 @@
             <button type="button" id="uploadaccountsippy"  class="btn btn-primary "><i class="entypo-download"></i><span>Import</span></button>
         </p>
         <div class="clear"></div>
-        <div class="panel-heading" style="padding: 0;">
+        <div class="card-header py-3" style="padding: 0;">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#customertab" data-toggle="tab">Customers</a></li>
                 <li><a href="#vendortab" data-toggle="tab">Vendors</a></li>
             </ul>
         </div>
-        <div class="panel-body" style="padding: 0;">
+        <div class="card-body" style="padding: 0;">
             <div class="tab-content" style="margin: 0;">
                 <div class="tab-pane fade in active" id="customertab">
                     <div class="row">
@@ -1486,7 +1486,7 @@
     .gatewayloading, .quickbookloading{
         display:none;
         color: #ffffff;
-        background: #303641;
+        background: #4e73df;
         display: table;
         position: fixed;
         visibility: visible;
@@ -1495,7 +1495,7 @@
         left: 50%; top: auto;
         margin: 71px auto;
         z-index: 999;
-        border: 1px solid #303641;
+        border: 1px solid #4e73df;
     }
     #st1 a,#st2 a,#st3 a{
         cursor: default;
@@ -1640,7 +1640,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

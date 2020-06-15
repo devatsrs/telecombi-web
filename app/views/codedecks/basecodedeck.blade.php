@@ -76,9 +76,9 @@ var postdata;
                         var action , edit_ , show_ , delete_;
                         show_ = "{{ URL::to('codedecks/basecodedeck/{id}')}}";
                         show_ = show_.replace( '{id}', id);
-                        action = '<a href="'+show_+'" class="btn btn-default btn-sm tooltip-primary" data-original-title="View" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-eye"></i></a>';
+                        action = '<a href="'+show_+'" class="btn btn-primary btn-sm tooltip-primary" data-original-title="View" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-eye"></i></a>';
                         @if(User::checkCategoryPermission('CodeDecks','Edit') )
-                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" class="edit-codedeck btn btn-default btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i></a>';
+                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" class="edit-codedeck btn btn-primary btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i></a>';
                         @endif
                         @if(User::checkCategoryPermission('CodeDecks','Delete') )
                         if(full[4] == 0) {
@@ -272,7 +272,7 @@ function ajax_update(fullurl,data){
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

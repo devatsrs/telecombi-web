@@ -70,9 +70,9 @@
         <div class="input-group-btn pull-right" style="width:70px;">
             @if( User::checkCategoryPermission('Tickets','Edit'))
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                        aria-expanded="false">Action <span class="caret"></span></button>
+                        aria-expanded="false">Action </button>
                 <ul class="action dropdown-menu dropdown-menu-left" role="menu"
-                    style="background-color: #000; border-color: #000; margin-top:0px;">
+                    >
                     <li> <a id="bulk-assign" href="javascript:;"> Assign </a> </li>
                     <li> <a id="bulk-close" href="javascript:;" title="Shift+Close to skip notification mail" data-placement="top" data-toggle="tooltip"> Close </a> </li>
                     <li> <a id="bulk-delete" href="javascript:;"> Delete </a> </li>
@@ -87,8 +87,8 @@
 
         @if( User::checkCategoryPermission('Tickets','Add'))
             <div class="btn-group pull-right">
-                <button href="#" class="btn  btn-primary btn-md  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Add New&nbsp;&nbsp;<span class="caret"></span></button>
-                <ul class="dropdown-menu" style="background-color: #000; border-color: #000; margin-top:0px;" role="menu">
+                <button href="#" class="btn  btn-primary btn-md  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Add New&nbsp;&nbsp;</button>
+                <ul class="dropdown-menu"  role="menu">
                     <li><a href="{{URL::to('/tickets/add')}}">Ticket</a></li>
                     <li><a href="{{URL::to('/tickets/compose_email')}}">Email</a></li>
                 </ul>

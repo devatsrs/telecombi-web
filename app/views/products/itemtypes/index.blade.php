@@ -60,8 +60,8 @@
                         <a href="{{ URL::to('/products')  }}" class="btn btn-danger btn-md btn-icon icon-left pull-right" > <i class="entypo-cancel"></i> Close </a>
                         @if(User::checkCategoryPermission('ItemType','Edit'))
                         <div class="input-group-btn pull-right hidden dropdown" style="width:78px;">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                            <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                                 @if(User::checkCategoryPermission('ItemType','Edit'))
                                     <li class="li_active">
                                         <a class="type_active_deactive" type_ad="active" href="javascript:void(0);" >
@@ -179,14 +179,14 @@
 
                                     action += '</div>';
                                     <?php if(User::checkCategoryPermission('ItemType','Edit')){ ?>
-                                        action += ' <a data-name = "' + full[1] + '" data-id="' + full[0] + '" title="Edit" class="edit-itemtype btn btn-default btn-sm btn-smtooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                        action += ' <a data-name = "' + full[1] + '" data-id="' + full[0] + '" title="Edit" class="edit-itemtype btn btn-primary btn-sm btn-smtooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
                                     <?php } ?>
                                     <?php if(User::checkCategoryPermission('ItemType','Delete') ){ ?>
-                                        action += ' <a href="'+delete_+'" data-redirect="{{ URL::to('products')}}" title="Delete"  class="btn delete btn-danger btn-default btn-sm btn-smtooltip-primary" data-original-title="Delete" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-trash"></i></a>';
+                                        action += ' <a href="'+delete_+'" data-redirect="{{ URL::to('products')}}" title="Delete"  class="btn delete btn-danger btn-primary btn-sm btn-smtooltip-primary" data-original-title="Delete" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-trash"></i></a>';
                                      <?php } ?>
                                      if(full[3]==1) {
                                          <?php if(User::checkCategoryPermission('DynamicField', 'View') ){ ?>
-                                                 action += '<a href="'+url_+'" data-toggle="tooltip" title="Dynamic Fields"  class="btn btn-default btn-sm btn-smtooltip-primary" style="margin-left:3px;"><i class="glyphicon glyphicon-th"></i> </a>';
+                                                 action += '<a href="'+url_+'" data-toggle="tooltip" title="Dynamic Fields"  class="btn btn-primary btn-sm btn-smtooltip-primary" style="margin-left:3px;"><i class="glyphicon glyphicon-th"></i> </a>';
                                          <?php } ?>
                                      }
                                     return action;

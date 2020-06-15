@@ -135,16 +135,16 @@
         <div class="tab-pane " id="tab2">
             <form id="block_by_country_form" method="post" class="form-horizontal form-groups-bordered validate"
                   novalidate="novalidate">
-                <div class="panel panel-primary" data-collapsed="0">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary" data-collapsed="0">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             Block by Country
                         </div>
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-1 control-label">Country</label>
                             <div class="col-sm-2">
@@ -177,16 +177,16 @@
             </div>
             <form id="block_by_code_form" method="post" class="form-horizontal form-groups-bordered validate"
                   novalidate="novalidate">
-                <div class="panel panel-primary" data-collapsed="0">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary" data-collapsed="0">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             Block by Code
                         </div>
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-1 control-label">Code</label>
                             <div class="col-sm-2">

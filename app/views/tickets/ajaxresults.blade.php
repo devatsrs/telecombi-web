@@ -18,14 +18,14 @@
             </div>
           </div>
           <div class="pull-left btn-group">
-            <button type="button" data-toggle="dropdown" class="btn  dropdown-toggle  btn-green">Export <span class="caret"></span></button>
+            <button type="button" data-toggle="dropdown" class="btn  dropdown-toggle  btn-green">Export </button>
             <ul class="dropdown-menu dropdown_sort dropdown-green" role="menu">
               <li><a class="export_btn export_type" action_type="csv" href="#"> CSV</a> </li>
               <li><a class="export_btn export_type" action_type="xlsx"  href="#"> EXCEL</a> </li>
             </ul>
           </div>
           <div class="pull-right sorted btn-group">
-            <button type="button" class="btn btn-green dropdown-toggle" data-toggle="dropdown"> Sorted by {{$Sortcolumns[$data['iSortCol_0']]}} <span class="caret"></span> </button>
+            <button type="button" class="btn btn-green dropdown-toggle" data-toggle="dropdown"> Sorted by {{$Sortcolumns[$data['iSortCol_0']]}}  </button>
             <ul class="dropdown-menu dropdown_sort dropdown-green" role="menu">
               <?php foreach($Sortcolumns as $key => $SortcolumnsData){ ?>
               <li><a class="sort_fld @if($key==$data['iSortCol_0']) checked @endif" action_type="sort_field" action_value="{{$key}}"   href="#"> <i class="entypo-check" @if($key!=$data['iSortCol_0']) style="visibility:hidden;" @endif ></i> {{@$SortcolumnsData}}</a></li>
@@ -71,7 +71,7 @@
         <div>Priority:<span>&nbsp;&nbsp;<?php echo $result_data->PriorityValue; ?></span></div>
         <div>Agent:<span>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $result_data->Agent; ?></span></div>
         <div>Group:<span>&nbsp;&nbsp;&nbsp;<?php echo $result_data->GroupName; ?></span></div></td>
-      <td  align="left" class="col-time"><div class="btn-group"><a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#" aria-expanded="false">Action<span class="caret"></span></a>
+      <td  align="left" class="col-time"><div class="btn-group"><a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#" aria-expanded="false">Action</a>
           <ul class="dropdown-menu ticketaction multi-level dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu">
             @if(User::checkCategoryPermission('TicketDashboardTimeLineWidgets','View'))<li><a href="{{URL::to('/')}}/tickets/{{$result_data->TicketID}}/log" class="icon-left" target="_blank"><i class="entypo-list"></i>Log </a></li> @endif
           </ul>

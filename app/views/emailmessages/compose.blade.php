@@ -19,7 +19,7 @@
       
       <!-- links -->
       <div class="mail-links">        
-        <button type="submit" data-loading-text="Loading..." href="#" submit_value="{{Messages::Draft}}" class="btn btn-default btn-icon submit_btn"> Draft <i class="entypo-tag"></i></button>
+        <button type="submit" data-loading-text="Loading..." href="#" submit_value="{{Messages::Draft}}" class="btn btn-primary btn-icon submit_btn"> Draft <i class="entypo-tag"></i></button>
         <button type="submit" data-loading-text="Loading..." submit_value="{{Messages::Sent}}" class="btn btn-success submit_btn btn-icon"> Send <i class="entypo-mail"></i> </button>
       </div>
     </div>

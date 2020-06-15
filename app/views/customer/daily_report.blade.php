@@ -5,16 +5,16 @@
     </ol>
     <h3>@lang('routes.CUST_PANEL_PAGE_MOVEMENT_REPORT_TITLE')</h3>
      <div id="table_filter" method="get" action="#" >
-        <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     @lang('routes.CUST_PANEL_FILTER_TITLE')
                 </div>
-                <div class="panel-options">
+                <div class="card-options">
                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label for="field-1" class="col-sm-1 control-label">@lang('routes.CUST_PANEL_PAGE_MOVEMENT_REPORT_FILTER_FIELD_START_DATE')</label>
 					<div class="col-sm-2"> {{ Form::text('StartDate', $original_startdate, array("class"=>"form-control datepicker","data-date-format"=>"yyyy-mm-dd" ,"data-enddate"=>date('Y-m-d'))) }} </div>

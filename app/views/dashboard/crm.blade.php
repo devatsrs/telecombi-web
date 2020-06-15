@@ -43,14 +43,14 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
 
 <div class="row">
   <div class="col-sm-12">
-    <div class="panel panel-primary panel-table">
-      <div class="panel-heading">
-        <div class="panel-title">
+    <div class="card shadow card-primary card-table">
+      <div class="card-header py-3">
+        <div class="card-title">
           <h3>Active Tasks</h3>
         </div>
-        <div id="UsersTasks" class="panel-options"> {{ Form::select('DueDateFilter', array("All"=>"All","duetoday"=>"Due Today","duesoon"=>"Due Soon","overdue"=>"Overdue"), 'All', array('id'=>'DueDateFilter','class'=>'select_gray')) }} <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a> </div>
+        <div id="UsersTasks" class="card-options"> {{ Form::select('DueDateFilter', array("All"=>"All","duetoday"=>"Due Today","duesoon"=>"Due Soon","overdue"=>"Overdue"), 'All', array('id'=>'DueDateFilter','class'=>'select_gray')) }} <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a> </div>
       </div>
-      <div class="panel-body white-bg" style="max-height: 450px; overflow-y: auto; overflow-x: hidden;">
+      <div class="card-body white-bg" style="max-height: 450px; overflow-y: auto; overflow-x: hidden;">
         <table class="table table-bordered datatable" id="taskGrid">
           <thead>
             <tr>
@@ -76,20 +76,20 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
 	 if(User::checkCategoryPermission('CrmDashboardRecentAccount','View')){?>
     <div class="row">
     <div class="col-sm-12">
-            <div class="panel panel-primary panel-table">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-table">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>Recent Accounts</h3>
                         <span>Recently Added Accounts</span>
                     </div>
 
-                    <div id="AccountsTab" class="panel-options">
+                    <div id="AccountsTab" class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
                         <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
                     </div>
                 </div>
-                <div class="panel-body white-bg">
+                <div class="card-body white-bg">
                     <div class="dataTables_wrapper">
                         <table id="accounts" class="table table-responsive">
                         <thead>
@@ -125,15 +125,15 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  ?>
 @if(User::checkCategoryPermission('CrmDashboardSalesOpportunity','View'))
   <div class="col-md-6">
-    <div class="panel panel-primary panel-table">
-      <div class="panel-heading">      
-        <div id="Sales" class="pull-right panel-box panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
-        <div class="panel-title forecase_title">
+    <div class="card shadow card-primary card-table">
+      <div class="card-header py-3">      
+        <div id="Sales" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
+        <div class="card-title forecase_title">
           <h3>Sales by Opportunity</h3>
           <div class="SalesResult"></div>
         </div>        
       </div>
-      <div class="form_Sales panel-body white-bg">
+      <div class="form_Sales card-body white-bg">
             <form novalidate class="form-horizontal form-groups-bordered"  id="crm_dashboard_Sales">
               <div class="form-group form-group-border-none">
                 <label for="Closingdate" class="col-sm-2 control-label ClosingdateLabel ">Close Date</label>
@@ -161,15 +161,15 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  ?>
   @if(User::checkCategoryPermission('CrmDashboardPipeline','View'))
   <div class="col-sm-6">
-    <div class="panel panel-primary panel-table">
-      <div class="panel-heading">
-        <div class="panel-title">
+    <div class="card shadow card-primary card-table">
+      <div class="card-header py-3">
+        <div class="card-title">
           <h3>Pipeline Summary</h3>
           <div class="PipeLineResult"></div>
         </div>
-        <div id="Pipeline" class="panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a> </div>
+        <div id="Pipeline" class="card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a> </div>
       </div>
-      <div class="panel-body white-bg">
+      <div class="card-body white-bg">
         <div class="text-center">
           <div id="crmdpipeline1" style="min-width: 310px; height: 400px; margin: 0 auto" class="crmdpipeline"></div>
         </div>
@@ -186,15 +186,15 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  @if(User::checkCategoryPermission('CrmDashboardForecast','View'))
 <div class="row">
   <div class="col-md-12">
-    <div class="panel panel-primary panel-table">
-      <div class="panel-heading">
-        <div id="Forecast" class="pull-right panel-box panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
-        <div class="panel-title forecase_title">
+    <div class="card shadow card-primary card-table">
+      <div class="card-header py-3">
+        <div id="Forecast" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
+        <div class="card-title forecase_title">
           <h3>Forecast</h3>
           <div class="ForecastResult"></div>
         </div>          
       </div>
-      <div class="form_Forecast panel-body white-bg">
+      <div class="form_Forecast card-body white-bg">
             <form novalidate class="form-horizontal form-groups-bordered"  id="crm_dashboard_Forecast">
               <div class="form-group form-group-border-none">
                 <label for="ClosingdateFortcast" class="col-sm-2 control-label ClosingdateLabel1 ">Close Date</label>
@@ -219,15 +219,15 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  @if(User::checkCategoryPermission('CrmDashboardSalesRevenue','View'))
 <div class="row">
 <div class="col-sm-12">
-    <div class="panel panel-primary panel-table">
-      <div class="panel-heading">
-        <div id="Sales_Manager" class="pull-right panel-box panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
-        <div class="panel-title forecase_title">
+    <div class="card shadow card-primary card-table">
+      <div class="card-header py-3">
+        <div id="Sales_Manager" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
+        <div class="card-title forecase_title">
           <h3>Sales By Revenue</h3>
           <div class="SalesResultManager"></div>
         </div>          
       </div>
-      <div class="form_Sales panel-body white-bg">
+      <div class="form_Sales card-body white-bg">
             <form novalidate class="form-horizontal form-groups-bordered"  id="crm_dashboard_Sales_Manager">
               <div class="form-group form-group-border-none">               
                 <div class="col-sm-8">
@@ -262,14 +262,14 @@ if((count($CrmAllowedReports)==0) ||  in_array('CrmDashboardOpportunities',$CrmA
  @if(User::checkCategoryPermission('CrmDashboardOpportunities','View'))
 <div class="row">
   <div class="col-sm-12">
-    <div class="panel panel-primary panel-table">
-      <div class="panel-heading">
-        <div class="panel-title">
+    <div class="card shadow card-primary card-table">
+      <div class="card-header py-3">
+        <div class="card-title">
           <h3>Open Opportunities</h3>
         </div>
-        <div id="UsersOpportunities" class="panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a> </div>
+        <div id="UsersOpportunities" class="card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a> </div>
       </div>
-      <div class="panel-body white-bg">
+      <div class="card-body white-bg">
         <table class="table table-bordered datatable" id="opportunityGrid">
           <thead>
             <tr>
@@ -454,10 +454,10 @@ var RevenueReport = 0;
 		font-weight:bold;
 		pointer-events:auto !important;
 	}
-	.panel-heading{
+	.card-header py-3{
 	border:none !important;
 	}
-    #customer .panel-heading{
+    #customer .card-header py-3{
         border-bottom:1px solid transparent !important;
         border-color:#ebebeb !important;
     }

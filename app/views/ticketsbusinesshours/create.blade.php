@@ -12,7 +12,7 @@
 }
 .custom_hours .col-sm-9{padding-bottom:15px;}
 .red_icon{color:#fdb415;}
-.panel-title span{font-size:12px;}
+.card-title span{font-size:12px;}
 </style>
 <ol class="breadcrumb bc-3">
   <li> <a href="{{action('dashboard')}}"><i class="entypo-home"></i>Home</a> </li>
@@ -29,12 +29,12 @@
 <br>
   <div class="row">
     <div class="col-md-12">
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title"> Basic Information </div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title"> Basic Information </div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="form-group">
             <label for="field-1" class="col-sm-2 control-label">Title</label>
             <div class="col-sm-6">
@@ -183,12 +183,12 @@
         </div>
       </div>
       <!-- -->
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Yearly Holiday Information <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Holidays will be ignored when calculating SLA for a ticket" data-original-title="Yearly Holiday Information" class="label label-info popover-primary">?</span> </div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Yearly Holiday Information <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Holidays will be ignored when calculating SLA for a ticket" data-original-title="Yearly Holiday Information" class="label label-info popover-primary">?</span> </div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="form-group">
           	<div class="col-sm-9"> 
             <div class="col-sm-2"> {{Form::select('HolidaysMonths', TicketBusinessHours::$HolidaysMonths,'',array("class"=>"form-control HolidaysMonths  small select2"))}} </div>
@@ -353,7 +353,7 @@ var calculate_time_error = new Array();
 			
 		 //	var HolidaysData = '<div class="'+HolidaysID+' form-group"><div class="col-sm-1"><a class="holidayentry clickable" id="'+HolidaysID+'"> X </a></div><div class="col-sm-2">'+HolidaysMonthsTitle+' '+HolidaysDays+'</div><div class="col-sm-4">'+HolidaysName+'</div> <input type="hidden" name="holidays['+HolidaysID+']" value="'+HolidaysName+'" /> </div>';	
 			
-			var HolidaysData = '<div class="'+HolidaysID+' form-group"><div class="col-sm-1"> <a id="'+HolidaysID+'"  title="Delete" class="btn btn-danger holidayentry clickable btn-xs btn-default btn-sm"><i class="entypo-trash"></i></a> </div><div class="col-sm-2">'+HolidaysMonthsTitle+' '+HolidaysDays+'</div><div class="col-sm-4">'+HolidaysName+'</div> <input type="hidden" name="holidays['+HolidaysID+']" value="'+HolidaysName+'" /> </div>';	
+			var HolidaysData = '<div class="'+HolidaysID+' form-group"><div class="col-sm-1"> <a id="'+HolidaysID+'"  title="Delete" class="btn btn-danger holidayentry clickable btn-xs btn-primary btn-sm"><i class="entypo-trash"></i></a> </div><div class="col-sm-2">'+HolidaysMonthsTitle+' '+HolidaysDays+'</div><div class="col-sm-4">'+HolidaysName+'</div> <input type="hidden" name="holidays['+HolidaysID+']" value="'+HolidaysName+'" /> </div>';	
 			
 			//////
 			$('.holidaysShow').append(HolidaysData);

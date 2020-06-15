@@ -74,11 +74,11 @@
                         delete_  = delete_ .replace( '{id}', id );
                         action = '';
                         <?php if(User::checkCategoryPermission('BusinessHours','Edit') ){ ?>
-                        action += ' <a href="'+edit_+'" title="Edit" class="btn btn-default btn-sm"><i class="entypo-pencil"></i></a>';
+                        action += ' <a href="'+edit_+'" title="Edit" class="btn btn-primary btn-sm"><i class="entypo-pencil"></i></a>';
                         <?php } ?>
                         <?php if(User::checkCategoryPermission('BusinessHours','Delete') ){ ?>
 						if(full[3] == 0){
-                        	action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger btn-default btn-sm"><i class="entypo-trash"></i></a>';
+                        	action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger btn-primary btn-sm"><i class="entypo-trash"></i></a>';
 						}
                         <?php } ?>
                         return action;

@@ -143,7 +143,7 @@ var popup_type	=	0;
                          action += '<input type = "hidden"  name = "templateID" value = "' + id + '" / >';
                          action += '</div>';
                         <?php if(User::checkCategoryPermission('EmailTemplate','Edit')) { ?>
-                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-template btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-template btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                         <?php } ?>
                         <?php if(User::checkCategoryPermission('EmailTemplate','Delete')) { ?>
 						if(full[6]==0){

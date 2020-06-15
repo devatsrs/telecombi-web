@@ -3,28 +3,28 @@
     position: absolute;
 }
 </style>
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Subscriptions
         </div>
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
 
          <div id="subscription_filter" method="get" action="#" >
-                                <div class="panel panel-primary panel-collapse" data-collapsed="1">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary card-collapse" data-collapsed="1">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             Filter
                                         </div>
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
-                                    <div class="panel-body" style="display: none;">
+                                    <div class="card-body" style="display: none;">
                                         <div class="form-group">
                                             <label for="field-1" class="col-sm-1 control-label">Name</label>
                                             <div class="col-sm-2">
@@ -201,7 +201,7 @@
                                     action += '<input disabled type = "hidden"  name = "' + list_fields[i] + '"       value = "' + (full[i] != null?full[i]:'')+ '" / >';
                                  }
                                  action += '</div>';
-                                 action += ' <a href="' + subscription_edit_url.replace("{id}",id) +'" title="Edit" class="edit-subscription btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
+                                 action += ' <a href="' + subscription_edit_url.replace("{id}",id) +'" title="Edit" class="edit-subscription btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
                                  action += ' <a href="' + subscription_delete_url.replace("{id}",id) +'" title="Delete" class="delete-subscription btn btn-danger btn-sm"><i class="entypo-trash"></i></a>'
                                  return action;
                             }
@@ -372,7 +372,7 @@
                                     html += "<td>" + data['AccountCLI'] + "</td>";
                                     html += '<td>' + data["InboundDiscountPlans"] + '&nbsp;&nbsp;<a href="javascript:void(0);" onclick ="view_discountplan('+ data["SubscriptionDiscountPlanID"] + ','+AccountSubscriptionID+','+"{{AccountDiscountPlan::INBOUND}}"+')" class="btn btn-sm btn-primary tooltip-primary" data-original-title="View Detail" title="" data-placement="top" data-toggle="tooltip" data-loading-text="Loading..."><i class="fa fa-eye"></i></a></td>';
                                     html += '<td>' + data["OutboundDiscountPlans"] + '&nbsp;&nbsp;<a href="javascript:void(0);" onclick ="view_discountplan('+ data["SubscriptionDiscountPlanID"] + ','+AccountSubscriptionID+','+"{{AccountDiscountPlan::OUTBOUND}}"+')" class="btn btn-sm btn-primary tooltip-primary" data-original-title="View Detail" title="" data-placement="top" data-toggle="tooltip" data-loading-text="Loading..."><i class="fa fa-eye"></i></a></td>';
-                                    html += '<td><a href="javascript:void(0);" title="Edit" onclick ="edit_discountplan('+ data["SubscriptionDiscountPlanID"] + ')" class="edit-discountplan btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a><a href="javascript:void(0);" onclick ="delete_discountplan('+ data["SubscriptionDiscountPlanID"] + ','+ AccountSubscriptionID +')" title="Delete" class="delete-discountplan btn btn-danger btn-sm"><i class="entypo-trash"></i></a></td>';
+                                    html += '<td><a href="javascript:void(0);" title="Edit" onclick ="edit_discountplan('+ data["SubscriptionDiscountPlanID"] + ')" class="edit-discountplan btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a><a href="javascript:void(0);" onclick ="delete_discountplan('+ data["SubscriptionDiscountPlanID"] + ','+ AccountSubscriptionID +')" title="Delete" class="delete-discountplan btn btn-danger btn-sm"><i class="entypo-trash"></i></a></td>';
                                     html += "</tr>";
 
                                     table.append(html);

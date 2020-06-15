@@ -3,8 +3,8 @@
   <h4>Total Conversation(s): {{count($response['data'])}}</h4>
 </div>
 <div class="col-md-12 perfect-scrollbar" style="max-height:600px; overflow-y:auto">
-  <div class="panel panel-primary">
-    <div class="panel-body no-padding"> 
+  <div class="card shadow card-primary">
+    <div class="card-body no-padding"> 
       <!-- List of Comments -->
       <ul class="comments-list">
         @if($data['conversations_type']=='ticket')

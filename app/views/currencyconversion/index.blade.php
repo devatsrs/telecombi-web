@@ -28,16 +28,16 @@
 <div class="row">
 <div class="col-md-12">
 <form id="currency-form" method="post" class="form-horizontal form-groups-bordered validate">
-<div class="panel panel-primary" data-collapsed="0">
-<div class="panel-heading">
-                    <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+<div class="card-header py-3">
+                    <div class="card-title">
                         Add Exchange Rate
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
 @foreach ($currencyarray as $currencylist)
     <div class="form-group">
         <label for="field-1" class="col-sm-1 control-label">{{$currencylist->Code}}</label>

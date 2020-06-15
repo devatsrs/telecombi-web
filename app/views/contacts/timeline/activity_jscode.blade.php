@@ -920,7 +920,7 @@ ul.grid li div.action {
 	margin-bottom: 0;
 }
 #account-timeline ul li.follow::before {
-	background: #f5f5f6 none repeat scroll 0 0;
+	background: #fff none repeat scroll 0 0;
 }
 /*.cbp_tmtimeline > li.followup_task .cbp_tmlabel::before{margin:0;right:93%;top:-27px; border-color:transparent #f1f1f1 #fff transparent; position:absolute; border-style:solid; border-width:14px;  content: " ";}*/
 .cbp_tmtimeline > li.followup_task .cbp_tmlabel::before {
@@ -973,7 +973,7 @@ footer.main {
 	font-size: 14.4px !important;
 }
 .mail_message {
-	font-family: "Noto Sans", sans-serif !important;
+	font-family: "Nunito", sans-serif !important;
 }
 .no-display {
 	overflow: auto;

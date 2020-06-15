@@ -115,16 +115,16 @@
                             var Status = full[3];
                             var ReportScheduleID = full[2];
                             @if(User::checkCategoryPermission('Report','Update'))
-                                action += ' <a href="' + report_edit_url.replace("{id}", id) + '" class="btn btn-default btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
-                                action += ' <a href="' + report_edit_url.replace("{id}", id) + '?report=run" class="btn btn-default btn-sm tooltip-primary" data-original-title="Run" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-play"></i>&nbsp;</a>';
-                                action += ' <a class="btn btn-default btn-sm tooltip-primary dropdown-toggle" data-original-title="Export" title="" data-placement="top" data-toggle="dropdown"><i class="fa fa-download"></i>&nbsp;</a>' +
+                                action += ' <a href="' + report_edit_url.replace("{id}", id) + '" class="btn btn-primary btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                action += ' <a href="' + report_edit_url.replace("{id}", id) + '?report=run" class="btn btn-primary btn-sm tooltip-primary" data-original-title="Run" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-play"></i>&nbsp;</a>';
+                                action += ' <a class="btn btn-primary btn-sm tooltip-primary dropdown-toggle" data-original-title="Export" title="" data-placement="top" data-toggle="dropdown"><i class="fa fa-download"></i>&nbsp;</a>' +
                                         '<ul class="dropdown-menu dropdown-menu-left" role="menu" style="left:60px;top:35px;background-color: #000; border-color: #000; margin-top:0px; min-width: 0"> <li> <a href="' + report_export_url.replace("{id}", id) + '?Type={{Report::XLS}}" class="save-report-data"> <span>Excel</span> </a> </li><li> <a href="' + report_export_url.replace("{id}", id) + '?Type={{Report::PNG}}" class="save-report-data"> <span>PNG</span> </a> </li> <li> <a href="' + report_export_url.replace("{id}", id) + '?Type={{Report::PDF}}" class="save-report-data">  <span>PDF</span> </a> </li> </ul>';
                             if(ReportScheduleID) {
-                                action += ' <a href="' + report_schedule_url.replace("{id}", ReportScheduleID) + '" class="schedule_report  btn btn-default btn-sm tooltip-primary" data-original-title="Scheduling" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-calendar-times-o"></i>&nbsp;</a>';
+                                action += ' <a href="' + report_schedule_url.replace("{id}", ReportScheduleID) + '" class="schedule_report  btn btn-primary btn-sm tooltip-primary" data-original-title="Scheduling" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-calendar-times-o"></i>&nbsp;</a>';
                             }else{
-                                action += ' <a href="' + report_add_schedule_url + '" class="schedule_report  btn btn-default btn-sm tooltip-primary" data-original-title="Scheduling" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-calendar-times-o"></i>&nbsp;</a>';
+                                action += ' <a href="' + report_add_schedule_url + '" class="schedule_report  btn btn-primary btn-sm tooltip-primary" data-original-title="Scheduling" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-calendar-times-o"></i>&nbsp;</a>';
                             }
-                                action += ' <a href="' + report_history_url+'?ReportID=' +id+'" class="btn btn-default btn-sm tooltip-primary" data-original-title="History" title="" data-placement="top" data-toggle="tooltip"><i class="glyphicon glyphicon-time"></i>&nbsp;</a>';
+                                action += ' <a href="' + report_history_url+'?ReportID=' +id+'" class="btn btn-primary btn-sm tooltip-primary" data-original-title="History" title="" data-placement="top" data-toggle="tooltip"><i class="glyphicon glyphicon-time"></i>&nbsp;</a>';
                             @endif
 
                                     @if(User::checkCategoryPermission('Report','Delete'))

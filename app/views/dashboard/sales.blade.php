@@ -4,18 +4,18 @@
 <div class="row">
     <div class="col-md-12">
         <form novalidate="novalidate" class="form-horizontal form-groups-bordered validate" method="post" id="sales_filter">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Filter
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#">
                             <i class="entypo-down-open"></i>
                         </a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="col-sm-1 control-label" for="Startdate">Start date</label>
                         <div class="col-sm-2">
@@ -54,20 +54,20 @@
 <div class="row">
     @if(isset($dashboardData['data']['TotalSales']))
     <div class="col-sm-6">
-        <div class="panel panel-primary panel-table">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary card-table">
+            <div class="card-header py-3">
+                <div class="card-title">
                     <h3>Total Sales</h3>
                     <span>For selected period</span>
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                     <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a>
                     <a data-rel="close" href="#"><i class="entypo-cancel"></i></a>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <table class="table table-responsive">
                     <thead>
                     <tr>
@@ -95,20 +95,20 @@
     @endif
     @if(isset($dashboardData['data']['TotalActiveAccount']))
     <div class="col-sm-6">
-        <div class="panel panel-primary panel-table">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary card-table">
+            <div class="card-header py-3">
+                <div class="card-title">
                     <h3>Total Account</h3>
                     <span>For selected period</span>
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                     <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a>
                     <a data-rel="close" href="#"><i class="entypo-cancel"></i></a>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <table class="table table-responsive">
                     <thead>
                     <tr>
@@ -149,13 +149,13 @@
 @if(isset($dashboardData['data']['AccountSales']))
 
     <div class="col-sm-6">
-        <div class="panel panel-primary panel-table">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary card-table">
+            <div class="card-header py-3">
+                <div class="card-title">
                     <h3>Active Account Sales @if(isset($dashboardData['data']['TotalActiveAccount'][0]->totalactive))({{$dashboardData['data']['TotalActiveAccount'][0]->totalactive}})@endif</h3>
                     <span>For selected period</span>
                 </div>
-                <div class="panel-options">
+                <div class="card-options">
                     <a data-rel="collapse" href="#">
                         <i class="entypo-down-open"></i>
                     </a>
@@ -167,7 +167,7 @@
                     </a>
                 </div>
             </div>
-            <div class="panel-body" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
+            <div class="card-body" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
                 <table class="table table-responsive">
                     <thead>
                         <tr>
@@ -211,13 +211,13 @@
     @if(isset($dashboardData['data']['TotalInActiveAccountList']))
 
         <div class="col-sm-6">
-            <div class="panel panel-primary panel-table">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-table">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>InActive Accounts @if(isset($dashboardData['data']['TotalInActiveAccount'][0]->totalinactive))({{$dashboardData['data']['TotalInActiveAccount'][0]->totalinactive}})@endif </h3>
                         <span>For selected period</span>
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#">
                             <i class="entypo-down-open"></i>
                         </a>
@@ -229,7 +229,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="panel-body" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
+                <div class="card-body" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
                     <table class="table table-responsive">
                         <thead>
                             <tr>
@@ -258,13 +258,13 @@
 @if(isset($dashboardData['data']['PrevTotalInActiveAccountList']) && $compare_with == 1)
 
         <div class="col-sm-6">
-            <div class="panel panel-primary panel-table">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-table">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>Previous InActive Accounts @if(isset($dashboardData['data']['PrevTotalInActiveAccount'][0]->prevtotalinactive) && $compare_with == 1)({{$dashboardData['data']['PrevTotalInActiveAccount'][0]->prevtotalinactive}})@endif </h3>
                         <span>For selected period</span>
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#">
                             <i class="entypo-down-open"></i>
                         </a>
@@ -276,7 +276,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="panel-body" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
+                <div class="card-body" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
                     <table class="table table-responsive">
                         <thead>
                             <tr>
@@ -301,11 +301,11 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title">Top Destination</div>
+            <div class="card shadow card-primary">
+                <div class="card-header py-3">
+                    <div class="card-title">Top Destination</div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <label >Current</label>
                     @if(isset($top_data))
                     <div class="pie-large" id="pie-large" style="height: 350px">
@@ -332,11 +332,11 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <div id="charts_env" class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title">Sales Chart</div>
+        <div id="charts_env" class="card shadow card-primary">
+            <div class="card-header py-3">
+                <div class="card-title">Sales Chart</div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="tab-content">
                 @if(isset($sales_data))
                     <div class="tab-pane active" id="line-chart">
@@ -355,11 +355,11 @@
 @if(User::is_admin())
 <div class="row">
     <div class="col-sm-12">
-        <div id="charts_env" class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title">Leadership Chart</div>
+        <div id="charts_env" class="card shadow card-primary">
+            <div class="card-header py-3">
+                <div class="card-title">Leadership Chart</div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="tab-content">
                 @if(isset($dashboardData['data']['SalesExecutive']) && count($dashboardData['data']['SalesExecutive']))
                     <div class="tab-pane active" id="line-chart-2">

@@ -26,8 +26,8 @@
 </p>
 <div class="row">
     <div class="col-sm-12">
-        <div class="panel panel-primary panel-table loading">
-            <div class="panel-body">
+        <div class="card shadow card-primary card-table loading">
+            <div class="card-body">
                 <div id="account_expense_bar_chart">
                 </div>
             </div>
@@ -36,10 +36,10 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <div class="panel loading panel-default dataTables_wrapper" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
+        <div class="card shadow loading card-default dataTables_wrapper" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
 
-            <!-- panel body -->
-            <div class="panel-body">
+            <!-- card shadow body -->
+            <div class="card-body">
 
                 <table class="table table-bordered datatable" id="expense_customer_table">
                 </table>
@@ -48,10 +48,10 @@
 
     </div>
     <div class="col-sm-12">
-        <div class="panel loading panel-default dataTables_wrapper" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
+        <div class="card shadow loading card-default dataTables_wrapper" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
 
-            <!-- panel body -->
-            <div class="panel-body">
+            <!-- card shadow body -->
+            <div class="card-body">
 
                 <table class="table table-bordered datatable" id="expense_vendor_table">
                 </table>
@@ -63,9 +63,9 @@
 </div>
 <div class="row">
     <div class="col-sm-3">
-        <div class="panel loading panel-default dataTables_wrapper" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-            <!-- panel body -->
-            <div class="panel-body">
+        <div class="card shadow loading card-default dataTables_wrapper" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+            <!-- card shadow body -->
+            <div class="card-body">
                 <table class="table table-bordered datatable" id="expense_year_table">
                     <thead>
                     <tr>

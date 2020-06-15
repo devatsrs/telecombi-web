@@ -15,16 +15,16 @@
 <div class="row">
     <div class="col-md-12">
         <form novalidate="novalidate" class="form-horizontal form-groups-bordered validate" method="post" id="duesheet_filter">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Filter
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="field-1">Account Type</label>
                         <div class="col-sm-3">
@@ -49,16 +49,16 @@
 <div class="cler row">
     <div class="col-md-12">
         <form role="form" id="form1" method="post" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Recent Due Sheet
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <div class="col-md-12">
                             <table class="table table-bordered datatable" id="table-4">
@@ -114,10 +114,10 @@
                         {
                         mRender: function ( id, type, full ) {
                             if($searchFilter.AccountType == '{{AccountApproval::CUSTOMER}}'){
-                                action = '<a href="'+baseurl+'/customers_rates/'+id+'" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>'
+                                action = '<a href="'+baseurl+'/customers_rates/'+id+'" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>'
                             }
                             if($searchFilter.AccountType == '{{AccountApproval::VENDOR}}'){
-                                action = '<a href="'+baseurl+'/vendor_rates/'+id+'" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>'
+                                action = '<a href="'+baseurl+'/vendor_rates/'+id+'" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>'
                             }
 
                             return action;

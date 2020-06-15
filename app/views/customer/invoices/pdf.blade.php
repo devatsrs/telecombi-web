@@ -11,8 +11,8 @@ p{ line-height: 20px;}
 .text-left{ text-align: left}
 .text-right{ text-align: right}
 .text-center{ text-align: center}
-table.invoice th{ padding:3px; background-color: #f5f5f6}
-.bg_graycolor{background-color: #f5f5f6}
+table.invoice th{ padding:3px; background-color: #fff}
+.bg_graycolor{background-color: #fff}
 table.invoice td , table.invoice_total td{ padding:3px;}
 .page_break{page-break-after: always;}
 @media print {
@@ -122,8 +122,8 @@ $InvoiceTaxRates = InvoiceTaxRate::where("InvoiceID",$Invoice->InvoiceID )->get(
 <br /><br /><br />
     <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
+                <div class="card shadow card-default">
+                    <div class="card-body">
                         <div class="table-responsive">
                                 <table border="0" width="100%" cellpadding="0" cellspacing="0">
                                     <tr>

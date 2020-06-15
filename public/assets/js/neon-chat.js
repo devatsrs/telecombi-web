@@ -109,8 +109,8 @@ var neonChat = neonChat || {
 			if($chat.hasClass('fixed') && $chat_inner.length && $.isFunction($.fn.niceScroll))
 			{
 				$chat.find('.chat-inner').niceScroll({
-					cursorcolor: '#454a54',
-					cursorborder: '1px solid #454a54',
+					cursorcolor: '#7296ff',
+					cursorborder: '1px solid #7296ff',
 					railpadding: {right: 3},
 					railalign: 'right',
 					cursorborderradius: 1

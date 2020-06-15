@@ -71,9 +71,9 @@ var postdata;
                         delete_ = "{{ URL::to('dialstrings/{id}/delete_dialstring')}}";
                         show_ = show_.replace( '{id}', id);
                         delete_ = delete_.replace( '{id}', id);
-                        action = '<a href="'+show_+'" title="View" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>';
+                        action = '<a href="'+show_+'" title="View" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                         <?php if(User::checkCategoryPermission('DialStrings','Edit') ){ ?>
-                            action += ' <a data-name = "'+full[0]+'" data-type = "'+full[4]+'" data-id="'+ id +'" title="Edit" class="edit-dialstring btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a data-name = "'+full[0]+'" data-type = "'+full[4]+'" data-id="'+ id +'" title="Edit" class="edit-dialstring btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                         <?php } ?>
                         <?php if(User::checkCategoryPermission('DialStrings','Delete') ){ ?>
                             action += ' <a href="'+ delete_ +'" title="Delete" class="delete-dialstring btn delete btn-danger btn-sm"><i class="entypo-trash"></i></a>';

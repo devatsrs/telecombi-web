@@ -64,10 +64,10 @@
                                     edit  = edit .replace( '{id}', id );
                                     var action = '';
                                     <?php if(User::checkCategoryPermission('UploadFileTemplate','Edit') ){ ?>
-                                        action += ' <a href="'+edit+'" title="Edit" class="edit-config btn btn-default btn-sm" data-name="Edit Template"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                        action += ' <a href="'+edit+'" title="Edit" class="edit-config btn btn-primary btn-sm" data-name="Edit Template"><i class="entypo-pencil"></i>&nbsp;</a>';
                                     <?php } ?>
                                     <?php if(User::checkCategoryPermission('UploadFileTemplate','Delete') ){ ?>
-                                        action += ' <a href="'+delete_+'" title="Delete" class="btn delete btn-danger btn-default btn-sm"><i class="entypo-trash"></i></a>';
+                                        action += ' <a href="'+delete_+'" title="Delete" class="btn delete btn-danger btn-primary btn-sm"><i class="entypo-trash"></i></a>';
                                     <?php } ?>
                                     return action;
                                 }

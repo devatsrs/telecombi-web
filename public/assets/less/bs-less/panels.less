@@ -6,23 +6,23 @@
 @panel_hpadding: 15px;
 
 // Base class
-.panel {
+.card {
   margin-bottom: @line-height-computed;
-  background-color: @panel-bg;
+  background-color: @card-bg;
   border: 1px solid transparent;
-  border-radius: @panel-border-radius;
+  border-radius: @card-border-radius;
   //.box-shadow(0 1px 1px rgba(0,0,0,.05));
   
-  &.panel-shadow {
+  &.card-shadow {
   	.box-shadow(~"0 3px 1px rgba(0,0,0,.04)");
   }
   
-  &.reloading > .panel-heading > .panel-options > a[rel="reload"] > i {
+  &.reloading > .card-heading > .card-options > a[rel="reload"] > i {
 	.transition(~"none");
 	.animation(~"reloadingAnimation 1s linear infinite");
   }
   
-  &.panel-collapse > .panel-heading > .panel-options > a[rel="collapse"] > i {
+  &.card-collapse > .card-heading > .card-options > a[rel="collapse"] > i {
   	.rotate(180deg);
   }
   
@@ -38,11 +38,11 @@
   // Collapsed
   &[data-collapsed="1"] {
   
-  	.panel-body {
+  	.card-body {
 	  	display: none;
   	}
   	
-  	.panel-heading > .panel-options > a[rel="collapse"] > i {
+  	.card-heading > .card-options > a[rel="collapse"] > i {
 	  	.rotate(180deg);
   	}
   }
@@ -50,20 +50,20 @@
   // Minimal
   &.minimal {
 	  
-	  > .panel-heading {
+	  > .card-heading {
 	  	  padding: 0;
 		  border-bottom: 1px solid @default;
 		  
-		  > .panel-title {
+		  > .card-title {
 		  	  position: relative;
-			  color: @panel-default-text;
+			  color: @card-default-text;
 			  padding: 0;
 			  padding-bottom: @panel_vpadding;
 			  top: @panel_vpadding - 2;
 		  }
 		  
 		  // Nav tabs
-		  > .panel-options {
+		  > .card-options {
 		  	padding-right: 0;
 		  	
 		  	> .nav-tabs {
@@ -109,7 +109,7 @@
 		  }
 	  }
 	  
-	  > .panel-body {
+	  > .card-body {
 		  padding-left: 0;
 		  padding-right: 0;
 	  }
@@ -118,9 +118,9 @@
 	  &.minimal-gray {
 	  	  @minimal_gray_border: #ebebeb;
 		  
-		  > .panel-heading {
+		  > .card-heading {
 		  	
-		  	> .panel-options {
+		  	> .card-options {
 			  	
 			  	> .nav-tabs {
 				  	
@@ -146,7 +146,7 @@
 }
 
 // Panel contents
-.panel-body {
+.card-body {
   position: relative;
   padding: 15px;
   .clearfix();
@@ -159,10 +159,10 @@
 
 // List groups in panels
 //
-// By default, space out list group content from panel headings to account for
+// By default, space out list group content from card headings to account for
 // any kind of custom content between the two.
 
-.panel {
+.card {
   > .list-group {
     margin-bottom: 0;
 
@@ -182,19 +182,19 @@
     // Add border top radius for first one
     &:first-child {
       .list-group-item:first-child {
-        .border-top-radius((@panel-border-radius - 1));
+        .border-top-radius((@card-border-radius - 1));
       }
     }
     // Add border bottom radius for last one
     &:last-child {
       .list-group-item:last-child {
-        .border-bottom-radius((@panel-border-radius - 1));
+        .border-bottom-radius((@card-border-radius - 1));
       }
     }
   }
 }
 // Collapse space between when there's no additional content.
-.panel-heading + .list-group {
+.card-heading + .list-group {
   .list-group-item:first-child {
     border-top-width: 0;
   }
@@ -203,10 +203,10 @@
 
 // Tables in panels
 //
-// Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
+// Place a non-bordered `.table` within a card (not within a `.card-body`) and
 // watch it go full width.
 
-.panel {
+.card {
   > .table,
   > .table-responsive > .table {
     margin-bottom: 0;
@@ -219,11 +219,11 @@
       > tr:first-child {
         td:first-child,
         th:first-child {
-          border-top-left-radius: (@panel-border-radius - 1);
+          border-top-left-radius: (@card-border-radius - 1);
         }
         td:last-child,
         th:last-child {
-          border-top-right-radius: (@panel-border-radius - 1);
+          border-top-right-radius: (@card-border-radius - 1);
         }
       }
     }
@@ -236,17 +236,17 @@
       > tr:last-child {
         td:first-child,
         th:first-child {
-          border-bottom-left-radius: (@panel-border-radius - 1);
+          border-bottom-left-radius: (@card-border-radius - 1);
         }
         td:last-child,
         th:last-child {
-          border-bottom-right-radius: (@panel-border-radius - 1);
+          border-bottom-right-radius: (@card-border-radius - 1);
         }
       }
     }
   }
-  > .panel-body + .table,
-  > .panel-body + .table-responsive {
+  > .card-body + .table,
+  > .card-body + .table-responsive {
     border-top: 1px solid @table-border-color;
   }
   > .table > tbody:first-child > tr:first-child th,
@@ -287,9 +287,9 @@
 
 
 // Optional heading
-.panel-heading {
+.card-heading {
   border-bottom: 1px solid transparent;
-  .border-top-radius(@panel-border-radius);
+  .border-top-radius(@card-border-radius);
   .clearfix;
 
   > .dropdown .dropdown-toggle {
@@ -297,7 +297,7 @@
   }
   
   // Laborator
-  > .panel-title {
+  > .card-title {
 	  float: left;
 	  padding: @panel_vpadding @panel_hpadding;
 	  
@@ -310,7 +310,7 @@
 	  }
   }
   
-  > .panel-options {
+  > .card-options {
 	float: right;
 	padding-right: @panel_hpadding;
 	
@@ -344,7 +344,7 @@
 .keyframes(~'reloadingAnimation, 0%{ transform: rotate(0deg); } 100%{ transform: rotate(360deg); }');
 
 // Within heading, strip any `h*` tag of it's default margins for spacing.
-.panel-title {
+.card-title {
   margin-top: 0;
   margin-bottom: 0;
   font-size: ceil((@font-size-base * 1.125));
@@ -354,28 +354,28 @@
 }
 
 // Optional footer (stays gray in every modifier class)
-.panel-footer {
+.card-footer {
   padding: 10px 15px;
-  background-color: @panel-footer-bg;
-  border-top: 1px solid @panel-inner-border;
-  .border-bottom-radius(@panel-border-radius - 1);
+  background-color: @card-footer-bg;
+  border-top: 1px solid @card-inner-border;
+  .border-bottom-radius(@card-border-radius - 1);
 }
 
 
 // Collapsable panels (aka, accordion)
 //
-// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// Wrap a series of panels in `.card-group` to turn them into an accordion with
 // the help of our collapse JavaScript plugin.
 
-.panel-group {
+.card-group {
   margin-bottom: @line-height-computed;
   // Tighten up margin so it's only between panels
-  .panel {
+  .card {
     margin-bottom: 0;
-    //border-radius: @panel-border-radius;
+    //border-radius: @card-border-radius;
     overflow: hidden; // crop contents when collapsed
     
-    > .panel-heading > .panel-title {
+    > .card-heading > .card-title {
 	    
 	    float: none;
 	    
@@ -384,36 +384,36 @@
 	    }
     }
     
-    + .panel {
+    + .card {
       margin-top: 5px;
     }
   }
 
-  .panel-heading {
+  .card-heading {
     border-bottom: 0;
-    + .panel-collapse .panel-body {
-      border-top: 1px solid @panel-inner-border;
+    + .card-collapse .card-body {
+      border-top: 1px solid @card-inner-border;
     }
   }
-  .panel-footer {
+  .card-footer {
     border-top: 0;
-    + .panel-collapse .panel-body {
-      border-bottom: 1px solid @panel-inner-border;
+    + .card-collapse .card-body {
+      border-bottom: 1px solid @card-inner-border;
     }
   }
   
   // Joined Accordions
   &.joined {
 	  
-	  > .panel {
+	  > .card {
 		  .rounded(0);
 		  
-		  + .panel {
+		  + .card {
 			  margin-top: 0;
 			  border-top: 0;
 		  }
 		  
-		  > .panel-heading {
+		  > .card-heading {
 			  background-color: @background_color;
 			  
 			  h4 a {
@@ -440,7 +440,7 @@
 			  }
 		  }
 		  
-		  > .panel-heading + .panel-collapse {
+		  > .card-heading + .card-collapse {
 			  //background-color: @default;
 			  background-color: @hover_bg;
 			  margin-bottom: 0;
@@ -455,125 +455,125 @@
 
 
 // Contextual variations
-.panel-primary {
-  @panel-default-heading-bg: #ffffff;
-  @options-color: lighten(@panel-default-border, 5%);
-  @panel-default-border: @default;
+.card-primary {
+  @card-default-heading-bg: #ffffff;
+  @options-color: lighten(@card-default-border, 5%);
+  @card-default-border: @default;
   
-  .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border; @options-color);
+  .card-variant(@card-default-border; @card-default-text; @card-default-heading-bg; @card-default-border; @options-color);
 }
-.panel-invert {
-  @panel-default-heading-bg: @main_color;
-  @panel-default-border: #39414e;
+.card-invert {
+  @card-default-heading-bg: @main_color;
+  @card-default-border: #39414e;
   
-  @options-color: lighten(@panel-default-border, 10%);
-  @panel-default-text: @main_text_acitve_color;
+  @options-color: lighten(@card-default-border, 10%);
+  @card-default-text: @main_text_acitve_color;
   
-  .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border; @options-color);
+  .card-variant(@card-default-border; @card-default-text; @card-default-heading-bg; @card-default-border; @options-color);
   
-  > .panel-body {
-  	background-color: @panel-default-heading-bg;
+  > .card-body {
+  	background-color: @card-default-heading-bg;
   	color: #778193;
   }
 }
-.panel-default {
-  @panel-default-heading-bg: #f0f0f1;
-  @options-color: darken(@panel-default-border, 5%);
-  @panel-default-border: @default;
+.card-default {
+  @card-default-heading-bg: #f0f0f1;
+  @options-color: darken(@card-default-border, 5%);
+  @card-default-border: @default;
   
-  .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border; @options-color);
+  .card-variant(@card-default-border; @card-default-text; @card-default-heading-bg; @card-default-border; @options-color);
   
-  > .panel-heading > .panel-options > .nav-tabs > li {    	
+  > .card-heading > .card-options > .nav-tabs > li {    	
 	> a { background-color: @options-color; }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
 }
-.panel-success {
-  @options-color: darken(@panel-success-border, 5%);
-  .panel-variant(@panel-success-border; @panel-success-text; @panel-success-heading-bg; @panel-success-border; @options-color);
+.card-success {
+  @options-color: darken(@card-success-border, 5%);
+  .card-variant(@card-success-border; @card-success-text; @card-success-heading-bg; @card-success-border; @options-color);
   
-  > .panel-heading > .panel-options > .nav-tabs > li {    	
+  > .card-heading > .card-options > .nav-tabs > li {    	
 	> a { background-color: darken(@options-color, 5%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
 }
-.panel-warning {
-  @options-color: darken(@panel-warning-border, 5%);
-  .panel-variant(@panel-warning-border; @panel-warning-text; @panel-warning-heading-bg; @panel-warning-border; @options-color);
+.card-warning {
+  @options-color: darken(@card-warning-border, 5%);
+  .card-variant(@card-warning-border; @card-warning-text; @card-warning-heading-bg; @card-warning-border; @options-color);
   
-  > .panel-heading > .panel-options > .nav-tabs > li {    	
-	> a { background-color: darken(@panel-warning-heading-bg, 15%); }
+  > .card-heading > .card-options > .nav-tabs > li {    	
+	> a { background-color: darken(@card-warning-heading-bg, 15%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
 }
-.panel-danger {
-  @options-color: darken(@panel-danger-border, 5%);
-  .panel-variant(@panel-danger-border; @panel-danger-text; @panel-danger-heading-bg; @panel-danger-border; @options-color);
+.card-danger {
+  @options-color: darken(@card-danger-border, 5%);
+  .card-variant(@card-danger-border; @card-danger-text; @card-danger-heading-bg; @card-danger-border; @options-color);
   
-  > .panel-heading > .panel-options > .nav-tabs > li {    	
-	> a { background-color: darken(@panel-danger-heading-bg, 15%); }
+  > .card-heading > .card-options > .nav-tabs > li {    	
+	> a { background-color: darken(@card-danger-heading-bg, 15%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
 }
-.panel-info {
-  @options-color: darken(@panel-info-border, 5%);
-  .panel-variant(@panel-info-border; @panel-info-text; @panel-info-heading-bg; @panel-info-border; @options-color);
+.card-info {
+  @options-color: darken(@card-info-border, 5%);
+  .card-variant(@card-info-border; @card-info-text; @card-info-heading-bg; @card-info-border; @options-color);
   
-  > .panel-heading > .panel-options > .nav-tabs > li {    	
-	> a { background-color: darken(@panel-info-heading-bg, 15%); }
+  > .card-heading > .card-options > .nav-tabs > li {    	
+	> a { background-color: darken(@card-info-heading-bg, 15%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
 }
-.panel-dark {
-  @panel-dark-text: #FFF;
-  @panel-dark-heading-bg: #333; 
-  @panel-dark-border: #222;
-  @options-color: lighten(@panel-dark-border, 15%);
+.card-dark {
+  @card-dark-text: #FFF;
+  @card-dark-heading-bg: #333; 
+  @card-dark-border: #4e73df
+  @options-color: lighten(@card-dark-border, 15%);
   
-  .panel-variant(@panel-dark-border; @panel-dark-text; @panel-dark-heading-bg; @panel-dark-border; @options-color);
+  .card-variant(@card-dark-border; @card-dark-text; @card-dark-heading-bg; @card-dark-border; @options-color);
   
-  > .panel-heading > .panel-options > .nav-tabs > li {    	
-	> a { background-color: fade(@panel-dark-text, 10%); color: @panel-dark-text; border-color: fade(@panel-dark-border, 10%); }
-	&.active > a { background-color: #fff; border-bottom-color: #fff; color: @panel-dark-border; i { color: @panel-dark-border; } }
+  > .card-heading > .card-options > .nav-tabs > li {    	
+	> a { background-color: fade(@card-dark-text, 10%); color: @card-dark-text; border-color: fade(@card-dark-border, 10%); }
+	&.active > a { background-color: #fff; border-bottom-color: #fff; color: @card-dark-border; i { color: @card-dark-border; } }
   }
 }
-.panel-gray {
-  @panel-gray-text: #FFF;
-  @panel-gray-heading-bg: #EEE; 
-  @panel-gray-border: #FFF;
-  @options-color: darken(@panel-gray-border, 12%);
+.card-gray {
+  @card-gray-text: #FFF;
+  @card-gray-heading-bg: #EEE; 
+  @card-gray-border: #FFF;
+  @options-color: darken(@card-gray-border, 12%);
   
-  .panel-variant(@panel-gray-heading-bg; @panel-default-text; @panel-gray-heading-bg; @panel-gray-border; @options-color);
+  .card-variant(@card-gray-heading-bg; @card-default-text; @card-gray-heading-bg; @card-gray-border; @options-color);
   
-  > .panel-heading > .panel-options > .nav-tabs > li {    	
-	> a { background-color: @panel-gray-text; border-bottom: 1px solid @panel-gray-text; }
-	&.active > a { background-color: @panel-gray-heading-bg; border-color: @panel-gray-border; border-bottom-color: @panel-gray-heading-bg; }
+  > .card-heading > .card-options > .nav-tabs > li {    	
+	> a { background-color: @card-gray-text; border-bottom: 1px solid @card-gray-text; }
+	&.active > a { background-color: @card-gray-heading-bg; border-color: @card-gray-border; border-bottom-color: @card-gray-heading-bg; }
   }
   
-  > .panel-body {
-	  background-color: @panel-gray-heading-bg;
+  > .card-body {
+	  background-color: @card-gray-heading-bg;
   }
   
-  > .panel-body + .panel-body {
-  	border-top-color: @panel-gray-border;
+  > .card-body + .card-body {
+  	border-top-color: @card-gray-border;
   }
 }
-.panel-gradient {
-  @panel-gradient-text: @main_color;
-  @panel-gradient-heading-bg: #FFF;
-  @panel-gradient-border: #CCC;
+.card-gradient {
+  @card-gradient-text: @main_color;
+  @card-gradient-heading-bg: #FFF;
+  @card-gradient-border: #CCC;
   
-  @options-color: lighten(@panel-gradient-border, 2%);
+  @options-color: lighten(@card-gradient-border, 2%);
   
-  .panel-variant(@panel-gradient-border; @panel-gradient-text; @panel-gradient-heading-bg; @panel-gradient-border; @options-color);
+  .card-variant(@card-gradient-border; @card-gradient-text; @card-gradient-heading-bg; @card-gradient-border; @options-color);
   
-  > .panel-heading {
+  > .card-heading {
 	  .background-image(linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%));
 	  
-	  > .panel-options {
+	  > .card-options {
 		  
 		  i {
-			  color: @panel-gradient-text;
+			  color: @card-gradient-text;
 		  }
 	  }
   }

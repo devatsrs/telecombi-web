@@ -50,11 +50,11 @@
 		if($TicketConversationData->Timeline_type == TicketsTable::TIMELINEEMAIL){
 		 ?>
     <div class="mail-reply-seperator"></div>
-    <div id="message{{$TicketConversationData->AccountEmailLogID}}" class="panel loop{{$loop}} @if($loop>4) panel-collapse @endif  first_data panel-primary margin-top" data-collapsed="0">
+    <div id="message{{$TicketConversationData->AccountEmailLogID}}" class="card shadow loop{{$loop}} @if($loop>4) card-collapse @endif  first_data card-primary margin-top" data-collapsed="0">
       
-      <!-- panel head -->
-      <div class="panel-heading panel-heading-convesation">        
-          <div class="panel-title col-md-10" ><span><?php
+      <!-- card shadow head -->
+      <div class="card-header py-3 card-header py-3-convesation">        
+          <div class="card-title col-md-10" ><span><?php
 		  if($TicketConversationData->EmailCall==Messages::Received){
 		   ?>From <?php if(!empty($TicketConversationData->EmailfromName)){ echo imap_mime_header_decode($TicketConversationData->EmailfromName)[0]->text." (".$TicketConversationData->Emailfrom.")"; ?> <?php }else{ ?> <?php echo $TicketConversationData->Emailfrom; } ?><br>to (<?php echo $TicketConversationData->EmailTo; ?>)
 		 <?php }elseif($TicketConversationData->EmailCall==Messages::Sent){ echo $TicketConversationData->CreatedBy; ?> (<?php echo $TicketConversationData->Emailfrom; ?>) replied<br>to (<?php echo $TicketConversationData->EmailTo; ?>) <?php } ?></span>
@@ -62,11 +62,11 @@
           <?php if(!empty($TicketConversationData->EmailCc)){ ?><br>cc:  <?php echo str_replace(',',', ',$TicketConversationData->EmailCc); ?> <?php } ?>
 		  <?php if(!empty($TicketConversationData->EmailBcc)){ ?><br>bcc: <?php echo str_replace(',',', ',$TicketConversationData->EmailBcc); ?> <?php } ?> </div>
           
-        <div class="panel-options col-md-2" style="text-align: right; padding: 0 5px;"> <span> {{\Carbon\Carbon::createFromTimeStamp(strtotime($TicketConversationData->created_at))->diffForHumans()}}</span> @if( User::checkCategoryPermission('Tickets','Edit')) <a action_type="forward"  data-toggle="tooltip" data-type="child" data-placement="top"  ticket_number="{{$TicketConversationData->AccountEmailLogID}}" data-original-title="Forward" class="btn btn-xs btn-info email_action tooltip-primary"><i class="entypo-forward"></i> </a> @endif <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+        <div class="card-options col-md-2" style="text-align: right; padding: 0 5px;"> <span> {{\Carbon\Carbon::createFromTimeStamp(strtotime($TicketConversationData->created_at))->diffForHumans()}}</span> @if( User::checkCategoryPermission('Tickets','Edit')) <a action_type="forward"  data-toggle="tooltip" data-type="child" data-placement="top"  ticket_number="{{$TicketConversationData->AccountEmailLogID}}" data-original-title="Forward" class="btn btn-xs btn-info email_action tooltip-primary"><i class="entypo-forward"></i> </a> @endif <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
       </div>
       
-      <!-- panel body -->
-      <div @if($loop>4) style="display:none;" @endif  class="panel-body">
+      <!-- card shadow body -->
+      <div @if($loop>4) style="display:none;" @endif  class="card-body">
           <div class="embed-responsive embed-responsive-4by3 ticketBody" style="display: none;">
             {{htmlentities($TicketConversationData->EmailMessage)}}
           </div>
@@ -101,16 +101,16 @@
     <?php }else if($TicketConversationData->Timeline_type == TicketsTable::TIMELINENOTE){
 	?>
     <div class="mail-reply-seperator"></div>
-    <div id="note{{$TicketConversationData->NoteID}}" class="panel loop{{$loop}} @if($loop>4) panel-collapse @endif panel-primary margin-top" data-collapsed="0">
+    <div id="note{{$TicketConversationData->NoteID}}" class="card shadow loop{{$loop}} @if($loop>4) card-collapse @endif card-primary margin-top" data-collapsed="0">
       
-      <!-- panel head -->
-      <div class="panel-heading">
-        <div class="panel-title"><strong>Note</strong> by ({{$TicketConversationData->CreatedBy}}) </div>
-        <div class="panel-options"> <span>{{\Carbon\Carbon::createFromTimeStamp(strtotime($TicketConversationData->created_at))->diffForHumans()}}</span> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <!-- card shadow head -->
+      <div class="card-header py-3">
+        <div class="card-title"><strong>Note</strong> by ({{$TicketConversationData->CreatedBy}}) </div>
+        <div class="card-options"> <span>{{\Carbon\Carbon::createFromTimeStamp(strtotime($TicketConversationData->created_at))->diffForHumans()}}</span> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
       </div>
       
-      <!-- panel body -->
-      <div @if($loop>4) style="display:none;" @endif  class="panel-body">
+      <!-- card shadow body -->
+      <div @if($loop>4) style="display:none;" @endif  class="card-body">
           <div class="embed-responsive embed-responsive-4by3 ticketBody" style="display: none;">
               {{$TicketConversationData->Note}}
           </div>
@@ -161,15 +161,15 @@
     <div class="mail-menu">
       <div class="row">
         <div class="col-md-12">
-        <div class="panel panel-primary" data-collapsed="0"> 
+        <div class="card shadow card-primary" data-collapsed="0"> 
             
-            <!-- panel head -->
-            <div class="panel-heading">
-              <div class="panel-title"><strong>Ticket Info</strong></div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+            <!-- card shadow head -->
+            <div class="card-header py-3">
+              <div class="card-title"><strong>Ticket Info</strong></div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>            
-            <!-- panel body -->
-            <div class="panel-body">
+            <!-- card shadow body -->
+            <div class="card-body">
             <form id="UpdateTicketDueTime" class="form-horizontal form-groups-bordered validate" role="form">
                 <div class="form-group">
                     <div class="col-md-12">
@@ -214,16 +214,16 @@
             </div>
           </div>      
         
-          <div class="panel panel-primary" data-collapsed="0"> 
+          <div class="card shadow card-primary" data-collapsed="0"> 
             
-            <!-- panel head -->
-            <div class="panel-heading">
-              <div class="panel-title"><strong>Requester Info</strong></div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+            <!-- card shadow head -->
+            <div class="card-header py-3">
+              <div class="card-title"><strong>Requester Info</strong></div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
             
-            <!-- panel body -->
-            <div class="Requester_Info panel-body">
+            <!-- card shadow body -->
+            <div class="Requester_Info card-body">
 
                 <p><a target="_blank" class="blue_link" href="{{$Requester['URL']}}">{{$Requester['Title']}}</a><br>
                 ({{$Requester['Email']}}). </p>
@@ -277,16 +277,16 @@
           </div>
         </div>
         <div class="col-md-12">
-          <div class="panel panel-primary margin-top" data-collapsed="0"> 
+          <div class="card shadow card-primary margin-top" data-collapsed="0"> 
             
-            <!-- panel head -->
-            <div class="panel-heading">
-              <div class="panel-title"><strong>Ticket Properties</strong></div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+            <!-- card shadow head -->
+            <div class="card-header py-3">
+              <div class="card-title"><strong>Ticket Properties</strong></div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
             
-            <!-- panel body -->
-            <div class="panel-body">@include('tickets.ticket_detail_dynamic_fields')</div>
+            <!-- card shadow body -->
+            <div class="card-body">@include('tickets.ticket_detail_dynamic_fields')</div>
           </div>
         </div>
       </div>
@@ -343,7 +343,7 @@
 .mail-env{background:none !important;}
 .mail-menu {background:#f1f1f1;}
 .mail-menu .row{margin-right:0px !important; margin-left:0px !important;}
-.mail-menu .panel{margin-bottom:5px;}
+.mail-menu .card{margin-bottom:5px;}
 .blue_link{font-size:16px; font-weight:bold;}
 /*.mail-header{padding:10px !important; padding-bottom:0px !important; border-bottom:none !important;}*/
 .mail-env .mail-body .mail-info .mail-sender, .mail-env .mail-body .mail-info .mail-date{padding:10px;}
@@ -360,8 +360,8 @@
 .mail-env .mail-body .mail-header .mail-title{float:none !important;}
 .mail-env .mail-body .mail-header .mail-date{padding:0px; text-align:inherit;}
 .Requester_Info{padding:10px !important;}
-.panel-primary > .panel-heading-convesation{min-height:80px !important;}
-.panel-primary > .panel-heading-convesation .panel-title{font-size:12px !important; }
+.card-primary > .card-header py-3-convesation{min-height:80px !important;}
+.card-primary > .card-header py-3-convesation .card-title{font-size:12px !important; }
 .change_due_time{display:none;}
 </style>
 <script src="<?php echo URL::to('/'); ?>/assets/lightbox/ekko-lightbox.js"></script>

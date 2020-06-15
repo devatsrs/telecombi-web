@@ -71,11 +71,11 @@
                         delete_  = delete_ .replace( '{id}', id );
                         action = '';
                         <?php if(User::checkCategoryPermission('Contacts','Edit') ){ ?>
-                        action += ' <a href="'+edit_+'" title="Edit" class="btn btn-default btn-sm"><i class="entypo-pencil"></i></a>';
+                        action += ' <a href="'+edit_+'" title="Edit" class="btn btn-primary btn-sm"><i class="entypo-pencil"></i></a>';
                         <?php } ?>
-                        action += ' <a href="'+show_+'" Title="View" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>';
+                        action += ' <a href="'+show_+'" Title="View" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                         <?php if(User::checkCategoryPermission('Contacts','Delete') ){ ?>
-                        action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger btn-default btn-sm"><i class="entypo-trash"></i></a>';
+                        action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger btn-primary btn-sm"><i class="entypo-trash"></i></a>';
                         <?php } ?>
                         return action;
                       }

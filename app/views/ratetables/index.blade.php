@@ -55,16 +55,16 @@
 <div class="cler row">
     <div class="col-md-12">
         <form role="form" id="form1" method="post" class="form-horizontal form-groups-bordered validate" novalidate>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Rate Table
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <div class="col-md-12">
                             <table class="table table-bordered datatable" id="table-4">
@@ -133,11 +133,11 @@ jQuery(document).ready(function($) {
                                 view_ = view_.replace('{id}', id);
                                 delete_ = delete_.replace('{id}', id);
 
-                                action = '<a title="View" href="' + view_ + '" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>&nbsp;';
-                                action += '<a title="Edit" data-id="'+  id +'" data-rateTableName="'+full[0]+'" data-TrunkID="'+full[6]+'" data-CurrencyID="'+full[7]+'" data-RoundChargedAmount="'+full[8]+'" class="edit-ratetable btn btn-default btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
+                                action = '<a title="View" href="' + view_ + '" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>&nbsp;';
+                                action += '<a title="Edit" data-id="'+  id +'" data-rateTableName="'+full[0]+'" data-TrunkID="'+full[6]+'" data-CurrencyID="'+full[7]+'" data-RoundChargedAmount="'+full[8]+'" class="edit-ratetable btn btn-primary btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
 
                                 <?php if(User::checkCategoryPermission('RateTables','Delete') ) { ?>
-                                    action += ' <a title="Delete" href="' + delete_ + '" data-redirect="{{URL::to("/rate_tables")}}"  class="btn btn-default delete btn-danger btn-sm" data-loading-text="Loading..."><i class="entypo-trash"></i></a>';
+                                    action += ' <a title="Delete" href="' + delete_ + '" data-redirect="{{URL::to("/rate_tables")}}"  class="btn btn-primary delete btn-danger btn-sm" data-loading-text="Loading..."><i class="entypo-trash"></i></a>';
                                 <?php } ?>
                                 //action += status_link;
                                 return action;
@@ -315,9 +315,9 @@ jQuery(document).ready(function($) {
                                <label for="field-5" class="control-label">Round Charged Amount (123.45)</label>
                                <span class="label label-info popover-primary" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="it's round up the value to given decimal points. Ex: you have entered 2 in Round Charged Amount then it will round the CDR amount like this : amount is 1.2355 becomes 1.24. Note that rounding off is always done upwards." data-original-title="Round Charged Amount (123.45)">?</span>
                                <div class="input-spinner">
-                                   <button type="button" class="btn btn-default">-</button>
+                                   <button type="button" class="btn btn-primary">-</button>
                                    {{Form::text('RoundChargedAmount', 2, array("class"=>"form-control", "maxlength"=>"1", "data-min"=>0,"data-max"=>6,"Placeholder"=>"Add Numeric value" , "data-mask"=>"decimal"))}}
-                                   <button type="button" class="btn btn-default">+</button>
+                                   <button type="button" class="btn btn-primary">+</button>
                                </div>
                            </div>
                        </div>
@@ -376,9 +376,9 @@ jQuery(document).ready(function($) {
                                 <label for="field-5" class="control-label">Round Charged Amount (123.45)</label>
                                 <span class="label label-info popover-primary" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="it's round up the value to given decimal points. Ex: you have entered 2 in Round Charged Amount then it will round the CDR amount like this : amount is 1.2355 becomes 1.24. Note that rounding off is always done upwards." data-original-title="Round Charged Amount (123.45)">?</span>
                                 <div class="input-spinner">
-                                    <button type="button" class="btn btn-default">-</button>
+                                    <button type="button" class="btn btn-primary">-</button>
                                     {{Form::text('RoundChargedAmount', ( isset($BillingClass->RoundChargesAmount)?$BillingClass->RoundChargesAmount:'2' ),array("class"=>"form-control", "maxlength"=>"1", "data-min"=>0,"data-max"=>6,"Placeholder"=>"Add Numeric value" , "data-mask"=>"decimal"))}}
-                                    <button type="button" class="btn btn-default">+</button>
+                                    <button type="button" class="btn btn-primary">+</button>
                                 </div>
                             </div>
                         </div>

@@ -244,7 +244,7 @@
 
                                     /*Multiple Dropdown*/
                                     action += '<div class="btn-group">';
-                                    action += ' <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary btn-sm" data-target="#" href="#">Action<span class="caret"></span></a>';
+                                    action += ' <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary btn-sm" data-target="#" href="#">Action</a>';
                                     action += '<ul class="dropdown-menu multi-level dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu">';
 
                                     if('{{User::checkCategoryPermission('CreditNotes','Edit')}}')
@@ -284,7 +284,7 @@
                                     //if(full[4] != 'accepted')
                                     {
 
-                                        action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Change Status <span class="caret"></span></button>'
+                                        action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Change Status </button>'
                                         action += '<ul class="dropdown-menu dropdown-green" role="menu">';
                                         $.each(creditnotesstatus, function( index, value ) {
 

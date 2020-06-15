@@ -21,7 +21,7 @@ blockquote.pull-left .small {
 }
 body {
   direction: rtl;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
 }
 h1,
 h2,
@@ -35,7 +35,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
 }
 .navbar-brand {
   float: right;
@@ -166,13 +166,13 @@ h6,
   float: right;
 }
 .alert-dismissable .close {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
   top: -2px;
   left: 21px;
   right: 0px;
 }
 .close {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
   float: left;
 }
 .caret {
@@ -962,7 +962,7 @@ th {
   float: left;
 }
 .page-container .sidebar-menu #main-menu li.has-sub > a:before {
-  content: '\e878';
+  content: "\e878";
   float: left;
   margin-left: 0;
   margin-right: 13px;
@@ -977,7 +977,19 @@ th {
 .page-container .sidebar-menu #main-menu li ul > li > a,
 .page-container .sidebar-menu #main-menu li ul > li ul > li > a,
 .page-container .sidebar-menu #main-menu li ul > li ul > li > ul > li > a,
-.page-container .sidebar-menu #main-menu li ul > li ul > li > ul > li > ul > li > a {
+.page-container
+  .sidebar-menu
+  #main-menu
+  li
+  ul
+  > li
+  ul
+  > li
+  > ul
+  > li
+  > ul
+  > li
+  > a {
   padding-left: 20px;
 }
 .page-container .sidebar-menu #main-menu li ul > li > ul > li > a {
@@ -986,13 +998,33 @@ th {
 .page-container .sidebar-menu #main-menu li ul > li > ul > li > ul > li > a {
   padding-right: 60px;
 }
-.page-container .sidebar-menu #main-menu li ul > li > ul > li > ul > li > ul > li > a {
+.page-container
+  .sidebar-menu
+  #main-menu
+  li
+  ul
+  > li
+  > ul
+  > li
+  > ul
+  > li
+  > ul
+  > li
+  > a {
   padding-right: 80px;
 }
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li a,
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li li a,
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li li a,
-.page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li li li a {
+.page-container.sidebar-collapsed
+  .sidebar-menu
+  #main-menu
+  > li
+  > ul
+  li
+  li
+  li
+  a {
   padding-left: 20px;
 }
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li li a {
@@ -1001,10 +1033,27 @@ th {
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li li a {
   padding-right: 30px;
 }
-.page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li li li a {
+.page-container.sidebar-collapsed
+  .sidebar-menu
+  #main-menu
+  > li
+  > ul
+  li
+  li
+  li
+  a {
   padding-right: 40px;
 }
-.page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li li li li a {
+.page-container.sidebar-collapsed
+  .sidebar-menu
+  #main-menu
+  > li
+  > ul
+  li
+  li
+  li
+  li
+  a {
   padding-right: 50px;
 }
 .page-container .sidebar-menu .logo-env > div {
@@ -1018,7 +1067,12 @@ th {
   left: 75px;
   right: auto;
 }
-.page-container.right-sidebar.sidebar-collapsed .sidebar-menu #main-menu > li > a > span.badge {
+.page-container.right-sidebar.sidebar-collapsed
+  .sidebar-menu
+  #main-menu
+  > li
+  > a
+  > span.badge {
   left: -225px;
   right: auto;
 }
@@ -1032,10 +1086,10 @@ th {
 .pull-right {
   float: left !important;
 }
-.panel-heading > .panel-title {
+.card-heading > .card-title {
   float: right;
 }
-.panel-heading > .panel-options {
+.card-heading > .card-options {
   float: left;
   padding-left: 10px;
   padding-right: 0;
@@ -1210,16 +1264,16 @@ th {
 .search-results-env .search-bar .form-control + .input-group-btn {
   border: 0;
 }
-.panel-heading > .panel-options > .nav-tabs > li:last-child {
+.card-heading > .card-options > .nav-tabs > li:last-child {
   margin-right: 10px;
 }
-.panel > .panel-heading > .panel-options > a {
+.card > .card-heading > .card-options > a {
   float: left;
   margin-left: 0;
   margin-right: 5px;
   direction: ltr;
 }
-.panel.minimal > .panel-heading > .panel-options > .nav-tabs > li a {
+.card.minimal > .card-heading > .card-options > .nav-tabs > li a {
   margin-left: 0;
 }
 .tile-stats .icon {
@@ -1236,21 +1290,56 @@ th {
 .page-container.horizontal-menu header.navbar ul.nav > li {
   float: right;
 }
-.page-container.horizontal-menu header.navbar ul.nav > li.dropdown .dropdown-menu {
+.page-container.horizontal-menu
+  header.navbar
+  ul.nav
+  > li.dropdown
+  .dropdown-menu {
   left: 0;
   right: auto;
 }
-.page-container.horizontal-menu header.navbar ul.nav > li.dropdown .dropdown-menu > li > ul > li > a i {
+.page-container.horizontal-menu
+  header.navbar
+  ul.nav
+  > li.dropdown
+  .dropdown-menu
+  > li
+  > ul
+  > li
+  > a
+  i {
   float: right !important;
 }
-.page-container.horizontal-menu header.navbar ul.nav > li.dropdown .dropdown-menu > li > ul > li .line {
+.page-container.horizontal-menu
+  header.navbar
+  ul.nav
+  > li.dropdown
+  .dropdown-menu
+  > li
+  > ul
+  > li
+  .line {
   margin-right: 40px;
 }
-.page-container.horizontal-menu header.navbar ul.nav > li.dropdown .dropdown-menu > li > ul > li .image.pull-right {
+.page-container.horizontal-menu
+  header.navbar
+  ul.nav
+  > li.dropdown
+  .dropdown-menu
+  > li
+  > ul
+  > li
+  .image.pull-right {
   float: right !important;
 }
-.page-container.horizontal-menu header.navbar .navbar-nav > li ul li.has-sub > a:before {
-  content: '\e878';
+.page-container.horizontal-menu
+  header.navbar
+  .navbar-nav
+  > li
+  ul
+  li.has-sub
+  > a:before {
+  content: "\e878";
   float: left;
   margin-left: 0;
   margin-right: 20px;
@@ -1396,7 +1485,11 @@ blockquote.blockquote-danger {
 body .select2-container .select2-choice > .select2-chosen {
   margin-right: 56px;
 }
-.page-body .select2-container .select2-choices .select2-search-choice .select2-search-choice-close {
+.page-body
+  .select2-container
+  .select2-choices
+  .select2-search-choice
+  .select2-search-choice-close {
   right: 76%;
 }
 .select2-container-multi .select2-choices li {
@@ -1444,7 +1537,11 @@ div.datepicker {
 .datepicker-rtl {
   right: auto !important;
 }
-.page-body .selectboxit-container .selectboxit-options li .selectboxit-option-anchor {
+.page-body
+  .selectboxit-container
+  .selectboxit-options
+  li
+  .selectboxit-option-anchor {
   direction: rtl;
 }
 .pager.wizard li a {
@@ -1534,22 +1631,57 @@ body .cbp_tmtimeline > li .cbp_tmicon {
 .profile-env section.profile-feed .profile-stories article.story .user-thumb {
   float: right;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li .user-comment-thumb {
+.profile-env
+  section.profile-feed
+  .profile-stories
+  article.story
+  .story-content
+  footer
+  .comments
+  li
+  .user-comment-thumb {
   padding-right: 0;
   padding-left: 20px;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer .comments li.comment-form .user-comment-content .form-control {
+.profile-env
+  section.profile-feed
+  .profile-stories
+  article.story
+  .story-content
+  footer
+  .comments
+  li.comment-form
+  .user-comment-content
+  .form-control {
   padding-right: 40px;
   padding-top: 10px;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header .publisher {
+.profile-env
+  section.profile-feed
+  .profile-stories
+  article.story
+  .story-content
+  header
+  .publisher {
   float: right;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content footer > a {
+.profile-env
+  section.profile-feed
+  .profile-stories
+  article.story
+  .story-content
+  footer
+  > a {
   margin-left: 30px;
   margin-right: 0;
 }
-.profile-env section.profile-feed .profile-stories article.story .story-content header .story-type {
+.profile-env
+  section.profile-feed
+  .profile-stories
+  article.story
+  .story-content
+  header
+  .story-type {
   float: left;
 }
 .tile-block .tile-content .todo-list .neon-cb-replacement .cb-wrapper + label {
@@ -1599,7 +1731,12 @@ body .cke_toolbar_break {
   margin-left: 0;
   margin-right: 5px;
 }
-.page-container.sidebar-collapsed.sidebar-is-showing .sidebar-menu #main-menu li a i {
+.page-container.sidebar-collapsed.sidebar-is-showing
+  .sidebar-menu
+  #main-menu
+  li
+  a
+  i {
   margin-left: 5px;
   margin-right: 0;
 }

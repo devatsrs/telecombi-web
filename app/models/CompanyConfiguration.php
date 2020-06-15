@@ -23,7 +23,7 @@ class CompanyConfiguration extends \Eloquent {
 
         self::$cache['CompanyConfiguration'] = array();
 
-        if (self::$enable_cache && Cache::has($CompanyConfiguration)) {
+        if (self::$enable_cache && Cache::has($CompanyConfiguration) && !empty(Cache::get($CompanyConfiguration))) {
             $cache = Cache::get($CompanyConfiguration);
             self::$cache['CompanyConfiguration'] = $cache['CompanyConfiguration'];
         } else {

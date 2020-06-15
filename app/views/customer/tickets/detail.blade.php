@@ -71,11 +71,11 @@
 		if($TicketConversationData->Timeline_type == TicketsTable::TIMELINEEMAIL){
 		 ?>
     <div class="mail-reply-seperator"></div>
-    <div id="message{{$TicketConversationData->AccountEmailLogID}}" class="panel loop{{$loop}} @if($loop>4) panel-collapse @endif  first_data panel-primary margin-top" data-collapsed="0">
+    <div id="message{{$TicketConversationData->AccountEmailLogID}}" class="card shadow loop{{$loop}} @if($loop>4) card-collapse @endif  first_data card-primary margin-top" data-collapsed="0">
       
-      <!-- panel head -->
-      <div class="panel-heading panel-heading-convesation">        
-          <div class="panel-title" ><span><?php 
+      <!-- card shadow head -->
+      <div class="card-header py-3 card-header py-3-convesation">        
+          <div class="card-title" ><span><?php 
 		  if($TicketConversationData->EmailCall==Messages::Received){
 		   ?>@lang('routes.MAIL_LBL_FROM') <?php echo $TicketConversationData->Emailfrom;  ?>
 		 <?php }elseif($TicketConversationData->EmailCall==Messages::Sent){ echo $TicketConversationData->Emailfrom; ?> @lang('routes.MAIL_LBL_REPLIED')<br>@lang('routes.MAIL_LBL_TO') (<?php echo $TicketConversationData->EmailTo; ?>) <?php } ?></span>
@@ -83,11 +83,11 @@
           <?php if(!empty($TicketConversationData->EmailCc)){ ?><br>@lang('routes.MAIL_LBL_CC'):  <?php echo $TicketConversationData->EmailCc; ?> <?php } ?>
 		  <?php if(!empty($TicketConversationData->EmailBcc)){ ?><br>@lang('routes.MAIL_LBL_BCC'): <?php echo $TicketConversationData->EmailBcc; ?> <?php } ?> </div>
           
-        <div class="panel-options"> <span> {{\Carbon\Carbon::createFromTimeStamp(strtotime($TicketConversationData->created_at))->diffForHumans()}}</span> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+        <div class="card-options"> <span> {{\Carbon\Carbon::createFromTimeStamp(strtotime($TicketConversationData->created_at))->diffForHumans()}}</span> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
       </div>
       
-      <!-- panel body -->
-      <div @if($loop>4) style="display:none;" @endif class="panel-body">
+      <!-- card shadow body -->
+      <div @if($loop>4) style="display:none;" @endif class="card-body">
 		  <div class="embed-responsive embed-responsive-4by3 ticketBody" style="display: none;">
 		  	{{htmlentities($TicketConversationData->EmailMessage)}}
 		  </div>
@@ -129,16 +129,16 @@
     <div class="mail-menu">
       <div class="row">
         <div class="col-md-12">
-          <div class="panel panel-primary" data-collapsed="0"> 
+          <div class="card shadow card-primary" data-collapsed="0"> 
             
-            <!-- panel head -->
-            <div class="panel-heading">
-              <div class="panel-title"><strong>@lang('routes.CUST_PANEL_PAGE_TICKETS_DETAIL_TAB_REQUESTER_INFO')</strong></div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+            <!-- card shadow head -->
+            <div class="card-header py-3">
+              <div class="card-title"><strong>@lang('routes.CUST_PANEL_PAGE_TICKETS_DETAIL_TAB_REQUESTER_INFO')</strong></div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
             
-            <!-- panel body -->
-            <div class="panel-body">
+            <!-- card shadow body -->
+            <div class="card-body">
               @if(!empty($ticketdata->RequesterName))
             <p><a class="blue_link" href="#">{{$ticketdata->RequesterName}}</a><br><a href="#">({{$ticketdata->Requester}})</a>. </p>
             @else
@@ -148,16 +148,16 @@
           </div>
         </div>
         <div class="col-md-12">
-          <div class="panel panel-primary margin-top" data-collapsed="0"> 
+          <div class="card shadow card-primary margin-top" data-collapsed="0"> 
             
-            <!-- panel head -->
-            <div class="panel-heading">
-              <div class="panel-title"><strong>@lang('routes.CUST_PANEL_PAGE_TICKETS_DETAIL_TAB_TICKET_PROPERTIES')</strong></div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+            <!-- card shadow head -->
+            <div class="card-header py-3">
+              <div class="card-title"><strong>@lang('routes.CUST_PANEL_PAGE_TICKETS_DETAIL_TAB_TICKET_PROPERTIES')</strong></div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
             
-            <!-- panel body -->
-            <div class="panel-body">@include('customer.tickets.ticket_detail_dynamic_fields')</div>
+            <!-- card shadow body -->
+            <div class="card-body">@include('customer.tickets.ticket_detail_dynamic_fields')</div>
           </div>
 
         </div>
@@ -215,7 +215,7 @@
 .mail-env{background:none !important;}
 .mail-menu {background:#f1f1f1;}
 .mail-menu .row{margin-right:0px !important; margin-left:0px !important;}
-.mail-menu .panel{margin-bottom:5px;}
+.mail-menu .card{margin-bottom:5px;}
 .blue_link{font-size:16px; font-weight:bold;}
 /*.mail-header{padding:10px !important; padding-bottom:0px !important; border-bottom:none !important;}*/
 .mail-env .mail-body .mail-info .mail-sender, .mail-env .mail-body .mail-info .mail-date{padding:10px;}
@@ -232,8 +232,8 @@
 .mail-env .mail-body .mail-header .mail-title{float:none !important;}
 .mail-env .mail-body .mail-header .mail-date{padding:0px; text-align:inherit;}
 .Requester_Info{padding:10px !important;}
-.panel-primary > .panel-heading-convesation{min-height:80px !important;}
-.panel-primary > .panel-heading-convesation .panel-title{font-size:12px !important; }
+.card-primary > .card-header py-3-convesation{min-height:80px !important;}
+.card-primary > .card-header py-3-convesation .card-title{font-size:12px !important; }
 </style>
 <script>
 var editor_options 	 	=  		{};

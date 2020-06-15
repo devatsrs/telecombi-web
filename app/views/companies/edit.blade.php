@@ -11,7 +11,7 @@
 </ol>
 <h3>Company</h3>
 
-<div class="panel-title">
+<div class="card-title">
     @include('includes.errors')
     @include('includes.success')
 </div>
@@ -46,19 +46,19 @@
 <div class="row">
     <div class="col-md-12">
         <form role="form" id="form-user-add"  method="post" action="{{URL::current()}}"  class="form-horizontal form-groups-bordered">
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Company Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
 
 
                     <div class="form-group">
@@ -121,18 +121,18 @@
                 </div>
 
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Contact Person Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
 
 
                     <div class="form-group">
@@ -168,17 +168,17 @@
 
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Address Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Address Line 1</label>
                         <div class="col-sm-4">
@@ -213,17 +213,17 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Setting
                                 </div>
 
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
 
                                 <div class="form-group">
                                     <label for="field-1" class="col-sm-2 control-label">Invoice Status</label>
@@ -239,9 +239,9 @@
                                     <label for="field-1" class="col-sm-2 control-label">Decimal Places (123.45) </label>
                                     <div class="col-sm-4">
                                         <div class="input-spinner">
-                                            <button type="button" class="btn btn-default">-</button>
+                                            <button type="button" class="btn btn-primary">-</button>
                                             {{Form::text('RoundChargesAmount', $RoundChargesAmount,array("class"=>"form-control", "maxlength"=>"1", "data-min"=>0,"data-max"=>6,"Placeholder"=>"Add Numeric value" , "data-mask"=>"decimal"))}}
-                                            <button type="button" class="btn btn-default">+</button>
+                                            <button type="button" class="btn btn-primary">+</button>
                                         </div>
                                     </div>
                                     <label for="field-1" class="col-sm-2 control-label"> Account Verification </label>
@@ -259,7 +259,7 @@
                                         @if(isset($RateSheetTemplateFile) && $RateSheetTemplateFile != '')
                                             <a href="{{URL::to('company/download_rate_sheet_template')}}" class="btn btn-success btn-sm btn-icon icon-left"><i class="entypo-down"></i>Download</a>
                                         @else
-                                            <a href="#" class="btn btn-default btn-sm btn-icon icon-left disabled"><i class="entypo-down"></i>Download</a>
+                                            <a href="#" class="btn btn-primary btn-sm btn-icon icon-left disabled"><i class="entypo-down"></i>Download</a>
                                         @endif
                                     </div>
                                 </div>
@@ -296,17 +296,17 @@
                             </div>
                         </div>
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Digital signature PDF
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Image</label>
                         <div class="col-sm-4">
@@ -325,33 +325,33 @@
                         <label class="col-sm-2 control-label">Image position Left</label>
                         <div class="col-sm-4">
                             <div class="input-spinner pull-left">
-                                <button type="button" class="btn btn-default">-</button>
+                                <button type="button" class="btn btn-primary">-</button>
                                 <input class="form-control" placeholder="" data-mask="decimal" name="signatureCertpPositionLeft" value="{{$DigitalSignature['positionLeft']}}" type="text">
-                                <button type="button" class="btn btn-default">+</button>
+                                <button type="button" class="btn btn-primary">+</button>
                             </div>
                         </div>
                         <label class="col-sm-2 control-label">Image position Top</label>
                         <div class="col-sm-4">
                             <div class="input-spinner pull-left">
-                                <button type="button" class="btn btn-default">-</button>
+                                <button type="button" class="btn btn-primary">-</button>
                                 <input class="form-control" placeholder="" data-mask="decimal" name="signatureCertpPositionTop" value="{{$DigitalSignature['positionTop']}}" type="text">
-                                <button type="button" class="btn btn-default">+</button>
+                                <button type="button" class="btn btn-primary">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Mail Settings  <button data-loading-text="Loading..." title="Validate Mail Settings"  type="button" class="ValidateSmtp btn btn-primary">Test</button> 
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">SMTP Server</label>
                         <div class="col-sm-4">
@@ -397,16 +397,16 @@
             @if(empty(is_reseller()))
 
             @if(isset($COMPANY_SSH_VISIBLE) && $COMPANY_SSH_VISIBLE == 1)
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         SSH Details
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Host</label>
                         <div class="col-sm-10">
@@ -431,16 +431,16 @@
             </div>
             @endif
 
-            <div class="panel panel-primary" data-collapsed="0">
-                  <div class="panel-heading">
-                        <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                  <div class="card-header py-3">
+                        <div class="card-title">
                                 Licence Information
                         </div>
-                        <div class="panel-options">
+                        <div class="card-options">
                               <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         </div>
                   </div>
-                  <div class="panel-body">
+                  <div class="card-body">
                           <div class="form-group">
                               <label for="field-1" class="col-sm-2 control-label">License key</label>
                               <div class="col-sm-10">

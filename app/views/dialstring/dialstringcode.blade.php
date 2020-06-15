@@ -200,7 +200,7 @@ var postdata;
                                     action += '</div>';
 
                                     <?php if(User::checkCategoryPermission('DialStrings','Edit')){ ?>
-                                            action += ' <a href="javascript:;" title="Edit" class="edit-dialstring btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                            action += ' <a href="javascript:;" title="Edit" class="edit-dialstring btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                                     <?php } ?>
                                             <?php if(User::checkCategoryPermission('DialStrings','Delete') ){ ?>
                                             action += ' <a href="'+ delete_ +'" Title="Delete" class="delete-dialstringcode btn btn-danger btn-sm"><i class="entypo-trash"></i></a>';

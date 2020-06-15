@@ -56,16 +56,16 @@
 <div class="row">
     <div class="col-md-12">
         <form novalidate class="form-horizontal form-groups-bordered validate" method="post" id="customer_detail">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Customer Details
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Authentication Rule
 
@@ -93,8 +93,8 @@
                                 <div  class="col-md-12">
                                     @if( User::checkCategoryPermission('AuthenticationRule','Add,Delete'))
                                         <div class="input-group-btn pull-right" style="width:70px;">
-                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                                                 @if( User::checkCategoryPermission('AuthenticationRule','Add'))
                                                     <li class="li_active">
                                                         <a class="customer-add-ip" type_ad="active" href="javascript:void(0);" >
@@ -172,16 +172,16 @@
 <div class="row">
     <div class="col-md-12">
         <form novalidate class="form-horizontal form-groups-bordered validate" method="post" id="vendor_detail">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Vendor Details
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Authentication Rule
 
@@ -209,8 +209,8 @@
                                 <div  class="col-md-12">
                                     @if( User::checkCategoryPermission('AuthenticationRule','Add,Delete'))
                                     <div class="input-group-btn pull-right" style="width:70px;">
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                                        <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                                        <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                                             @if( User::checkCategoryPermission('AuthenticationRule','Add'))
                                                 <li class="li_active">
                                                     <a class="vendor-add-ip" type_ad="active" href="javascript:void(0);" >
@@ -273,8 +273,8 @@
                                 <div  class="col-md-12">
                                     @if( User::checkCategoryPermission('AuthenticationRule','Add,Delete'))
                                         <div class="input-group-btn pull-right" style="width:70px;">
-                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                                                 @if( User::checkCategoryPermission('AuthenticationRule','Add'))
                                                     <li class="li_active">
                                                         <a class="vendor-add-cli" type_ad="active" href="javascript:void(0);" >

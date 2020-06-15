@@ -69,10 +69,10 @@
             <br>
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title"><strong>Accounts</strong></div>
-                            <div class="panel-options">
+                    <div class="card shadow card-default">
+                        <div class="card-header py-3">
+                            <div class="card-title"><strong>Accounts</strong></div>
+                            <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
                                     <label class="btn btn-white active">
                                         <input type="radio" name="ActiveAccount" value="Yes" checked="checked">Active
@@ -84,7 +84,7 @@
                                 <a data-rel="close" href="#"><i class="entypo-cancel"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body with-table">
+                        <div class="card-body with-table">
                             <table class="table table-bordered table-responsive" id="accounts">
                                 <thead>
                                 <tr>
@@ -101,10 +101,10 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title"><strong>Leads</strong></div>
-                            <div class="panel-options">
+                    <div class="card shadow card-default">
+                        <div class="card-header py-3">
+                            <div class="card-title"><strong>Leads</strong></div>
+                            <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
                                     <label class="btn btn-white active">
                                         <input type="radio" name="ActiveLead" value="Yes" checked="checked">Active
@@ -116,7 +116,7 @@
                                 <a data-rel="close" href="#"><i class="entypo-cancel"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body with-table">
+                        <div class="card-body with-table">
                             <table class="table table-bordered table-responsive" id="leads">
                                 <thead>
                                 <tr>
@@ -136,10 +136,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title"><strong>Revenue </strong> </div>
-                            <div class="panel-options">
+                    <div class="card shadow card-default">
+                        <div class="card-header py-3">
+                            <div class="card-title"><strong>Revenue </strong> </div>
+                            <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
                                     <label class="btn  btn-white active">
                                         <input type="radio" name="RevenueListType" value="Daily" checked="checked">Daily
@@ -165,7 +165,7 @@
                                 <a data-rel="close" href="#"><i class="entypo-cancel"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body with-table without-paging">
+                        <div class="card-body with-table without-paging">
                             <table class="table table-bordered table-responsive" id="AccountManagerRevenue">
                                 <thead>
                                 <tr>
@@ -192,10 +192,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title"> <strong>Margin</strong></div>
-                            <div class="panel-options">
+                    <div class="card shadow card-default">
+                        <div class="card-header py-3">
+                            <div class="card-title"> <strong>Margin</strong></div>
+                            <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
                                     <label class="btn  btn-white active">
                                         <input type="radio" name="MarginListType" value="Daily" checked="checked">Daily
@@ -221,7 +221,7 @@
                                 <a data-rel="close" href="#"><i class="entypo-cancel"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body with-table without-paging">
+                        <div class="card-body with-table without-paging">
                             <table class="table table-bordered table-responsive" id="AccountManagerMargin" >
                                 <thead>
                                 <tr>
@@ -250,10 +250,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title"> <strong>By Account</strong></div>
-                            <div class="panel-options">
+                    <div class="card shadow card-default">
+                        <div class="card-header py-3">
+                            <div class="card-title"> <strong>By Account</strong></div>
+                            <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
                                     <label class="btn  btn-white active">
                                         <input type="radio" name="AccountListType" value="Daily" checked="checked">Daily
@@ -271,7 +271,7 @@
                                 <a data-rel="close" href="#"><i class="entypo-cancel"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body with-table without-paging">
+                        <div class="card-body with-table without-paging">
                             <table class="table table-bordered table-responsive" id="AccountMargin" >
                                 <thead>
                                 <tr>

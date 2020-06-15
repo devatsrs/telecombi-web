@@ -1,4 +1,8 @@
-<div class="row">
+<style>
+
+</style>
+
+<div class="dashboard-top w-100  bg-white shadow mb-4 d-table">
 
 <!-- Profile Info and Notifications -->
 <div class="col-md-6 col-sm-8 clearfix">
@@ -6,10 +10,10 @@
 <ul class="user-info pull-left pull-none-xsm">
 
     <!-- Profile Info -->
-    <li class="profile-info dropdown">
+    <li class="py-4 profile-info dropdown open">
         <!-- add class "pull-right" if you want to place this from right -->
-
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <div class="dropdown">
+        <a href="#" class="dropdown-toggle font-weight-bolder" data-toggle="dropdown">
             <img src="{{ UserProfile::get_user_picture_url(User::get_userID()) }}" alt="" class="img-circle" width="44" />
             {{Auth::user()->FirstName}} {{Auth::user()->LastName}} ({{ User::get_user_roles() }})
         </a>
@@ -20,29 +24,18 @@
             <li class="caret"></li>
 
 		 @if( User::checkCategoryPermission('Users','View'))
-        <li> <a href="{{Url::to('users')}}">&nbsp;<i class="fa fa-user-secret"></i><span>Users</span> </a></li>
+        <li><a href="{{Url::to('users')}}">&nbsp;<i class="fa fa-user-secret"></i><span>Users</span> </a></li>
         @endif
         @if(User::is_admin())
         <li> <a href="{{Url::to('roles')}}">&nbsp;<i class="fa fa-key"></i><span>User Roles</span></a></li>
         @endif
         <li><a href="{{URL::to('users/edit_profile/'. User::get_userID() )}}"><i class="entypo-user"></i>Edit Profile</a></li>
-
-            <!-- <li>
-                 <a href="mailbox.html">
-                     <i class="entypo-mail"></i>
-                     Inbox
-                 </a>
-             </li>
-
-             <li>
-                 <a href="extra-calendar.html">
-                     <i class="entypo-calendar"></i>
-                     Calendar
-                 </a>
-             </li>
--->
+        
 		   <li><a href="{{URL::to('/jobs')}}"><i class="entypo-clipboard"></i>Jobs</a></li>
         </ul>
+        </div>
+
+
     </li>
 
 </ul>
@@ -52,11 +45,13 @@
 
     <!-- Ajax Content here : Latest Jobs -->
      <a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle jobs" href="#"><i class="entypo-list"></i></a>
-     <ul class="dropdown-menu">
-         <li class="top">
+     <div class="shadow">
+     <ul class="dropdown-menu  ">
+         <li class="top ">
              <p>Loading...</p>
          </li>
      </ul>
+     </div>
 </li>
     <!-- Cron job Notifications -->
     @if( User::checkCategoryPermission('CronJob','View'))
@@ -131,7 +126,7 @@
          <li class="sep"></li>-->
 
         <li id="filter-button-toggle" style="display: none;">
-            <button id="filter-toggle-button" type="button" data-toggle="tooltip" class="btn btn-default btn-xs popover-primary" data-title="Filter" data-placement="left"><i class="fa fa-filter"></i></button>
+            <button id="filter-toggle-button" type="button" data-toggle="tooltip" class="btn btn-primary btn-xs popover-primary" data-title="Filter" data-placement="left"><i class="fa fa-filter"></i></button>
         </li>
 
         <li>

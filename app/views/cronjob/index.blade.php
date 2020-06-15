@@ -26,16 +26,16 @@
 <div class="row">
     <div class="col-md-12">
         <form id="cronjob_filter" method="get"    class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Filter
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Status</label>
                         <div class="col-sm-2">
@@ -124,12 +124,12 @@ var postdata;
                             var history_url = baseurl + "/cronjobs/history/" + CronJobID;
 
                             <?php if(User::checkCategoryPermission('CronJob','Edit') ){ ?>
-                            action += ' <a data-name = "' + full[1] + '" data-id="' + CronJobID + '" title="Edit" class="edit-config btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a data-name = "' + full[1] + '" data-id="' + CronJobID + '" title="Edit" class="edit-config btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                             <?php } ?>
                             <?php if(User::checkCategoryPermission('CronJob','Delete')){ ?>
                             action += ' <a data-id="' + CronJobID + '" title="Delete" class="delete-config btn delete btn-danger btn-sm"><i class="entypo-trash"></i></a>';
                             <?php } ?>
-                            action += ' <a href="' + history_url + '" title="History" class=" btn btn-default btn-sm"><i class="entypo-list"></i>History </a>';
+                            action += ' <a href="' + history_url + '" title="History" class=" btn btn-primary btn-sm"><i class="entypo-list"></i>History </a>';
 
                             return action;
                         }

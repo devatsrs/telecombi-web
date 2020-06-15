@@ -51,8 +51,8 @@
                 <div class="col-md-12">
                     <div class="input-group-btn pull-right" style="width:76px;" id="btn-action">
                         @if(User::checkCategoryPermission('Timezones','Edit'))
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                            <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                                 @if(User::checkCategoryPermission('Timezones','Edit'))
                                     <li>
                                         <a class="changeSelectedStatus" id="ActiveSelected" href="javascript:;" >
@@ -189,10 +189,10 @@
                                         action += '</div>';
                                         if(full[0] != 1) {// can't edit/delete default timezone, default timezone id is 1
                                             <?php if(User::checkCategoryPermission('Timezones', 'Edit') ){ ?>
-                                                    action += ' <a href="' + edit_ + '" title="Edit" class="edit-timezones btn btn-default btn-xs" data-name="Edit Timezones"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                                    action += ' <a href="' + edit_ + '" title="Edit" class="edit-timezones btn btn-primary btn-xs" data-name="Edit Timezones"><i class="entypo-pencil"></i>&nbsp;</a>';
                                             <?php } ?>
                                             <?php if(User::checkCategoryPermission('Timezones', 'Delete') ){ ?>
-                                            action += ' <a href="'+delete_+'" title="Delete" class="btn delete btn-danger btn-default btn-xs"><i class="entypo-trash"></i></a>';
+                                            action += ' <a href="'+delete_+'" title="Delete" class="btn delete btn-danger btn-primary btn-xs"><i class="entypo-trash"></i></a>';
                                             <?php } ?>
                                         }
                                         return action;

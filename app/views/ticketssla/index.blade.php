@@ -57,7 +57,7 @@
                                     var action = '';
 
                                     @if(User::checkCategoryPermission('TicketsSla','Edit'))
-                                            action += '<a  href="' + edit_ + '" class="btn btn-sm btn-default"><i class="entypo-pencil"></i></a>';
+                                            action += '<a  href="' + edit_ + '" class="btn btn-sm btn-primary"><i class="entypo-pencil"></i></a>';
                                     @endif
                                             @if(User::checkCategoryPermission('TicketsSla','Delete'))
 											 if(full[3] == 0){

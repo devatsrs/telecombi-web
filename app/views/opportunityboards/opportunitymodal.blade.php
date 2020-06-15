@@ -103,7 +103,7 @@
             $('#add-modal-opportunity [name="BoardID"]').select2().select2('val',BoardID);
 
             setcolor($('#add-modal-opportunity [name="BackGroundColour"]'), '#ffffff');
-            setcolor($('#add-modal-opportunity [name="TextColour"]'), '#303641');
+            setcolor($('#add-modal-opportunity [name="TextColour"]'), '#4e73df');
             $('#add-opportunity-form [name="Rating"]').val(0);
             $('#add-opportunity-form [name="Rating"]').trigger('change');
             $('#add-modal-opportunity h4').text('Add Opportunity');
@@ -477,7 +477,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-1 paddingleft-0">
-                                        <a class="btn btn-primary btn-xs reset" data-color="#303641" href="javascript:void(0)">
+                                        <a class="btn btn-primary btn-xs reset" data-color="#4e73df" href="javascript:void(0)">
                                             <i class="entypo-ccw"></i>
                                         </a>
                                     </div>

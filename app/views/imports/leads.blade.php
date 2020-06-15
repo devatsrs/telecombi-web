@@ -28,7 +28,7 @@
         padding-right:5px;
     }
 </style>
-<div class="panel">
+<div class="card">
 <form id="rootwizard-2" method="post" action="" class="form-wizard validate form-horizontal form-groups-bordered" enctype="multipart/form-data">
 
     <div class="steps-progress">
@@ -113,17 +113,17 @@
             <div class="row hidden" id="add-template">
                 <div class="col-md-12">
                     <div id="add-template-form">
-                        <div class="panel panel-primary" data-collapsed="0">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                        <div class="card shadow card-primary" data-collapsed="0">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Mapping Template
                                 </div>
 
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label for="field-1" class="col-sm-2 control-label">Template Name:</label>
                                     <div class="col-sm-4">
@@ -131,17 +131,17 @@
                                     </div>
                                 </div>
                                 <br />
-                                <div class="panel panel-primary" data-collapsed="0">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary" data-collapsed="0">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             Lead Importer
                                         </div>
 
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
-                                    <div class="panel-body">
+                                    <div class="card-body">
                                         <div class="form-group">
                                             <label for="field-1" class="col-sm-2 control-label">Delimiter:</label>
                                             <div class="col-sm-4">
@@ -173,18 +173,18 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="panel panel-primary" data-collapsed="0">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary" data-collapsed="0">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             Field Mapping
                                         </div>
 
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
 
-                                    <div class="panel-body" id="mapping">
+                                    <div class="card-body" id="mapping">
                                         <div class="form-group">
                                             <label for="field-1" class="col-sm-2 control-label">Company*</label>
                                             <div class="col-sm-4">
@@ -300,18 +300,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-primary" data-collapsed="0">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary" data-collapsed="0">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             File to be loaded
                                         </div>
 
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
 
-                                    <div class="panel-body scrollx">
+                                    <div class="card-body scrollx">
                                         <div id="table-4_processing" class="dataTables_processing hidden">Processing...</div>
                                         <table class="table table-bordered datatable" id="table-4">
                                             <thead>
@@ -752,7 +752,7 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

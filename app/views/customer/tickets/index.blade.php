@@ -7,8 +7,8 @@
 <h3>@lang('routes.CUST_PANEL_PAGE_TICKETS_TITLE')</h3>
 <p class="text-right"> 
 <div class="btn-group pull-right">
-<button href="#" class="btn  btn-primary btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="@lang('routes.BUTTON_LOADING_CAPTION')">@lang('routes.CUST_PANEL_PAGE_TICKETS_BUTTON_ADD_NEW')&nbsp;&nbsp;<span class="caret"></span></button>
- <ul class="dropdown-menu" style="background-color: #000; border-color: #000; margin-top:0px;" role="menu">
+<button href="#" class="btn  btn-primary btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="@lang('routes.BUTTON_LOADING_CAPTION')">@lang('routes.CUST_PANEL_PAGE_TICKETS_BUTTON_ADD_NEW')&nbsp;&nbsp;</button>
+ <ul class="dropdown-menu"  role="menu">
     <li><a href="{{URL::to('customer/tickets/add')}}">@lang('routes.CUST_PANEL_PAGE_TICKETS_ADD_TICKET')</a></li>
   </ul>
   </div>
@@ -17,12 +17,12 @@
 <div class="row">
   <div class="col-md-12">
     <form role="form" id="tickets_filter" method="post" action="{{Request::url()}}" class="form-horizontal form-groups-bordered validate" novalidate>
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title"> @lang('routes.CUST_PANEL_FILTER_TITLE') </div>
-          <div class="panel-options"> <a class="filter_minimize_btn" href="#" data-rel="collapse"><i class=" entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title"> @lang('routes.CUST_PANEL_FILTER_TITLE') </div>
+          <div class="card-options"> <a class="filter_minimize_btn" href="#" data-rel="collapse"><i class=" entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body" id="paymentsearch">
+        <div class="card-body" id="paymentsearch">
           <div class="form-group">
             <label for="field-1" class="col-sm-1 control-label small_label">@lang('routes.CUST_PANEL_PAGE_TICKETS_FILTER_FIELD_SEARCH')</label>
             <div class="col-sm-2"> {{ Form::text('search', '', array("class"=>"form-control")) }} </div>

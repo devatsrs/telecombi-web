@@ -3,29 +3,29 @@
         padding: 15px 10px;
     }
 </style>
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             CLI
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <div id="clitable_filter" method="get" action="#" >
-            <div class="panel panel-primary panel-collapse" data-collapsed="1">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-collapse" data-collapsed="1">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Filter
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body" style="display: none;">
+                <div class="card-body" style="display: none;">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-1 control-label">CLI</label>
                         <div class="col-sm-2">
@@ -48,9 +48,9 @@
                 <div class="pull-right">
                     @if( User::checkCategoryPermission('AuthenticationRule','Add,Delete'))
                         <button type="button" class="btn btn-primary btn-sm  dropdown-toggle" data-toggle="dropdown"
-                                aria-expanded="false">Action <span class="caret"></span></button>
+                                aria-expanded="false">Action </button>
                         <ul class="dropdown-menu dropdown-menu-left" role="menu"
-                            style="background-color: #000; border-color: #000; margin-top:0px;">
+                            >
                             @if( User::checkCategoryPermission('AuthenticationRule','Add'))
                                 <li>
                                     <a class="create" id="add-clitable" href="javascript:;">

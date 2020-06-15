@@ -318,13 +318,13 @@
             reload_table();
         });
         function loading_table(table,bit){
-            var panel = jQuery(table).closest('.loading');
+            var card shadow = jQuery(table).closest('.loading');
             if(bit==1){
-                blockUI(panel);
-                panel.addClass('reloading');
+                blockUI(card);
+                card.addClass('reloading');
             }else{
-                unblockUI(panel);
-                panel.removeClass('reloading');
+                unblockUI(card);
+                card.removeClass('reloading');
             }
         }
 

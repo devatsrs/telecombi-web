@@ -19,16 +19,16 @@
                 <div class="row">
                 <div class="col-md-12">
                     <form novalidate="novalidate" class="form-horizontal form-groups-bordered filter validate" method="post" id="vendor_analysis">
-                        <div data-collapsed="0" class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                        <div data-collapsed="0" class="card shadow card-primary">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     @lang("routes.CUST_PANEL_FILTER_TITLE")
                                 </div>
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label class="col-sm-1 control-label" for="field-1">@lang("routes.CUST_PANEL_PAGE_ANALYSIS_FILTER_FIELD_START_DATE")</label>
                                     <div class="col-sm-2" style="padding-left:0; padding-right:0; width:10%;">

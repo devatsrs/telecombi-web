@@ -45,18 +45,18 @@
 <div class="row">
     <div class="col-md-12">
         <form role="form" id="lead-from" method="post" action="{{$url}}" class="form-horizontal form-groups-bordered">
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Lead Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
 
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">*Lead Owner</label>
@@ -191,7 +191,7 @@
                            <input type="text" class="form-control" id="tags" name="tags" value="{{$lead->tags}}" />
                        </div>
                    </div>
-                    <div class="panel-title desc clear">
+                    <div class="card-title desc clear">
                         Description
                     </div>
                     <div class="form-group">
@@ -201,18 +201,18 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Address Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Address Line 1</label>
                         <div class="col-sm-4">
@@ -448,13 +448,13 @@
                                     </div>
                                     <label for="field-5" class="control-label col-sm-2">Select Background</label>
                                     <div class="col-sm-3 input-group">
-                                        <input name="BackGroundColour" type="text" class="form-control colorpicker" value="#303641" />
+                                        <input name="BackGroundColour" type="text" class="form-control colorpicker" value="#4e73df" />
                                         <div class="input-group-addon">
                                             <i class="color-preview"></i>
                                         </div>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button class="btn btn-xs btn-danger reset" data-color="#303641" type="button">Reset</button>
+                                        <button class="btn btn-xs btn-danger reset" data-color="#4e73df" type="button">Reset</button>
                                     </div>
                                 </div>
                             </div>

@@ -67,8 +67,8 @@
 <div class="row">
     <div  class="col-md-12">
         <div class="input-group-btn pull-right hidden dropdown" style="width:70px;">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-            <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+            <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                 @if(User::checkCategoryPermission('Leads','Email'))
                 <li>
                     <a href="javascript:void(0)" class="sendemail">
@@ -203,15 +203,15 @@
                             show_ = show_.replace('{id}', id);
                             action = '';
                             <?php if(User::checkCategoryPermission('Opportunity','Add')) { ?>
-                            action +='&nbsp;<button class="btn btn-default btn-xs opportunity" title="Add Opportunity" data-id="'+id+'" type="button"> <i class="fa fa-line-chart"></i> </button>';
+                            action +='&nbsp;<button class="btn btn-primary btn-xs opportunity" title="Add Opportunity" data-id="'+id+'" type="button"> <i class="fa fa-line-chart"></i> </button>';
                             <?php } ?>
                             <?php if(User::checkCategoryPermission('Leads','Edit')) { ?>
-                            action +='&nbsp;<button redirecto="'+edit_+'" class="btn btn-default btn-xs" title="Edit" data-id="'+full[0]+'" type="button"> <i class="entypo-pencil"></i> </button>';
+                            action +='&nbsp;<button redirecto="'+edit_+'" class="btn btn-primary btn-xs" title="Edit" data-id="'+full[0]+'" type="button"> <i class="entypo-pencil"></i> </button>';
                             <?php } ?>
                             <?php if(User::checkCategoryPermission('Leads','Clone')) { ?>
-                            //action += '&nbsp;<a href="' + clone_ + '" class="btn btn-default btn-sm btn-icon icon-left"><i class="entypo-users"></i>Clone </a>';
+                            //action += '&nbsp;<a href="' + clone_ + '" class="btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-users"></i>Clone </a>';
                             <?php } ?>
-                            action +='&nbsp;<button redirecto="'+show_+'" class="btn btn-default btn-xs" title="View" data-id="'+full[0]+'" type="button"> <i class="fa fa-eye"></i> </button>';//entypo-info
+                            action +='&nbsp;<button redirecto="'+show_+'" class="btn btn-primary btn-xs" title="View" data-id="'+full[0]+'" type="button"> <i class="fa fa-eye"></i> </button>';//entypo-info
 
                             action +='<input type="hidden" name="accountid" value="'+id+'"/>';
                             action +='<input type="hidden" name="address1" value="'+full[7]+'"/>';

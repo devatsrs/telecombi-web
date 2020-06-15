@@ -3,8 +3,8 @@
     <?php if(User::checkCategoryPermission('TicketDashboardSummaryWidgets','View')){ ?>
         <div class="row ticket">
         <div class="col-md-12">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div id="ticket-widgets" class="panel-body">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div id="ticket-widgets" class="card-body">
 
                     <div class="col-sm-2 col-xs-4">
                         <div class="tile-stats tile-aqua">
@@ -85,18 +85,18 @@
     @if(User::checkCategoryPermission('TicketDashboardTimeLineWidgets','View'))
     <div class="row">
         <div class="col-md-12">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Recent Activities
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#">
                             <i class="entypo-down-open"></i>
                         </a>
                     </div>
                 </div>
-                <div id="activity-timeline" class="panel-body">
+                <div id="activity-timeline" class="card-body">
                     <ul>
 
                     </ul>

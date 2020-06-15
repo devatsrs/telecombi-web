@@ -13,7 +13,7 @@
   <li class="active"> <strong>Edit Import Rule</strong> </li>
 </ol>
 <h3>Edit Import Rules</h3>
-<div class="panel-title"> @include('includes.errors')
+<div class="card-title"> @include('includes.errors')
   @include('includes.success') </div>
 <p style="text-align: right;">
   <button type='button' class="save btn btn-primary btn-sm btn-icon icon-left" data-loading-text="Loading..."> <i class="entypo-floppy"></i> Save </button>
@@ -22,12 +22,12 @@
 <div class="row">
   <div class="col-md-12">
     <form role="form" id="form-import-rules" method="post"  class="form-horizontal form-groups-bordered">
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Detail</div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Detail</div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="form-group">
             <label for="GroupName" class="col-sm-3 control-label">Title</label>
             <div class="col-sm-9">
@@ -49,14 +49,14 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-primary import_conditions" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Conditions <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="When a ticket satisfies these conditions." data-original-title="Conditions" class="label label-info popover-primary">?</span>
+      <div class="card shadow card-primary import_conditions" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Conditions <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="When a ticket satisfies these conditions." data-original-title="Conditions" class="label label-info popover-primary">?</span>
             <button type="button" title="Add New" id="add_new_condition" class="btn btn-primary btn-xs ">+</button>
           </div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="custom_hours form-group">
             <div class="col-sm-3">
               <input tabindex="7" class="icheck" value="{{TicketImportRule::MATCH_ANY}}" type="radio" name="Match" @if($EditImportData->
@@ -80,7 +80,7 @@
               <div class="custom_hours condition_sort_list form-group">
                 <div class="col-sm-1">
                 @if($key>0)
-                <a title="Delete" class="btn btn-danger conditionentry clickable btn-xs btn-default btn-sm"><i class="entypo-trash"></i></a>
+                <a title="Delete" class="btn btn-danger conditionentry clickable btn-xs btn-primary btn-sm"><i class="entypo-trash"></i></a>
                 @endif
                 </div>
                 <div class="col-sm-3">
@@ -118,15 +118,15 @@
           </ul>
         </div>
       </div>
-      <div class="panel panel-primary import_actions" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Actions <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Perform these actions
+      <div class="card shadow card-primary import_actions" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Actions <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Perform these actions
 ." data-original-title="Actions" class="label label-info popover-primary">?</span>
             <button type="button" title="Add New" id="add_new_rule" class="btn btn-primary btn-xs ">+</button>
           </div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <ul class="action_border action-sortable-list  list-unstyled ui-sortable">
           <?php
 		  if(count($EditImportAction)>0){ 
@@ -138,7 +138,7 @@
   <div class="custom_hours form-group">
     <div class="col-sm-1">
     @if($key>0)
-    <a title="Delete" class="btn btn-danger actionentry clickable btn-xs btn-default btn-sm"><i class="entypo-trash"></i></a>
+    <a title="Delete" class="btn btn-danger actionentry clickable btn-xs btn-primary btn-sm"><i class="entypo-trash"></i></a>
     @endif
     </div>
     <div class="col-sm-3">
@@ -241,16 +241,16 @@
 			
 			$(document).on("click","#add_new_condition",function(event){ 
 				var count_conditions 	= 	0;
-				var getClass 			=   $('.import_conditions').find('.panel-body .condtion_border .custom_hours');
+				var getClass 			=   $('.import_conditions').find('.card-body .condtion_border .custom_hours');
 				getClass.each(function () {count_conditions++;}); 	 
 				var html_condition 		= 	GetData(count_conditions,"condition"); //$('.new_condition_content').html();							
-				$('.import_conditions').find('.panel-body .condtion_border').append(html_condition);				
+				$('.import_conditions').find('.card-body .condtion_border').append(html_condition);				
 				count_conditions_first = count_conditions; 
 				if(count_conditions_first==0){
-					$('.import_conditions').find('.panel-body .condtion_border .custom_hours').last().find('.conditionentry').remove();
+					$('.import_conditions').find('.card-body .condtion_border .custom_hours').last().find('.conditionentry').remove();
 				}
-				$('.import_conditions').find('.panel-body .condtion_border .custom_hours').last().find('.drpdown').select2();
-				$('.import_conditions').find('.panel-body .condtion_border .custom_hours').last().find('.condition_order').val(count_conditions);
+				$('.import_conditions').find('.card-body .condtion_border .custom_hours').last().find('.drpdown').select2();
+				$('.import_conditions').find('.card-body .condtion_border .custom_hours').last().find('.condition_order').val(count_conditions);
 				initSortableCondition();
 				saveOrderConditions();
 			});	
@@ -258,18 +258,18 @@
 			
 			$(document).on("click","#add_new_rule",function(event){ 
 				var count_rules		 	= 	0;
-				var getClass 			=   $('.import_actions').find('.panel-body .action_border .custom_hours');
+				var getClass 			=   $('.import_actions').find('.card-body .action_border .custom_hours');
 				getClass.each(function () {count_rules++;}); 	
 				
 				var html_condition = GetData(count_rules,"rule"); //$('.new_condition_content').html();	
 				
-				$('.import_actions').find('.panel-body .action_border').append(html_condition);
+				$('.import_actions').find('.card-body .action_border').append(html_condition);
 				count_rules_first = count_rules; 
 				if(count_rules_first==0){
-					$('.import_actions').find('.panel-body .action_border .custom_hours').last().find('.actionentry').remove();
+					$('.import_actions').find('.card-body .action_border .custom_hours').last().find('.actionentry').remove();
 				}
-				$('.import_actions').find('.panel-body .action_border .custom_hours').last().find('.drpdown').select2();
-				$('.import_actions').find('.panel-body .action_border .custom_hours').last().find('.action_order').val(count_rules);
+				$('.import_actions').find('.card-body .action_border .custom_hours').last().find('.drpdown').select2();
+				$('.import_actions').find('.card-body .action_border .custom_hours').last().find('.action_order').val(count_rules);
 				initSortableAction();
 				saveOrderRules();
 			});	

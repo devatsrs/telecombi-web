@@ -71,9 +71,9 @@
                   <div class="input-group-btn">
                       @if( User::checkCategoryPermission('Disputes','Email'))
                           <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown"
-                                  aria-expanded="false">Action <span class="caret"></span></button>
+                                  aria-expanded="false">Action </button>
                           <ul class="dropdown-menu dropdown-menu-right" role="menu"
-                              style="background-color: #000; border-color: #000; margin-top:0px;">
+                              >
                              {{-- @if(User::checkCategoryPermission('Disputes','Email'))
                                   --}}{{--<li> <a class="pay_now create" id="bulk_email" href="javascript:;"> Bulk Email </a> </li>--}}{{--
                               @endif--}}
@@ -244,7 +244,7 @@
                                     action += '</div>';
 
                                     action += '<div class="btn-group">';
-                                    action += '<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action<span class="caret"></span></a>';
+                                    action += '<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action</a>';
                                     action += '<ul class="dropdown-menu multi-level dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu">';
                                     if('{{User::checkCategoryPermission('Disputes','Edit')}}' ) {
                                         action += '<li><a data-id="' + id + '" class="edit-dispute icon-left"><i class="entypo-pencil"></i>Edit </a></li>';
@@ -260,7 +260,7 @@
 
 
                                     if('{{User::checkCategoryPermission('Disputes','ChangeStatus')}}') {
-                                        action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Change Status <span class="caret"></span></button>'
+                                        action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Change Status </button>'
                                         action += '<ul class="dropdown-menu dropdown-green" role="menu">';
                                         $.each(dispute_status, function( index, value ) {
                                             if(index!=''){

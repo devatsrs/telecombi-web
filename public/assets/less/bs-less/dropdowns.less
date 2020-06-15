@@ -2,7 +2,6 @@
 // Dropdown menus
 // --------------------------------------------------
 
-
 // Dropdown arrow/caret
 .caret {
   display: inline-block;
@@ -10,9 +9,9 @@
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top:   @caret-width-base solid @dropdown-caret-color;
+  border-top: @caret-width-base solid @dropdown-caret-color;
   border-right: @caret-width-base solid transparent;
-  border-left:  @caret-width-base solid transparent;
+  border-left: @caret-width-base solid transparent;
   // Firefox fix for https://github.com/twbs/bootstrap/issues/9538. Once fixed,
   // we can just straight up remove this.
   border-bottom: 0 dotted;
@@ -72,42 +71,51 @@
     white-space: nowrap; // prevent links from randomly breaking onto new lines
     .rounded;
   }
-  
-  
-  &.dropdown-green { .dropdown-variant(@brand-success; darken(@brand-success, 4%); #fff); }
-  &.dropdown-gold { .dropdown-variant(#fcd036; darken(#fcd036, 13%); #846e20; darken(#fcd036, 12%)); }
-  &.dropdown-blue { .dropdown-variant(#0072bc; darken(#0072bc, 5%); #fff; darken(#0072bc, 5%)); }
-  &.dropdown-primary { .dropdown-variant(#303641; @main_border_color; #fff; darken(#303641, 5%)); }
-  &.dropdown-red { .dropdown-variant(#d42020; darken(#d42020, 7%); #fff; darken(#d42020, 5%)); }
-  &.dropdown-black { .dropdown-variant(#000; lighten(#000, 27%); #fff; lighten(#000, 22%)); }
+
+  &.dropdown-green {
+    .dropdown-variant(@brand-success; darken(@brand-success, 4%); #fff);
+  }
+  &.dropdown-gold {
+    .dropdown-variant(#fcd036; darken(#fcd036, 13%); #846e20; darken(#fcd036, 12%));
+  }
+  &.dropdown-blue {
+    .dropdown-variant(#0072bc; darken(#0072bc, 5%); #fff; darken(#0072bc, 5%));
+  }
+  &.dropdown-primary {
+    .dropdown-variant(#4e73df; @main_border_color; #fff; darken(#4e73df, 5%));
+  }
+  &.dropdown-red {
+    .dropdown-variant(#d42020; darken(#d42020, 7%); #fff; darken(#d42020, 5%));
+  }
+  &.dropdown-black {
+    .dropdown-variant(#000; lighten(#000, 27%); #fff; lighten(#000, 22%));
+  }
 }
 
-.dropdown-variant(@bg-color; @border-color; @text-color)
-{
-	@hover-bg: darken(@bg-color, 5%);
-	.dropdown-variant(@bg-color; @border-color; @text-color; @hover-bg);
+.dropdown-variant(@bg-color; @border-color; @text-color) {
+  @hover-bg: darken(@bg-color, 5%);
+  .dropdown-variant(@bg-color; @border-color; @text-color; @hover-bg);
 }
 
-.dropdown-variant(@bg-color; @border-color; @text-color; @hover-bg)
-{
-	background-color: @bg-color;
-	border-color: @border-color;
-	  
-	> li {
-	  
-	  > a {
-		  color: @text-color;
-	  }
-	  
-	  &:hover a {
-		  background-color: @hover-bg;
-		  color: @text-color;
-	  }
-	}
-	
-	.divider, .divider:hover {
-	  .nav-divider(@border-color);
-	}
+.dropdown-variant(@bg-color; @border-color; @text-color; @hover-bg) {
+  background-color: @bg-color;
+  border-color: @border-color;
+
+  > li {
+    > a {
+      color: @text-color;
+    }
+
+    &:hover a {
+      background-color: @hover-bg;
+      color: @text-color;
+    }
+  }
+
+  .divider,
+  .divider:hover {
+    .nav-divider(@border-color);
+  }
 }
 
 // Hover/Focus state
@@ -216,7 +224,6 @@
   }
 }
 
-
 // Component alignment
 //
 // Reiterate per navbar.less and the modified component alignment there.
@@ -228,4 +235,3 @@
     }
   }
 }
-

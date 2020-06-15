@@ -57,18 +57,18 @@
         <div class="row">
             <div class="col-md-12">
                 <form role="form" id="customer-rate-table-search" method="post"  action="{{Request::url()}}" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-                   <div class="panel panel-primary" data-collapsed="0">
-                       <div class="panel-heading">
-                           <div class="panel-title">
+                   <div class="card shadow card-primary" data-collapsed="0">
+                       <div class="card-header py-3">
+                           <div class="card-title">
                                Search
                            </div>
 
-                           <div class="panel-options">
+                           <div class="card-options">
                                <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                            </div>
                        </div>
 
-                       <div class="panel-body">
+                       <div class="card-body">
                            <div class="form-group">
                                <label for="field-1" class="col-sm-1 control-label">Code</label>
                                <div class="col-sm-2">
@@ -170,8 +170,8 @@
          <div  class="col-md-12">
                 <div class="input-group-btn pull-right" style="width:76px;" id="btn-action">
                     @if( User::checkCategoryPermission('CustomersRates','Edit,ClearRate'))
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                    <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                    <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                         @if(User::checkCategoryPermission('CustomersRates','Edit'))
                             <li>
                                 <a class="generate_rate create" id="addSelectedCustomerRates" href="javascript:;" >
@@ -353,10 +353,10 @@
                                                     if (CustomerRateID > 0) {
                                                         <?php if(User::checkCategoryPermission('CustomersRates','Edit')) { ?>
                                                         if(DiscontinuedRates == 0) {
-                                                            action += ' <a href="Javascript:;" class="edit-customer-rate btn btn-default btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                                            action += ' <a href="Javascript:;" class="edit-customer-rate btn btn-primary btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>';
                                                         }
                                                         <?php } ?>
-                                                        action += ' <a href="Javascript:;" title="History" class="btn btn-default btn-xs btn-history details-control"><i class="entypo-back-in-time"></i>&nbsp;</a>';
+                                                        action += ' <a href="Javascript:;" title="History" class="btn btn-primary btn-xs btn-history details-control"><i class="entypo-back-in-time"></i>&nbsp;</a>';
                                                         <?php if(User::checkCategoryPermission('CustomersRates','ClearRate')) { ?>
                                                             if(DiscontinuedRates == 0) {
                                                                 action += ' <button href="' + clerRate_ + '"  class="btn clear-customer-rate btn-danger btn-xs btn-icon icon-left" data-loading-text="Loading..."><i class="entypo-cancel"></i>Clear Rate</button>';

@@ -129,11 +129,11 @@ jQuery(document).ready(function($) {
 
                                 delete_ = delete_.replace('{id}', full[9]);
                                 @if(User::checkCategoryPermission('AutoRateImport','Add'))
-                                action = '<a title="Edit" data-id="'+id+'" data-AutoImportSettingID="'+full[9]+'" data-TrunkID="'+full[7]+'" data-uploadtemplate="'+full[8]+'" data-subject="'+full[3]+'" data-sendor="'+full[5]+'" data-fileName="'+full[4]+'" class="edit-autoImportSetting btn btn-default btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
+                                action = '<a title="Edit" data-id="'+id+'" data-AutoImportSettingID="'+full[9]+'" data-TrunkID="'+full[7]+'" data-uploadtemplate="'+full[8]+'" data-subject="'+full[3]+'" data-sendor="'+full[5]+'" data-fileName="'+full[4]+'" class="edit-autoImportSetting btn btn-primary btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
                                 @endif
 
                                 <?php if(User::checkCategoryPermission('AutoRateImport','Delete') ) { ?>
-                                    action += ' <a title="Delete" href="' + delete_ + '" data-redirect="{{URL::to("/rate_tables")}}"  class="btn btn-default delete btn-danger btn-sm" data-loading-text="Loading..."><i class="entypo-trash"></i></a>';
+                                    action += ' <a title="Delete" href="' + delete_ + '" data-redirect="{{URL::to("/rate_tables")}}"  class="btn btn-primary delete btn-danger btn-sm" data-loading-text="Loading..."><i class="entypo-trash"></i></a>';
                                 <?php } ?>
                                 //action += status_link;
                                 return action;

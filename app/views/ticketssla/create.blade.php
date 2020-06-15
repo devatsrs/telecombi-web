@@ -9,7 +9,7 @@
   <li class="active"> <strong>New SLA Policy</strong> </li>
 </ol>
 <h3>New SLA Policy</h3>
-<div class="panel-title"> @include('includes.errors')
+<div class="card-title"> @include('includes.errors')
   @include('includes.success') </div>
 <p style="text-align: right;">
   <button type='button' class="save btn btn-primary btn-sm btn-icon icon-left" data-loading-text="Loading..."> <i class="entypo-floppy"></i> Save </button>
@@ -18,12 +18,12 @@
 <div class="row">
   <div class="col-md-12">
     <form role="form" id="form-sla-add" method="post" action="{{URL::to('ticketgroups/create')}}" class="form-horizontal form-groups-bordered">
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Detail</div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Detail</div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="form-group">
             <label for="GroupName" class="col-sm-3 control-label">Name</label>
             <div class="col-sm-9">
@@ -46,12 +46,12 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-primary sla_targets" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">SLA Targets <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A service level agreement (SLA) policy lets you set standards of performance for your support team. You can set SLA policies for the time within which agents should respond to, and resolve tickets based on ticket priorities. You can choose whether you want each SLA rule to be calculated over calendar hours or your business hours." data-original-title="SLA Policy" class="label label-info popover-primary">?</span></div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary sla_targets" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">SLA Targets <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A service level agreement (SLA) policy lets you set standards of performance for your support team. You can set SLA policies for the time within which agents should respond to, and resolve tickets based on ticket priorities. You can choose whether you want each SLA rule to be calculated over calendar hours or your business hours." data-original-title="SLA Policy" class="label label-info popover-primary">?</span></div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div>
             <div class="custom_hours form-group">
               <div class="col-sm-1"><b>Priority</b></div>
@@ -141,12 +141,12 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Apply this to</div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Apply this to</div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="custom_hours form-group">
             <div class="col-sm-2"><b>Group</b></div>
             <div class="day_time_data col-sm-10">  {{Form::select("Apply[Groups][]", $Groups, '' ,array("class"=>"select2","multiple"=>"multiple","id"=>"Groups"))}} </div>
@@ -161,12 +161,12 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">What happens when this SLA is violated? <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="You can also set up escalation rules that notify agents or managers when SLAs have been violated. You can set up multiple levels of escalation for resolution SLA. The violation emails can be configured in Admin > Email Templates" data-original-title="SLA violation notifications" class="label label-info popover-primary">?</span></div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">What happens when this SLA is violated? <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="You can also set up escalation rules that notify agents or managers when SLAs have been violated. You can set up multiple levels of escalation for resolution SLA. The violation emails can be configured in Admin > Email Templates" data-original-title="SLA violation notifications" class="label label-info popover-primary">?</span></div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="custom_hours form-group">
             <div class="col-sm-12">Set escalation rule when a ticket is not responded on time <span>&nbsp;
             <p class="make-switch switch-small">

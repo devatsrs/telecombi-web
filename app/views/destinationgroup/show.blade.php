@@ -129,9 +129,9 @@
                                 }
                                 action += '</div>';
                                 @if(User::checkCategoryPermission('DestinationGroup','Edit'))
-                                action += ' <a href="' + edit_url.replace("{id}",id) +'" title="Edit" class="edit-button btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
+                                action += ' <a href="' + edit_url.replace("{id}",id) +'" title="Edit" class="edit-button btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
                                 @endif
-                                action += ' <a href="' + view_url.replace("{id}",id) +'" title="View" class="view-button btn btn-default btn-sm"><i class="fa fa-eye"></i></a>'
+                                action += ' <a href="' + view_url.replace("{id}",id) +'" title="View" class="view-button btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>'
                                 @if($discountplanapplied ==0)
                                 @if(User::checkCategoryPermission('DestinationGroup','Delete'))
                                 action += ' <a href="' + delete_url.replace("{id}",id) +'" title="Delete" class="delete-button btn btn-danger btn-sm"><i class="entypo-trash"></i></a>'
@@ -170,7 +170,7 @@
             $('#add-button').click(function(ev){
                 ev.preventDefault();
                 $('#modal-form').trigger("reset");
-                $('#modal-list .panel-title').html('Add Destination Group');
+                $('#modal-list .card-title').html('Add Destination Group');
                 $("#modal-form [name=DestinationGroupID]").val("");
                 $("#modal-form [name=DestinationGroupSetID]").val("{{$DestinationGroupSetID}}");
                 $('#modal-form').attr("action",add_url);
@@ -182,7 +182,7 @@
                 $('#modal-form').trigger("reset");
                 var edit_url  = $(this).attr("href");
                 $('#modal-form').attr("action",edit_url);
-                $('#modal-list .panel-title').html('Edit Destination Group');
+                $('#modal-list .card-title').html('Edit Destination Group');
                 var cur_obj = $(this).prev("div.hiddenRowData");
                 for(var i = 0 ; i< list_fields.length; i++){
                     $("#modal-form [name='"+list_fields[i]+"']").val(cur_obj.find("input[name='"+list_fields[i]+"']").val());

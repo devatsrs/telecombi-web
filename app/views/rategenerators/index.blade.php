@@ -110,10 +110,10 @@
                             var status_link = active_ = "";
                             if (full[3] == "1") {
                                 active_ = "{{ URL::to('/rategenerators/{id}/change_status/0')}}";
-                                status_link = ' <a title="Deactivate" href="' + active_ + '"  class="btn btn-default change_status btn-danger btn-sm" data-loading-text="Loading..."><i class="entypo-minus-circled"></i></a>';
+                                status_link = ' <a title="Deactivate" href="' + active_ + '"  class="btn btn-primary change_status btn-danger btn-sm" data-loading-text="Loading..."><i class="entypo-minus-circled"></i></a>';
                             } else {
                                 active_ = "{{ URL::to('/rategenerators/{id}/change_status/1')}}";
-                                status_link = ' <a title="Activate" href="' + active_ + '"    class="btn btn-default change_status btn-success btn-sm" data-loading-text="Loading..."><i class="entypo-check"></i></a>';
+                                status_link = ' <a title="Activate" href="' + active_ + '"    class="btn btn-primary change_status btn-success btn-sm" data-loading-text="Loading..."><i class="entypo-check"></i></a>';
                             }
 
 
@@ -125,14 +125,14 @@
                             action = '';
 
                             <?php if(User::checkCategoryPermission('RateGenerator','Edit')) { ?>
-                            action += ' <a title="Edit" href="' + edit_ + '" class="btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a> '
+                            action += ' <a title="Edit" href="' + edit_ + '" class="btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a> '
                             action += status_link;
 							
 							 @if(User::checkCategoryPermission('RateGenerator','Delete'))
-                                action += ' <a title="Delete" href="' + delete_ + '" data-redirect="{{URL::to("rategenerators")}}" data-id = '+id+'  class="btn btn-default btn-sm  delete btn-danger"><i class="entypo-trash"></i></a> '
+                                action += ' <a title="Delete" href="' + delete_ + '" data-redirect="{{URL::to("rategenerators")}}" data-id = '+id+'  class="btn btn-primary btn-sm  delete btn-danger"><i class="entypo-trash"></i></a> '
                             @endif
                             if (full[3] == 1) { /* When Status is 1 */
-                                action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Generate Rate Table <span class="caret"></span></button>'
+                                action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Generate Rate Table </button>'
                                 action += '<ul class="dropdown-menu dropdown-green" role="menu"><li><a href="' + generate_new_rate_table_ + '" class="generate_rate create" >Create New Rate Table</a></li><li><a href="' + update_existing_rate_table_ + '" class="generate_rate update" data-trunk="' + full[5] + '" data-codedeck="' + full[6] + '" data-currency="' + full[7] + '">Update Existing Rate Table</a></li></ul></div>';
                             }
                             <?php } ?>                            

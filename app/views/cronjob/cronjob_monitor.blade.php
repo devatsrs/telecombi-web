@@ -133,7 +133,7 @@
                         $(nRow).find("td:nth-child(3)").append('&nbsp;&nbsp; <span title="Cron Job is failing..." data-placement="top" class="badge badge-danger" data-toggle="tooltip">i</span>');
                     }
                     if(typeof data[7] != 'undefined' && data[7] == 0  ){ // 'Status'  InActive CronJob Gray color
-                        $(nRow).css('background-color', '#f5f5f6');
+                        $(nRow).css('background-color', '#fff');
                         $(nRow).find("td:nth-child(3)").append('&nbsp;&nbsp; <span title="Cron Job is Disabled" data-placement="top" class="badge badge-warning" data-toggle="tooltip">i</span>');
                     }
 
@@ -190,12 +190,12 @@
                                     var Status = full[7];
 
                                     <?php if(User::checkCategoryPermission('CronJob','Edit') ){ ?>
-                                            action += '&nbsp;<button   data-id="' + CronJobID + '" class="edit-config btn btn-default btn-sm" title="Edit" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i></button>';
+                                            action += '&nbsp;<button   data-id="' + CronJobID + '" class="edit-config btn btn-primary btn-sm" title="Edit" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i></button>';
                                     <?php } ?>
 
                                     var history_url = baseurl + "/cronjobs/history/" + CronJobID;
 
-                                    action += '&nbsp;<a target="_blank" href="'+ history_url +'" class=" btn btn-default btn-sm" title="History" data-placement="top" data-toggle="tooltip"><i class="entypo-back-in-time"></i></a>';
+                                    action += '&nbsp;<a target="_blank" href="'+ history_url +'" class=" btn btn-primary btn-sm" title="History" data-placement="top" data-toggle="tooltip"><i class="entypo-back-in-time"></i></a>';
 
                                     <?php if(User::checkCategoryPermission('CronJob','Edit') ){ ?>
                                         if(Status == 1 ) {

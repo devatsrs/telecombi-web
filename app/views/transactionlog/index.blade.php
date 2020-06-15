@@ -6,18 +6,18 @@
     <li class="active"><strong>View Invoice Log ({{$invoice->InvoiceNumber}})</strong></li>
 </ol>
 
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Invoice Log
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
 
-    <div class="panel-body">
+    <div class="card-body">
 
         <form role="form" id="rate-table-search"  method="post" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
 
@@ -36,18 +36,18 @@
     </div>
 </div>
 
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Transaction Log
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <form role="form" id="rate-table-search"  method="post" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
 
         </form>
@@ -67,18 +67,18 @@
     </div>
 </div>
 
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Payments
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <table class="table table-bordered datatable" id="table-3">
             <thead>
             <tr>
@@ -280,7 +280,7 @@
                                     action += '<input type = "hidden"  name = "' + list_fields_payments[i] + '" value = "' + (full[i] != null ? full[i] : '') + '" / >';
                                 }
                                 action += '</div>';
-                                action += ' <a data-name = "' + full[0] + '" data-id="' + full[0] + '" title="View" class="view-payment btn btn-default btn-sm"><i class="fa fa-eye"></i></a>';
+                                action += ' <a data-name = "' + full[0] + '" data-id="' + full[0] + '" title="View" class="view-payment btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                                 <?php if(User::checkCategoryPermission('Payments','Recall')) {?>
                                 if (full[13] == 0 && full[7] != 'Rejected') {
                                     action += ' <a href="' + recall_ + '" data-redirect="{{ URL::to('payments')}}"  class="btn recall btn-danger btn-sm btn-icon icon-left"><i class="entypo-ccw"></i>Recall </a>';

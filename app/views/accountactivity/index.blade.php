@@ -1,28 +1,28 @@
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Activities
         </div>
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <div class="text-right">
             <a  id="add-new-activity" class=" btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-plus"></i>Add New</a>
             <div class="clear clearfix"><br></div>
         </div>
                     <form id="activity_filter" method="get"    class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-                        <div class="panel panel-primary" data-collapsed="0">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                        <div class="card shadow card-primary" data-collapsed="0">
+                            <div class="card-header py-3">
+                                <div class="card-title">
                                     Filter
                                 </div>
-                                <div class="panel-options">
+                                <div class="card-options">
                                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label for="field-1" class="col-sm-2 control-label">Activity Title</label>
                                     <div class="col-sm-2">
@@ -120,7 +120,7 @@
                                             action += '<input type = "hidden"  name = "' + list_fields_activity[i] + '"       value = "' + (full[i] != null ? full[i] : '') + '" / >';
                                         }
                                         action += '</div>';
-                                        action += ' <a data-id="' + id + '" title="Edit" class="edit-activity btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
+                                        action += ' <a data-id="' + id + '" title="Edit" class="edit-activity btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
                                         action += ' <a href="' + delete_ + '" data-redirect="{{ URL::to('products')}}" title="Delete"  class="btn delete btn-danger btn-sm"><i class="entypo-trash"></i></a>'
                                         return action;
                                     }

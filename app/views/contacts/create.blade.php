@@ -35,18 +35,18 @@
 
         <form role="form" id="contact-from" method="post" action="{{URL::to('contacts/store/')}}"
               class="form-horizontal form-groups-bordered">
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Contact Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">*First Name</label>
 
@@ -208,7 +208,7 @@
                         </div>
                     </div>
 
-                    <div class="panel-title desc clear">
+                    <div class="card-title desc clear">
                         Description
                     </div>
                     <div class="form-group">
@@ -219,18 +219,18 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Address Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Address Line 1</label>
 

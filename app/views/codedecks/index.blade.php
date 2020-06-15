@@ -192,7 +192,7 @@ var postdata;
                         action += '</div>';
 
                         <?php if(User::checkCategoryPermission('CodeDecks','Edit')){ ?>
-                            action += ' <a href="javascript:;" title="Edit" class="edit-codedeck btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a href="javascript:;" title="Edit" class="edit-codedeck btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                         <?php } ?>
                         <?php if(User::checkCategoryPermission('CodeDecks','Delete') ){ ?>
                             action += ' <a data-id="'+ RateID +'" title="Delete" class="delete-codedecks btn btn-danger btn-sm"><i class="entypo-trash"></i></a>';
@@ -599,7 +599,7 @@ function bulk_update(fullurl,data){
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

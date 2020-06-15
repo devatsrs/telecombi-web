@@ -89,7 +89,7 @@
                         }
                         action += '</div>';
 
-                                action += ' <a href="' + alert_edit_url.replace("{id}", id) + '" title="@lang('routes.BUTTON_EDIT_CAPTION')" class="edit-call-alert btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
+                                action += ' <a href="' + alert_edit_url.replace("{id}", id) + '" title="@lang('routes.BUTTON_EDIT_CAPTION')" class="edit-call-alert btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
 
 
                                 action += ' <a href="' + alert_delete_url.replace("{id}", id) + '" title="@lang('routes.BUTTON_DELETE_CAPTION')" class="delete-call-alert btn btn-danger btn-sm"><i class="entypo-trash"></i></a>'

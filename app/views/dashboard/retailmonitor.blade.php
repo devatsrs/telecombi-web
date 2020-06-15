@@ -1,9 +1,9 @@
 <div class="tab-pane {{!in_array('AnalysisMonitor',$MonitorDashboardSetting)?'active':''}}" id="mdn" >
     <div class="row">
         <div class="col-sm-12">
-            <div class="panel panel-default loading">
+            <div class="card shadow card-default loading">
 
-                <div class="panel-body with-table">
+                <div class="card-body with-table">
                     <table class="table table-bordered table-responsive most-dialled-number">
                         <thead>
                         <tr>
@@ -27,9 +27,9 @@
     <div class="row">
 
         <div class="col-sm-12">
-        <div class="panel panel-default loading">
+        <div class="card shadow card-default loading">
 
-            <div class="panel-body with-table">
+            <div class="card-body with-table">
                 <table class="table table-bordered table-responsive long-duration-call">
                     <thead>
                     <tr>
@@ -50,8 +50,8 @@
 <div class="tab-pane" id="mec" >
     <div class="row">
         <div class="col-sm-12">
-            <div class="panel panel-default loading">
-                <div class="panel-body with-table">
+            <div class="card shadow card-default loading">
+                <div class="card-body with-table">
                     <table class="table table-bordered table-responsive most-expensive-call">
                         <thead>
                         <tr>

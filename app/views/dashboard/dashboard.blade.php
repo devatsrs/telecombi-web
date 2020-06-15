@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
     <style>
-        /*.panel-title{
+        /*.card-title{
             float:none;
         }*/
         .white-bg {
@@ -55,7 +55,7 @@
 
                 @if( (empty($MonitorDashboardSetting)) ||  in_array('InboundMonitor',$MonitorDashboardSetting))
                     <div class="col-md-12">
-                        <div class="tile-stats tile-sky stat-tile panel loading">
+                        <div class="tile-stats tile-sky stat-tile shadow loading">
                             <h3>Sales <span></span></h3>
                             {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                             <p>Today Outbound Sales by hour</p>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="tile-stats tile-sunset stat-tile panel loading">
+                        <div class="tile-stats tile-sunset stat-tile shadow loading">
                             <h3>Sales <span></span></h3>
                             {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                             <p>Today Inbound Sales by hour</p>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="tile-stats tile-grass stat-tile panel loading">
+                        <div class="tile-stats tile-grass stat-tile shadow loading">
                             <h3>Minutes <span>0</span></h3>
                             {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                             <p>Today Outbound Minutes by hour</p>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="tile-stats tile-sunflower stat-tile panel loading">
+                        <div class="tile-stats tile-sunflower stat-tile shadow loading">
                             <h3>Minutes <span>0</span></h3>
                             {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                             <p>Today Inbound Minutes by hour</p>
@@ -88,7 +88,7 @@
                     </div>
                 @else
                     <div class="col-md-12">
-                        <div class="tile-stats tile-grass stat-tile panel loading">
+                        <div class="tile-stats tile-grass stat-tile shadow loading">
                             <h3>Sales <span></span></h3>
                             {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                             <p>Today Sales by hour</p>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="tile-stats tile-sky stat-tile panel loading">
+                        <div class="tile-stats tile-sky stat-tile shadow loading">
                             <h3>Minutes <span>0</span></h3>
                             {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                             <p>Today Minutes by hour</p>
@@ -134,12 +134,12 @@
                         <div class="row">
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Destination - Call Count.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Destination - Call Count.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -147,8 +147,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
                                         <br />
 
                                         <div class="text-center">
@@ -160,12 +160,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Destination - Call Cost.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Destination - Call Cost.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -173,8 +173,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
                                         <br />
 
                                         <div class="text-center">
@@ -186,12 +186,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Destination - Call Minutes.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Destination - Call Minutes.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -199,8 +199,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -217,12 +217,12 @@
                             <div class="row">
                                 <div class="col-md-4">
 
-                                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                        <!-- panel head -->
-                                        <div class="panel-heading">
-                                            <div class="panel-title">Top 10 Destination Break - Call Count.</div>
+                                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                        <!-- card shadow head -->
+                                        <div class="card-header py-3">
+                                            <div class="card-title">Top 10 Destination Break - Call Count.</div>
 
-                                            {{--<div class="panel-options">
+                                            {{--<div class="card-options">
                                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -230,8 +230,8 @@
                                             </div>--}}
                                         </div>
 
-                                        <!-- panel body -->
-                                        <div class="panel-body">
+                                        <!-- card shadow body -->
+                                        <div class="card-body">
 
                                             <br />
 
@@ -244,12 +244,12 @@
                                 </div>
                                 <div class="col-md-4">
 
-                                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                        <!-- panel head -->
-                                        <div class="panel-heading">
-                                            <div class="panel-title">Top 10 Destination Break - Call Cost.</div>
+                                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                        <!-- card shadow head -->
+                                        <div class="card-header py-3">
+                                            <div class="card-title">Top 10 Destination Break - Call Cost.</div>
 
-                                            {{--<div class="panel-options">
+                                            {{--<div class="card-options">
                                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -257,8 +257,8 @@
                                             </div>--}}
                                         </div>
 
-                                        <!-- panel body -->
-                                        <div class="panel-body">
+                                        <!-- card shadow body -->
+                                        <div class="card-body">
 
                                             <br />
 
@@ -271,12 +271,12 @@
                                 </div>
                                 <div class="col-md-4">
 
-                                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                        <!-- panel head -->
-                                        <div class="panel-heading">
-                                            <div class="panel-title">Top 10 Destination Break - Call Minutes.</div>
+                                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                        <!-- card shadow head -->
+                                        <div class="card-header py-3">
+                                            <div class="card-title">Top 10 Destination Break - Call Minutes.</div>
 
-                                            {{--<div class="panel-options">
+                                            {{--<div class="card-options">
                                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -284,8 +284,8 @@
                                             </div>--}}
                                         </div>
 
-                                        <!-- panel body -->
-                                        <div class="panel-body">
+                                        <!-- card shadow body -->
+                                        <div class="card-body">
 
                                             <br />
 
@@ -302,12 +302,12 @@
                         <div class="row">
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Prefix - Call Count.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Prefix - Call Count.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -315,8 +315,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -329,12 +329,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Prefix - Call Cost.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Prefix - Call Cost.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -342,8 +342,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -356,12 +356,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Prefix - Call Minutes.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Prefix - Call Minutes.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -369,8 +369,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -387,12 +387,12 @@
                         <div class="row">
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Trunks - Call Count.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Trunks - Call Count.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -400,8 +400,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -414,12 +414,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Trunks - Call Cost.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Trunks - Call Cost.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -427,8 +427,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -441,12 +441,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Trunks - Call Minutes.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Trunks - Call Minutes.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -454,8 +454,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -472,12 +472,12 @@
                         <div class="row">
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Accounts - Call Count.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Accounts - Call Count.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -485,8 +485,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -499,12 +499,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Accounts - Call Cost.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Accounts - Call Cost.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -512,8 +512,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -526,12 +526,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Accounts - Call Minutes.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Accounts - Call Minutes.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -539,8 +539,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -557,12 +557,12 @@
                         <div class="row">
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Gateways - Call Count.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Gateways - Call Count.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -570,8 +570,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -584,12 +584,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Gateways - Call Cost.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Gateways - Call Cost.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -597,8 +597,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 
@@ -611,12 +611,12 @@
                             </div>
                             <div class="col-md-4">
 
-                                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                    <!-- panel head -->
-                                    <div class="panel-heading">
-                                        <div class="panel-title">Top 10 Gateways - Call Minutes.</div>
+                                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                    <!-- card shadow head -->
+                                    <div class="card-header py-3">
+                                        <div class="card-title">Top 10 Gateways - Call Minutes.</div>
 
-                                        {{--<div class="panel-options">
+                                        {{--<div class="card-options">
                                             <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -624,8 +624,8 @@
                                         </div>--}}
                                     </div>
 
-                                    <!-- panel body -->
-                                    <div class="panel-body">
+                                    <!-- card shadow body -->
+                                    <div class="card-body">
 
                                         <br />
 

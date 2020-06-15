@@ -9,7 +9,7 @@
   <li class="active"> <strong>Edit Theme</strong> </li>
 </ol>
 <h3>Edit Theme</h3>
-<div class="panel-title"> @include('includes.errors')
+<div class="card-title"> @include('includes.errors')
   @include('includes.success') </div>
 <div class="float-right">
   <button type="button"  class="save btn btn-primary btn-sm btn-icon icon-left" data-loading-text="Loading..."> <i class="entypo-floppy"></i> Save </button>
@@ -19,8 +19,8 @@
 <div class="row">
   <div class="col-md-12">
     <form role="form" id="form-themes-edit"  method="post"  class="form-horizontal form-groups-bordered">
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-body">
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-body">
           <div class="form-group">
             <label for="DomainUrl" class="col-sm-2 control-label">Domain Url
                 <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Domain Url example site.com" data-original-title="Domain Url" class="label label-info popover-primary">?</span>

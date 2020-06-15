@@ -77,7 +77,7 @@
     .gatewayloading{
         display:none;
         color: #ffffff;
-        background: #303641;
+        background: #4e73df;
         display: table;
         position: fixed;
         visibility: visible;
@@ -86,7 +86,7 @@
         left: 50%; top: auto;
         margin: 71px auto;
         z-index: 999;
-        border: 1px solid #303641;
+        border: 1px solid #4e73df;
     }
     #st1 a,#st2 a,#st3 a{
         cursor: default;
@@ -156,7 +156,7 @@
         width: 268px;
     }
 </style>
-<div class="panel">
+<div class="card">
 <form id="rootwizard-2" method="post" action="" class="form-wizard validate form-horizontal form-groups-bordered" enctype="multipart/form-data">
   <div style="display:none;" class="steps-progress">
     <div class="progress-indicator"></div>
@@ -834,18 +834,18 @@
         <div class="subcategorycontent" id="subcategorycontent{{$QuickBookDbData->Slug}}">
             <!-- quickbook form start-->
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Details
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-6  margin-top">
                             <div class="form-group">
@@ -915,18 +915,18 @@
                 </div>
             </div>
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Chart of Accounts Mapping
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="col-md-6  margin-top">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-4 control-label">Invoice:</label>
@@ -976,18 +976,18 @@
         <div class="subcategorycontent" id="subcategorycontent{{$QuickBookDesktopDbData->Slug}}">
             <!-- quickbook form start-->
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Chart of Accounts Mapping
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="col-md-6  margin-top">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-4 control-label">Invoice:</label>
@@ -1045,18 +1045,18 @@
         <div class="subcategorycontent" id="subcategorycontent{{$XeroDbData->Slug}}">
             <!-- Xero form start-->
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Details
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-6  margin-top">
                             <div class="form-group">
@@ -1097,18 +1097,18 @@
                 </div>
             </div>
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Chart of Accounts Mapping(For Journal Posting)
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="col-md-6  margin-top">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-4 control-label">Invoice:</label>

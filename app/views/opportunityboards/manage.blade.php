@@ -67,16 +67,16 @@
         <div class="row">
             <div class="col-md-12">
                 <form id="search-opportunity-filter" method="get"  action="" class="form-horizontal form-groups-bordered validate" novalidate>
-                    <div class="panel panel-primary" data-collapsed="0">
-                        <div class="panel-heading">
-                            <div class="panel-title">
+                    <div class="card shadow card-primary" data-collapsed="0">
+                        <div class="card-header py-3">
+                            <div class="card-title">
                                 Filter
                             </div>
-                            <div class="panel-options">
+                            <div class="card-options">
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <div class="form-group">
                                 <label for="field-1" class="col-sm-1 control-label">Name</label>
                                 <div class="col-sm-2">
@@ -298,7 +298,7 @@
                             }
                             action += '</div>';
                             @if(User::checkCategoryPermission('Task','Edit'))
-                            action += ' <a data-id="' + full[2] + '" title="Edit" class="edit-deal btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a data-id="' + full[2] + '" title="Edit" class="edit-deal btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                             @endif
                             return action;
                         }
@@ -1051,7 +1051,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-1 paddingleft-0">
-                                        <a class="btn btn-primary btn-xs reset" data-color="#303641" href="javascript:void(0)">
+                                        <a class="btn btn-primary btn-xs reset" data-color="#4e73df" href="javascript:void(0)">
                                             <i class="entypo-ccw"></i>
                                         </a>
                                     </div>

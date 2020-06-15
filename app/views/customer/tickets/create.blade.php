@@ -12,12 +12,12 @@
 <br>
 <div class="row">
   <div class="col-md-12">
-    <div class="panel panel-primary" data-collapsed="0">
-      <div class="panel-heading">
-        <div class="panel-title"> @lang('routes.CUST_PANEL_PAGE_NEW_TICKET_DETAIL_HEADER') </div>
-        <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+    <div class="card shadow card-primary" data-collapsed="0">
+      <div class="card-header py-3">
+        <div class="card-title"> @lang('routes.CUST_PANEL_PAGE_NEW_TICKET_DETAIL_HEADER') </div>
+        <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <form role="form" id="form-tickets-add" method="post" action="{{URL::to('/customer/tickets/create')}}" class="form-horizontal form-groups-bordered">
           <?php  $required = array();
 			   foreach($Ticketfields as $TicketfieldsData)

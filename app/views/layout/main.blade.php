@@ -34,34 +34,36 @@
 
     <body class="page-body gray">
 
-        <div class="page-container">
+    <div class="page-container">
 
-            @if(Session::get('reseller')==1)
-                @include('includes.resellerpanel.sidebar')
-            @else
-                @include('includes.sidebar')
-            @endif
+@if(Session::get('reseller')==1)
+    @include('includes.resellerpanel.sidebar')
+@else
+    @include('includes.sidebar')
+@endif
+<div class="top-content">
+
+    @if(Session::get('reseller')==1)
+        @include('includes.resellerpanel.dashboard-top')
+    @else
+        @include('includes.dashboard-top')
+    @endif
+    </div>
+    <div class="clearfix"></div>
+<div class="main-content">
+
+    <div id="content">
+        @yield('content')
+    </div>
+
+    @include('includes.footer')
+
+</div>
 
 
-            <div class="main-content">
+@include('layout.filter')
 
-                @if(Session::get('reseller')==1)
-                    @include('includes.resellerpanel.dashboard-top')
-                @else
-                    @include('includes.dashboard-top')
-                @endif
-                <div id="content">
-                    @yield('content')
-                </div>
-
-                @include('includes.footer')
-
-            </div>
-
-
-            @include('layout.filter')
-
-        </div>
+</div>
 
             @yield('footer_ext')
 

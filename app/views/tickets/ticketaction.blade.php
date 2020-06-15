@@ -78,9 +78,9 @@
     <div class="btn-group">
         <button type="button" class="btn btn-primary TicketStatus btn-sm btn-send-mail" data-status-id="">Send</button>
         <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split btn-sm btn-send-mail" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="caret"></span>
+            
         </button>
-        <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+        <ul class="dropdown-menu dropdown-menu-left" role="menu" >
             @foreach($ticketStatusArr as $statusId=>$status)
                 <li> <a href="javascript:;" class="TicketStatus" data-status-id="{{$statusId}}"> {{$status}}</a> </li>
             @endforeach

@@ -428,7 +428,7 @@
                                             action += '</span>';
 
 
-                                            _edit = ' <span class="float-right"><a href="#" class="edit-ratecompare btn btn-default btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>'+action+'</span>';
+                                            _edit = ' <span class="float-right"><a href="#" class="edit-ratecompare btn btn-primary btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>'+action+'</span>';
                                             str = '<span class="_column_rate">'+_rate +'</span><br>';
                                             str += '<span class="_column_effectiveDate">'+_effective_date+'</span>';
                                             str += '<span class="_column_rate_orig hidden">'+_rate_orig +'</span><br>';
@@ -441,7 +441,7 @@
                                         /*if (i > 0 ) {
 
                                             action += '</span>';
-                                            var _add = ' <span class="float-right"><a href="#" class="add-ratecompare btn btn-default btn-xs"><i class="entypo-plus"></i>&nbsp;</a>' + action + '</span>';
+                                            var _add = ' <span class="float-right"><a href="#" class="add-ratecompare btn btn-primary btn-xs"><i class="entypo-plus"></i>&nbsp;</a>' + action + '</span>';
                                             str += _add;
                                         }*/
                                     }

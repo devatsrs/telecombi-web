@@ -72,7 +72,7 @@ var postdata;
                          action += '<input type = "hidden"  name = "FlatStatus" value = "' + full[4] + '" / >';
                          action += '</div>';
                          <?php if(User::checkCategoryPermission('TaxRates','Edit')){ ?>
-                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-taxrate btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-taxrate btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                          <?php } ?>
                          <?php if(User::checkCategoryPermission('TaxRates','Delete')){ ?>
                             action += ' <a data-id="'+ id +'" title="Delete" class="delete-taxrate btn delete btn-danger btn-sm"><i class="entypo-trash"></i></a>';

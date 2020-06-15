@@ -122,9 +122,9 @@
                                 }
                                 action += '</div>';
                                 @if(User::checkCategoryPermission('DestinationGroup','Edit'))
-                                action += ' <a href="' + edit_url.replace("{id}",id) +'" title="Edit" class="edit-button btn btn-default btn-sm"><i class="entypo-pencil"></i></a>'
+                                action += ' <a href="' + edit_url.replace("{id}",id) +'" title="Edit" class="edit-button btn btn-primary btn-sm"><i class="entypo-pencil"></i></a>'
                                 @endif
-                                action += ' <a href="' + view_url.replace("{id}",id) +'" title="View" class="view-button btn btn-default btn-sm"><i class="fa fa-eye"></i></a>'
+                                action += ' <a href="' + view_url.replace("{id}",id) +'" title="View" class="view-button btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>'
                                 @if(User::checkCategoryPermission('DestinationGroup','Delete'))
                                 if(full[7]== null) {
                                     action += ' <a href="' + delete_url.replace("{id}", id) + '" title="Delete" class="delete-button btn btn-danger btn-sm"><i class="entypo-trash"></i></a>'

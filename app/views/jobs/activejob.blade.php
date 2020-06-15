@@ -1,13 +1,13 @@
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Active Jobs
         </div>
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <div class="text-right">
             <div class="refresh-collection"><a id="refreshjob" class="btn btn-primary save-collection"><undefined>Refresh</undefined></a></div>
             <!--<a  id="add-subscription" class=" btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-plus"></i>Add Subscription</a>-->

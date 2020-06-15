@@ -13,7 +13,7 @@
     }
 
     /* Page sections */
-    .panel{
+    .card{
         margin-bottom: 5px !important;
     }
     .page_section h3 {
@@ -61,18 +61,18 @@
     <div class="row page_section incident">
         <div class="col-md-12" >
             <form id="post_form_0" method=""  action="" class="form-horizontal post_form form-groups-bordered validate" novalidate>
-                <div class="panel panel-default make_round">
-                    <div class="panel-heading make_round " data-rel="collapse" data-collapsed="1">
-                        <div class="panel-title">
+                <div class="card shadow card-default make_round">
+                    <div class="card-header py-3 make_round " data-rel="collapse" data-collapsed="1">
+                        <div class="card-title">
 
                         </div>
                         @if(User::checkCategoryPermission('NoticeBoardPost','Edit'))
-                            <div class="panel-options ">
+                            <div class="card-options ">
                                 <a href="#" class="save_post" data-original-title="Save" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-floppy"></i></a>
                             </div>
                         @endif
                     </div>
-                    <div class="panel-body section_border_1 no_top_border make_round make_round_bottom_only">
+                    <div class="card-body section_border_1 no_top_border make_round make_round_bottom_only">
                         <div class="row">
                             <label for="field-1" class="col-md-2 control-label">Title*</label>
                             <div class="col-md-4">
@@ -108,12 +108,12 @@
         load_more_updates();
         if(window.location.hash) {
             var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-            var $selected_panel = $('#post_form_'+hash).find('[data-rel="collapse"]').closest('.panel');
+            var $selected_panel = $('#post_form_'+hash).find('[data-rel="collapse"]').closest('.card');
             if($selected_panel.length) {
-                var $first_panel = $('#timeline-ul [data-rel="collapse"]:first').closest('.panel');
-                $first_panel.children('.panel-body, .table').hide();
+                var $first_panel = $('#timeline-ul [data-rel="collapse"]:first').closest('.card');
+                $first_panel.children('.card-body, .table').hide();
                 $first_panel.attr('data-collapsed', 1);
-                $selected_panel.children('.panel-body, .table').show();
+                $selected_panel.children('.card-body, .table').show();
                 $selected_panel.attr('data-collapsed', 0);
 
             }
@@ -124,13 +124,13 @@
             ev.preventDefault();
 
             var $this = $(this),
-                    $panel = $this.closest('.panel'),
-                    $body = $panel.children('.panel-body, .table'),
-                    do_collapse = !$panel.hasClass('panel-collapse');
+                    $card shadow = $this.closest('.card'),
+                    $body = $card.children('.card-body, .table'),
+                    do_collapse = !$card.hasClass('card-collapse');
 
-            if ($panel.is('[data-collapsed="1"]'))
+            if ($card.is('[data-collapsed="1"]'))
             {
-                $panel.attr('data-collapsed', 0);
+                $card.attr('data-collapsed', 0);
                 $body.hide();
                 do_collapse = false;
             }
@@ -138,12 +138,12 @@
             if (do_collapse)
             {
                 $body.slideUp('normal', fit_main_content_height);
-                $panel.addClass('panel-collapse');
+                $card.addClass('card-collapse');
             }
             else
             {
                 $body.slideDown('normal', fit_main_content_height);
-                $panel.removeClass('panel-collapse');
+                $card.removeClass('card-collapse');
             }
         });
 
@@ -210,11 +210,11 @@
         });
         $(document).on('change', '.post_type', function(e) {
             e.preventDefault();
-            $(this).parents('form').find('.panel-heading').removeClass('post-none');
-            $(this).parents('form').find('.panel-heading').removeClass('post-error');
-            $(this).parents('form').find('.panel-heading').removeClass('post-info');
-            $(this).parents('form').find('.panel-heading').removeClass('post-warning');
-            $(this).parents('form').find('.panel-heading').first().addClass($(this).val());
+            $(this).parents('form').find('.card-header py-3').removeClass('post-none');
+            $(this).parents('form').find('.card-header py-3').removeClass('post-error');
+            $(this).parents('form').find('.card-header py-3').removeClass('post-info');
+            $(this).parents('form').find('.card-header py-3').removeClass('post-warning');
+            $(this).parents('form').find('.card-header py-3').first().addClass($(this).val());
         });
         $('.add_new_post').hide();
     });
@@ -273,8 +273,8 @@
     }
 
     function first_open(){
-        var $first_panel = $('#timeline-ul [data-rel="collapse"]:first').closest('.panel');
-        $first_panel.children('.panel-body, .table').show();
+        var $first_panel = $('#timeline-ul [data-rel="collapse"]:first').closest('.card');
+        $first_panel.children('.card-body, .table').show();
         $first_panel.attr('data-collapsed', 0);
     }
 </script>

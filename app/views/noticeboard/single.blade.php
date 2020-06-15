@@ -1,14 +1,14 @@
 <div class="row page_section incident">
     <div class="col-md-12" >
         <form id="post_form_{{$NoticeBoardPost->NoticeBoardPostID}}" method=""  action="" class="form-horizontal post_form form-groups-bordered validate" novalidate>
-        <div class="panel panel-default make_round"  data-collapsed="1">
-            <div class="panel-heading  make_round panel-collapse {{$NoticeBoardPost->Type}}" data-rel="collapse" >
-                <div class="panel-title ">
+        <div class="card shadow card-default make_round"  data-collapsed="1">
+            <div class="card-header py-3  make_round card-collapse {{$NoticeBoardPost->Type}}" data-rel="collapse" >
+                <div class="card-title ">
                     {{$NoticeBoardPost->Title}}
                 </div>
 
                 @if(Session::get('customer') == 0)
-                    <div class="panel-options ">
+                    <div class="card-options ">
                         <strong class="incident_time">{{cus_lang("CUST_PANEL_PAGE_NOTICEBOARD_MSG_UPDATED")}}  {{\Carbon\Carbon::createFromTimeStamp(strtotime($NoticeBoardPost->updated_at))->diffForHumans() }}</strong>
                         @if(User::checkCategoryPermission('NoticeBoardPost','Edit'))
                             <a href="#" class="save_post" data-original-title="Save" title="" data-placement="top" data-toggle="tooltip" data-id="{{$NoticeBoardPost->NoticeBoardPostID}}"><i class="entypo-floppy"></i></a>
@@ -18,12 +18,12 @@
                         @endif
                     </div>
                 @else
-                    <div class="panel-options ">
+                    <div class="card-options ">
                         <strong class="incident_time">{{cus_lang("CUST_PANEL_PAGE_NOTICEBOARD_MSG_UPDATED")}}  {{\Carbon\Carbon::createFromTimeStamp(strtotime($NoticeBoardPost->updated_at))->diffForHumans() }}</strong>
                     </div>
                 @endif
             </div>
-            <div class="panel-body section_border_1 no_top_border make_round make_round_bottom_only" style="display: none">
+            <div class="card-body section_border_1 no_top_border make_round make_round_bottom_only" style="display: none">
                 @if(Session::get('customer') == 0)
                 <div class="row">
 

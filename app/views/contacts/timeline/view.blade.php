@@ -21,7 +21,7 @@
         <div class=""> 
           <!--<div class="list-contact-slide" style="height:500px; overflow-x:scroll;"> -->
           <div class="list-contact-slide"> 
-            <!--contacts card start -->
+            <!--contacts card shadow start -->
             <div class="gridview">
               <ul class="clearfix grid col-md-12">
                 <li>
@@ -48,13 +48,13 @@
                         <div class="meta">Skype: <a class="sendemail" href="javascript:void(0)">{{$contacts->Skype}}</a></div>
                       </div>
                     </div>
-                    <div class="col-sm-11 padding-0 action"> <a class="btn-default btn-sm label padding-3" href="{{ URL::to('contacts/'.$contacts->ContactID.'/edit')}}"><i class="entypo-pencil"></i> </a></div>
+                    <div class="col-sm-11 padding-0 action"> <a class="btn-primary btn-sm label padding-3" href="{{ URL::to('contacts/'.$contacts->ContactID.'/edit')}}"><i class="entypo-pencil"></i> </a></div>
                   </div>
                 </li>
               </ul>
             </div>
             
-            <!--contacts card end --> 
+            <!--contacts card shadow end --> 
             
           </div>
         </div>

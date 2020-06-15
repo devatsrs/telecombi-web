@@ -77,10 +77,10 @@ return array(
         /** Primary RM Database **/
         'sqlsrv' => [
             'driver'   => 'mysql',
-            'host'     => getenv('DB_HOST'),
-            'database' => getenv('DB_DATABASE'),
-            'username' => getenv('DB_USERNAME'),
-            'password' => substr(getenv('DB_PASSWORD'),5),
+            'host'     => 'localhost',
+            'database' => 'NeonRMDev',
+            'username' => 'root',
+            'password' => 'root',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'   => '',
@@ -88,10 +88,10 @@ return array(
         /** Billing Database **/
         'sqlsrv2' => [
             'driver'   => 'mysql',
-            'host'     => getenv('DB_HOST2'),
-            'database' => getenv('DB_DATABASE2'),
-            'username' => getenv('DB_USERNAME2'),
-            'password' => substr(getenv('DB_PASSWORD2'),5),
+            'host'     => 'localhost',
+            'database' => 'NeonBillingDev',
+            'username' => 'root',
+            'password' => 'root',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'   => '',
@@ -99,10 +99,10 @@ return array(
         /** CDR Database **/
         'sqlsrvcdr' => [
             'driver'   => 'mysql',
-            'host'     => getenv('DB_HOSTCDR'),
-            'database' => getenv('DB_DATABASECDR'),
-            'username' => getenv('DB_USERNAMECDR'),
-            'password' => substr(getenv('DB_PASSWORDCDR'),5),
+            'host'     => 'localhost',
+            'database' => 'NeonCDRDev',
+            'username' => 'root',
+            'password' => 'root',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'   => '',
@@ -133,10 +133,10 @@ return array(
 		/** Neon Report Database **/
 		'neon_report' => [
 			'driver'    => 'mysql',
-			'host'      => getenv('DB_HOSTREPORT'),
-			'database'  => getenv('DB_DATABASEREPORT'),
-			'username'  => getenv('DB_USERNAMEREPORT'),
-			'password'  => substr(getenv('DB_PASSWORDREPORT'),5),
+            'host'     => 'localhost',
+            'database' => 'NeonReportDev',
+            'username' => 'root',
+            'password' => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

@@ -40,18 +40,18 @@
 <div class="col-md-12 form-horizontal">
 
 
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Account Details
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <div class="form-group">
             <label for="field-1" class="col-sm-2 text-right">First Name</label>
             <div class="col-sm-4">
@@ -145,7 +145,7 @@
              </div>
         </div>
 
-        <div class="panel-title  clear">
+        <div class="card-title  clear">
             Description
         </div>
         <div class="form-group">
@@ -155,18 +155,18 @@
         </div>
     </div>
 </div>
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Address Information
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <div class="form-group">
             <label for="field-1" class="col-sm-2 text-right">Address Line 1</label>
             <div class="col-sm-4">
@@ -202,18 +202,18 @@
         </div>
     </div>
 </div>
-<div class="panel panel-primary" data-collapsed="0">
+<div class="card shadow card-primary" data-collapsed="0">
 
-    <div class="panel-heading">
-        <div class="panel-title">
+    <div class="card-header py-3">
+        <div class="card-title">
             Notes
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         @if(User::checkCategoryPermission('Contacts','Add'))
         <div class="form-group">
             <form role="form" id="notes-from" method="post" action="{{URL::to('contacts/'.$contact->ContactID.'/store_note/')}}" class="form-horizontal form-groups-bordered">
@@ -246,7 +246,7 @@
                     <a href="{{URL::to('contacts/'.$contact->ContactID.'/store_note/')}}" class="btn-danger btn-sm deleteNote entypo-cancel" id="{{$note->NoteID}}"></a>
                     @endif
                     @if(User::checkCategoryPermission('Contacts','Edit'))
-                    <a href="{{URL::to('contacts/'.$contact->ContactID.'/delete_note/')}}" class="btn-default btn-sm editNote entypo-pencil" id="{{$note->NoteID}}"></a>
+                    <a href="{{URL::to('contacts/'.$contact->ContactID.'/delete_note/')}}" class="btn-primary btn-sm editNote entypo-pencil" id="{{$note->NoteID}}"></a>
                     @endif
 
                 </td>

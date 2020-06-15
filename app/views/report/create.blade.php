@@ -24,12 +24,12 @@
     @include('includes.success')
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-primary" data-collapsed="0">
-                <!-- panel head -->
-                <div class="panel-heading">
-                    <div class="panel-title">{{Input::get('report')=='run'?'<strong>'.$report->Name.'</strong>':'Report'}}</div>
+            <div class="card shadow card-primary" data-collapsed="0">
+                <!-- card shadow head -->
+                <div class="card-header py-3">
+                    <div class="card-title">{{Input::get('report')=='run'?'<strong>'.$report->Name.'</strong>':'Report'}}</div>
                     @if(User::checkCategoryPermission('Report','Update') )
-                    <div class="panel-options dropdown">
+                    <div class="card-options dropdown">
                         <a href="{{URL::to('report')}}"  data-original-title="Back" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-times"></i></a>
                         <a type="submit" id="save_report"  data-original-title="Save" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-floppy"></i></a>
                         @if(empty(Input::get('report')) && !empty($report))
@@ -81,8 +81,8 @@
                     @endif
 
                 </div>
-                <!-- panel body -->
-                <div class="panel-body">
+                <!-- card shadow body -->
+                <div class="card-body">
                     <form role="form" class="form-horizontal form-groups-bordered" id="report-row-col">
                         <div class="form-group " >
                             <div class="col-sm-2 {{Input::get('report')=='run'?'hidden':''}}">

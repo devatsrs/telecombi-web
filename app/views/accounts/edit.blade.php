@@ -70,18 +70,18 @@
 <div class="col-md-12">
     <form role="form" id="account-from" method="post" action="{{URL::to('accounts/update/'.$account->AccountID)}}" class="form-horizontal form-groups-bordered">
 
-        <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Account Details
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                 </div>
             </div>
 
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label class="col-md-2 control-label">Account Owner</label>
                     <div class="col-md-4">
@@ -284,7 +284,7 @@
                     });
                 </script>               
                 
-                <div class="panel-title desc clear">
+                <div class="card-title desc clear">
                     Description
                 </div>
                 <div class="form-group">
@@ -317,25 +317,25 @@
             </div>
         </div>
         @if( ($account->IsVendor == 1 || $account->IsCustomer == 1) && count($AccountApproval) > 0)
-            <div class="panel panel-primary" data-collapsed="0">
-                        <div class="panel-heading">
-                            <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                        <div class="card-header py-3">
+                            <div class="card-title">
                                 Account Verification Document
                             </div>
-                            <div class="panel-options">
+                            <div class="card-options">
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                             </div>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                         @foreach($AccountApproval as $row)
                             <div class="form-group ">
-                                <div class="panel-title desc col-md-3 ">
+                                <div class="card-title desc col-md-3 ">
                                     @if($row->Required == 1)
                                     *
                                     @endif
                                     {{$row->Key}}
                                 </div>
-                                <div class="panel-title desc col-md-4 table_{{$row->AccountApprovalID}}" >
+                                <div class="card-title desc col-md-4 table_{{$row->AccountApprovalID}}" >
                                 <?php
                                  $AccountApprovalList = AccountApprovalList::select('AccountApprovalID','AccountApprovalListID','FileName')->where(["AccountID"=> $account->AccountID,'AccountApprovalID'=>$row->AccountApprovalID])->get();
                                  ?>
@@ -389,18 +389,18 @@
                         </div>
                     </div>
         @endif
-        <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Address Information
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                 </div>
             </div>
 
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label class="col-md-2 control-label">Address Line 1</label>
                     <div class="col-md-4">
@@ -453,13 +453,13 @@
                 "saturday"=>"Saturday",
                 "sunday"=>"Sunday");
         ?>
-        <div class="panel panel-primary billing-section-hide"   data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary billing-section-hide"   data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Billing
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <div class="make-switch switch-small">
                         <input type="checkbox" @if($account->Billing == 1 )checked="" @endif name="Billing" value="1">
                     </div>
@@ -467,7 +467,7 @@
                 </div>
             </div>
 
-            <div class="panel-body billing-section">
+            <div class="card-body billing-section">
                 <div class="form-group">
                     <label class="col-md-2 control-label">Billing Class*</label>
                     <div class="col-md-4">
@@ -701,19 +701,19 @@
         @if(User::checkCategoryPermission('AccountService','View'))
             @include('accountservices.index')
         @endif
-        <div class="panel panel-primary" data-collapsed="0">
+        <div class="card shadow card-primary" data-collapsed="0">
 
-            <div class="panel-heading">
-                <div class="panel-title">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Payment Information
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                 </div>
             </div>
 
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label for="field-1s" class="col-md-3 control-label">Show All Available Payment Methods On Invoice
                         <span data-toggle="popover" data-trigger="hover" data-placement="top" data-content="if ON then customer can pay invoice by selecting any Available payment method, if OFF then customer can pay by only selected Preferred Payment Method" data-original-title="Show All Payment Methods On Invoice" class="label label-info popover-primary">?</span>
@@ -986,17 +986,17 @@
         $('[name="Billing"]').on( "change",function(e){
             if($('[name="Billing"]').prop("checked") == true){
                 $(".billing-section").show();
-                $(".billing-section-hide").nextAll('.panel').attr('data-collapsed',0);
-                $(".billing-section-hide").nextAll('.panel').find('.panel-body').show();
+                $(".billing-section-hide").nextAll('.card').attr('data-collapsed',0);
+                $(".billing-section-hide").nextAll('.card').find('.card-body').show();
                 $('.billing-section .select2-container').css('visibility','visible');
-                $("#subscription_filter").find('.panel-body').hide();
-                $("#oneofcharge_filter").find('.panel-body').hide();
-                $("#clitable_filter").find('.panel-body').hide();
-                $("#service_filter").find('.panel-body').hide();
+                $("#subscription_filter").find('.card-body').hide();
+                $("#oneofcharge_filter").find('.card-body').hide();
+                $("#clitable_filter").find('.card-body').hide();
+                $("#service_filter").find('.card-body').hide();
             }else{
                 $(".billing-section").hide();
-                $(".billing-section-hide").nextAll('.panel').attr('data-collapsed',1);
-                $(".billing-section-hide").nextAll('.panel').find('.panel-body').hide();
+                $(".billing-section-hide").nextAll('.card').attr('data-collapsed',1);
+                $(".billing-section-hide").nextAll('.card').find('.card-body').hide();
             }
         });
         $('[name="Billing"]').trigger('change');

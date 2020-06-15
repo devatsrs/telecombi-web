@@ -1,12 +1,12 @@
 <!-- default start -->
 
 <div class="hidden default-row">
-  <div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-      <div class="panel-title"> Behavior </div>
-      <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+  <div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+      <div class="card-title"> Behavior </div>
+      <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
       <div class="row">
         <div class="col-md-6 margin-top">
           <div class="form-group">
@@ -59,12 +59,12 @@
         <div class="modal-header"><strong>Properties </strong>: <span class="fldtype"></span></div>
         <div class="modal-body">
           <div class="before_body"></div>
-          <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> Detail </div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> Detail </div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -105,12 +105,12 @@
         <div class="modal-header"><strong>Properties </strong>: <span class="fldtype"></span></div>
         <div class="modal-body">
           <div class="before_body"></div>
-          <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> Detail </div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> Detail </div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -151,12 +151,12 @@
         <div class="modal-header"><strong>Properties </strong>: <span class="fldtype"></span></div>
         <div class="modal-body">
           <div class="before_body"></div>
-          <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> Detail </div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> Detail </div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -179,12 +179,12 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-primary fieldvalues" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> Values </div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card shadow card-primary fieldvalues" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> Values </div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="row">
                 <div class="fieldvaluescontect col-md-12">
                 <div class="col-md-12">
@@ -194,9 +194,9 @@
                 <div class="col-md-2">SLA timer</div>
                 </div>
                   <ul id="draggableValuesList" class="draggableValuesList">
-                    <li class="panel" id="">
-                      <div class="panel-head"><i class="fa fa-reorder"></i></div>
-                      <div class="panel-divbody">
+                    <li class="card" id="">
+                      <div class="card-head"><i class="fa fa-reorder"></i></div>
+                      <div class="card-divbody">
                       <div class="col-md-12">    
                         <div class="col-md-2">
                           <input type="text"  class="form-control" value="abcvasdf1" />

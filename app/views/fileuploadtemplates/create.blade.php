@@ -58,18 +58,18 @@
         <div class="col-md-12">
 
             <form role="form" id="file-form" method="post" action="{{$post_url}}" enctype="multipart/form-data" class="form-horizontal form-groups-bordered">
-                <div class="panel panel-primary" data-collapsed="0">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary" data-collapsed="0">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             Upload File
                         </div>
 
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         </div>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-2 control-label">Template Type</label>
                             <div class="col-sm-4">
@@ -111,18 +111,18 @@
             </form>
             @if(!empty($file_name))
             <form role="form" id="csvimporter-form" method="post" class="form-horizontal form-groups-bordered">
-                <div class="panel panel-primary" data-collapsed="0" id="csvimporter-form-data">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary" data-collapsed="0" id="csvimporter-form-data">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             Import Rules
                         </div>
 
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         </div>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-2 control-label">Delimiter:</label>
                             <div class="col-sm-4">
@@ -154,58 +154,58 @@
                         </p>
                     </div>
                 </div>
-                <div class="panel panel-primary" data-collapsed="0">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary" data-collapsed="0">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             Field Remapping
                         </div>
 
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse">{{--<i class="entypo-down-open"></i>--}}</a>
                         </div>
                     </div>
 
-                    <div class="panel-body field-remaping" id="field-remaping-1" style="{{ $TemplateTypeV==1 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-1" style="{{ $TemplateTypeV==1 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.customercdrtemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-2" style="{{ $TemplateTypeV==2 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-2" style="{{ $TemplateTypeV==2 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.vendorcdrtemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-3" style="{{ $TemplateTypeV==3 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-3" style="{{ $TemplateTypeV==3 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.accounttemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-4" style="{{ $TemplateTypeV==4 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-4" style="{{ $TemplateTypeV==4 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.leadstemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-5" style="{{ $TemplateTypeV==5 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-5" style="{{ $TemplateTypeV==5 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.dialstringtemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-6" style="{{ $TemplateTypeV==6 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-6" style="{{ $TemplateTypeV==6 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.accountipstemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-7" style="{{ $TemplateTypeV==7 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-7" style="{{ $TemplateTypeV==7 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.itemtemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-8" style="{{ $TemplateTypeV==8 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-8" style="{{ $TemplateTypeV==8 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.vendorratetemplate')
                     </div>
-                    <div class="panel-body field-remaping" id="field-remaping-9" style="{{ $TemplateTypeV==9 ? '' : 'display: none;' }}">
+                    <div class="card-body field-remaping" id="field-remaping-9" style="{{ $TemplateTypeV==9 ? '' : 'display: none;' }}">
                         @include('fileuploadtemplates.paymenttemplate')
                     </div>
                 </div>
             </form>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         File to be loaded
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body scrollx">
+                <div class="card-body scrollx">
                     <div id="table-4_processing" class="dataTables_processing hidden">Processing...</div>
                     <table class="table table-bordered datatable" id="table-4">
                         <thead>

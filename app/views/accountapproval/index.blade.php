@@ -124,7 +124,7 @@ var postdata;
                          action += '<input type = "hidden"  name = "CountryId" value = "' + full[9] + '" / >';
                          action += '</div>';
                          <?php if(User::checkCategoryPermission('AccountChecklist','Edit')){ ?>
-                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-config btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-config btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                          <?php } ?>
                          <?php if(User::checkCategoryPermission('AccountChecklist','Delete')){ ?>
                             action += ' <a data-id="'+ id +'" title="Delete" class="delete-config btn btn-danger btn-sm"><i class="entypo-trash"></i></a>';

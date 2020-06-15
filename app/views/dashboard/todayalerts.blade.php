@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="panel panel-primary panel-table">
-            <div class="panel-heading">
+        <div class="card shadow card-primary card-table">
+            <div class="card-header py-3">
                 <h3>Notification</h3>
             </div>
-            <div class="panel-body white-bg">
+            <div class="card-body white-bg">
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="nav nav-tabs">
@@ -16,8 +16,8 @@
                             <div class="tab-pane active" id="today" >
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="panel panel-default loading">
-                                            <div class="panel-body with-table">
+                                        <div class="card shadow card-default loading">
+                                            <div class="card-body with-table">
                                                 <table class="table table-bordered table-responsive today-alerts">
                                                     <thead>
                                                     <tr>
@@ -39,8 +39,8 @@
                             <div class="tab-pane" id="yesterday" >
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="panel panel-default loading">
-                                            <div class="panel-body with-table">
+                                        <div class="card shadow card-default loading">
+                                            <div class="card-body with-table">
                                                 <table class="table table-bordered table-responsive yesterday-alerts">
                                                     <thead>
                                                     <tr>
@@ -62,8 +62,8 @@
                             <div class="tab-pane" id="yesterday2" >
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="panel panel-default loading">
-                                            <div class="panel-body with-table">
+                                        <div class="card shadow card-default loading">
+                                            <div class="card-body with-table">
                                                 <table class="table table-bordered table-responsive yesterday2-alerts">
                                                     <thead>
                                                     <tr>

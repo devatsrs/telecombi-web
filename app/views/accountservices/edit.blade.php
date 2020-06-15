@@ -45,18 +45,18 @@
     <div class="col-md-12">
         <form id="service-edit-form" method="post" class="form-horizontal form-groups-bordered">
 
-            <div class="panel panel-primary " data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary " data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Invoice Description
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-md-2 control-label">Service Title
                             <span class="label label-info popover-primary" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="This Service Title will appear on the invoice" data-original-title="Service Title">?</span>
@@ -92,31 +92,31 @@
 
                     <!-- Account Option start -->
 
-            <div class="panel panel-primary additional-optional-section-hide" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary additional-optional-section-hide" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Additional Options
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
 
                     <!-- Account Tarrif start -->
-            <div class="panel panel-primary tarrif-section-hide" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary tarrif-section-hide" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Tariff
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-md-2 control-label">Inbound Tariff</label>
                         <div class="col-md-4">
@@ -152,13 +152,13 @@
                 "saturday"=>"Saturday",
                 "sunday"=>"Sunday");
         ?>
-        <div class="panel panel-primary billing-section-hide"   data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary billing-section-hide"   data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Billing
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <div class="make-switch switch-small">
                         <input type="checkbox" @if(isset($AccountBilling->ServiceBilling) && $AccountBilling->ServiceBilling == 1 )checked="" @endif name="ServiceBilling" value="1">
                     </div>
@@ -166,7 +166,7 @@
                 </div>
             </div>
 
-            <div class="panel-body billing-section">
+            <div class="card-body billing-section">
                 <div class="form-group">
                     <?php
                     $BillingStartDate = isset($AccountBilling->BillingStartDate)?$AccountBilling->BillingStartDate:'';
@@ -383,20 +383,20 @@
         var AccountBilling = '{{$AccountBilling}}';
 
         if(AccountBilling == false){
-            $(".billing-section-hide").addClass('panel-collapse');
-            $(".billing-section-hide").find('.panel-body').hide();
+            $(".billing-section-hide").addClass('card-collapse');
+            $(".billing-section-hide").find('.card-body').hide();
         }
 
         $('[name="ServiceBilling"]').on( "change",function(e){
             if($('[name="ServiceBilling"]').prop("checked") == true){
                 $(".billing-section").show();
-                $(".billing-section-hide").nextAll('.panel').attr('data-collapsed',0);
-                $(".billing-section-hide").nextAll('.panel').find('.panel-body').show();
+                $(".billing-section-hide").nextAll('.card').attr('data-collapsed',0);
+                $(".billing-section-hide").nextAll('.card').find('.card-body').show();
                 $('.billing-section .select2-container').css('visibility','visible');
             }else{
                 $(".billing-section").hide();
-                $(".billing-section-hide").nextAll('.panel').attr('data-collapsed',1);
-                $(".billing-section-hide").nextAll('.panel').find('.panel-body').hide();
+                $(".billing-section-hide").nextAll('.card').attr('data-collapsed',1);
+                $(".billing-section-hide").nextAll('.card').find('.card-body').hide();
             }
         });
         $('[name="ServiceBilling"]').trigger('change');
@@ -407,19 +407,19 @@
         var InDiscountPlanID = '{{$InboundDiscountPlanID}}';
 
         if(AccountBilling == false && InTariffID =='' && OutTariffID =='' && OutDiscountPlanID =='' && InDiscountPlanID ==''){
-            $(".additional-optional-section-hide").addClass('panel-collapse');
-            $(".additional-optional-section-hide").find('.panel-body').hide();
+            $(".additional-optional-section-hide").addClass('card-collapse');
+            $(".additional-optional-section-hide").find('.card-body').hide();
         }
 
 
         if(InTariffID =='' && OutTariffID ==''){
-            $(".tarrif-section-hide").addClass('panel-collapse');
-            $(".tarrif-section-hide").find('.panel-body').hide();
+            $(".tarrif-section-hide").addClass('card-collapse');
+            $(".tarrif-section-hide").find('.card-body').hide();
         }
 
         if(OutDiscountPlanID =='' && InDiscountPlanID ==''){
-            $(".discount-section-hide").addClass('panel-collapse');
-            $(".discount-section-hide").find('.panel-body').hide();
+            $(".discount-section-hide").addClass('card-collapse');
+            $(".discount-section-hide").find('.card-body').hide();
         }
 
         $("#save_service").click(function (ev) {

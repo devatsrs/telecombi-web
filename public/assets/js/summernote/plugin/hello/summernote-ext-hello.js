@@ -32,8 +32,8 @@
           contents: '<i class="fa fa-child"/> Hello',
           tooltip: 'hello',
           click: function () {
-            self.$panel.show();
-            self.$panel.hide(500);
+            self.$card.show();
+            self.$card.hide(500);
             // invoke insertText method with 'hello' on editor module.
             context.invoke('editor.insertText', 'hello');
           }
@@ -59,7 +59,7 @@
       // This method will be called when editor is initialized by $('..').summernote();
       // You can create elements for plugin
       this.initialize = function () {
-        this.$panel = $('<div class="hello-panel"/>').css({
+        this.$card = $('<div class="hello-card"/>').css({
           position: 'absolute',
           width: 100,
           height: 100,
@@ -68,14 +68,14 @@
           background: 'red'
         }).hide();
 
-        this.$panel.appendTo('body');
+        this.$card.appendTo('body');
       };
 
       // This methods will be called when editor is destroyed by $('..').summernote('destroy');
       // You should remove elements on `initialize`.
       this.destroy = function () {
-        this.$panel.remove();
-        this.$panel = null;
+        this.$card.remove();
+        this.$card = null;
       };
     }
   });

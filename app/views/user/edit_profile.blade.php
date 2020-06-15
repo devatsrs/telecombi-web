@@ -11,7 +11,7 @@
 </ol>
 <h3>Edit Profile</h3>
 
-<div class="panel-title">
+<div class="card-title">
     @include('includes.errors')
     @include('includes.success')
 </div>
@@ -32,19 +32,19 @@
 <div class="row">
     <div class="col-md-12">
         <form role="form" id="form-user-add"  method="post" action="{{URL::current()}}"  class="form-horizontal form-groups-bordered" enctype="multipart/form-data">
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         User Detail
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
 
 
                     <div class="form-group">
@@ -97,18 +97,18 @@
                 </div>
 
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Personal Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Picture</label>
                         <div class="col-sm-4">
@@ -123,17 +123,17 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Address Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 control-label">Address Line 1</label>
                         <div class="col-sm-4">

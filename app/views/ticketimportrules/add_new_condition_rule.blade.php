@@ -1,7 +1,7 @@
 <?php if($DataType=='condition'){ ?>
 <li class="sortable-item">
   <div class="custom_hours condition_sort_list form-group">
-    <div class="col-sm-1"><a title="Delete" class="btn btn-danger conditionentry clickable btn-xs btn-default btn-sm"><i class="entypo-trash"></i></a></div>
+    <div class="col-sm-1"><a title="Delete" class="btn btn-danger conditionentry clickable btn-xs btn-primary btn-sm"><i class="entypo-trash"></i></a></div>
     <div class="col-sm-3">
     
       <select name="condition[{{$counter}}][rule_condition]" class="form-control rule_condition drpdown">
@@ -33,7 +33,7 @@
   <?php }else if($DataType=='rule'){ ?>
   <li class="sortable-item">
   <div class="custom_hours form-group">
-    <div class="col-sm-1"><a title="Delete" class="btn btn-danger actionentry clickable btn-xs btn-default btn-sm"><i class="entypo-trash"></i></a></div>
+    <div class="col-sm-1"><a title="Delete" class="btn btn-danger actionentry clickable btn-xs btn-primary btn-sm"><i class="entypo-trash"></i></a></div>
     <div class="col-sm-3">
       <select name="rule[{{$counter}}][rule_action]" class="form-control rule_action drpdown">
         <option  selected value="">Select Action</option>

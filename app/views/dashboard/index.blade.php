@@ -10,20 +10,20 @@
         //$TotalDueCustomer = $dashboardData['data']['TotalDueCustomer'];//VendorRate::getRecentDueVendorRates();
         //$TotalDueVendor = $dashboardData['data']['TotalDueVendor'];
         ?>
-            <div class="panel panel-primary panel-table">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-table">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>Recent Due Rate Sheet</h3>
                         <span>Rate sheets due in next 2 days</span>
                     </div> 
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
                         <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <table id="duesheets" class="table table-responsive">
                         <thead>
                         <tr>
@@ -65,20 +65,20 @@
     ?>
     <?php if(User::checkCategoryPermission('Leads','View')){?>
         <div class="col-sm-6">
-                <div class="panel panel-primary panel-table">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary card-table">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             <h3>Recent Leads</h3>
                             <span>Recently Added Leads</span>
                         </div>
 
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                             <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
                             <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <table id="leads" class="table table-responsive">
                             <thead>
                             <tr>
@@ -103,20 +103,20 @@
         ?>
     <div class="clear"></div>
     <div class="col-sm-6">
-        <div class="panel panel-primary panel-table">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary card-table">
+            <div class="card-header py-3">
+                <div class="card-title">
                     <h3>Jobs (Pending Jobs:)</h3>
                     <span>Jobs logged by me </span>
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                      <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
                     <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <table id="jobs" class="table table-responsive">
                     <thead>
                         <tr>
@@ -139,20 +139,20 @@
 
     </div>
     <div class="col-sm-6">
-            <div class="panel panel-primary panel-table">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-table">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>Last 7 Days Processed Files</h3>
                         <span>Jobs Processed</span>
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
                         <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <table id="processedFile" class="table table-responsive">
                         <thead>
                         <tr>
@@ -173,20 +173,20 @@
     <!---Recent Accounts-->
     <?php if(User::checkCategoryPermission('Account','View')){?>
     <div class="col-sm-6">
-            <div class="panel panel-primary panel-table">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary card-table">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>Recent Accounts</h3>
                         <span>Recently Added Accounts</span>
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
                         <a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <table id="accounts" class="table table-responsive">
                         <thead>
                         <tr>
@@ -299,7 +299,7 @@
                     success: function (response) {
                         var jobs = response.Jobs;
                         html = '';
-                        table.parents('.panel-primary').find('.panel-title h3').html('Jobs (Pending Jobs:'+response.JobsCount[0]['totalpending']+')');
+                        table.parents('.card-primary').find('.card-title h3').html('Jobs (Pending Jobs:'+response.JobsCount[0]['totalpending']+')');
                         table.find('tbody').html('');
                         if(jobs.length > 0){
                             for (i = 0; i < jobs.length; i++) {
@@ -413,9 +413,9 @@
         load.accounts();
         //load.missingAccounts();
 
-        $('body').on('click', '.panel > .panel-heading > .panel-options > a[data-rel="reload"]', function(e){
+        $('body').on('click', '.card shadow > .card-header py-3 > .card-options > a[data-rel="reload"]', function(e){
             e.preventDefault();
-            var id = $(this).parents('.panel-primary').find('table').attr('id');
+            var id = $(this).parents('.card-primary').find('table').attr('id');
             if(id=='duesheets'){
                 load.duesheet();
             }else if(id=='leads'){
@@ -432,13 +432,13 @@
         });
 
         function loadingUnload(table,bit){
-            var panel = jQuery(table).closest('.panel');
+            var card shadow = jQuery(table).closest('.card');
             if(bit==1){
-                blockUI(panel);
-                panel.addClass('reloading');
+                blockUI(card);
+                card.addClass('reloading');
             }else{
-                unblockUI(panel)
-                panel.removeClass('reloading');
+                unblockUI(card)
+                card.removeClass('reloading');
             }
         }
     });

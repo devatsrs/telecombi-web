@@ -548,11 +548,11 @@
                                 action += '</div>';
                                 <?php if(User::checkCategoryPermission('RateTables','Edit')) { ?>
                                     if(DiscontinuedRates == 0) {
-                                        action += ' <a href="Javascript:;"  title="Edit" class="edit-rate-table btn btn-default btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                        action += ' <a href="Javascript:;"  title="Edit" class="edit-rate-table btn btn-primary btn-xs"><i class="entypo-pencil"></i>&nbsp;</a>';
                                     }
                                 <?php } ?>
 
-                                action += ' <a href="Javascript:;" title="History" class="btn btn-default btn-xs btn-history details-control"><i class="entypo-back-in-time"></i>&nbsp;</a>';
+                                action += ' <a href="Javascript:;" title="History" class="btn btn-primary btn-xs btn-history details-control"><i class="entypo-back-in-time"></i>&nbsp;</a>';
 
                                 if (id != null && id != 0) {
                                     <?php if(User::checkCategoryPermission('RateTables','Delete')) { ?>

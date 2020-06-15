@@ -18,12 +18,12 @@
 <div class="row">
   <div class="col-md-12">
     <form id="recurringinvoices_filter" method="get"    class="form-horizontal form-groups-bordered validate" novalidate>
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title"> Filter </div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title"> Filter </div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="form-group">
             <label for="field-1" class="col-sm-2 control-label">Account</label>
             <div class="col-sm-2"> {{ Form::select('AccountID', $accounts, '', array("class"=>"select2","data-allow-clear"=>"true","data-placeholder"=>"Select Account")) }} </div>
@@ -41,8 +41,8 @@
 <div class="row">
   <div  class="col-md-12">
     <div class="input-group-btn pull-right" style="width:70px;"> @if( User::checkCategoryPermission('RecurringProfile','Edit,Delete'))
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-      <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+      <ul class="dropdown-menu dropdown-menu-left" role="menu" >
           @if(User::checkCategoryPermission('RecurringProfile','Edit'))
               <li> <a data-action="changestatus_bulk" title="Active" data-startstop="1" href="javascript:void(0);" ><i class="entypo-check"></i>Active</a> </li>
               <li> <a data-action="changestatus_bulk" title="In Active" data-startstop="0" href="javascript:void(0);" ><i class="glyphicon glyphicon-ban-circle"></i> In Active</a> </li>
@@ -200,7 +200,7 @@ var postdata;
 
 
                         action += '<div class="btn-group">';
-                        action += ' <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action<span class="caret"></span></a>';
+                        action += ' <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action</a>';
                         action += '<ul class="dropdown-menu multi-level dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu">';
 
 

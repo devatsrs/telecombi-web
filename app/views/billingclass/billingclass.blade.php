@@ -20,9 +20,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab1" >
-                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel body -->
-                        <div class="panel-body">
+                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow body -->
+                        <div class="card-body">
                             <div class="form-group">
                                 <label for="field-1" class="col-sm-2 control-label">Class Name</label>
                                 <div class="col-sm-4">
@@ -41,9 +41,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                                 <label for="field-1" class="col-sm-2 control-label">Payment is expected within (Days)*</label>
                                 <div class="col-sm-4">
                                     <div class="input-spinner">
-                                        <button type="button" class="btn btn-default">-</button>
+                                        <button type="button" class="btn btn-primary">-</button>
                                         {{Form::text('PaymentDueInDays',( isset($BillingClass->PaymentDueInDays)?$BillingClass->PaymentDueInDays:'1' ),array("class"=>"form-control","data-min"=>0, "maxlength"=>"3", "data-max"=>300,"Placeholder"=>"Add Numeric value", "data-mask"=>"decimal"))}}
-                                        <button type="button" class="btn btn-default">+</button>
+                                        <button type="button" class="btn btn-primary">+</button>
                                     </div>
                                 </div>
                             </div>
@@ -51,9 +51,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                                 <label for="field-1" class="col-sm-2 control-label">Round Charged Amount (123.45)*</label>
                                 <div class="col-sm-4">
                                     <div class="input-spinner">
-                                        <button type="button" class="btn btn-default">-</button>
+                                        <button type="button" class="btn btn-primary">-</button>
                                         {{Form::text('RoundChargesAmount', ( isset($BillingClass->RoundChargesAmount)?$BillingClass->RoundChargesAmount:'2' ),array("class"=>"form-control", "maxlength"=>"1", "data-min"=>0,"data-max"=>6,"Placeholder"=>"Add Numeric value" , "data-mask"=>"decimal"))}}
-                                        <button type="button" class="btn btn-default">+</button>
+                                        <button type="button" class="btn btn-primary">+</button>
                                     </div>
                                 </div>
                                 <label for="field-1" class="col-sm-2 control-label">Billing Timezone*</label>
@@ -65,9 +65,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                                 <label for="field-1" class="col-sm-2 control-label">Round Charged CDR (123.45)*</label>
                                 <div class="col-sm-4">
                                     <div class="input-spinner">
-                                        <button type="button" class="btn btn-default">-</button>
+                                        <button type="button" class="btn btn-primary">-</button>
                                         {{Form::text('RoundChargesCDR', ( isset($BillingClass->RoundChargesCDR)?$BillingClass->RoundChargesCDR:'2' ),array("class"=>"form-control", "maxlength"=>"1", "data-min"=>0,"data-max"=>6,"Placeholder"=>"Add Numeric value" , "data-mask"=>"decimal"))}}
-                                        <button type="button" class="btn btn-default">+</button>
+                                        <button type="button" class="btn btn-primary">+</button>
                                     </div>
                                 </div>
                                 <label for="field-1" class="col-sm-2 control-label">Invoice Template*</label>
@@ -125,9 +125,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="invoice_tab" >
-                        <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                <!-- panel body -->
-                                <div class="panel-body">
+                        <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                <!-- card shadow body -->
+                                <div class="card-body">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Active</label>
                                         <div class="col-sm-4">
@@ -167,17 +167,17 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                                                             <td><button type="button" class=" remove-row btn btn-danger btn-xs">X</button></td>
                                                             <td>
                                                                 <div class="input-spinner">
-                                                                    <button type="button" class="btn btn-default">-</button>
+                                                                    <button type="button" class="btn btn-primary">-</button>
                                                                     <input type="text" name="InvoiceReminder[Day][]" class="form-control" id="field-1" placeholder="" value="{{$Day}}" Placeholder="Add Numeric value" data-mask="decimal"/>
-                                                                    <button type="button" class="btn btn-default">+</button>
+                                                                    <button type="button" class="btn btn-primary">+</button>
                                                                 </div>
 
                                                             </td>
                                                             <td>
                                                                 <div class="input-spinner">
-                                                                    <button type="button" class="btn btn-default">-</button>
+                                                                    <button type="button" class="btn btn-primary">-</button>
                                                                     <input type="text" name="InvoiceReminder[Age][]" class="form-control" id="field-1" placeholder="" value="{{$InvoiceReminders->Age[$InvoiceReminder]}}" Placeholder="Add Numeric value" data-mask="decimal"/>
-                                                                    <button type="button" class="btn btn-default">+</button>
+                                                                    <button type="button" class="btn btn-primary">+</button>
                                                                 </div>
 
                                                             </td>
@@ -195,9 +195,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                             </div>
                     </div>
                     <div class="tab-pane " id="account_tab" >
-                        <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                <!-- panel body -->
-                                <div class="panel-body">
+                        <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                <!-- card shadow body -->
+                                <div class="card-body">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Active</label>
                                         <div class="col-sm-4">
@@ -256,9 +256,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                 </div>
             </div>
             <div class="tab-pane" id="tab3" >
-                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel body -->
-                        <div class="panel-body">
+                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow body -->
+                        <div class="card-body">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Active</label>
                                 <div class="col-sm-4">
@@ -316,9 +316,9 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
                     </div>
             </div>
             <div class="tab-pane" id="tab4" >
-                <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                    <!-- panel body -->
-                    <div class="panel-body">
+                <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                    <!-- card shadow body -->
+                    <div class="card-body">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Active</label>
                             <div class="col-sm-4">
@@ -388,14 +388,14 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
     </div>
     @if(isset($accounts) && count($accounts))
     <div class="col-sm-12">
-        <div data-collapsed="0" class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div data-collapsed="0" class="card shadow card-primary">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Accounts
                 </div>
-                <div class="panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> </div>
+                <div class="card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="bootstrap-tagsinput">
                     @foreach($accounts as $account)
                         <span class="tag label label-info">{{$account->AccountName}}</span>
@@ -413,8 +413,8 @@ $pbxaccountblock_count = CronJob::where(['CompanyID'=>$CompanyID,'CronJobCommand
 <script src="{{ URL::asset('assets/js/billing_class.js') }}"></script>
 <script>
     var template_dp_html =  '{{Form::select('InvoiceReminder[TemplateID][]', $emailTemplates, '' ,array("class"=>"select22 select2add small form-control","data-type"=>'email_template','data-active'=>0,'data-modal'=>'add-new-modal-template'))}}';
-    var add_row_html_payment = '<tr class="itemrow hidden"><td><button type="button" class=" remove-row btn btn-danger btn-xs">X</button></td><td><div class="input-spinner"><button type="button" class="btn btn-default">-</button><input type="text" name="InvoiceReminder[Day][]" class="form-control" id="field-1" placeholder="" value="" Placeholder="Add Numeric value" data-mask="decimal"/><button type="button" class="btn btn-default">+</button></div></td>';
-    add_row_html_payment += '<td><div class="input-spinner"><button type="button" class="btn btn-default">-</button><input type="text" name="InvoiceReminder[Age][]" class="form-control" id="field-1" placeholder="" value="" Placeholder="Add Numeric value" data-mask="decimal"/><button type="button" class="btn btn-default">+</button></div></td>';
+    var add_row_html_payment = '<tr class="itemrow hidden"><td><button type="button" class=" remove-row btn btn-danger btn-xs">X</button></td><td><div class="input-spinner"><button type="button" class="btn btn-primary">-</button><input type="text" name="InvoiceReminder[Day][]" class="form-control" id="field-1" placeholder="" value="" Placeholder="Add Numeric value" data-mask="decimal"/><button type="button" class="btn btn-primary">+</button></div></td>';
+    add_row_html_payment += '<td><div class="input-spinner"><button type="button" class="btn btn-primary">-</button><input type="text" name="InvoiceReminder[Age][]" class="form-control" id="field-1" placeholder="" value="" Placeholder="Add Numeric value" data-mask="decimal"/><button type="button" class="btn btn-primary">+</button></div></td>';
     add_row_html_payment += '<td>'+template_dp_html+'</td><tr>';
     $('#rowContainer').append(add_row_html_payment);
     var target = '';

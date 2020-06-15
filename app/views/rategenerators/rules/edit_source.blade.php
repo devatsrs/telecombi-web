@@ -1,16 +1,16 @@
-<div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
 
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
 
-                <div class="panel-body">
+                <div class="card-body">
                     <form  id="rategenerator-source-from"  action="{{URL::to('rategenerators/rules/'.$id.'/update_source/'.$RateRuleID)}}" method="post" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
                         <div class="form-group">
                             <div class="" style="max-height: 500px; overflow-y: auto; overflow-x: hidden;">

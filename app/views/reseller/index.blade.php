@@ -133,7 +133,7 @@
                         action += '<input type = "hidden"  name = "ChildCompanyID" value = "' + (full[8] != null ? full[8] : 0) + '" / >';
                         action += '</div>';
                         <?php if(User::checkCategoryPermission('Reseller','Edit')){ ?>
-                                action += ' <a data-name = "'+full[1]+'" data-id="'+ full[0] +'" title="Edit" class="edit-reseller btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                action += ' <a data-name = "'+full[1]+'" data-id="'+ full[0] +'" title="Edit" class="edit-reseller btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                         <?php } ?>
                         <?php if(User::checkCategoryPermission('Reseller','Delete')){ ?>
                                 action += ' <a data-id="'+ full[0] +'" title="Delete" class="delete-reseller btn btn-danger btn-sm"><i class="entypo-trash"></i></a>';

@@ -10,12 +10,12 @@
 <div class="row">
   <div class="col-md-12">
     <form id="invoice_filter" method="get"    class="form-horizontal form-groups-bordered validate" novalidate>
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title"> @lang('routes.CUST_PANEL_FILTER_TITLE') </div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title"> @lang('routes.CUST_PANEL_FILTER_TITLE') </div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="form-group">
             <label for="field-1" class="col-sm-1 control-label">@lang('routes.CUST_PANEL_PAGE_INVOICE_FILTER_FIELD_TYPE')</label>
             <div class="col-sm-2"> {{Form::select('InvoiceType',Invoice::$invoice_type_customer,Input::get('InvoiceType'),array("class"=>"select2 small"))}} </div>
@@ -174,10 +174,10 @@ var postdata;
                                  }
                                  action += '</div>';
                                  if (full[0] == '{{Invoice::INVOICE_OUT}}'){
-                                     action += ' <a href="'+invoice_preview+'" target="_blank" title="@lang('routes.BUTTON_VIEW_CAPTION')" class="view-invoice-sent btn btn-default btn-sm"><i class="fa fa-eye"></i></a>';
+                                     action += ' <a href="'+invoice_preview+'" target="_blank" title="@lang('routes.BUTTON_VIEW_CAPTION')" class="view-invoice-sent btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                                  }else{
                                      action += ' <a></a>';
-                                     action += ' <a title="@lang('routes.BUTTON_VIEW_CAPTION')" class="view-invoice-in btn btn-default btn-sm"><i class="fa fa-eye"></i></a>';
+                                     action += ' <a title="@lang('routes.BUTTON_VIEW_CAPTION')" class="view-invoice-in btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                                  }
 
                                  return action;

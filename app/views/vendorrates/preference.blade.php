@@ -67,18 +67,18 @@
 <div class="row">
 <div class="col-md-12">
        <form role="form" id="vendor-rate-search" method="get"  action="{{URL::to('vendor_rates/'.$id.'/search')}}" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-        <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+                <div class="card-title">
                     Search
                 </div>
 
-                <div class="panel-options">
+                <div class="card-options">
                     <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                 </div>
             </div>
 
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="form-group">
                     <label for="field-1" class="col-sm-1 control-label">Code</label>
                     <div class="col-sm-3">
@@ -200,7 +200,7 @@ jQuery(document).ready(function($) {
                                 }
                                 action += '</div>';
 
-                                action += ' <a href="Javascript:;" title="Edit" class="edit-vendor-rate btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                action += ' <a href="Javascript:;" title="Edit" class="edit-vendor-rate btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
 
                                 return action;
                             }

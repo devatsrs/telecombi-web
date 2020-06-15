@@ -170,8 +170,8 @@
                             action += '</div>';
                             var Status = full[2];
                             @if(User::checkCategoryPermission('Report','Update'))
-                                action += ' <a href="' + report_schedule_url.replace("{id}", id) + '" class="schedule_report btn btn-default btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
-                                action += ' <a href="' + report_history_url+'?ReportScheduleID=' +id+'" class="btn btn-default btn-sm tooltip-primary" data-original-title="History" title="" data-placement="top" data-toggle="tooltip"><i class="glyphicon glyphicon-time"></i>&nbsp;</a>';
+                                action += ' <a href="' + report_schedule_url.replace("{id}", id) + '" class="schedule_report btn btn-primary btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                action += ' <a href="' + report_history_url+'?ReportScheduleID=' +id+'" class="btn btn-primary btn-sm tooltip-primary" data-original-title="History" title="" data-placement="top" data-toggle="tooltip"><i class="glyphicon glyphicon-time"></i>&nbsp;</a>';
                             @endif
 
                                     @if(User::checkCategoryPermission('Report','Delete'))

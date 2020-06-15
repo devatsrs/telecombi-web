@@ -25,11 +25,11 @@
     <div class="row">
       <div class="col-md-12">
         <form novalidate class="form-horizontal form-groups-bordered validate" method="post" id="bulk_upload" enctype="multipart/form-data">
-          <div data-collapsed="0" class="panel panel-primary">
-            <div class="panel-heading">
-              <div class="panel-title"> CDR Upload </div>
+          <div data-collapsed="0" class="card shadow card-primary">
+            <div class="card-header py-3">
+              <div class="card-title"> CDR Upload </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="field-1">Upload Template</label>
                 <div class="col-sm-3"> {{ Form::select('FileUploadTemplateID', $UploadTemplate, '' , array("class"=>"select2 small")) }} </div>
@@ -62,11 +62,11 @@
     <div class="row hidden" id="add-template">
       <div class="col-md-12">
         <form id="add-template-form" method="post">
-          <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> Add New Template </div>
+          <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> Add New Template </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="form-group">
                 <label for="field-1" class="col-sm-2 control-label">Template Name:</label>
                 <div class="col-sm-4">
@@ -76,10 +76,10 @@
               <br />
               <br />
             </div>
-            <div class="panel-heading">
-              <div class="panel-title">CSV Importer </div>
+            <div class="card-header py-3">
+              <div class="card-title">CSV Importer </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="form-group">
                 <label for="field-1" class="col-sm-2 control-label">Delimiter:</label>
                 <div class="col-sm-4">
@@ -106,12 +106,12 @@
               </p>
             </div>
           </div>
-          <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> Field Remapping </div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> Field Remapping </div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body" id="mapping">
+            <div class="card-body" id="mapping">
               <div class="form-group">
                 <label for="field-1" class="col-sm-2 control-label">Connect DateTime*</label>
                 <div class="col-sm-4"> {{Form::select('selection[connect_datetime]', array(),'',array("class"=>"select2 small"))}} </div>
@@ -169,12 +169,12 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-primary" data-collapsed="0">
-            <div class="panel-heading">
-              <div class="panel-title"> CSV File to be loaded </div>
-              <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+          <div class="card shadow card-primary" data-collapsed="0">
+            <div class="card-header py-3">
+              <div class="card-title"> CSV File to be loaded </div>
+              <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body scrollx">
+            <div class="card-body scrollx">
               <table class="table table-bordered datatable" id="table-4">
                 <thead>
                   <tr> </tr>

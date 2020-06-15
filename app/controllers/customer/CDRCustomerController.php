@@ -109,7 +109,7 @@ class CDRCustomerController extends BaseController {
 
     public function generate_html($excel_data){
         $body = '<style>.bg_graycolor{
-                background-color: #f5f5f6;
+                background-color: #fff;
                 font-family: Sans-Serif;
             }
             .bg_graycolor th, .bg_graycolor td{

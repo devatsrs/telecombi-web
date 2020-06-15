@@ -1,13 +1,13 @@
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Emails
         </div>
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <div class="text-right">
             <a  id="SendMail" class=" btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-plus"></i>Send Email</a>
             <div class="clear clearfix"><br></div>
@@ -56,7 +56,7 @@
                                     var view_ = "{{ URL::to('/accounts/'.$account->AccountID.'/activities/{id}/view_email_log/')}}";
                                     delete_ = delete_.replace('{id}', id);
                                     view_ = view_.replace('{id}', id);
-                                    action = ' <a href="' + view_ + '" title="View" class="view-Email btn btn-default btn-sm"><i class="fa fa-eye"></i></a>'
+                                    action = ' <a href="' + view_ + '" title="View" class="view-Email btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>'
                                     action += ' <a href="' + delete_ + '" title="Delete" class="btn delete-Email btn-danger btn-sm"><i class="entypo-trash"></i></a>'
                                     return action;
                                 }

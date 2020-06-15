@@ -70,8 +70,8 @@
                     <div  class="col-md-12">
                         @if(User::checkCategoryPermission('Products','Edit'))
                         <div class="input-group-btn pull-right hidden dropdown" style="width:70px;">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action </button>
+                            <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                                 @if(User::checkCategoryPermission('Products','Edit'))
                                     <li class="li_active">
                                         <a class="type_active_deactive" type_ad="active" href="javascript:void(0);" >
@@ -237,11 +237,11 @@
                                     action += '</div>';
                                     if(full[3]!='topup') {
                                         <?php if(User::checkCategoryPermission('Products', 'Edit')){ ?>
-                                                action += ' <a data-name = "' + full[1] + '" data-id="' + full[0] + '" title="Edit" class="edit-product btn btn-default btn-sm btn-smtooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
-                                        action += ' <a data-name = "' + full[1] + '" data-id="' + full[0] + '" title="CLone" class="clone-product btn btn-default btn-smtooltip-primary" data-original-title="Clone" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-clone"></i>&nbsp;</a>';
+                                                action += ' <a data-name = "' + full[1] + '" data-id="' + full[0] + '" title="Edit" class="edit-product btn btn-primary btn-sm btn-smtooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                        action += ' <a data-name = "' + full[1] + '" data-id="' + full[0] + '" title="CLone" class="clone-product btn btn-primary btn-smtooltip-primary" data-original-title="Clone" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-clone"></i>&nbsp;</a>';
                                         <?php } ?>
                                                 <?php if(User::checkCategoryPermission('Products', 'Delete') ){ ?>
-                                                action += ' <a href="' + delete_ + '" data-redirect="{{ URL::to('products')}}" title="Delete"  class="btn delete btn-danger btn-default btn-sm btn-smtooltip-primary" data-original-title="Delete" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-trash"></i></a>';
+                                                action += ' <a href="' + delete_ + '" data-redirect="{{ URL::to('products')}}" title="Delete"  class="btn delete btn-danger btn-primary btn-sm btn-smtooltip-primary" data-original-title="Delete" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-trash"></i></a>';
                                         <?php } ?>
                                     }
                                     return action;

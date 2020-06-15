@@ -143,8 +143,8 @@ jQuery(document).ready(function ($) {
                      }
                      action += '</div>';
                      <?php if(User::checkCategoryPermission('BillingSubscription','Edit')) { ?>
-                        action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-billing_subscription btn btn-default btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
-                        action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Clone" class="clone-billing_subscription btn btn-default btn-sm tooltip-primary" data-original-title="Clone" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-clone"></i>&nbsp;</a>';
+                        action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Edit" class="edit-billing_subscription btn btn-primary btn-sm tooltip-primary" data-original-title="Edit" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-pencil"></i>&nbsp;</a>';
+                        action += ' <a data-name = "'+full[0]+'" data-id="'+ id +'" title="Clone" class="clone-billing_subscription btn btn-primary btn-sm tooltip-primary" data-original-title="Clone" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-clone"></i>&nbsp;</a>';
                     <?php } ?>
                      <?php if(User::checkCategoryPermission('BillingSubscription','Delete')) { ?>
                         action += ' <a data-id="'+ id +'" title="Delete" class="delete-billing_subscription btn delete btn-danger btn-sm tooltip-primary" data-original-title="Delete" title="" data-placement="top" data-toggle="tooltip"><i class="entypo-trash"></i></a>';

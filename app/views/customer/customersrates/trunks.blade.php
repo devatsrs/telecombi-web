@@ -38,16 +38,16 @@
         <div class="row">
             <div class="col-md-12">
                 <form  id="CustomerTrunk-form" method="post" action="#" >
-                <div class="panel panel-primary" data-collapsed="0">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="card shadow card-primary" data-collapsed="0">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             @lang("routes.CUST_PANEL_PAGE_CUSTOMERS_RATES_TAB_SETTINGS_TAB_OUTGOING_TITLE")
                         </div>
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <table class="table table-bordered datatable" id="table-4">
                             <thead>
                                 <tr>

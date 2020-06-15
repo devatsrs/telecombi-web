@@ -30,12 +30,12 @@
     <div class="tab-pane active" id="customer" >
       <div class="col-md-12">
         <form novalidate class="form-horizontal form-groups-bordered filter validate" method="post" id="gateway_form">
-          <div data-collapsed="0" class="panel panel-primary">
-            <div class="panel-heading">
-              <div class="panel-title">Filter</div>
-              <div class="panel-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> </div>
+          <div data-collapsed="0" class="card shadow card-primary">
+            <div class="card-header py-3">
+              <div class="card-title">Filter</div>
+              <div class="card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <div class="form-group">
                 <label class="col-sm-1 control-label" for="field-1">Gateway</label>
                 <div class="col-sm-3"> {{ Form::select('Gateway',$gateway,$id,array("class"=>"select2")) }} </div>
@@ -118,7 +118,7 @@ var postdata;
                          action += '</div>';
 
                          <?php if(User::checkCategoryPermission('Gateway','Edit') ){ ?>
-                            action += ' <a data-name = "'+full[0]+'" data-id="'+ full[3]+'" title="Title" class="edit-config btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                            action += ' <a data-name = "'+full[0]+'" data-id="'+ full[3]+'" title="Title" class="edit-config btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                          <?php } ?>
                          <?php if(User::checkCategoryPermission('Gateway','Delete') ){ ?>
                             //action += ' <a data-id="'+ full[4] +'" class="delete-config btn delete btn-danger btn-sm btn-icon icon-left"><i class="entypo-trash"></i>Delete </a>';

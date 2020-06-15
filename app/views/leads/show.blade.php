@@ -38,18 +38,18 @@
 
 <div class="row">
     <div class="col-md-12 form-horizontal">
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Lead Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">Lead Owner</label>
                         <div class="col-sm-4">
@@ -165,7 +165,7 @@
                         </div>
                     </div>
 
-                    <div class="panel-title  clear">
+                    <div class="card-title  clear">
                         Description
                     </div>
                     <div class="form-group">
@@ -175,18 +175,18 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Address Information
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">Address Line 1</label>
                         <div class="col-sm-4">
@@ -223,18 +223,18 @@
                 </div>
 
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Notes
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     @if(User::checkCategoryPermission('Leads','Add'))
                     <div class="form-group">
                         <form role="form" id="notes-from" method="post" action="{{URL::to('leads/'.$lead->AccountID.'/store_note/')}}" class="form-horizontal form-groups-bordered">
@@ -265,7 +265,7 @@
                             <td>
                                 @if(User::checkCategoryPermission('Leads','Edit'))
                                     <a href="{{URL::to('leads/'.$lead->AccountID.'/store_note/')}}" class="btn-danger btn-sm deleteNote entypo-cancel" id="{{$note->NoteID}}"></a>
-                                    <a href="{{URL::to('leads/'.$lead->AccountID.'/delete_note/')}}" class="btn-default btn-sm editNote entypo-pencil" id="{{$note->NoteID}}"></a>
+                                    <a href="{{URL::to('leads/'.$lead->AccountID.'/delete_note/')}}" class="btn-primary btn-sm editNote entypo-pencil" id="{{$note->NoteID}}"></a>
                                 @endif
                             </td>
                             <td >
@@ -282,20 +282,20 @@
                 </div>
             </div>
 
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Contacts
                     </div>
 
 
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
 
                     <table class="table table-bordered table-hover responsive">
                         <thead>
@@ -316,14 +316,14 @@
                             <td class="center">
                                 @if(User::checkCategoryPermission('Contacts','Edit'))
                                 <a href="{{ URL::to('contacts/'.$contact->ContactID.'/edit')}}"
-                                   class="btn btn-default btn-sm btn-icon icon-left">
+                                   class="btn btn-primary btn-sm btn-icon icon-left">
                                     <i class="entypo-pencil"></i>
                                     Edit
                                 </a>
                                 @endif
                                 @if(User::checkCategoryPermission('Contacts','View'))
                                 <a href="{{ URL::to('contacts/'.$contact->ContactID.'/show')}}"
-                                   class="btn btn-default btn-sm btn-icon icon-left">
+                                   class="btn btn-primary btn-sm btn-icon icon-left">
                                     <i class="entypo-pencil"></i>
                                     View
                                 </a>

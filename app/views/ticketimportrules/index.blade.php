@@ -60,10 +60,10 @@
                                     var action = '';
 
                                     @if(User::checkCategoryPermission('TicketImportRules','Edit'))
-                                          action += '<a  href="' + edit_ + '" title="Edit" class="btn btn-sm btn-default"><i class="entypo-pencil"></i></a>';                                    @endif
+                                          action += '<a  href="' + edit_ + '" title="Edit" class="btn btn-sm btn-primary"><i class="entypo-pencil"></i></a>';                                    @endif
 									
 									 @if(User::checkCategoryPermission('TicketImportRules','Add'))
-                                            action += '&nbsp;<a title="Clone"  href="' + clone_ + '" class="btn btn-sm btn-default"><i class="fa fa-clone"></i></a>';
+                                            action += '&nbsp;<a title="Clone"  href="' + clone_ + '" class="btn btn-sm btn-primary"><i class="fa fa-clone"></i></a>';
                                     @endif
 
                                             @if(User::checkCategoryPermission('TicketImportRules','Delete'))											

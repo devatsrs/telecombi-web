@@ -121,9 +121,9 @@
                                 }
                                 action += '</div>';
                                 @if(User::checkCategoryPermission('DiscountPlan','Edit'))
-                                action += ' <a href="' + edit_url.replace("{id}",id) +'" title="Edit" class="edit-button btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
+                                action += ' <a href="' + edit_url.replace("{id}",id) +'" title="Edit" class="edit-button btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
                                 @endif
-                                action += ' <a href="' + view_url.replace("{id}",id) +'" title="View" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>'
+                                action += ' <a href="' + view_url.replace("{id}",id) +'" title="View" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>'
                                 @if(User::checkCategoryPermission('DiscountPlan','Delete'))
                                 if(full[9]== null) {
                                     action += ' <a href="' + delete_url.replace("{id}", id) + '" title="Delete" class="delete-button btn btn-danger btn-sm"><i class="entypo-trash"></i></a>'

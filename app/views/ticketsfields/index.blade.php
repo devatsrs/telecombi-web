@@ -10,8 +10,8 @@
   <div class="row dropdown">
     <div  class="col-md-12">
       <div class="input-group-btn pull-right" style="width:86px;">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Add New <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Add New </button>
+        <ul class="dropdown-menu dropdown-menu-left" role="menu" >
           <li> <a class="add_new_field" field_type="custom_text"  	  FieldDomType="text" 		href="javascript:void(0)">  <span>Textbox</span> </a> </li>
           <li> <a class="add_new_field" field_type="custom_paragraph" FieldDomType="paragraph" 	href="javascript:void(0)">  <span>Textarea</span> </a> </li>
           <li> <a class="add_new_field" field_type="custom_checkbox"  FieldDomType="checkbox" 	href="javascript:void(0)">  <span>Checkbox</span> </a> </li>

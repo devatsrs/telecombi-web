@@ -18,16 +18,16 @@
 <div class="row">
     <div class="col-md-12">
         <form novalidate="novalidate" class="form-horizontal form-groups-bordered validate" method="post" id="summer_filter">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Filter
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label class="col-sm-1 control-label" for="field-1">Start date</label>
                         <div class="col-sm-2">

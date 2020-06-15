@@ -27,8 +27,8 @@
   <p class="text-right">
     <button type="submit" class="btn save btn-primary btn-icon btn-sm icon-left hidden-print" data-loading-text="Loading..."> Save<i class="entypo-floppy"></i> </button>
     <a href="{{URL::to('/invoice')}}" class="btn btn-danger btn-sm btn-icon icon-left"> <i class="entypo-cancel"></i> Close </a> </p>
-  <div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-body">
+  <div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-body">
       <div class="form-group">
         <div class="col-sm-4">
           <label for="field-1" class="col-sm-3 control-label">*Client</label>

@@ -81,7 +81,7 @@ acceptance of those changes.<o:p></o:p></span></p><ol start="1" type="1">
        mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-fareast-language:
        EN-GB"> means a situation where We have initially received payment from
        You, but that payment has been subsequently rejected by You or Your
-       credit or debit card issuer and the payment sums are returned to You.<o:p></o:p></span></li>
+       credit or debit card shadow issuer and the payment sums are returned to You.<o:p></o:p></span></li>
                 <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
        auto;line-height:normal;mso-list:l1 level3 lfo2;tab-stops:list 1.5in"><b><span lang="EN-GB" style="font-size:12.0pt;mso-fareast-font-family:&quot;Times New Roman&quot;;
        mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-fareast-language:
@@ -584,7 +584,7 @@ acceptance of those changes.<o:p></o:p></span></p><ol start="1" type="1">
        auto;line-height:normal;mso-list:l1 level3 lfo2;tab-stops:list 1.5in"><span lang="EN-GB" style="font-size:12.0pt;mso-fareast-font-family:&quot;Times New Roman&quot;;
        mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-fareast-language:
        EN-GB">ensure that We have Your correct name, postal address, phone, fax
-       and email information and credit and/or debit card details at all times;<o:p></o:p></span></li>
+       and email information and credit and/or debit card shadow details at all times;<o:p></o:p></span></li>
                 <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
        auto;line-height:normal;mso-list:l1 level3 lfo2;tab-stops:list 1.5in"><span lang="EN-GB" style="font-size:12.0pt;mso-fareast-font-family:&quot;Times New Roman&quot;;
        mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-fareast-language:
@@ -672,7 +672,7 @@ acceptance of those changes.<o:p></o:p></span></p><ol start="1" type="1">
                 <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
        auto;line-height:normal;mso-list:l1 level3 lfo2;tab-stops:list 1.5in"><span lang="EN-GB" style="font-size:12.0pt;mso-fareast-font-family:&quot;Times New Roman&quot;;
        mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-fareast-language:
-       EN-GB">in the event of a Chargeback by Your credit card company or other
+       EN-GB">in the event of a Chargeback by Your credit card shadow company or other
        credit institution We shall have the immediate right at Our sole
        discretion to take ownership of the Requested Phone Number and suspend
        provision of the Services. Where We exercise Our right under this clause
@@ -812,7 +812,7 @@ acceptance of those changes.<o:p></o:p></span></p><ol start="1" type="1">
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-fareast-language:
       EN-GB">Where You authorise the payment of any Fees by credit and/or debit
       card, We may deduct other amounts becoming payable under this Contract
-      under that credit and/or debit card without obtaining additional or
+      under that credit and/or debit card shadow without obtaining additional or
       further authorisation from You.<o:p></o:p></span></li>
             <li class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:
       auto;line-height:normal;mso-list:l1 level2 lfo2;tab-stops:list 1.0in"><span lang="EN-GB" style="font-size:12.0pt;mso-fareast-font-family:&quot;Times New Roman&quot;;

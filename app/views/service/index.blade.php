@@ -113,7 +113,7 @@
                         action += '<input type = "hidden"  name = "CompanyGatewayID" value = "' + (full[5] != null ? full[5] : '') + '" / >';
                         action += '<input type = "hidden"  name = "Status" value = "' + (full[0] != null ? full[0] : 0) + '" / ></div>';
                         <?php if(User::checkCategoryPermission('Service','Edit')){ ?>
-                                action += ' <a data-name = "'+full[1]+'" data-id="'+ full[4] +'" title="Edit" class="edit-service btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                action += ' <a data-name = "'+full[1]+'" data-id="'+ full[4] +'" title="Edit" class="edit-service btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                         <?php } ?>
                         <?php if(User::checkCategoryPermission('Service','Delete')){ ?>
                                 action += ' <a data-id="'+ full[4] +'" title="Delete" class="delete-service btn btn-danger btn-sm"><i class="entypo-trash"></i></a>';

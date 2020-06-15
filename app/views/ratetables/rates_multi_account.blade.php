@@ -171,7 +171,7 @@
                             mRender: function(id, type, full) {
                                 var action;
                                 var account_trunk = full[0]+'_'+full[5];
-                                action = '<a title="Edit" data-id="'+  account_trunk +'" data-rateTableName="'+full[4]+'" data-TrunkID="'+full[5]+'"  class="edit-ratetable btn btn-default btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
+                                action = '<a title="Edit" data-id="'+  account_trunk +'" data-rateTableName="'+full[4]+'" data-TrunkID="'+full[5]+'"  class="edit-ratetable btn btn-primary btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
                                 return action;
                             }
                         },
@@ -200,7 +200,7 @@
                             mRender: function(id, type, full) {
                                 var action;
                                 var account_service = full[0]+'_'+full[5];
-                                action = '<a title="Edit" data-id="'+ account_service +'" data-OutboundRatetable="'+full[8]+'" data-inboundRatetable="'+full[7]+'" data-serviceId="'+full[5]+'" class="edit-ratetable btn btn-default btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
+                                action = '<a title="Edit" data-id="'+ account_service +'" data-OutboundRatetable="'+full[8]+'" data-inboundRatetable="'+full[7]+'" data-serviceId="'+full[5]+'" class="edit-ratetable btn btn-primary btn-sm"><i class="entypo-pencil"></i></a>&nbsp;';
                                 return action;
                             }
                         },

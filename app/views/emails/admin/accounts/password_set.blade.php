@@ -8,7 +8,7 @@
 
 <div>Dear {{ $data['AccountName'] }},<br><br>
 
-    Following is your authentication detail for customer panel.
+    Following is your authentication detail for customer card.
 
     <h4>Authentication Detail</h4><br><br>
     User Email: {{ $data['BillingEmail'] }}<br>

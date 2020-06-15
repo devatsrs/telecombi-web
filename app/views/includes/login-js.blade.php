@@ -39,7 +39,7 @@ if ( Request::is('/') || Request::is('login') || Request::is('customer/login') |
         "assets/js/neon-api.js",
         "assets/js/jquery.validate.min.js",
         "assets/js/jquery.dataTables.min.js",
-//        "assets/js/jquery.dataTables.1.10.15.min.js",
+        "assets/js/jquery.dataTables.1.10.15.min.js",
 //		"https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/js/jquery.dataTables.js",
         "assets/js/selectboxit/jquery.selectBoxIt.min.js",   //
 

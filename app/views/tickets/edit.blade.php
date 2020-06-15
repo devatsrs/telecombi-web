@@ -7,7 +7,7 @@
   <li class="active"> <strong>Update Ticket</strong> </li>
 </ol>
 <h3>Update Ticket</h3>
-<div class="panel-title"> @include('includes.errors')
+<div class="card-title"> @include('includes.errors')
   @include('includes.success') </div>
 <p style="text-align: right;">
   <button type='button' class="save btn btn-primary btn-sm btn-icon icon-left" data-loading-text="Loading..."> <i class="entypo-floppy"></i> Save </button>
@@ -15,12 +15,12 @@
 <br>
 <div class="row">
   <div class="col-md-12">
-    <div class="panel panel-primary" data-collapsed="0">
-      <div class="panel-heading">
-        <div class="panel-title"> Ticket Detail </div>
-        <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+    <div class="card shadow card-primary" data-collapsed="0">
+      <div class="card-header py-3">
+        <div class="card-title"> Ticket Detail </div>
+        <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <form role="form" id="form-tickets-edit" method="post" action="{{URL::to('tickets/'.$TicketID.'/update')}}" class="form-horizontal form-groups-bordered">
           <?php  $required = array();
 			   foreach($Ticketfields as $TicketfieldsData)

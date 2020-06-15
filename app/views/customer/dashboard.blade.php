@@ -44,7 +44,7 @@
         <div class="col-md-3">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="tile-stats tile-cyan stat-tile panel loading">
+                    <div class="tile-stats tile-cyan stat-tile shadow loading">
                         <h3>@lang("routes.CUST_PANEL_PAGE_MONITOR_RIGHT_SIDE_SALES") <span></span></h3>
                         {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                         <p>@lang("routes.CUST_PANEL_PAGE_MONITOR_RIGHT_SIDE_TODAY_SALES_BY_HOUR")</p>
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <div class="tile-stats tile-aqua stat-tile panel loading">
+                    <div class="tile-stats tile-aqua stat-tile shadow loading">
                         <h3>@lang("routes.CUST_PANEL_PAGE_MONITOR_RIGHT_SIDE_TODAY_MINUTES") <span>0</span></h3>
                         {{--<div class="icon"><i class="fa fa-line-chart"></i></div>--}}
                         <p>@lang("routes.CUST_PANEL_PAGE_MONITOR_RIGHT_SIDE_TODAY_MINUTES_BY_HOUR")</p>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="tile-stats tile-pink stat-tile panel loading">
+                    <div class="tile-stats tile-pink stat-tile shadow loading">
                         <h3>@lang("routes.CUST_PANEL_PAGE_MONITOR_RIGHT_SIDE_ACCOUNT_MANAGER")</h3>
                         <div class="icon"><i class="fa fa-user"></i></div>
                         <p style="font-size:12px; ">
@@ -98,12 +98,12 @@
                 <div class="row">
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_LBL_TOP_DESTINATION_CALL_COUNT")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_LBL_TOP_DESTINATION_CALL_COUNT")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -111,8 +111,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -125,12 +125,12 @@
                 </div>
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_LBL_TOP_DESTINATION_CALL_COST")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_LBL_TOP_DESTINATION_CALL_COST")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -138,8 +138,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -152,12 +152,12 @@
                 </div>
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_LBL_TOP_DESTINATION_CALL_MINUTES")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_LBL_TOP_DESTINATION_CALL_MINUTES")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -165,8 +165,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -183,12 +183,12 @@
                     <div class="row">
                         <div class="col-md-4">
 
-                            <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                <!-- panel head -->
-                                <div class="panel-heading">
-                                    <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_BREAK_LBL_TOP_DESTINATION_BREAK_CALL_COUNT")</div>
+                            <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                <!-- card shadow head -->
+                                <div class="card-header py-3">
+                                    <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_BREAK_LBL_TOP_DESTINATION_BREAK_CALL_COUNT")</div>
 
-                                    {{--<div class="panel-options">
+                                    {{--<div class="card-options">
                                         <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -196,8 +196,8 @@
                                     </div>--}}
                                 </div>
 
-                                <!-- panel body -->
-                                <div class="panel-body">
+                                <!-- card shadow body -->
+                                <div class="card-body">
 
                                     <br />
 
@@ -210,12 +210,12 @@
                         </div>
                         <div class="col-md-4">
 
-                            <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                <!-- panel head -->
-                                <div class="panel-heading">
-                                    <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_BREAK_LBL_TOP_DESTINATION_BREAK_CALL_COST")</div>
+                            <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                <!-- card shadow head -->
+                                <div class="card-header py-3">
+                                    <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_BREAK_LBL_TOP_DESTINATION_BREAK_CALL_COST")</div>
 
-                                    {{--<div class="panel-options">
+                                    {{--<div class="card-options">
                                         <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -223,8 +223,8 @@
                                     </div>--}}
                                 </div>
 
-                                <!-- panel body -->
-                                <div class="panel-body">
+                                <!-- card shadow body -->
+                                <div class="card-body">
 
                                     <br />
 
@@ -237,12 +237,12 @@
                         </div>
                         <div class="col-md-4">
 
-                            <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                                <!-- panel head -->
-                                <div class="panel-heading">
-                                    <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_BREAK_LBL_TOP_DESTINATION_BREAK_CALL_MINUTES")</div>
+                            <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                                <!-- card shadow head -->
+                                <div class="card-header py-3">
+                                    <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_DESTINATION_BREAK_LBL_TOP_DESTINATION_BREAK_CALL_MINUTES")</div>
 
-                                    {{--<div class="panel-options">
+                                    {{--<div class="card-options">
                                         <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -250,8 +250,8 @@
                                     </div>--}}
                                 </div>
 
-                                <!-- panel body -->
-                                <div class="panel-body">
+                                <!-- card shadow body -->
+                                <div class="card-body">
 
                                     <br />
 
@@ -268,12 +268,12 @@
                 <div class="row">
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_PREFIX_TOP_PREFIX_CALL_COUNT")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_PREFIX_TOP_PREFIX_CALL_COUNT")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -281,8 +281,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -295,12 +295,12 @@
                 </div>
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_PREFIX_TOP_PREFIX_CALL_COST")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_PREFIX_TOP_PREFIX_CALL_COST")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -308,8 +308,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -322,12 +322,12 @@
                 </div>
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_PREFIX_TOP_PREFIX_CALL_MINUTES")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_PREFIX_TOP_PREFIX_CALL_MINUTES")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -335,8 +335,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -353,12 +353,12 @@
                 <div class="row">
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_TRUNK_TOP_TRUNK_CALL_COUNT")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_TRUNK_TOP_TRUNK_CALL_COUNT")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -366,8 +366,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -380,12 +380,12 @@
                 </div>
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_TRUNK_TOP_TRUNK_CALL_COST")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_TRUNK_TOP_TRUNK_CALL_COST")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -393,8 +393,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 
@@ -407,12 +407,12 @@
                 </div>
                 <div class="col-md-4">
 
-                    <div class="panel loading panel-default" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
-                        <!-- panel head -->
-                        <div class="panel-heading">
-                            <div class="panel-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_TRUNK_TOP_TRUNK_CALL_MINUTES")</div>
+                    <div class="card shadow loading card-default" data-collapsed="0"><!-- to apply shadow add class "card-shadow" -->
+                        <!-- card shadow head -->
+                        <div class="card-header py-3">
+                            <div class="card-title">@lang("routes.CUST_PANEL_PAGE_MONITOR_TAB_TRUNK_TOP_TRUNK_CALL_MINUTES")</div>
 
-                            {{--<div class="panel-options">
+                            {{--<div class="card-options">
                                 <a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-3" class="bg"><i class="entypo-cog"></i></a>
                                 <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                 <a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
@@ -420,8 +420,8 @@
                             </div>--}}
                         </div>
 
-                        <!-- panel body -->
-                        <div class="panel-body">
+                        <!-- card shadow body -->
+                        <div class="card-body">
 
                             <br />
 

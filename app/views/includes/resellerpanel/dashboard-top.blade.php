@@ -54,7 +54,7 @@
 
     <ul class="list-inline links-list pull-right">
         <li id="filter-button-toggle" style="display: none;">
-            <button id="filter-toggle-button" type="button" data-toggle="tooltip" class="btn btn-default btn-xs popover-primary" data-title="Filter" data-placement="left"><i class="fa fa-filter"></i></button>
+            <button id="filter-toggle-button" type="button" data-toggle="tooltip" class="btn btn-primary btn-xs popover-primary" data-title="Filter" data-placement="left"><i class="fa fa-filter"></i></button>
         </li>
         <li>
             <a href="{{ URL::to('reseller/logout') }}">Log Out <i class="entypo-logout right"></i>

@@ -70,16 +70,16 @@ body .page-container .sidebar-menu #main-menu li a:hover {
   background-color: #4e73dfe8;
 }
 body .page-container .sidebar-menu #main-menu li ul > li > a:hover {
-  background-color: #141414;
+  background-color: #7296ff;
 }
 body .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > ul li {
   border-color: #7296ff;
 }
 body .page-container .sidebar-menu #main-menu li ul > li ul > li > a {
-  background-color: #1b1b1b;
+  background-color: #4e73df;
 }
 body .page-container .sidebar-menu #main-menu li ul > li ul > li ul > li > a {
-  background-color: #1b1b1b;
+  background-color: #4e73df;
 }
 body
   .page-container
@@ -95,7 +95,7 @@ body
   ul
   > li
   > a {
-  background-color: #1b1b1b;
+  background-color: #4e73df;
 }
 body
   .page-container.sidebar-collapsed
@@ -128,7 +128,7 @@ body #chat .chat-group > strong {
   color: rgba(255, 255, 255, 0.4);
 }
 body #chat .chat-conversation {
-  background: #1b1b1b;
+  background: #4e73df;
 }
 body #chat .chat-conversation .conversation-body > li.odd,
 body #chat .chat-conversation .conversation-body > li.even,
@@ -144,7 +144,7 @@ body #chat .chat-conversation .chat-textarea textarea {
   border-color: #4e73dfe8;
 }
 body #chat .chat-group > a:before {
-  border-color: transparent transparent transparent #1b1b1b;
+  border-color: transparent transparent transparent #4e73df;
 }
 body.login-page .login-form .form-group .input-group {
   border-color: #7296ff;
@@ -205,7 +205,7 @@ body .login-container .login-header.login-caret:after {
   border-top-color: #4e73df;
 }
 body.login-page.logging-in .login-progressbar {
-  background: #414141;
+  background: #ffffff;
   height: 2px;
 }
 body.login-page.logging-in .login-progressbar div {
@@ -229,7 +229,7 @@ body .btn-primary {
   background: #4e73df;
   border-color: #4e73df;
 }
-body .panel-invert {
+body .card-invert {
   background: #4e73df;
 }
 body .navbar-inverse {
@@ -298,8 +298,8 @@ body .btn-primary:focus,
 body .btn-primary:active,
 body .btn-primary.active,
 body .open .dropdown-toggle.btn-primary {
-  background: #1b1b1b;
-  border-color: #1b1b1b;
+  background: #4e73df;
+  border-color: #4e73df;
 }
 body
   .tile-block
@@ -485,13 +485,13 @@ body
   > a:hover {
   color: #eeeeee;
 }
-body .panel-invert > .panel-heading,
+body .card-invert > .card-heading,
 body .modal.invert .modal-dialog .modal-content .modal-header,
 body .modal.invert .modal-dialog .modal-content .modal-footer {
   background: #4e73df;
   border-color: #7296ff;
 }
-body .panel-invert > .panel-body,
+body .card-invert > .card-body,
 body .modal.invert .modal-dialog .modal-content {
   background: #4e73df;
   color: #eeeeee;
@@ -499,15 +499,15 @@ body .modal.invert .modal-dialog .modal-content {
 body .modal.invert .modal-dialog .modal-content {
   border-color: #4e73df;
 }
-body .panel-invert {
+body .card-invert {
   border-color: #4e73df;
 }
-body .panel-invert > .panel-heading > .panel-options > a.bg,
+body .card-invert > .card-heading > .card-options > a.bg,
 body .modal.invert .modal-dialog .modal-content .modal-header .close {
   background-color: #4e73dfe8;
 }
-body .panel-invert > .panel-heading > .panel-options > a.bg:hover {
-  background-color: #1b1b1b;
+body .card-invert > .card-heading > .card-options > a.bg:hover {
+  background-color: #4e73df;
 }
 body a.list-group-item.active,
 body a.list-group-item.active:hover,
@@ -525,8 +525,8 @@ body .popover.popover-primary {
   border-color: #4e73df;
 }
 body .popover.popover-primary .popover-title {
-  background-color: #1b1b1b;
-  border-color: #1b1b1b;
+  background-color: #4e73df;
+  border-color: #4e73df;
 }
 body .popover.popover-primary.top .arrow {
   border-top-color: #4e73df;

@@ -88,8 +88,8 @@
 
           @if(User::checkCategoryPermission('Invoice','Add'))
               <div class="input-group-btn">
-                  <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false"> Add Invoice <span class="caret"></span></button>
-                  <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                  <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false"> Add Invoice </button>
+                  <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                       <li> <a id="add-new-invoice" href="{{URL::to("invoice/create")}}" style="width:100%"> Oneoff </a> </li>
                       <li> <a id="invoice-in" href="javascript:;"> Received</a> </li>
                   </ul>
@@ -98,8 +98,8 @@
 
           @if(User::checkCategoryPermission('Invoice','Generate'))
               <div class="input-group-btn">
-                  <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false">Generate Invoice <span class="caret"></span></button>
-                  <ul class="dropdown-menu dropdown-menu-left" role="menu" style="background-color: #000; border-color: #000; margin-top:0px;">
+                  <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown" aria-expanded="false">Generate Invoice </button>
+                  <ul class="dropdown-menu dropdown-menu-left" role="menu" >
                       <li> <a id="generate-new-invoice" href="javascript:;">Automatically</a> </li>
                       <li> <a id="manual_billing" class="manual_billing" href="javascript:;"style="width:100%">Manually </a> </li>
 
@@ -109,9 +109,9 @@
 
         <div class="input-group-btn"> @if( User::checkCategoryPermission('Invoice','Edit,Send,Generate,Email'))
           <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown"
-                                    aria-expanded="false">Action <span class="caret"></span></button>
+                                    aria-expanded="false">Action </button>
           <ul class="dropdown-menu dropdown-menu-left" role="menu"
-                                style="background-color: #000; border-color: #000; margin-top:0px;">
+                                >
             @if(User::checkCategoryPermission('Invoice','Send'))
             <li> <a class="generate_rate create" id="bulk-invoice-send" href="javascript:;"
                                            style="width:100%"> Send Invoice </a> </li>
@@ -353,7 +353,7 @@
                             if (full[0] == '{{Invoice::INVOICE_IN}}') {
                                 if ('{{User::checkCategoryPermission('Invoice','Edit')}}') {
                                     action += '<div class="btn-group">';
-                                    action += '<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action<span class="caret"></span></a>';
+                                    action += '<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action</a>';
                                     action += '<ul class="dropdown-menu multi-level dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu">';
                                     action += ' <li><a class="edit-invoice-in icon-left"><i class="entypo-pencil"></i>Edit </a></li>';
                                     //action += ' <li><a class="view-invoice-in icon-left"><i class="entypo-pencil"></i>Print </a></li>';
@@ -365,7 +365,7 @@
                                 }
                             } else {
                                 action += '<div class="btn-group">';
-                                action += '<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action<span class="caret"></span></a>';
+                                action += '<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Action</a>';
                                 action += '<ul class="dropdown-menu multi-level dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu">';
 
                                 if (full[15] == '{{Invoice::ITEM_INVOICE}}') {
@@ -374,7 +374,7 @@
                                     }
                                 }
                                 if (edit_url) {
-                                    //action += ' <a href="' + edit_url +'" class="edit-invoice btn btn-default btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>'
+                                    //action += ' <a href="' + edit_url +'" class="edit-invoice btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>'
                                     action += '<li><a class="icon-left"  target="_blank" href="' + invoice_preview + '"><i class="fa fa-eye"></i>View </a></li>';
                                 }
                                 if (invoice_log) {
@@ -397,7 +397,7 @@
                             /*Multiple Dropdown*/
                             if (full[0] != '{{Invoice::INVOICE_IN}}') {
                                 if ('{{User::checkCategoryPermission('Invoice','Edit')}}') {
-                                    action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Change Status <span class="caret"></span></button>'
+                                    action += ' <div class="btn-group"><button href="#" class="btn generate btn-success btn-sm  dropdown-toggle" data-toggle="dropdown" data-loading-text="Loading...">Change Status </button>'
                                     action += '<ul class="dropdown-menu dropdown-green" role="menu">';
                                     $.each(invoicestatus, function (index, value) {
                                         if (index != '') {

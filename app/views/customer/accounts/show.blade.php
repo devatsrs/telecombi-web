@@ -32,18 +32,18 @@
     <div class="col-md-12 form-horizontal">
 
 
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                             @lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_AC_DETAILS_TITLE')
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">@lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_AC_DETAILS_LBL_ACCOUNT_OWNER')</label>
                         <div class="col-sm-4">
@@ -157,7 +157,7 @@
                             {{$account->Description}}
                         </div>
                     </div>
-                    <!--<div class="panel-title clear">
+                    <!--<div class="card-title clear">
                         Description
                     </div>
                     <div class="form-group">
@@ -168,18 +168,18 @@
                     @endif
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         @lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_BILLING_TITLE')
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">@lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_BILLING_LBL_TAX_RATE')</label>
                         <div class="col-sm-4">
@@ -201,18 +201,18 @@
 
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         @lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_ADDRESS_INFORMATION_TITLE')
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-2 text-right">@lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_ADDRESS_INFORMATION_LBL_ADDRESS_LINE_1')</label>
                         <div class="col-sm-4">
@@ -248,19 +248,19 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         @lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_PAYMENT_INFORMATION_TITLE')
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                         <div class="form-group">
                             <label for="field-1" class="col-sm-2 text-right">@lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_PAYMENT_INFORMATION_LBL_PAYMENT_METHOD')</label>
                             <div class="col-sm-4">
@@ -275,20 +275,20 @@
 
                  </div>
             </div>
-            <div class="panel panel-primary" data-collapsed="0">
+            <div class="card shadow card-primary" data-collapsed="0">
 
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         @lang('routes.CUST_PANEL_PAGE_PROFILE_TAB_CONTACTS_TITLE')
                     </div>
 
 
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
 
                     <table class="table table-bordered table-hover responsive">
                         <thead>
@@ -308,13 +308,13 @@
                                 <td>{{$contact->Email}}</td>
                                 <!--<td class="center">
                                     <a href="{{ URL::to('contacts/'.$contact->ContactID.'/edit')}}"
-                                       class="btn btn-default btn-sm btn-icon icon-left">
+                                       class="btn btn-primary btn-sm btn-icon icon-left">
                                         <i class="entypo-pencil"></i>
                                         Edit
                                     </a>
 
                                     <a href="{{ URL::to('contacts/'.$contact->ContactID.'/show')}}"
-                                       class="btn btn-default btn-sm btn-icon icon-left">
+                                       class="btn btn-primary btn-sm btn-icon icon-left">
                                         <i class="entypo-pencil"></i>
                                         View
                                     </a>

@@ -81,7 +81,7 @@
                     <h4>07-05-2018</h4>
                     01. Added option to sort rules in rate generator.<br>
                     02. Added option to set Charge Date and Next Invoice Date against accounts.<br>
-                    03. Added Account Exposure widget in customer panel.<br>
+                    03. Added Account Exposure widget in customer card.<br>
                     04. Improved Reseller section.<br>
                     05. Fixed issue with Auto Payment Capture job to list all issues against each account.<br>
                     06. Added Account Name - Authentication Rule in Sippy Gateway.<br>
@@ -99,7 +99,7 @@
                     18. LCR list - Added option to view customer rates offered against codes and margins.<br>
                     19. Added option to bulk apply rate tables to multiple customers and trunks.<br>
                     20. Added option to digitally Sign Invoices.<br>
-                    21. Added Top Up option in customer panel.<br>
+                    21. Added Top Up option in customer card.<br>
                     22. Added Multilingual option for Customer Panel.<br>
                     23. Added History button against vendor, customer and rate table rates which will show you full history on codes.<br>
                     24. Added ‘Auto Rate Import’ option via email for both Vendor and Rate Tables.<br>
@@ -234,7 +234,7 @@
                     02. Added Auto Payment Capture for authorize(.net) and stripe.<br>
                     03. Added STREAMCO Gateway Integration.<br>
                     04. Added Locutorios Gateway Integration.<br>
-                    05. Added Movement Report in customer panel for MOR.<br>
+                    05. Added Movement Report in customer card shadow for MOR.<br>
                     06. Added Barcode scanning option on OneOff Invoice.<br>
                     07. Added New field under Account Service 'Details' where you can specify e.g. Location for that service or any other information.<br>
                     08. Added Account Exposure column in Account Grid.<br>
@@ -323,7 +323,7 @@
                     01. Added Recurring option under Billing.<br>
                     02. Moved Sage Export button under action on invoice page.<br>
                     03. Added option to delete missing gateway accounts.<br>
-                    04. Added Unbilled Amount widget in customer panel.<br>
+                    04. Added Unbilled Amount widget in customer card.<br>
                     05. Added option to select Current, Future or specific date rates when generating rate table from Rate Generator.<br>
                     06. Revised Code Deck filter on LCR page.<br>
                     07. Added balance brought forward in Statement Of Account.<br>
@@ -394,7 +394,7 @@
                     09. Added payments view option under Invoice log. From invoice page you can see all payments against the invoice.<br>
                     10. Improved Billing dashboard.<br>
                     11. Improved responsiveness.<br>
-                    12. Fixed Invoice No filter on Invoice and Payments page. Now you will be able to do wild card search.<br>
+                    12. Fixed Invoice No filter on Invoice and Payments page. Now you will be able to do wild card shadow search.<br>
                     13. Changed Sorting under Rate Generator -> Margin to Min Rate ASC.<br>
                     14. Added option to switch ON and OFF Job notifications.<br>
                     15. Fixed issue with Code Deck country update.<br>

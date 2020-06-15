@@ -16,8 +16,8 @@
     <div class="row" style="margin-top: 5px;">
         <div class="col-md-12">
             <form role="form" id="language-search" method="get"  action="{{URL::to('translate/search')}}" class="form-horizontal form-groups-bordered validate" novalidate="novalidate">
-                <div class="panel panel-primary" data-collapsed="0">
-                    <div class="panel-body">
+                <div class="card shadow card-primary" data-collapsed="0">
+                    <div class="card-body">
                         <label class="col-sm-1 control-label">Language</label>
                         <div class="col-sm-3">
                             {{ddl_language("language", "user_language", Translation::$default_lang_ISOcode)}}
@@ -219,13 +219,13 @@
 
         }
         function loading(table,bit){
-            var panel = jQuery(table).closest('.loading');
+            var card shadow = jQuery(table).closest('.loading');
             if(bit==1){
-                blockUI(panel);
-                panel.addClass('reloading');
+                blockUI(card);
+                card.addClass('reloading');
             }else{
-                unblockUI(panel);
-                panel.removeClass('reloading');
+                unblockUI(card);
+                card.removeClass('reloading');
             }
         }
         function deleteLanguageData(ele){

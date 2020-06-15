@@ -35,7 +35,7 @@
   <div id="account-timeline">
     <section>
       <div id="contact-column" class="about-account col-md-3 col-sm-12 col-xs-12 pull-left"> 
-        <!--Account card start --> 
+        <!--Account card shadow start --> 
         @if(isset($Account_card) && count($Account_card)>0)
         <div class="gridview">
           <ul class="clearfix grid col-md-12">
@@ -87,32 +87,32 @@
                   </div>
                 </div>
                 <div class="col-sm-11 padding-0 action">
-                  <button type="button" data-id="{{$account->AccountID}}" title="Add Opportunity" class="btn btn-default btn-xs opportunity"> <i class="fa fa-line-chart"></i> </button>
+                  <button type="button" data-id="{{$account->AccountID}}" title="Add Opportunity" class="btn btn-primary btn-xs opportunity"> <i class="fa fa-line-chart"></i> </button>
 
                   @if($leadOrAccountCheck=='account') <a href="{{ URL::to('accounts/'.$account->AccountID.'/edit')}}" id="edit_account" target="_blank" class="hidden">Add Contact</a> @elseif($leadOrAccountCheck=='lead') <a href="{{ URL::to('leads/'.$account->AccountID.'/edit')}}" id="edit_account" target="_blank" class="hidden">Add Contact</a> @endif 
                     @if($leadOrAccountCheck=='account' && User::checkCategoryPermission('AccountActivityChart','View'))
-                    <a  href="{{Url::to('accounts/activity/'.$account->AccountID)}}"  data-id="{{$account->AccountID}}"  title="Account Activity Chart" class="btn btn-default btn-xs redirect_link" > <i class="fa fa-bar-chart"></i> </a>
+                    <a  href="{{Url::to('accounts/activity/'.$account->AccountID)}}"  data-id="{{$account->AccountID}}"  title="Account Activity Chart" class="btn btn-primary btn-xs redirect_link" > <i class="fa fa-bar-chart"></i> </a>
                     @endif
                   @if($leadOrAccountCheck=='account' && User::checkCategoryPermission('CreditControl','View'))
-                    <a  href="{{Url::to('account/get_credit/'.$account->AccountID)}}"  data-id="{{$account->AccountID}}"  title="Credit Control" class="btn btn-default btn-xs redirect_link" > <i class="fa fa-credit-card"></i> </a>
+                    <a  href="{{Url::to('account/get_credit/'.$account->AccountID)}}"  data-id="{{$account->AccountID}}"  title="Credit Control" class="btn btn-primary btn-xs redirect_link" > <i class="fa fa-credit-card"></i> </a>
                   @endif
-                  <button type="button" href_id="edit_account" data-id="{{$account->AccountID}}"  title="Edit" class="btn btn-default btn-xs redirect_link" > <i class="entypo-pencil"></i> </button>
+                  <button type="button" href_id="edit_account" data-id="{{$account->AccountID}}"  title="Edit" class="btn btn-primary btn-xs redirect_link" > <i class="entypo-pencil"></i> </button>
                   @if(User::checkCategoryPermission('AccountSubscription','View') && CompanyConfiguration::get('ACCOUNT_SUB') == 1)
-                     <a class="btn btn-default btn-xs redirect_link"  title="View Account Subscriptions" href="{{ URL::to('/account_subscription?id='.$account->AccountID)}}"><i class="fa fa-refresh"></i></a>
+                     <a class="btn btn-primary btn-xs redirect_link"  title="View Account Subscriptions" href="{{ URL::to('/account_subscription?id='.$account->AccountID)}}"><i class="fa fa-refresh"></i></a>
                   @endif
                   
                   @if($account->IsCustomer==1 || $account->IsVendor==1)
-                     <a class="btn btn-default btn-xs redirect_link" title="Authentication Rule" href="{{ URL::to('accounts/authenticate/'.$account->AccountID)}}"><i class="entypo-lock"></i></a>
+                     <a class="btn btn-primary btn-xs redirect_link" title="Authentication Rule" href="{{ URL::to('accounts/authenticate/'.$account->AccountID)}}"><i class="entypo-lock"></i></a>
                   @endif
 
-                  <button type="button" data-id="{{$account->AccountID}}" title="View Account Logs" redirecto="{{ URL::to('accounts/'.$account->AccountID.'/log')}}" class="btn btn-default btn-xs"> <i class="fa fa-file-text-o"></i></button>
+                  <button type="button" data-id="{{$account->AccountID}}" title="View Account Logs" redirecto="{{ URL::to('accounts/'.$account->AccountID.'/log')}}" class="btn btn-primary btn-xs"> <i class="fa fa-file-text-o"></i></button>
 
                   @if($leadOrAccountCheck=='account')
                   @if($account->IsCustomer==1 && $account->VerificationStatus==Account::VERIFIED)
-                     <a class="btn-warning btn btn-default btn-xs" href="{{ URL::to('customers_rates/'.$account->AccountID)}}"><i class="entypo-user"></i></a>
+                     <a class="btn-warning btn btn-primary btn-xs" href="{{ URL::to('customers_rates/'.$account->AccountID)}}"><i class="entypo-user"></i></a>
                   @endif
                   @if($account->IsVendor==1 && $account->VerificationStatus==Account::VERIFIED)
-           <a class="btn-info btn btn-default btn-xs" href="{{ URL::to('vendor_rates/'.$account->AccountID)}}"><i class="fa fa-slideshare"></i></a>
+           <a class="btn-info btn btn-primary btn-xs" href="{{ URL::to('vendor_rates/'.$account->AccountID)}}"><i class="fa fa-slideshare"></i></a>
                    @endif
                   @endif
                    </div>
@@ -121,7 +121,7 @@
           </ul>
         </div>
         @endif 
-        <!--Account card end -->
+        <!--Account card shadow end -->
         <div class="">
           <button style="margin:8px 25px 0 0;"  href_id="create_contact" id="redirect_add_link" type="button" class="btn btn-black redirect_link btn-xs pull-right"> <i class="entypo-plus"></i> </button>
           <a href="{{ URL::to('contacts/create?AccountID='.$account->AccountID)}}" id="create_contact" target="_blank" class="hidden">Add Contact</a> <span class="head_title">Contacts</span> </div>
@@ -129,7 +129,7 @@
         
         <!--<div class="list-contact-slide" style="height:500px; overflow-x:scroll;"> -->
         <div class="list-contact-slide"> 
-          <!--contacts card start -->
+          <!--contacts card shadow start -->
           
           <div class="gridview">
             <ul class="clearfix grid col-md-12">
@@ -159,7 +159,7 @@
                       <div class="meta">Skype: <a class="sendemail" href="javascript:void(0)">{{$contacts_row['Skype']}}</a></div>
                     </div>
                   </div>
-                  <div class="col-sm-11 padding-0 action"> <a class="btn-default btn-sm label padding-3" href="{{ URL::to('contacts/'.$contacts_row['ContactID'].'/edit')}}"><i class="entypo-pencil"></i>&nbsp;</a>&nbsp;<a class="btn-default btn-sm label padding-3" href="{{ URL::to('contacts/'.$contacts_row['ContactID'].'/show')}}"><i class="entypo-search"></i> </a> </div>
+                  <div class="col-sm-11 padding-0 action"> <a class="btn-primary btn-sm label padding-3" href="{{ URL::to('contacts/'.$contacts_row['ContactID'].'/edit')}}"><i class="entypo-pencil"></i>&nbsp;</a>&nbsp;<a class="btn-primary btn-sm label padding-3" href="{{ URL::to('contacts/'.$contacts_row['ContactID'].'/show')}}"><i class="entypo-search"></i> </a> </div>
                 </div>
               </li>
               @endforeach
@@ -167,7 +167,7 @@
             </ul>
           </div>
           
-          <!--contacts card end --> 
+          <!--contacts card shadow end --> 
           
         </div>
       </div>

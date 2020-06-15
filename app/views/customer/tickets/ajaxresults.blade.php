@@ -17,14 +17,14 @@
                   </div>
                 </div>
                 <div class="pull-left  btn-group">
-                <button type="button" data-toggle="dropdown" class="btn  dropdown-toggle  btn-green">@lang('routes.BUTTON_EXPORT_CAPTION') <span class="caret"></span></button>
+                <button type="button" data-toggle="dropdown" class="btn  dropdown-toggle  btn-green">@lang('routes.BUTTON_EXPORT_CAPTION') </button>
                 <ul class="dropdown-menu dropdown_sort dropdown-green" role="menu">    
                     <li><a class="export_btn export_type" action_type="csv" href="#"> @lang('routes.BUTTON_EXPORT_CSV_CAPTION')</a> </li>
                     <li><a class="export_btn export_type" action_type="xlsx"  href="#">  @lang('routes.BUTTON_EXPORT_EXCEL_CAPTION')</a> </li>
                   </ul>
                 </div>
                 <div class="pull-right sorted btn-group">
-                  <button type="button" class="btn btn-green dropdown-toggle" data-toggle="dropdown"> @lang('routes.CUST_PANEL_PAGE_TICKETS_TABLE_SORTED_BY') @lang('routes.CUST_PANEL_PAGE_TICKETS_TABLE_SORTED_BY_COLUMNS_'. strtoupper($data['iSortCol_0'])) <span class="caret"></span> </button>
+                  <button type="button" class="btn btn-green dropdown-toggle" data-toggle="dropdown"> @lang('routes.CUST_PANEL_PAGE_TICKETS_TABLE_SORTED_BY') @lang('routes.CUST_PANEL_PAGE_TICKETS_TABLE_SORTED_BY_COLUMNS_'. strtoupper($data['iSortCol_0']))  </button>
                   <ul class="dropdown-menu dropdown_sort dropdown-green" role="menu">
                     <?php foreach($Sortcolumns as $key => $SortcolumnsData){ ?>
                     <li><a class="sort_fld @if($key==$data['iSortCol_0']) checked @endif" action_type="sort_field" action_value="{{$key}}"   href="#"> <i class="entypo-check" @if($key!=$data['iSortCol_0']) style="visibility:hidden;" @endif ></i> @lang('routes.CUST_PANEL_PAGE_TICKETS_TABLE_SORTED_BY_COLUMNS_'.strtoupper($key))</a></li>

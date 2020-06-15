@@ -11,7 +11,7 @@
   <li class="active"> <strong>Edit SLA Policy</strong> </li>
 </ol>
 <h3>Edit SLA Policy</h3>
-<div class="panel-title"> @include('includes.errors')
+<div class="card-title"> @include('includes.errors')
   @include('includes.success') </div>
 <p style="text-align: right;">
   <button type='button' class="save btn btn-primary btn-sm btn-icon icon-left" data-loading-text="Loading..."> <i class="entypo-floppy"></i> Save </button>
@@ -20,12 +20,12 @@
 <div class="row">
   <div class="col-md-12">
     <form role="form" id="form-sla-add" method="post" action="{{URL::to('ticketgroups/create')}}" class="form-horizontal form-groups-bordered">
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Detail</div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Detail</div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="form-group">
             <label for="GroupName" class="col-sm-3 control-label">Name</label>
             <div class="col-sm-9">
@@ -52,12 +52,12 @@
          @endif 
         </div>
       </div>
-      <div class="panel panel-primary sla_targets" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">SLA Targets</div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary sla_targets" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">SLA Targets</div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div>
             <div class="custom_hours form-group">
               <div class="col-sm-1"><b>Priority</b></div>
@@ -147,12 +147,12 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">Apply this to</div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">Apply this to</div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="custom_hours form-group">
             <div class="col-sm-2"><b>Group</b></div>
             <div class="day_time_data col-sm-10">  {{Form::select("Apply[Groups][]", $Groups, $slaApplyGroup ,array("class"=>"select2","multiple"=>"multiple","id"=>"Groups"))}} </div>
@@ -167,12 +167,12 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-primary" data-collapsed="0">
-        <div class="panel-heading">
-          <div class="panel-title">What happens when this SLA is violated?</div>
-          <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
+      <div class="card shadow card-primary" data-collapsed="0">
+        <div class="card-header py-3">
+          <div class="card-title">What happens when this SLA is violated?</div>
+          <div class="card-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <div class="custom_hours form-group">
             <div class="col-sm-12">Set escalation rule when a ticket is not responded on time <span>&nbsp;
             <p class="make-switch switch-small">

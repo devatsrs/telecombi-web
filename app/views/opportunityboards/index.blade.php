@@ -120,10 +120,10 @@
                                     }
                                     action += '</div>';
                                     @if(User::checkCategoryPermission('OpportunityBoard','Edit'))
-                                        action += ' <a data-name = "' + full[0] + '" data-id="' + id + '" title="Edit" class="edit-opportunitybaord btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
+                                        action += ' <a data-name = "' + full[0] + '" data-id="' + id + '" title="Edit" class="edit-opportunitybaord btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>';
                                     @endif
                                     @if(User::checkCategoryPermission('OpportunityBoard','Configure'))
-                                        action += ' <a class="manage-deal-board btn btn-default btn-sm btn-icon icon-left" href="'+configure+'"><i class="entypo-cog"></i> Configure Board</a>';
+                                        action += ' <a class="manage-deal-board btn btn-primary btn-sm btn-icon icon-left" href="'+configure+'"><i class="entypo-cog"></i> Configure Board</a>';
                                     @endif
                                     return action;
                                 }

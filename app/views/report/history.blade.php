@@ -16,16 +16,16 @@
 <div class="row">
     <div class="col-md-12">
         <form id="history_filter" method=""  action="" class="form-horizontal form-groups-bordered validate" novalidate>
-            <div class="panel panel-primary" data-collapsed="0">
-                <div class="panel-heading">
-                    <div class="panel-title">
+            <div class="card shadow card-primary" data-collapsed="0">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         Filter
                     </div>
-                    <div class="panel-options">
+                    <div class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                     </div>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <div class="form-group">
                         <label for="field-1" class="col-sm-1 control-label">Search</label>
                         <div class="col-sm-2">
@@ -138,7 +138,7 @@
                                 }
                                 action += '</div>';
 
-                                action += ' <a class="view-report btn btn-default btn-sm tooltip-primary" data-original-title="View" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-eye"></i></a>'
+                                action += ' <a class="view-report btn btn-primary btn-sm tooltip-primary" data-original-title="View" title="" data-placement="top" data-toggle="tooltip"><i class="fa fa-eye"></i></a>'
                                 var str = full[4];
                                 if(str) {
                                     var str_array = str.split(',');

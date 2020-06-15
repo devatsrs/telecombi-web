@@ -3,27 +3,27 @@
     position: absolute;
 }
 </style>
-<div class="panel panel-primary" data-collapsed="0">
-    <div class="panel-heading">
-        <div class="panel-title">
+<div class="card shadow card-primary" data-collapsed="0">
+    <div class="card-header py-3">
+        <div class="card-title">
             Additional Charges
         </div>
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <div id="oneofcharge_filter" method="get" action="#" >
-                                <div class="panel panel-primary panel-collapse" data-collapsed="1">
-                                    <div class="panel-heading">
-                                        <div class="panel-title">
+                                <div class="card shadow card-primary card-collapse" data-collapsed="1">
+                                    <div class="card-header py-3">
+                                        <div class="card-title">
                                             Filter
                                         </div>
-                                        <div class="panel-options">
+                                        <div class="card-options">
                                             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
                                         </div>
                                     </div>
-                                    <div class="panel-body" style="display: none;">
+                                    <div class="card-body" style="display: none;">
                                         <div class="form-group">
                                             <label for="field-1" class="col-sm-1 control-label">Item</label>
                                             <div class="col-sm-2">
@@ -159,7 +159,7 @@
                             action += '<input disabled type = "hidden"  name = "' + list_fields[i] + '"       value = "' + (full[i] != null ? str : '') + '" / >';
                         }
                         action += '</div>';
-                        action += ' <a href="' + oneofcharge_edit_url.replace("{id}", id) + '" title="Edit" class="edit-oneofcharge btn btn-default btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
+                        action += ' <a href="' + oneofcharge_edit_url.replace("{id}", id) + '" title="Edit" class="edit-oneofcharge btn btn-primary btn-sm"><i class="entypo-pencil"></i>&nbsp;</a>'
                         action += ' <a href="' + oneofcharge_delete_url.replace("{id}", id) + '" title="Delete" class="delete-oneofcharge btn btn-danger btn-sm"><i class="entypo-trash"></i></a>'
                         return action;
                     }

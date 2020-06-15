@@ -4,18 +4,18 @@
     <div class="row">
         <div class="col-sm-12">
             <form novalidate class="form-horizontal form-groups-bordered validate" method="post" id="billing_filter">
-                <div data-collapsed="0" class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div data-collapsed="0" class="card shadow card-primary">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             @lang('routes.CUST_PANEL_FILTER_TITLE')
                         </div>
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a data-rel="collapse" href="#">
                                 <i class="entypo-down-open"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div class="form-group">
                             <label class="col-sm-1 control-label" for="Startdate">@lang('routes.CUST_PANEL_PAGE_ANALYSIS_FILTER_FIELD_START_DATE')</label>
                             <div class="col-sm-2">
@@ -40,8 +40,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div data-collapsed="0" class="panel panel-primary">
-                <div id="invoice-widgets" class="panel-body">
+            <div data-collapsed="0" class="card shadow card-primary">
+                <div id="invoice-widgets" class="card-body">
                     @if((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardTotalOutstanding',$BillingDashboardWidgets))
                         <div class="col-sm-3 col-xs-6">
                             <div class="tile-stats tile-blue"><a target="_blank" class="undefined"
@@ -205,14 +205,14 @@
     @if((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardInvoiceExpense',$BillingDashboardWidgets))
     <div class="row">
         <div class="col-sm-12">
-            <div class="invoice_expsense panel panel-primary panel-table">
+            <div class="invoice_expsense card shadow card-primary card-table">
                 <form id="invoiceExpensefilter-form" name="filter-form" style="display: inline">
-                <div class="panel-heading">
-                    <div class="panel-title">
+                <div class="card-header py-3">
+                    <div class="card-title">
                         <h3>@lang('routes.CUST_PANEL_PAGE_ANALYSIS_HEADING_INVOICES_&_EXPENSES')</h3>
                     </div>
 
-                    <div class="panel-options">
+                    <div class="card-options">
                         {{ Form::select('ListType',array(
                         "Weekly"=>cus_lang("CUST_PANEL_PAGE_ANALYSIS_DDL_LISTTYPE_LBL_WEEKLY"),
                         "Monthly"=>cus_lang("CUST_PANEL_PAGE_ANALYSIS_DDL_LISTTYPE_LBL_MONTHLY"),
@@ -224,7 +224,7 @@
                     </div>
                 </div>
                 </form>
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="invoice_expense_bar_chart"></div>
                 </div>
             </div>
@@ -235,13 +235,13 @@
     @if((count($BillingDashboardWidgets)==0) ||  in_array('BillingDashboardPincodeWidget',$BillingDashboardWidgets))
         <div class="row">
             <div class="col-sm-12">
-                <div class="pin_expsense panel panel-primary panel-table">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="pin_expsense card shadow card-primary card-table">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             <h3>@lang('routes.CUST_PANEL_PAGE_ANALYSIS_HEADING_PINCODE')</h3>
                         </div>
 
-                        <div class="panel-options">
+                        <div class="card-options">
                             <form id="filter-form" name="filter-form" style="display: inline" >
                                 {{ Form::select('PinExt', array(
                                     'pincode'=>cus_lang("CUST_PANEL_PAGE_ANALYSIS_DDL_PINEXT_LBL_BY_PINCODE"),
@@ -262,7 +262,7 @@
                         </div>
 
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <div id="pin_expense_bar_chart"></div>
                     </div>
                 </div>
@@ -271,18 +271,18 @@
 
         <div class="row hidden" id="pin_grid_main">
             <div class="col-sm-12">
-                <div class="pin_expsense_report panel panel-primary" style="position: static;">
-                    <div class="panel-heading">
-                        <div class="panel-title">
+                <div class="pin_expsense_report card shadow card-primary" style="position: static;">
+                    <div class="card-header py-3">
+                        <div class="card-title">
                             <h3>@lang('routes.CUST_PANEL_PAGE_ANALYSIS_HEADING_PIN_GRID')</h3>
                         </div>
 
-                        <div class="panel-options">
+                        <div class="card-options">
                             <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a>
                             <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a>
                         </div>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         <table class="table table-bordered datatable" id="pin_grid">
                             <thead>
                             <tr>
@@ -326,7 +326,7 @@
             $.get( get_url, data , function(response){
                 $(".search.btn").button('reset');
                 loadingUnload('#invoice_expense_bar_chart',0);
-                $(".panel.invoice_expsense #invoice_expense_bar_chart").html(response);
+                $(".card.invoice_expsense #invoice_expense_bar_chart").html(response);
             }, "html" );
             @endif
         }
@@ -568,13 +568,13 @@
             }
         }
         function loadingUnload(table,bit){
-            var panel = jQuery(table).closest('.panel');
+            var card shadow = jQuery(table).closest('.card');
             if(bit==1){
-                blockUI(panel);
-                panel.addClass('reloading');
+                blockUI(card);
+                card.addClass('reloading');
             }else{
-                unblockUI(panel);
-                panel.removeClass('reloading');
+                unblockUI(card);
+                card.removeClass('reloading');
             }
         }
         function pin_report() {

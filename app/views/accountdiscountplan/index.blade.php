@@ -1,16 +1,16 @@
-<div class="panel panel-primary discount-section-hide" data-collapsed="0">
+<div class="card shadow card-primary discount-section-hide" data-collapsed="0">
 
-    <div class="panel-heading">
-        <div class="panel-title">
+    <div class="card-header py-3">
+        <div class="card-title">
             Discount
         </div>
 
-        <div class="panel-options">
+        <div class="card-options">
             <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
         </div>
     </div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <div class="form-group">
             <label for="field-1" class="col-sm-1 control-label">Outbound Discount Plan</label>
             <div class="col-sm-3">

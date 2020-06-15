@@ -110,7 +110,7 @@
                                 var jobID = full[6] ;
                                 var download_ = "";
 
-                                action = '<a  onclick=" return showAjaxModal(\''+show_+'\',\'modal-customer-rate-history\');" href="javascript:;" title="View"   class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>';
+                                action = '<a  onclick=" return showAjaxModal(\''+show_+'\',\'modal-customer-rate-history\');" href="javascript:;" title="View"   class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                                 if( jobID != null ){
                                     /*Customer Upload*/
                                     if(download_upload_type == 'VU' && full[6]!= ''){
