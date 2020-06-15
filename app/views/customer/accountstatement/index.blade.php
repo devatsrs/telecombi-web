@@ -65,7 +65,7 @@
                     <div style="width:95px;" class="input-group-btn pull-right">
                         <div class="export-data">
                             <div class="DTTT btn-group">
-                                <a class="btn btn-white save-collection" style="display: none;" id="ToolTables_table-4_0">
+                                <a class="btn btn-primary save-collection" style="display: none;" id="ToolTables_table-4_0">
                                     <undefined>@lang('routes.BUTTON_EXPORT_EXCEL_CAPTION')</undefined>
                                 </a>
                             </div>

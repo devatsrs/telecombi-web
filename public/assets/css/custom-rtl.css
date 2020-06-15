@@ -27,7 +27,7 @@
 .card-title {
   float: right;
 }
-.card-heading > .card-options {
+.card-header > .card-options {
   float: left;
 }
 .select2-choice {

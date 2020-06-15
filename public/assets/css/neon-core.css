@@ -6994,10 +6994,10 @@ img.full-width {
 .card-table .card-body {
   background: #fafafa;
 }
-.card-table .card-heading > .card-title {
+.card-table .card-header > .card-title {
   padding: 30px 25px;
 }
-.card-table .card-heading > .card-title span {
+.card-table .card-header > .card-title span {
   color: #888888;
   font-size: 12px;
 }
@@ -10152,7 +10152,7 @@ body.page-fade-only-init > .page-container {
   -webkit-transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
-.draggable-portlets .sorted > .card .card-heading {
+.draggable-portlets .sorted > .card .card-header {
   cursor: pointer;
 }
 .draggable-portlets.dragging .sorted > .card {

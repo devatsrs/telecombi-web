@@ -484,7 +484,7 @@ body
   > a:hover {
   color: #ddefe3;
 }
-body .card-invert > .card-heading,
+body .card-invert > .card-header,
 body .modal.invert .modal-dialog .modal-content .modal-header,
 body .modal.invert .modal-dialog .modal-content .modal-footer {
   background: #00a651;
@@ -501,11 +501,11 @@ body .modal.invert .modal-dialog .modal-content {
 body .card-invert {
   border-color: #00a651;
 }
-body .card-invert > .card-heading > .card-options > a.bg,
+body .card-invert > .card-header > .card-options > a.bg,
 body .modal.invert .modal-dialog .modal-content .modal-header .close {
   background-color: #009549;
 }
-body .card-invert > .card-heading > .card-options > a.bg:hover {
+body .card-invert > .card-header > .card-options > a.bg:hover {
   background-color: #008541;
 }
 body a.list-group-item.active,

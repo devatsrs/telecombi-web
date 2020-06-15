@@ -1086,10 +1086,10 @@ th {
 .pull-right {
   float: left !important;
 }
-.card-heading > .card-title {
+.card-header > .card-title {
   float: right;
 }
-.card-heading > .card-options {
+.card-header > .card-options {
   float: left;
   padding-left: 10px;
   padding-right: 0;
@@ -1264,16 +1264,16 @@ th {
 .search-results-env .search-bar .form-control + .input-group-btn {
   border: 0;
 }
-.card-heading > .card-options > .nav-tabs > li:last-child {
+.card-header > .card-options > .nav-tabs > li:last-child {
   margin-right: 10px;
 }
-.card > .card-heading > .card-options > a {
+.card > .card-header > .card-options > a {
   float: left;
   margin-left: 0;
   margin-right: 5px;
   direction: ltr;
 }
-.card.minimal > .card-heading > .card-options > .nav-tabs > li a {
+.card.minimal > .card-header > .card-options > .nav-tabs > li a {
   margin-left: 0;
 }
 .tile-stats .icon {

@@ -124,7 +124,7 @@
                   <label for="subject">Email *</label>
                   <textarea id="Message" class="form-control message"    name="Message"></textarea>
                 </div>
-                <p class="comment-box-options-activity"> <a id="addTtachment" class="btn-sm btn-white btn-xs" title="Add an attachment…" href="javascript:void(0)"> <i class="entypo-attach"></i> </a> </p>
+                <p class="comment-box-options-activity"> <a id="addTtachment" class="btn-sm btn-primary btn-xs" title="Add an attachment…" href="javascript:void(0)"> <i class="entypo-attach"></i> </a> </p>
                 <div class="form-group email_attachment">
                   <input type="hidden" value="1" name="email_send" id="email_send"  />
                   <!--   <input id="filecontrole" type="file" name="emailattachment[]" class="fileUploads form-control file2 inline btn btn-primary btn-sm btn-icon icon-left hidden" multiple data-label="<i class='entypo-attach'></i>Attachments" />-->

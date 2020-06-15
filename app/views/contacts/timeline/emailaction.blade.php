@@ -55,7 +55,7 @@ Subject: <?php $response_data['Subject']; ?>....<br>
 Date: <?php echo date('M d, Y,',strtotime($response_data['created_at'])).' at '.date('H:i A, ',strtotime($response_data['created_at'])); ?><br>
 To: <?php if($response_data['EmailCall']=='Send'){echo $response_data['EmailTo'];}else{echo $response_data['Emailfrom'];} ?><br><br> @endif{{$response_data['Message']}}</textarea>
       </div>
-      <p class="comment-box-options-activity"> <a id="addReplyTtachment" class="btn-sm btn-white btn-xs" title="Add an attachment…" href="javascript:void(0)"> <i class="entypo-attach"></i> </a> </p>
+      <p class="comment-box-options-activity"> <a id="addReplyTtachment" class="btn-sm btn-primary btn-xs" title="Add an attachment…" href="javascript:void(0)"> <i class="entypo-attach"></i> </a> </p>
       <div class="form-group email_attachment">
         <input type="hidden" value="1" name="email_send" id="email_send"  />
         <input id="emailattachment_sent" type="hidden" name="emailattachment_sent" class="form-control file2 inline btn btn-primary btn-sm btn-icon icon-left hidden"   />

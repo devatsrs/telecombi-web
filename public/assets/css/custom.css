@@ -2481,7 +2481,7 @@ button.close {
   margin-bottom: 0px;
 }
 
-.card-default .card-heading {
+.card-default .card-header {
   min-height: 40px;
 }
 
@@ -2489,14 +2489,14 @@ button.close {
   border-color: #ebebeb;
 }
 
-.card-primary > .card-heading {
+.card-primary > .card-header {
   background-color: #ffffff;
   border-color: #ebebeb;
   color: #4e73df;
   min-height: 40px;
 }
 
-.card-heading > .card-options {
+.card-header > .card-options {
   float: right;
 }
 .card-title {
@@ -2507,7 +2507,7 @@ button.close {
   float: left;
 }
 
-.card-table .card-heading > .card-title {
+.card-table .card-header > .card-title {
   /*padding: 0px;*/
   /*margin-top:-19px;*/
 }
@@ -3626,4 +3626,13 @@ select#user_language option {
 
 .btn {
   color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: #2e59d9 !important;
+  border-color: #2653d4 !important;
 }

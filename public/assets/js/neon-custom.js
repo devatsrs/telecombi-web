@@ -221,7 +221,7 @@ toastr_opts = {
     // Panels
 
     // Added on v1.1.4 - Fixed collapsing effect with card tables
-    $(".card-heading").each(function(i, el) {
+    $(".card-header").each(function(i, el) {
       var $this = $(el),
         $body = $this.next("table");
 
@@ -237,7 +237,7 @@ toastr_opts = {
     $("body")
       .on(
         "click",
-        '.card > .card-heading > .card-options > a[data-rel="reload"]',
+        '.card > .card-header > .card-options > a[data-rel="reload"]',
         function(ev) {
           ev.preventDefault();
 
@@ -254,7 +254,7 @@ toastr_opts = {
       )
       .on(
         "click",
-        '.card > .card-heading > .card-options > a[data-rel="close"]',
+        '.card > .card-header > .card-options > a[data-rel="close"]',
         function(ev) {
           ev.preventDefault();
 
@@ -279,7 +279,7 @@ toastr_opts = {
       )
       .on(
         "click",
-        '.card > .card-heading > .card-options > a[data-rel="collapse"]',
+        '.card > .card-header > .card-options > a[data-rel="collapse"]',
         function(ev) {
           ev.preventDefault();
 

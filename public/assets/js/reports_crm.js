@@ -526,7 +526,7 @@ jQuery(document).ready(function($) {
 
   $("body").on(
     "click",
-    '.card > .card-heading > .card-options > a[data-rel="reload"]',
+    '.card > .card-header > .card-options > a[data-rel="reload"]',
     function(e) {
       e.preventDefault();
       var id = $(this)

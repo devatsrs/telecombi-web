@@ -18,7 +18,7 @@
             {{Auth::user()->FirstName}} {{Auth::user()->LastName}} ({{ User::get_user_roles() }})
         </a>
 
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu shadow">
 
 
             <li class="caret"></li>

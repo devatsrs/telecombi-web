@@ -12,7 +12,7 @@
                   </strong> <span>of {{$totalResults}}</span>
                   <div class="btn-group">
                     <?php if(count($result)>=$iDisplayLength){ ?>
-                    <a  movetype="next" class="move_mail next btn btn-sm btn-white"><i class="entypo-right-open"></i></a>
+                    <a  movetype="next" class="move_mail next btn btn-sm btn-primary"><i class="entypo-right-open"></i></a>
                     <?php } ?>
                   </div>
                 </div>
@@ -86,15 +86,15 @@
           <div class="btn-group">
             <?php if($data['clicktype']=='back'){ ?>
             <?php if(($current+1)>1){ ?>
-            <a  movetype="back" class="move_mail back btn btn-sm btn-white"><i class="entypo-left-open"></i></a>
+            <a  movetype="back" class="move_mail back btn btn-sm btn-primary"><i class="entypo-left-open"></i></a>
             <?php } ?>
-            <a  movetype="next" class="move_mail next btn btn-sm btn-white"><i class="entypo-right-open"></i></a>
+            <a  movetype="next" class="move_mail next btn btn-sm btn-primary"><i class="entypo-right-open"></i></a>
             <?php } ?>
             <?php if($data['clicktype']=='next'){ ?>
             <?php if(($current+1)>1){ ?>
-             <a  movetype="back" class="move_mail back btn btn-sm btn-white"><i class="entypo-left-open"></i></a>
+             <a  movetype="back" class="move_mail back btn btn-sm btn-primary"><i class="entypo-left-open"></i></a>
               <?php }  if($totalResults!=($current+count($result))){ ?>           
-            <a  movetype="next" class="move_mail next btn btn-sm btn-white"><i class="entypo-right-open"></i></a>
+            <a  movetype="next" class="move_mail next btn btn-sm btn-primary"><i class="entypo-right-open"></i></a>
             <?php } } ?>
           </div>
           </div>

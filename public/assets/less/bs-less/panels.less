@@ -17,12 +17,12 @@
   	.box-shadow(~"0 3px 1px rgba(0,0,0,.04)");
   }
   
-  &.reloading > .card-heading > .card-options > a[rel="reload"] > i {
+  &.reloading > .card-header > .card-options > a[rel="reload"] > i {
 	.transition(~"none");
 	.animation(~"reloadingAnimation 1s linear infinite");
   }
   
-  &.card-collapse > .card-heading > .card-options > a[rel="collapse"] > i {
+  &.card-collapse > .card-header > .card-options > a[rel="collapse"] > i {
   	.rotate(180deg);
   }
   
@@ -42,7 +42,7 @@
 	  	display: none;
   	}
   	
-  	.card-heading > .card-options > a[rel="collapse"] > i {
+  	.card-header > .card-options > a[rel="collapse"] > i {
 	  	.rotate(180deg);
   	}
   }
@@ -50,7 +50,7 @@
   // Minimal
   &.minimal {
 	  
-	  > .card-heading {
+	  > .card-header {
 	  	  padding: 0;
 		  border-bottom: 1px solid @default;
 		  
@@ -118,7 +118,7 @@
 	  &.minimal-gray {
 	  	  @minimal_gray_border: #ebebeb;
 		  
-		  > .card-heading {
+		  > .card-header {
 		  	
 		  	> .card-options {
 			  	
@@ -194,7 +194,7 @@
   }
 }
 // Collapse space between when there's no additional content.
-.card-heading + .list-group {
+.card-header + .list-group {
   .list-group-item:first-child {
     border-top-width: 0;
   }
@@ -287,7 +287,7 @@
 
 
 // Optional heading
-.card-heading {
+.card-header {
   border-bottom: 1px solid transparent;
   .border-top-radius(@card-border-radius);
   .clearfix;
@@ -375,7 +375,7 @@
     //border-radius: @card-border-radius;
     overflow: hidden; // crop contents when collapsed
     
-    > .card-heading > .card-title {
+    > .card-header > .card-title {
 	    
 	    float: none;
 	    
@@ -389,7 +389,7 @@
     }
   }
 
-  .card-heading {
+  .card-header {
     border-bottom: 0;
     + .card-collapse .card-body {
       border-top: 1px solid @card-inner-border;
@@ -413,7 +413,7 @@
 			  border-top: 0;
 		  }
 		  
-		  > .card-heading {
+		  > .card-header {
 			  background-color: @background_color;
 			  
 			  h4 a {
@@ -440,7 +440,7 @@
 			  }
 		  }
 		  
-		  > .card-heading + .card-collapse {
+		  > .card-header + .card-collapse {
 			  //background-color: @default;
 			  background-color: @hover_bg;
 			  margin-bottom: 0;
@@ -483,7 +483,7 @@
   
   .card-variant(@card-default-border; @card-default-text; @card-default-heading-bg; @card-default-border; @options-color);
   
-  > .card-heading > .card-options > .nav-tabs > li {    	
+  > .card-header > .card-options > .nav-tabs > li {    	
 	> a { background-color: @options-color; }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
@@ -492,7 +492,7 @@
   @options-color: darken(@card-success-border, 5%);
   .card-variant(@card-success-border; @card-success-text; @card-success-heading-bg; @card-success-border; @options-color);
   
-  > .card-heading > .card-options > .nav-tabs > li {    	
+  > .card-header > .card-options > .nav-tabs > li {    	
 	> a { background-color: darken(@options-color, 5%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
@@ -501,7 +501,7 @@
   @options-color: darken(@card-warning-border, 5%);
   .card-variant(@card-warning-border; @card-warning-text; @card-warning-heading-bg; @card-warning-border; @options-color);
   
-  > .card-heading > .card-options > .nav-tabs > li {    	
+  > .card-header > .card-options > .nav-tabs > li {    	
 	> a { background-color: darken(@card-warning-heading-bg, 15%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
@@ -510,7 +510,7 @@
   @options-color: darken(@card-danger-border, 5%);
   .card-variant(@card-danger-border; @card-danger-text; @card-danger-heading-bg; @card-danger-border; @options-color);
   
-  > .card-heading > .card-options > .nav-tabs > li {    	
+  > .card-header > .card-options > .nav-tabs > li {    	
 	> a { background-color: darken(@card-danger-heading-bg, 15%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
@@ -519,7 +519,7 @@
   @options-color: darken(@card-info-border, 5%);
   .card-variant(@card-info-border; @card-info-text; @card-info-heading-bg; @card-info-border; @options-color);
   
-  > .card-heading > .card-options > .nav-tabs > li {    	
+  > .card-header > .card-options > .nav-tabs > li {    	
 	> a { background-color: darken(@card-info-heading-bg, 15%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; }
   }
@@ -532,7 +532,7 @@
   
   .card-variant(@card-dark-border; @card-dark-text; @card-dark-heading-bg; @card-dark-border; @options-color);
   
-  > .card-heading > .card-options > .nav-tabs > li {    	
+  > .card-header > .card-options > .nav-tabs > li {    	
 	> a { background-color: fade(@card-dark-text, 10%); color: @card-dark-text; border-color: fade(@card-dark-border, 10%); }
 	&.active > a { background-color: #fff; border-bottom-color: #fff; color: @card-dark-border; i { color: @card-dark-border; } }
   }
@@ -545,7 +545,7 @@
   
   .card-variant(@card-gray-heading-bg; @card-default-text; @card-gray-heading-bg; @card-gray-border; @options-color);
   
-  > .card-heading > .card-options > .nav-tabs > li {    	
+  > .card-header > .card-options > .nav-tabs > li {    	
 	> a { background-color: @card-gray-text; border-bottom: 1px solid @card-gray-text; }
 	&.active > a { background-color: @card-gray-heading-bg; border-color: @card-gray-border; border-bottom-color: @card-gray-heading-bg; }
   }
@@ -567,7 +567,7 @@
   
   .card-variant(@card-gradient-border; @card-gradient-text; @card-gradient-heading-bg; @card-gradient-border; @options-color);
   
-  > .card-heading {
+  > .card-header {
 	  .background-image(linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%));
 	  
 	  > .card-options {

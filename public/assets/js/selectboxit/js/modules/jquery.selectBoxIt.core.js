@@ -152,7 +152,7 @@
 
                     "button": "btn",
 
-                    "list": "dropdown-menu",
+                    "list": "dropdown-menu shadow",
 
                     "container": "bootstrap",
 

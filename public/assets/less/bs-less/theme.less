@@ -275,28 +275,28 @@
 }
 
 // Mixin for generating new styles
-.card-heading-styles(@color) {
+.card-header-styles(@color) {
   #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 5%));
 }
 
 // Apply the mixin to the card headings only
-.card-default > .card-heading {
-  .card-heading-styles(@card-default-heading-bg);
+.card-default > .card-header {
+  .card-header-styles(@card-default-heading-bg);
 }
-.card-primary > .card-heading {
-  .card-heading-styles(@card-primary-heading-bg);
+.card-primary > .card-header {
+  .card-header-styles(@card-primary-heading-bg);
 }
-.card-success > .card-heading {
-  .card-heading-styles(@card-success-heading-bg);
+.card-success > .card-header {
+  .card-header-styles(@card-success-heading-bg);
 }
-.card-info > .card-heading {
-  .card-heading-styles(@card-info-heading-bg);
+.card-info > .card-header {
+  .card-header-styles(@card-info-heading-bg);
 }
-.card-warning > .card-heading {
-  .card-heading-styles(@card-warning-heading-bg);
+.card-warning > .card-header {
+  .card-header-styles(@card-warning-heading-bg);
 }
-.card-danger > .card-heading {
-  .card-heading-styles(@card-danger-heading-bg);
+.card-danger > .card-header {
+  .card-header-styles(@card-danger-heading-bg);
 }
 
 //

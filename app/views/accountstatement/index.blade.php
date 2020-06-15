@@ -62,7 +62,7 @@
 
             <div class="row">
                 <div class="col-md-12 text-right">
-                    <a class="btn btn-white save-collection" style="display: none;" id="ToolTables_table-4_0">
+                    <a class="btn btn-primary save-collection" style="display: none;" id="ToolTables_table-4_0">
                         <undefined>EXCEL</undefined>
                     </a>
                 </div>

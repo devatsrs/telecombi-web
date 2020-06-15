@@ -3131,7 +3131,7 @@ var neon_summernote_dropdown_tpl = {
   var editor = renderer.create(
     '<div class="note-editor note-frame card card-default"/>'
   );
-  var toolbar = renderer.create('<div class="note-toolbar card-heading"/>');
+  var toolbar = renderer.create('<div class="note-toolbar card-header"/>');
   var editingArea = renderer.create('<div class="note-editing-area"/>');
   var codable = renderer.create('<textarea class="note-codable"/>');
   var editable = renderer.create(
@@ -3172,7 +3172,7 @@ var neon_summernote_dropdown_tpl = {
     }
   );
 
-  var dropdown = renderer.create('<div class="dropdown-menu">', function(
+  var dropdown = renderer.create('<div class="dropdown-menu shadow">', function(
     $node,
     options
   ) {
@@ -3196,7 +3196,7 @@ var neon_summernote_dropdown_tpl = {
   });
 
   var dropdownCheck = renderer.create(
-    '<div class="dropdown-menu note-check">',
+    '<div class="dropdown-menu shadow note-check">',
     function($node, options) {
       var markup = $.isArray(options.items)
         ? options.items

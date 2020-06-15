@@ -74,10 +74,10 @@
                             <div class="card-title"><strong>Accounts</strong></div>
                             <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
-                                    <label class="btn btn-white active">
+                                    <label class="btn btn-primary active">
                                         <input type="radio" name="ActiveAccount" value="Yes" checked="checked">Active
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="ActiveAccount" value="No" >Inactive
                                     </label>
                                 </div>
@@ -106,10 +106,10 @@
                             <div class="card-title"><strong>Leads</strong></div>
                             <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
-                                    <label class="btn btn-white active">
+                                    <label class="btn btn-primary active">
                                         <input type="radio" name="ActiveLead" value="Yes" checked="checked">Active
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="ActiveLead" value="No" >Inactive
                                     </label>
                                 </div>
@@ -141,24 +141,24 @@
                             <div class="card-title"><strong>Revenue </strong> </div>
                             <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
-                                    <label class="btn  btn-white active">
+                                    <label class="btn  btn-primary active">
                                         <input type="radio" name="RevenueListType" value="Daily" checked="checked">Daily
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="RevenueListType" value="Weekly" >Weekly
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="RevenueListType" value="Monthly" >Monthly
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="RevenueListType" value="Yearly" >Yearly
                                     </label>
                                 </div>
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
-                                    <label class="btn btn-white active">
+                                    <label class="btn btn-primary active">
                                         <input type="radio" name="RevenueDisplayType" value="Table" checked="checked">Table
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="RevenueDisplayType" value="Chart" >Chart
                                     </label>
                                 </div>
@@ -197,24 +197,24 @@
                             <div class="card-title"> <strong>Margin</strong></div>
                             <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
-                                    <label class="btn  btn-white active">
+                                    <label class="btn  btn-primary active">
                                         <input type="radio" name="MarginListType" value="Daily" checked="checked">Daily
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="MarginListType" value="Weekly" >Weekly
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="MarginListType" value="Monthly" >Monthly
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="MarginListType" value="Yearly" >Yearly
                                     </label>
                                 </div>
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
-                                    <label class="btn btn-white active">
+                                    <label class="btn btn-primary active">
                                         <input type="radio" name="MarginDisplayType" value="Table" checked="checked">Table
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="MarginDisplayType" value="Chart" >Chart
                                     </label>
                                 </div>
@@ -255,16 +255,16 @@
                             <div class="card-title"> <strong>By Account</strong></div>
                             <div class="card-options">
                                 <div class="btn-group custom_btn_group" data-toggle="buttons">
-                                    <label class="btn  btn-white active">
+                                    <label class="btn  btn-primary active">
                                         <input type="radio" name="AccountListType" value="Daily" checked="checked">Daily
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="AccountListType" value="Weekly" >Weekly
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="AccountListType" value="Monthly" >Monthly
                                     </label>
-                                    <label class="btn btn-white">
+                                    <label class="btn btn-primary">
                                         <input type="radio" name="AccountListType" value="Yearly" >Yearly
                                     </label>
                                 </div>

@@ -43,7 +43,7 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
 
 <div class="row">
   <div class="col-sm-12">
-    <div class="card shadow card-primary card-table">
+    <div class="card shadow card-primary ">
       <div class="card-header py-3">
         <div class="card-title">
           <h3>Active Tasks</h3>
@@ -76,12 +76,11 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
 	 if(User::checkCategoryPermission('CrmDashboardRecentAccount','View')){?>
     <div class="row">
     <div class="col-sm-12">
-            <div class="card shadow card-primary card-table">
+            <div class="card shadow card-primary ">
                 <div class="card-header py-3">
                     <div class="card-title">
                         <h3>Recent Accounts</h3>
-                        <span>Recently Added Accounts</span>
-                    </div>
+                     </div>
 
                     <div id="AccountsTab" class="card-options">
                         <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
@@ -125,7 +124,7 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  ?>
 @if(User::checkCategoryPermission('CrmDashboardSalesOpportunity','View'))
   <div class="col-md-6">
-    <div class="card shadow card-primary card-table">
+    <div class="card shadow card-primary ">
       <div class="card-header py-3">      
         <div id="Sales" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
         <div class="card-title forecase_title">
@@ -161,7 +160,7 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  ?>
   @if(User::checkCategoryPermission('CrmDashboardPipeline','View'))
   <div class="col-sm-6">
-    <div class="card shadow card-primary card-table">
+    <div class="card shadow card-primary ">
       <div class="card-header py-3">
         <div class="card-title">
           <h3>Pipeline Summary</h3>
@@ -186,7 +185,7 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  @if(User::checkCategoryPermission('CrmDashboardForecast','View'))
 <div class="row">
   <div class="col-md-12">
-    <div class="card shadow card-primary card-table">
+    <div class="card shadow card-primary ">
       <div class="card-header py-3">
         <div id="Forecast" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
         <div class="card-title forecase_title">
@@ -219,7 +218,7 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
  @if(User::checkCategoryPermission('CrmDashboardSalesRevenue','View'))
 <div class="row">
 <div class="col-sm-12">
-    <div class="card shadow card-primary card-table">
+    <div class="card shadow card-primary ">
       <div class="card-header py-3">
         <div id="Sales_Manager" class="pull-right card-box card-options"> <a data-rel="collapse" href="#"><i class="entypo-down-open"></i></a> <a data-rel="reload" href="#"><i class="entypo-arrows-ccw"></i></a> <a data-rel="close" href="#"><i class="entypo-cancel"></i></a></div>
         <div class="card-title forecase_title">
@@ -235,10 +234,10 @@ if(User::checkCategoryPermission('CrmDashboardTasks','View')){ ?>
                  <div class="col-sm-3"> <input value="{{$StartDateDefault}} - {{$DateEndDefault}}" type="text" id="Duedate"  data-format="YYYY-MM-DD"  name="Duedate" class="small-date-input daterange">   </div>               
                 <div class="col-sm-3">
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-white active">
+                        <label class="btn btn-primary active">
                             <input type="radio" name="ListType" value="Weekly" checked="checked">Weekly
                         </label>
-                        <label class="btn btn-white">
+                        <label class="btn btn-primary">
                             <input type="radio" name="ListType" value="Monthly" >Monthly
                         </label>
                     </div>
@@ -262,7 +261,7 @@ if((count($CrmAllowedReports)==0) ||  in_array('CrmDashboardOpportunities',$CrmA
  @if(User::checkCategoryPermission('CrmDashboardOpportunities','View'))
 <div class="row">
   <div class="col-sm-12">
-    <div class="card shadow card-primary card-table">
+    <div class="card shadow card-primary ">
       <div class="card-header py-3">
         <div class="card-title">
           <h3>Open Opportunities</h3>
