@@ -75,7 +75,7 @@
                         <?php } ?>
                         action += ' <a href="'+show_+'" Title="View" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>';
                         <?php if(User::checkCategoryPermission('Contacts','Delete') ){ ?>
-                        action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger btn-primary btn-sm"><i class="entypo-trash"></i></a>';
+                        action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger  btn-sm"><i class="entypo-trash"></i></a>';
                         <?php } ?>
                         return action;
                       }

@@ -10,7 +10,9 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Nunito", sans-serif, Arial, sans-serif;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 12px;
   line-height: 1.42857143;
   color: #949494;
@@ -2247,8 +2249,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #cc2424;
-  border-color: #cc2424;
+  background-color: #d52a1a;
+  border-color: #d52a1a;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -2279,11 +2281,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #cc2424;
-  border-color: #cc2424;
+  background-color: #d52a1a;
+  border-color: #d52a1a;
 }
 .btn-danger .badge {
-  color: #cc2424;
+  color: #d52a1a;
   background-color: #ffffff;
 }
 .btn-danger > .caret {
@@ -2968,7 +2970,7 @@ hr + .mail-env {
   height: 0px;
   border-style: solid;
   border-width: 0 3px 4px 3px;
-  border-color: transparent transparent #cc2424 transparent;
+  border-color: transparent transparent #d52a1a transparent;
 }
 .mail-env .mail-body .mail-info .mail-sender.mail-date,
 .mail-env .mail-body .mail-info .mail-date.mail-date {
@@ -4024,7 +4026,7 @@ hr + .mail-env {
 .login-page .form-resetpassword-success.form-login-error,
 .login-page .form-login-error.form-login-error {
   padding: 0;
-  background: #cc2424;
+  background: #d52a1a;
 }
 .login-page .form-register-success.form-login-error h3,
 .login-page .form-forgotpassword-success.form-login-error h3,
@@ -6836,7 +6838,7 @@ fieldset[disabled]
   color: #ffffff;
 }
 .page-body .main-content .cbp_tmtimeline > li .cbp_tmicon.bg-danger {
-  background-color: #cc2424;
+  background-color: #d52a1a;
   color: #ffffff;
 }
 .page-body .main-content .cbp_tmtimeline > li .cbp_tmlabel {
@@ -7091,7 +7093,7 @@ fieldset[disabled]
   .timeline-entry
   .timeline-entry-inner
   .timeline-icon.bg-danger {
-  background-color: #cc2424;
+  background-color: #d52a1a;
   color: #ffffff;
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
@@ -7549,7 +7551,7 @@ fieldset[disabled]
   color: #00a651;
 }
 .comments-list > li .comment-details .comment-footer .action-links .delete {
-  color: #cc2424;
+  color: #d52a1a;
 }
 .comments-list > li:last-child {
   border-bottom: 0;

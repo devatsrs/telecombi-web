@@ -3375,7 +3375,7 @@ fieldset[disabled] .btn-warning:hover {
 .open > .dropdown-toggle.btn-danger:focus,
 .open > .dropdown-toggle.btn-danger:hover {
   color: #fff;
-  background-color: #ac2925;
+  background-color: #d52a1a;
   border-color: transparent;
 }
 .btn-danger.disabled.focus,
@@ -8027,7 +8027,7 @@ input:focus {
 [id^="frmb-"][id$="-form-wrap"] .btn-danger:hover,
 [id^="frmb-"][id$="-form-wrap"] .form-actions .clear-all:hover {
   background-color: #c9302c;
-  border-color: #ac2925;
+  border-color: #d52a1a;
 }
 [id^="frmb-"][id$="-form-wrap"] .btn-default {
   background-color: #fff;
@@ -8651,7 +8651,7 @@ a.btn.toggle-form:before {
 }
 .rendered-form .btn-danger:hover {
   background-color: #c9302c;
-  border-color: #ac2925;
+  border-color: #d52a1a;
 }
 .rendered-form .btn-default {
   background-color: #fff;

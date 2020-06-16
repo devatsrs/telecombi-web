@@ -941,7 +941,7 @@ em {
   color: #ffffff;
 }
 .badge.badge-danger {
-  background-color: #cc2424;
+  background-color: #d52a1a;
   color: #ffffff;
 }
 .badge.badge-roundless {
@@ -1054,7 +1054,7 @@ a.list-group-item.active > .badge,
   );
 }
 .progress-bar-danger {
-  background-color: #cc2424;
+  background-color: #d52a1a;
 }
 .progress-striped .progress-bar-danger {
   background-image: linear-gradient(
@@ -1515,7 +1515,7 @@ button.close {
 }
 
 .priority {
-  border-left-color: #cc2424;
+  border-left-color: #d52a1a;
   border-left-style: solid;
   border-left-width: 3px;
 }
@@ -1673,7 +1673,7 @@ ul.grid li div.box {
   border-radius: 10px;
   padding: 5px 5px;
   width: 100%;
-  min-height: 24.5em;
+  min-height: 26.5em;
   overflow: hidden;
 }
 ul.grid li div.selected {
@@ -1707,14 +1707,20 @@ ul.grid li div.meta {
   font-weight: normal;
 }
 ul.grid li div.action {
-  text-align: right;
+  /* text-align: right;
   margin: 5px 0px;
   min-height: 20px;
   padding-bottom: 5px;
   nargin-to: -20px;
   position: absolute;
   right: 15px;
-  bottom: 5px;
+  bottom: 5px; */
+}
+.gridview .card {
+  min-height: 321px;
+}
+.leads .gridview .card {
+  min-height: 255px;
 }
 
 .right-padding-0 {
@@ -3270,7 +3276,7 @@ button.btn.btn-xs.small_icons {
   border-left: 5px solid #00a651 !important;
 }
 .post-error {
-  border-left: 5px solid #cc2424 !important;
+  border-left: 5px solid #d52a1a !important;
 }
 .post-info {
   border-left: 5px solid #21a9e1 !important;

@@ -78,7 +78,7 @@
                         <?php } ?>
                         <?php if(User::checkCategoryPermission('BusinessHours','Delete') ){ ?>
 						if(full[3] == 0){
-                        	action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger btn-primary btn-sm"><i class="entypo-trash"></i></a>';
+                        	action += ' <a href="'+delete_+'" title="Delete"  class="btn btn-danger  btn-sm"><i class="entypo-trash"></i></a>';
 						}
                         <?php } ?>
                         return action;

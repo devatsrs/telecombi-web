@@ -10,7 +10,9 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Nunito", sans-serif, Arial, sans-serif;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 12px;
   line-height: 1.42857143;
   color: #858796;
@@ -2247,8 +2249,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #cc2424;
-  border-color: #cc2424;
+  background-color: #d52a1a;
+  border-color: #d52a1a;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -2279,11 +2281,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #cc2424;
-  border-color: #cc2424;
+  background-color: #d52a1a;
+  border-color: #d52a1a;
 }
 .btn-danger .badge {
-  color: #cc2424;
+  color: #d52a1a;
   background-color: #ffffff;
 }
 .btn-danger > .caret {
@@ -2985,7 +2987,7 @@ body {
 }
 .page-container .sidebar-menu .logo-env {
   width: 100%;
-  padding: 35px 35px 0;
+  padding: 10px 17px 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -3049,7 +3051,7 @@ body {
 .page-container .sidebar-menu #main-menu li {
   position: relative;
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   border-bottom: 1px solid rgba(69, 74, 84, 0.7);
 }
 .page-container .sidebar-menu #main-menu li#search {
@@ -4968,7 +4970,7 @@ float: left;
   > li.notification-danger
   > a
   > i {
-  background-color: #cc2424;
+  background-color: #d52a1a;
   color: #ffffff;
 }
 .page-container.horizontal-menu
@@ -6294,7 +6296,7 @@ float: left;
   > li.notification-danger
   > a
   > i {
-  background-color: #cc2424;
+  background-color: #d52a1a;
   color: #ffffff;
 }
 .notifications.dropdown .dropdown-menu > li > ul > li .task {
@@ -6453,20 +6455,20 @@ canvas + .knob {
   visibility: visible;
 }
 .validate-has-error {
-  border-color: #cc2424;
+  border-color: #d52a1a;
 }
 .validate-has-error:focus {
-  border-color: #cc2424;
+  border-color: #d52a1a;
 }
 .validate-has-error + span.validate-has-error,
 .validate-has-error > span.validate-has-error,
 .input-group + .validate-has-error {
-  color: #cc2424;
+  color: #d52a1a;
   display: inline-block;
   margin-top: 5px;
 }
 .validate-has-error .validate-has-error {
-  color: #cc2424;
+  color: #d52a1a;
   display: inline-block;
   margin-top: 5px;
 }
@@ -6474,7 +6476,7 @@ canvas + .knob {
   margin-left: 10px;
 }
 .validate-has-error .form-control {
-  border-color: #cc2424;
+  border-color: #d52a1a;
 }
 .file-input-wrapper.inline {
   display: inline-block;

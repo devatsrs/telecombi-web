@@ -204,7 +204,7 @@ body .login-container .login-header.login-caret:after {
   border-top-color: #981b1b;
 }
 body.login-page.logging-in .login-progressbar {
-  background: #cc2424;
+  background: #d52a1a;
   height: 2px;
 }
 body.login-page.logging-in .login-progressbar div {

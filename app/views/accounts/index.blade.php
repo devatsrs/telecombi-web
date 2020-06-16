@@ -431,37 +431,37 @@
                                 
 								
 								<?php if(User::checkCategoryPermission('Opportunity','Add') && CompanyConfiguration::get('ACCOUNT_ADD_OPP') == 1) { ?>
-                                action +='&nbsp;<button class="btn  btn-primary btn-xs small_icons" title="Add Opportunity" data-id="'+full[0]+'" type="button"> <i class="fa fa-line-chart"></i> </button>';
+                                action +='<div class="col-md-2"><button class="btn btn-primary btn-xs small_icons" title="Add Opportunity" data-id="'+full[0]+'" type="button"> <i class="fa fa-line-chart"></i> </button></div>';
                                 <?php } ?>
 
                                 <?php if(User::checkCategoryPermission('AccountActivityChart','View') && CompanyConfiguration::get('ACCOUNT_ACT_CHART') == 1){ ?>
-                                action +='&nbsp;<button redirecto="'+chart_+'" class="btn small_icons btn-primary btn-xs" title="Account Activity Chart" data-id="'+full[0]+'" type="button"> <i class="fa fa-bar-chart"></i> </button>';
-                                //action += '&nbsp;<a href="'+edit_+'" class="btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>';
+                                action +='<div class="col-md-2"><button redirecto="'+chart_+'" class="btn small_icons btn-primary btn-xs" title="Account Activity Chart" data-id="'+full[0]+'" type="button"> <i class="fa fa-bar-chart"></i> </button></div>';
+                                //action += '<div class="col-md-2"><a href="'+edit_+'" class="btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-pencil"></i>Edit </a>';
                                 <?php } ?>
 
                                 <?php if(User::checkCategoryPermission('CreditControl','View') && CompanyConfiguration::get('ACCOUNT_CC') == 1){ ?>
-                                        action +='&nbsp;<button redirecto="'+credit_+'" class="btn small_icons btn-primary btn-xs" title="Credit Control" data-id="'+full[0]+'" type="button"> <i class="fa fa-credit-card"></i> </button>';
+                                        action +='<div class="col-md-2"><button redirecto="'+credit_+'" class="btn small_icons btn-primary btn-xs" title="Credit Control" data-id="'+full[0]+'" type="button"> <i class="fa fa-credit-card"></i> </button></div>';
                                 <?php } ?>
 								
 								if(full[10]==1 || full[11]==1){
-                                 	action += '&nbsp;<button redirecto="'+authenticate_+'" title="Authentication Rule" class="btn small_icons btn-primary btn-xs"><i class="entypo-lock"></i></button>';
+                                 	action += '<div class="col-md-2"><button redirecto="'+authenticate_+'" title="Authentication Rule" class="btn small_icons btn-primary btn-xs"><i class="entypo-lock"></i></button></div>';
                                 }
 
 								<?php if(User::checkCategoryPermission('AccountSubscription','View') && CompanyConfiguration::get('ACCOUNT_SUB') == 1) { ?>
-                                action +='&nbsp;<button class="btn btn-primary small_icons btn-xs " redirecto="'+subscriptions_+'" title="View Account Subscriptions" data-id="'+full[0]+'" type="button"> <i class="fa fa-refresh"></i> </button>';
+                                action +='<div class="col-md-2"><button class="btn btn-primary small_icons btn-xs " redirecto="'+subscriptions_+'" title="View Account Subscriptions" data-id="'+full[0]+'" type="button"> <i class="fa fa-refresh"></i> </button></div>';
                                 <?php } ?>
 								
                                 <?php if(User::checkCategoryPermission('Account','Edit')){ ?>
-                                action +='&nbsp;<button redirecto="'+edit_+'" class="btn small_icons btn-primary btn-xs" title="Edit" data-id="'+full[0]+'" type="button"> <i class="entypo-pencil"></i></button>';
+                                action +='<div class="col-md-2"><button redirecto="'+edit_+'" class="btn small_icons btn-primary btn-xs" title="Edit" data-id="'+full[0]+'" type="button"> <i class="entypo-pencil"></i></button></div>';
                                 <?php } ?>
                                 <?php if(CompanyConfiguration::get('ACCOUNT_VIEW') == 1){ ?>
-                                action +='&nbsp;<button redirecto="'+show_+'" class="btn small_icons btn-primary btn-xs" title="View" data-id="'+full[0]+'" type="button"> <i class="fa fa-eye"></i></button>';//entypo-info
+                                action +='<div class="col-md-2"><button redirecto="'+show_+'" class="btn small_icons btn-primary btn-xs" title="View" data-id="'+full[0]+'" type="button"> <i class="fa fa-eye"></i></button></div>';//entypo-info
                                 <?php } ?>
                                 <?php if(CompanyConfiguration::get('ACCOUNT_LOG') == 1){ ?>
-                                action +='&nbsp;<button redirecto="'+log_+'" class="btn small_icons btn-primary btn-xs" title="View Account Logs" data-id="'+full[0]+'" type="button"> <i class="fa fa-file-text-o"></i></button>';//entypo-info
+                                action +='<div class="col-md-2"><button redirecto="'+log_+'" class="btn small_icons btn-primary btn-xs" title="View Account Logs" data-id="'+full[0]+'" type="button"> <i class="fa fa-file-text-o"></i></button></div>';//entypo-info
                                 <?php } ?>
                                 <?php if(CompanyConfiguration::get('ACCOUNT_MOV_REPORT') == 1){ ?>
-                                action +='&nbsp;<button redirecto="'+movement_report+'" class="btn small_icons btn-primary btn-xs" title="Movement Report" data-id="'+full[0]+'" type="button"> <i class="fa fa-calendar-plus-o"></i></button>';//entypo-info
+                                action +='<div class="col-md-2"><button redirecto="'+movement_report+'" class="btn small_icons btn-primary btn-xs" title="Movement Report" data-id="'+full[0]+'" type="button"> <i class="fa fa-calendar-plus-o"></i></button></div>';//entypo-info
                                 <?php } ?>
                                 /*full[6] == Customer verified
                                  full[7] == Vendor verified */
@@ -488,13 +488,13 @@
 
                                 if(full[10]==1 && full[12]=='{{Account::VERIFIED}}'){
                                     <?php if(User::checkCategoryPermission('CustomersRates','View')){ ?>
-                                        action += '&nbsp;<button redirecto="'+customer_rate_+'" title="Customer" class="btn small_icons btn-warning btn-xs"><i class="entypo-user"></i></button>';
+                                        action += '<div class="col-md-2"><button redirecto="'+customer_rate_+'" title="Customer" class="btn small_icons btn-warning btn-xs"><i class="entypo-user"></i></button></div>';
                                     <?php } ?>
                                 }
 
                                 if(full[11]==1 && full[12]=='{{Account::VERIFIED}}'){
                                     <?php if(User::checkCategoryPermission('VendorRates','View')){ ?>
-                                        action += '&nbsp;<button redirecto="'+vendor_blocking_+'" title="Vendor" class="btn small_icons btn-info btn-xs"><i class="fa fa-slideshare"></i></button>';
+                                        action += '<div class="col-md-2"><button redirecto="'+vendor_blocking_+'" title="Vendor" class="btn small_icons btn-info btn-xs"><i class="fa fa-slideshare"></i></button></div>';
                                     <?php } ?>
                                 } 								
 								
@@ -628,11 +628,11 @@
 				
                 if(checkClass=='1')
 				{
-                    html += '<li class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
+                    html += '<li class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
                 }
 				else
 				{
-                    html += '<li class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
+                    html += '<li class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
                 }
 				var account_title = childrens.eq(2).text();
 				if(account_title.length>22){
@@ -655,10 +655,12 @@
                 popup_html += "<div class='clear'></div><label class='col-sm-6' >Available Credit Limit:</label><div class='col-sm-6' >" + ACL + "</div>";
                 popup_html += "<div class='clear'></div><label class='col-sm-6' >Balance Threshold:</label><div class='col-sm-6' >" + BalanceThreshold + "</div>";
 
-                html += '  <div class="box clearfix ' + select + '">';
+                html += '  <div class="card   shadow  clearfix ' + select + '">';
                // html += '  <div class="col-sm-4 header padding-0"> <img class="thumb" alt="default thumb" height="50" width="50" src="' + url + '"></div>';
-                html += '  <div class="col-sm-12 header padding-left-1">  <span class="head">' + account_title + '</span><br>';
+                html += '  <div class="col-sm-12 card-header p-2">  <span class="head">' + account_title + '</span><br>';
                 html += '  <span class="meta complete_name">' + account_name + '</span></div>';
+                html += '  <div class="card-body">';
+
                 html += '  <div class="col-sm-6 padding-0">';
                 html += '  <div class="block">';
                 html += '     <div class="meta">Email</div>';
@@ -678,7 +680,8 @@
                 html += '     <div class="address account-address">' + address1 + ''+address2+''+address3+''+city+''+PostCode+''+country+'</div>';
                 html += '  </div>';
                 html += '  </div>';
-                html += '  <div class="col-sm-12 padding-0 action">';
+                html += '  </div>';
+                html += '  <div class="card-footer col-sm-12 action">';
                 html += '   ' + temp.html();
                 html += '  </div>';
                 html += ' </div>';

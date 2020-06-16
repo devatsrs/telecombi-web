@@ -112,6 +112,7 @@
     </a>
 </p>
 <br />-->
+<div class="leads">
 <table class="table table-bordered datatable hidden" id="table-4">
 <thead>
 <tr>
@@ -126,6 +127,7 @@
 <tbody>
 </tbody>
 </table>
+</div>
 
 <script type="text/javascript">
     var editor_options 	 	=  		{"leadoptions":true};
@@ -203,15 +205,15 @@
                             show_ = show_.replace('{id}', id);
                             action = '';
                             <?php if(User::checkCategoryPermission('Opportunity','Add')) { ?>
-                            action +='&nbsp;<button class="btn btn-primary btn-xs opportunity" title="Add Opportunity" data-id="'+id+'" type="button"> <i class="fa fa-line-chart"></i> </button>';
+                            action +='<div class="col-md-2"><button class="btn btn-primary btn-xs opportunity" title="Add Opportunity" data-id="'+id+'" type="button"> <i class="fa fa-line-chart"></i> </button></div>';
                             <?php } ?>
                             <?php if(User::checkCategoryPermission('Leads','Edit')) { ?>
-                            action +='&nbsp;<button redirecto="'+edit_+'" class="btn btn-primary btn-xs" title="Edit" data-id="'+full[0]+'" type="button"> <i class="entypo-pencil"></i> </button>';
+                            action +='<div class="col-md-2"><button redirecto="'+edit_+'" class="btn btn-primary btn-xs" title="Edit" data-id="'+full[0]+'" type="button"> <i class="entypo-pencil"></i> </button></div>';
                             <?php } ?>
                             <?php if(User::checkCategoryPermission('Leads','Clone')) { ?>
-                            //action += '&nbsp;<a href="' + clone_ + '" class="btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-users"></i>Clone </a>';
+                            //action += '<div class="col-md-2"><a href="' + clone_ + '" class="btn btn-primary btn-sm btn-icon icon-left"><i class="entypo-users"></i>Clone </a>';
                             <?php } ?>
-                            action +='&nbsp;<button redirecto="'+show_+'" class="btn btn-primary btn-xs" title="View" data-id="'+full[0]+'" type="button"> <i class="fa fa-eye"></i> </button>';//entypo-info
+                            action +='<div class="col-md-2"><button redirecto="'+show_+'" class="btn btn-primary btn-xs" title="View" data-id="'+full[0]+'" type="button"> <i class="fa fa-eye"></i> </button></div>';//entypo-info
 
                             action +='<input type="hidden" name="accountid" value="'+id+'"/>';
                             action +='<input type="hidden" name="address1" value="'+full[7]+'"/>';
@@ -291,9 +293,9 @@
                              select = 'selected';
                          }
                          if(checkClass=='1'){
-                             html += '<li class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
+                             html += '<li class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
                          }else{
-                             html += '<li class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
+                             html += '<li class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xsm-12">';
                          }
 						 var account_title = childrens.eq(1).text();
 				if(account_title.length>22){
@@ -305,10 +307,11 @@
 					account_name  = account_name.substring(0,40)+"...";	
 				}
 						 
-                         html += '  <div class="box clearfix ' + select + '">';
+                         html += '  <div class="card   shadow  clearfix ' + select + '">';
                          //html += '  <div class="col-sm-4 header padding-0"> <img class="thumb" alt="default thumb" height="50" width="50" src="' + url + '"></div>';
-                         html += '  <div class="col-sm-12 header padding-left-1">  <span class="head">' + account_title + '</span><br>';
+                         html += '  <div class="col-sm-12 card-header p-2">  <span class="head">' + account_title + '</span><br>';
                          html += '  <span class="meta complete_name">' + account_name + '</span></div>';
+                         html += '  <div class="card-body">';
                          html += '  <div class="col-sm-6 padding-0">';
                          html += '  <div class="block">';
                          html += '     <div class="meta">Email</div>';
@@ -326,7 +329,8 @@
 						 html += '     <div class="address">' + address1 + ''+address2+''+address3+''+city+''+PostCode+''+country+'</div>';
                          html += '  </div>';
                          html += '  </div>';
-                         html += '  <div class="col-sm-11 padding-0 action">';
+                         html += '  </div>';
+                         html += '  <div class="card-footer col-sm-12 action">';
                          html += '   ' + temp.html();
                          html += '  </div>';
                          html += ' </div>';

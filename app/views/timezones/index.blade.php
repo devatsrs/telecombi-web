@@ -192,7 +192,7 @@
                                                     action += ' <a href="' + edit_ + '" title="Edit" class="edit-timezones btn btn-primary btn-xs" data-name="Edit Timezones"><i class="entypo-pencil"></i>&nbsp;</a>';
                                             <?php } ?>
                                             <?php if(User::checkCategoryPermission('Timezones', 'Delete') ){ ?>
-                                            action += ' <a href="'+delete_+'" title="Delete" class="btn delete btn-danger btn-primary btn-xs"><i class="entypo-trash"></i></a>';
+                                            action += ' <a href="'+delete_+'" title="Delete" class="btn delete btn-danger  btn-xs"><i class="entypo-trash"></i></a>';
                                             <?php } ?>
                                         }
                                         return action;

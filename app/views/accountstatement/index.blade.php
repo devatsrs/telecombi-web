@@ -248,12 +248,12 @@
 
 
                                     if( result[i]['InvoiceIn_DisputeID'] !='' ) {
-                                        result[i]['InvoiceIn_DisputeID'] = '<a style="color:#cc2424;font-weight: bold" class="DisputeModel" id="' + result[i]['InvoiceIn_DisputeID'] + '" href="javascript:;" onClick="disputesModel(this);">'+result[i]['InvoiceIn_DisputeAmount']+'</a>';
+                                        result[i]['InvoiceIn_DisputeID'] = '<a style="color:#d52a1a;font-weight: bold" class="DisputeModel" id="' + result[i]['InvoiceIn_DisputeID'] + '" href="javascript:;" onClick="disputesModel(this);">'+result[i]['InvoiceIn_DisputeAmount']+'</a>';
                                     } else {
                                         result[i]['InvoiceIn_DisputeID'] = '';
                                     }
                                     if( result[i]['InvoiceOut_DisputeID'] !='' ) {
-                                        result[i]['InvoiceOut_DisputeID'] = '<a style="color:#cc2424;font-weight: bold" class="DisputeModel" id="' + result[i]['InvoiceOut_DisputeID'] + '" href="javascript:;" onClick="disputesModel(this);">'+result[i]['InvoiceOut_DisputeAmount']+'</a>';
+                                        result[i]['InvoiceOut_DisputeID'] = '<a style="color:#d52a1a;font-weight: bold" class="DisputeModel" id="' + result[i]['InvoiceOut_DisputeID'] + '" href="javascript:;" onClick="disputesModel(this);">'+result[i]['InvoiceOut_DisputeAmount']+'</a>';
                                     } else {
                                         result[i]['InvoiceOut_DisputeID'] = '';
                                     }
@@ -295,7 +295,7 @@
                                         '<th>@lang('routes.TABLE_TOTAL')</th>' +
                                         '<th></th>' +
                                         '<th style="text-align: right;">'+ CurencySymbol+ InvoiceOutAmountTotal +'</th>' +
-                                        '<th style="color:#cc2424 !important;text-align: right;">' + CurencySymbol + InvoiceOutDisputeAmountTotal +'</th>' +
+                                        '<th style="color:#d52a1a !important;text-align: right;">' + CurencySymbol + InvoiceOutDisputeAmountTotal +'</th>' +
                                         '<th></th>' +
                                         '<th></th>' +
                                         '<th style="text-align: right;">'+ CurencySymbol+ PaymentInAmountTotal+'</th>' +
@@ -303,7 +303,7 @@
                                         '<th></th>' +
                                         '<th></th>' +
                                         '<th style="text-align: right;">'+ CurencySymbol + InvoiceInAmountTotal +'</th>' +
-                                        '<th style="color:#cc2424 !important;text-align: right;">' + CurencySymbol + InvoiceInDisputeAmountTotal +'</th>' +
+                                        '<th style="color:#d52a1a !important;text-align: right;">' + CurencySymbol + InvoiceInDisputeAmountTotal +'</th>' +
                                         '<th></th>' +
                                         '<th></th>' +
                                         '<th style="text-align: right;">'+ CurencySymbol + PaymentOutAmountTotal +'</th>' +

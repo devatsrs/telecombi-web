@@ -11,7 +11,7 @@ $NoticeBoardPostLast = NoticeBoardPost::where("CompanyID", $CompanyID)->limit(1)
         border-left: 10px solid #00a651 !important;
     }
     .post-error {
-        border-left: 10px solid #cc2424 !important;
+        border-left: 10px solid #d52a1a !important;
     }
     .post-info {
         border-left: 10px solid #21a9e1 !important;
