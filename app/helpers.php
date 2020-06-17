@@ -1116,8 +1116,8 @@ function create_site_configration_cache(){
         $cache['FavIcon'] 			=	URL::to('/').'/assets/images/favicon.ico';
         $cache['Logo'] 	  			=	URL::to('/').'/assets/images/logo@2x.png';
         $cache['Title']				=	'Neon';
-        $cache['FooterText']		=	'&copy; '.date('Y').' Code Desk';
-        $cache['FooterUrl']			=	'http://www.code-desk.com';
+        $cache['FooterText']		=	'&copy; '.date('Y').' Shriramsoft';
+        $cache['FooterUrl']			=	'http://www.shriramsoft.com';
         $cache['LoginMessage']		=	Lang::get("routes.CUST_PANEL_PAGE_LOGIN_LBL_LOGIN_MSG");
         $cache['CustomCss']			=	'';
     }

@@ -12,7 +12,7 @@
                             <?php
                         $taggedUsers = $task['TaggedUsers'];
                         $task = $task['task'];
-                        //$priority = !empty($task['Priority'])?'<i style="color:#d52a1a;font-size:15px;" class="edit-deal entypo-record"></i>':'';
+                        //$priority = !empty($task['Priority'])?'<i style="color:#e74a3b;font-size:15px;" class="edit-deal entypo-record"></i>':'';
                         $priorityborder = !empty($task['Priority'])?'priority':'normal';
                         $hidden = '';
                         $datediff = '';

@@ -1,18 +1,5 @@
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-html {
-  font-size: 62.5%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
 body {
-  font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Nunito", Arial, sans-serif;
   font-size: 12px;
   line-height: 1.42857143;
   color: #949494;
@@ -796,21 +783,10 @@ output {
   background-image: none;
   border: 1px solid #ebebeb;
   border-radius: 3px;
-  -webkit-transition: border-color ease-in-out 0.15s,
-    -webkit-box-shadow ease-in-out 0.15s;
-  -moz-transition: border-color ease-in-out 0.15s,
-    -moz-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  -webkit-transition: border-color ease-in-out 0.15s,
-    box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 .form-control:focus {
   border-color: #c8cdd7;
   outline: 0;
-  -moz-box-shadow: 0 2px 1px rgba(203, 208, 217, 0.08);
-  -webkit-box-shadow: 0 2px 1px rgba(203, 208, 217, 0.08);
-  box-shadow: 0 2px 1px rgba(203, 208, 217, 0.08);
 }
 .form-control::-webkit-input-placeholder {
   color: #aaaaaa;
@@ -2249,8 +2225,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #d52a1a;
-  border-color: #d52a1a;
+  background-color: #e74a3b;
+  border-color: #e74a3b;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -2281,11 +2257,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #d52a1a;
-  border-color: #d52a1a;
+  background-color: #e74a3b;
+  border-color: #e74a3b;
 }
 .btn-danger .badge {
-  color: #d52a1a;
+  color: #e74a3b;
   background-color: #ffffff;
 }
 .btn-danger > .caret {
@@ -2970,7 +2946,7 @@ hr + .mail-env {
   height: 0px;
   border-style: solid;
   border-width: 0 3px 4px 3px;
-  border-color: transparent transparent #d52a1a transparent;
+  border-color: transparent transparent #e74a3b transparent;
 }
 .mail-env .mail-body .mail-info .mail-sender.mail-date,
 .mail-env .mail-body .mail-info .mail-date.mail-date {
@@ -4026,7 +4002,7 @@ hr + .mail-env {
 .login-page .form-resetpassword-success.form-login-error,
 .login-page .form-login-error.form-login-error {
   padding: 0;
-  background: #d52a1a;
+  background: #e74a3b;
 }
 .login-page .form-register-success.form-login-error h3,
 .login-page .form-forgotpassword-success.form-login-error h3,
@@ -6838,7 +6814,7 @@ fieldset[disabled]
   color: #ffffff;
 }
 .page-body .main-content .cbp_tmtimeline > li .cbp_tmicon.bg-danger {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .page-body .main-content .cbp_tmtimeline > li .cbp_tmlabel {
@@ -7093,7 +7069,7 @@ fieldset[disabled]
   .timeline-entry
   .timeline-entry-inner
   .timeline-icon.bg-danger {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
@@ -7551,7 +7527,7 @@ fieldset[disabled]
   color: #00a651;
 }
 .comments-list > li .comment-details .comment-footer .action-links .delete {
-  color: #d52a1a;
+  color: #e74a3b;
 }
 .comments-list > li:last-child {
   border-bottom: 0;

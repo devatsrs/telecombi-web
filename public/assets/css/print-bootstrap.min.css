@@ -3154,7 +3154,7 @@ select[multiple].form-group-lg .form-control, textarea.form-group-lg .form-contr
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open > .dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #286090;
-    border-color: #4e73dfe8
+    border-color: #4e73df;
 }
 
 .btn-primary.active, .btn-primary:active, .open > .dropdown-toggle.btn-primary {
@@ -3258,7 +3258,7 @@ select[multiple].form-group-lg .form-control, textarea.form-group-lg .form-contr
 .btn-danger.active, .btn-danger.focus, .btn-danger:active, .btn-danger:focus, .btn-danger:hover, .open > .dropdown-toggle.btn-danger {
     color: #fff;
     background-color: #c9302c;
-    border-color: #d52a1a
+    border-color: #e74a3b
 }
 
 .btn-danger.active, .btn-danger:active, .open > .dropdown-toggle.btn-danger {

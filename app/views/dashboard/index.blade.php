@@ -174,7 +174,7 @@
     <?php if(User::checkCategoryPermission('Account','View')){?>
     <div class="col-sm-6">
             <div class="card shadow card-primary card-table">
-                <div class="card-header py-3">
+                <div class=" card-header py-3">
                     <div class="card-title">
                         <h3>Recent Accounts</h3>
                         <span>Recently Added Accounts</span>

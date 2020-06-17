@@ -265,9 +265,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Nunito", Arial, sans-serif;
   font-size: 12px;
   line-height: 1.42857143;
   color: #949494;
@@ -3388,8 +3386,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #d52a1a;
-  border-color: #d52a1a;
+  background-color: #e74a3b;
+  border-color: #e74a3b;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -3420,11 +3418,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #d52a1a;
-  border-color: #d52a1a;
+  background-color: #e74a3b;
+  border-color: #e74a3b;
 }
 .btn-danger .badge {
-  color: #d52a1a;
+  color: #e74a3b;
   background-color: #ffffff;
 }
 .btn-danger > .caret {
@@ -6345,7 +6343,7 @@ div.label {
   background-color: #f9ce07;
 }
 .label-danger {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
 }
 .label-danger[href]:hover,
 .label-danger[href]:focus {
@@ -6388,7 +6386,7 @@ div.label {
   color: #ffffff;
 }
 .badge.badge-danger {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .badge.badge-roundless {
@@ -6837,7 +6835,7 @@ a.thumbnail.active {
   );
 }
 .progress-bar-danger {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
 }
 .progress-striped .progress-bar-danger {
   background-image: -webkit-gradient(
@@ -10187,7 +10185,7 @@ td.visible-print {
   width: 34%;
   border-left: 1px solid #ebebeb;
   border-right: 1px solid #ebebeb;
-  *background-color: #e6e6e6;
+  background-color: #e6e6e6;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10210,7 +10208,7 @@ td.visible-print {
 .has-switch label.disabled,
 .has-switch label[disabled] {
   color: #333333;
-  *background-color: #d9d9d9;
+  background-color: #d9d9d9;
 }
 .has-switch label:active,
 .has-switch label.active {
@@ -10238,7 +10236,7 @@ td.visible-print {
   border-bottom-left-radius: 49px;
 }
 .has-switch span.switch-right {
-  *background-color: #ffffff;
+  background-color: #ffffff;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10261,7 +10259,7 @@ td.visible-print {
 .has-switch span.switch-right.disabled,
 .has-switch span.switch-right[disabled] {
   color: #333333;
-  *background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 .has-switch span.switch-right:active,
 .has-switch span.switch-right.active {
@@ -10269,13 +10267,13 @@ td.visible-print {
 }
 .has-switch span.switch-primary,
 .has-switch span.switch-left {
-  *background-color: #0088cc;
+  background-color: #4e73df;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .has-switch span.switch-primary.switch-left,
 .has-switch span.switch-left.switch-left {
-  background-color: #0088cc;
+  background-color: #4e73df;
   color: #ffffff;
 }
 .has-switch span.switch-primary.switch-right,
@@ -10301,7 +10299,7 @@ td.visible-print {
 .has-switch span.switch-primary[disabled],
 .has-switch span.switch-left[disabled] {
   color: #ffffff;
-  *background-color: #0077b3;
+  background-color: #0077b3;
 }
 .has-switch span.switch-primary:active,
 .has-switch span.switch-left:active,
@@ -10310,7 +10308,7 @@ td.visible-print {
   background-color: #006699 \9;
 }
 .has-switch span.switch-info {
-  *background-color: #5bc0de;
+  background-color: #5bc0de;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10333,14 +10331,14 @@ td.visible-print {
 .has-switch span.switch-info.disabled,
 .has-switch span.switch-info[disabled] {
   color: #ffffff;
-  *background-color: #46b8da;
+  background-color: #46b8da;
 }
 .has-switch span.switch-info:active,
 .has-switch span.switch-info.active {
   background-color: #31b0d5 \9;
 }
 .has-switch span.switch-success {
-  *background-color: #62c462;
+  background-color: #62c462;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10363,14 +10361,14 @@ td.visible-print {
 .has-switch span.switch-success.disabled,
 .has-switch span.switch-success[disabled] {
   color: #ffffff;
-  *background-color: #4fbd4f;
+  background-color: #4fbd4f;
 }
 .has-switch span.switch-success:active,
 .has-switch span.switch-success.active {
   background-color: #42b142 \9;
 }
 .has-switch span.switch-warning {
-  *background-color: #fbb450;
+  background-color: #fbb450;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10393,14 +10391,14 @@ td.visible-print {
 .has-switch span.switch-warning.disabled,
 .has-switch span.switch-warning[disabled] {
   color: #ffffff;
-  *background-color: #faa937;
+  background-color: #faa937;
 }
 .has-switch span.switch-warning:active,
 .has-switch span.switch-warning.active {
   background-color: #fa9f1e \9;
 }
 .has-switch span.switch-danger {
-  *background-color: #ee5f5b;
+  background-color: #ee5f5b;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10423,14 +10421,14 @@ td.visible-print {
 .has-switch span.switch-danger.disabled,
 .has-switch span.switch-danger[disabled] {
   color: #ffffff;
-  *background-color: #ec4844;
+  background-color: #ec4844;
 }
 .has-switch span.switch-danger:active,
 .has-switch span.switch-danger.active {
   background-color: #e9322d \9;
 }
 .has-switch span.switch-default {
-  *background-color: #ffffff;
+  background-color: #ffffff;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10453,7 +10451,7 @@ td.visible-print {
 .has-switch span.switch-default.disabled,
 .has-switch span.switch-default[disabled] {
   color: #333333;
-  *background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 .has-switch span.switch-default:active,
 .has-switch span.switch-default.active {
@@ -10653,7 +10651,7 @@ div.datepicker table tr td.today,
 div.datepicker table tr td.today:hover,
 div.datepicker table tr td.today.disabled,
 div.datepicker table tr td.today.disabled:hover {
-  *background-color: #737397;
+  background-color: #737397;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   color: #000;
@@ -10704,7 +10702,7 @@ div.datepicker table tr td.today:hover[disabled],
 div.datepicker table tr td.today.disabled[disabled],
 div.datepicker table tr td.today.disabled:hover[disabled] {
   color: #ffffff;
-  *background-color: #66678a;
+  background-color: #66678a;
 }
 div.datepicker table tr td.today:active,
 div.datepicker table tr td.today:hover:active,
@@ -10738,7 +10736,7 @@ div.datepicker table tr td.range.today,
 div.datepicker table tr td.range.today:hover,
 div.datepicker table tr td.range.today.disabled,
 div.datepicker table tr td.range.today.disabled:hover {
-  *background-color: #f3ea7a;
+  background-color: #f3ea7a;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   -webkit-background-clip: padding-box;
@@ -10794,7 +10792,7 @@ div.datepicker table tr td.range.today:hover[disabled],
 div.datepicker table tr td.range.today.disabled[disabled],
 div.datepicker table tr td.range.today.disabled:hover[disabled] {
   color: #ffffff;
-  *background-color: #f1e663;
+  background-color: #f1e663;
 }
 div.datepicker table tr td.range.today:active,
 div.datepicker table tr td.range.today:hover:active,
@@ -10810,7 +10808,7 @@ div.datepicker table tr td.selected,
 div.datepicker table tr td.selected:hover,
 div.datepicker table tr td.selected.disabled,
 div.datepicker table tr td.selected.disabled:hover {
-  *background-color: #808080;
+  background-color: #808080;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   color: #fff;
@@ -10862,7 +10860,7 @@ div.datepicker table tr td.selected:hover[disabled],
 div.datepicker table tr td.selected.disabled[disabled],
 div.datepicker table tr td.selected.disabled:hover[disabled] {
   color: #ffffff;
-  *background-color: #737373;
+  background-color: #737373;
 }
 div.datepicker table tr td.selected:active,
 div.datepicker table tr td.selected:hover:active,
@@ -11651,7 +11649,7 @@ button.toast-close-button {
   background-color: #00a651;
 }
 .toast-error {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
 }
 .toast-info {
   background-color: #21a9e1;
@@ -13877,7 +13875,7 @@ button.toast-close-button {
   > li.notification-danger
   > a
   > i {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .page-container.horizontal-menu
@@ -15299,7 +15297,7 @@ button.toast-close-button {
   > li.notification-danger
   > a
   > i {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .notifications.dropdown .dropdown-menu > li > ul > li .task {
@@ -15478,20 +15476,20 @@ canvas + .knob {
   visibility: visible;
 }
 .validate-has-error {
-  border-color: #d52a1a;
+  border-color: #e74a3b;
 }
 .validate-has-error:focus {
-  border-color: #d52a1a;
+  border-color: #e74a3b;
 }
 .validate-has-error + span.validate-has-error,
 .validate-has-error > span.validate-has-error,
 .input-group + .validate-has-error {
-  color: #d52a1a;
+  color: #e74a3b;
   display: inline-block;
   margin-top: 5px;
 }
 .validate-has-error .validate-has-error {
-  color: #d52a1a;
+  color: #e74a3b;
   display: inline-block;
   margin-top: 5px;
 }
@@ -15499,7 +15497,7 @@ canvas + .knob {
   margin-left: 10px;
 }
 .validate-has-error .form-control {
-  border-color: #d52a1a;
+  border-color: #e74a3b;
 }
 .file-input-wrapper.inline {
   display: inline-block;
@@ -20865,7 +20863,7 @@ hr + .mail-env {
   height: 0px;
   border-style: solid;
   border-width: 0 3px 4px 3px;
-  border-color: transparent transparent #d52a1a transparent;
+  border-color: transparent transparent #e74a3b transparent;
 }
 .mail-env .mail-body .mail-info .mail-sender.mail-date,
 .mail-env .mail-body .mail-info .mail-date.mail-date {
@@ -22120,7 +22118,7 @@ body.page-fade-only-init > .page-container {
 .login-page .form-resetpassword-success.form-login-error,
 .login-page .form-login-error.form-login-error {
   padding: 0;
-  background: #d52a1a;
+  background: #e74a3b;
 }
 .login-page .form-register-success.form-login-error h3,
 .login-page .form-forgotpassword-success.form-login-error h3,
@@ -25133,7 +25131,7 @@ fieldset[disabled]
   color: #ffffff;
 }
 .page-body .main-content .cbp_tmtimeline > li .cbp_tmicon.bg-danger {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .page-body .main-content .cbp_tmtimeline > li .cbp_tmlabel {
@@ -25418,7 +25416,7 @@ fieldset[disabled]
   .timeline-entry
   .timeline-entry-inner
   .timeline-icon.bg-danger {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
@@ -26209,7 +26207,7 @@ fieldset[disabled]
   color: #00a651;
 }
 .comments-list > li .comment-details .comment-footer .action-links .delete {
-  color: #d52a1a;
+  color: #e74a3b;
 }
 .comments-list > li:last-child {
   border-bottom: 0;

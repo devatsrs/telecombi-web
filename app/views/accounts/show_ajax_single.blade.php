@@ -70,7 +70,7 @@
              <a id="edit_task_{{$response->TaskID}}" task-id="{{$response->TaskID}}"  key_id="{{$key}}" class="pull-right edit-deal edit_task_link"><i class="entypo-pencil"></i>&nbsp;</a>
             <a id="delete_task_{{$response->TaskID}}" task-id="{{$response->TaskID}}"  key_id="{{$key}}" class="pull-right edit-deal delete_task_link"><i class="entypo-trash"></i></a>
                   <h2 class="toggle_open" id_toggle="{{$key}}">
-                @if($response->Priority=='High')  <i class="edit-deal entypo-record" style="color:#d52a1a;font-size:15px;"></i> @endif
+                @if($response->Priority=='High')  <i class="edit-deal entypo-record" style="color:#e74a3b;font-size:15px;"></i> @endif
                 @if($response->created_by==$current_user_title && $response->Name==$current_user_title)<span>You created a task</span>
                  @elseif ($response->created_by==$current_user_title && $response->Name!=$current_user_title)<span>You assigned task to {{$response->Name}} </span> 
                  @elseif ($response->created_by!=$current_user_title && $response->Name==$current_user_title)<span> {{$response->created_by}} assigned task to  You </span>

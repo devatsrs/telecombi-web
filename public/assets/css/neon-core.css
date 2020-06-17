@@ -10,9 +10,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Nunito";
   font-size: 12px;
   line-height: 1.42857143;
   color: #858796;
@@ -796,21 +794,10 @@ output {
   background-image: none;
   border: 1px solid #ebebeb;
   border-radius: 3px;
-  -webkit-transition: border-color ease-in-out 0.15s,
-    -webkit-box-shadow ease-in-out 0.15s;
-  -moz-transition: border-color ease-in-out 0.15s,
-    -moz-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  -webkit-transition: border-color ease-in-out 0.15s,
-    box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 .form-control:focus {
   border-color: #c8cdd7;
   outline: 0;
-  -moz-box-shadow: 0 2px 1px rgba(203, 208, 217, 0.08);
-  -webkit-box-shadow: 0 2px 1px rgba(203, 208, 217, 0.08);
-  box-shadow: 0 2px 1px rgba(203, 208, 217, 0.08);
 }
 .form-control::-webkit-input-placeholder {
   color: #aaaaaa;
@@ -2249,8 +2236,8 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #d52a1a;
-  border-color: #d52a1a;
+  background-color: #e74a3b;
+  border-color: #e74a3b;
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -2281,11 +2268,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #d52a1a;
-  border-color: #d52a1a;
+  background-color: #e74a3b;
+  border-color: #e74a3b;
 }
 .btn-danger .badge {
-  color: #d52a1a;
+  color: #e74a3b;
   background-color: #ffffff;
 }
 .btn-danger > .caret {
@@ -2991,10 +2978,11 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  display: table;
 }
 .page-container .sidebar-menu .logo-env:before,
 .page-container .sidebar-menu .logo-env:after {
-  content: " ";
+  /* content: " "; */
   /* 1 */
   display: table;
   /* 2 */
@@ -3642,6 +3630,7 @@ float: left;
 .page-container.sidebar-collapsed .sidebar-menu .logo-env {
   display: block;
   padding: 20px;
+  margin-bottom: 25px;
 }
 .page-container.sidebar-collapsed .sidebar-menu .logo-env > div.logo {
   overflow: hidden;
@@ -4970,7 +4959,7 @@ float: left;
   > li.notification-danger
   > a
   > i {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .page-container.horizontal-menu
@@ -6296,7 +6285,7 @@ float: left;
   > li.notification-danger
   > a
   > i {
-  background-color: #d52a1a;
+  background-color: #e74a3b;
   color: #ffffff;
 }
 .notifications.dropdown .dropdown-menu > li > ul > li .task {
@@ -6455,20 +6444,20 @@ canvas + .knob {
   visibility: visible;
 }
 .validate-has-error {
-  border-color: #d52a1a;
+  border-color: #e74a3b;
 }
 .validate-has-error:focus {
-  border-color: #d52a1a;
+  border-color: #e74a3b;
 }
 .validate-has-error + span.validate-has-error,
 .validate-has-error > span.validate-has-error,
 .input-group + .validate-has-error {
-  color: #d52a1a;
+  color: #e74a3b;
   display: inline-block;
   margin-top: 5px;
 }
 .validate-has-error .validate-has-error {
-  color: #d52a1a;
+  color: #e74a3b;
   display: inline-block;
   margin-top: 5px;
 }
@@ -6476,7 +6465,7 @@ canvas + .knob {
   margin-left: 10px;
 }
 .validate-has-error .form-control {
-  border-color: #d52a1a;
+  border-color: #e74a3b;
 }
 .file-input-wrapper.inline {
   display: inline-block;
