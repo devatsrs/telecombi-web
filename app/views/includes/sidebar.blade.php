@@ -3,7 +3,7 @@
   <header class="logo-env"> 
     <!-- logo -->
     <div class="logo"><!-- Added by Abubakar --> 
-      @if(Session::get('user_site_configrations.Logo')!='')<a href="{{Url::to('/process_redirect')}}"> <img src="{{Session::get('user_site_configrations.Logo')}}" width="120" alt="" /> </a>
+      @if(Session::get('user_site_configrations.Logo')!='')<a class="shadow" href="{{Url::to('/process_redirect')}}"> <img src="{{Session::get('user_site_configrations.Logo')}}" width="150" alt="" /> </a>
       @endif
        @if(strtolower(getenv('APP_ENV'))!='production') <br/>
       <br/>
@@ -348,3 +348,11 @@
     @endif
   </ul>
 </div>
+
+<style>
+
+[class^="entypo-"]:before,
+[class*=" entypo-"]:before {
+  margin-left: 0px;
+}
+</style>
