@@ -257,7 +257,30 @@ class AutoRateImportController extends \BaseController {
 	{
 		$data = Input::all();
 		$data['IsSSL'] = isset($data['IsSSL']) ? 1 : 0 ;
-		$response 				= 		NeonAPI::request('AutoRateImportGroups/validatesmtp',$data,true,false,false);
+		//$response 				= 		NeonAPI::request('AutoRateImportGroups/validatesmtp',$data,true,false,false);
+
+        $data['IsSSL'] = isset($data['IsSSL']) ? 1 : 0 ;
+        $rules = array(
+            'host' => 'required',
+            'port' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'IsSSL' => 'required',
+        );
+
+        $validator = Validator::make($data, $rules);
+
+        if ($validator->fails()) {
+			return json_validator_response($validator);
+        }
+       
+		$result =  new EmailClient(["host"=>$data['host'], "port"=>$data['port'], "IsSSL"=>$data['IsSSL'], "username"=>$data['username'], "password"=>$data['password'] ]);
+		if($result->isValidConnection()){
+			$response = ('Validated.');
+		}else{
+			$response = ('could not connect.');
+		}
+    
 		return json_response_api($response,true);
 	}
 }

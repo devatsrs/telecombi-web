@@ -403,31 +403,71 @@ class AccountsController extends \BaseController {
             $PageNumber                 =    ceil($data['iDisplayStart']/$data['iDisplayLength']);
             $RowsPerPage                =    $data['iDisplayLength'];			
 			$message 					= 	 '';			
-            $response_timeline 			= 	 NeonAPI::request('account/GetTimeLine',$data,false,true);
+            //$response_timeline 			= 	 NeonAPI::request('account/GetTimeLine',$data,false,true);
 		/*		echo "<pre>";
 				print_r($response_timeline);		
 				exit;*/
-	
-			if($response_timeline['status']!='failed'){
-				if(isset($response_timeline['data']))
-				{
-					$response_timeline =  $response_timeline['data'];
-				}else{
-					$response_timeline = array();
-				}
-			}else{ 	
-				if(isset($response_timeline['Code']) && ($response_timeline['Code']==400 || $response_timeline['Code']==401)){
-                    \Illuminate\Support\Facades\Log::info("Account 401 ");
-                    \Illuminate\Support\Facades\Log::info(print_r($response_timeline,true));
-					//return	Redirect::to('/logout');
-				}		
-				if(isset($response_timeline->error) && $response_timeline->error=='token_expired'){
-                    \Illuminate\Support\Facades\Log::info("Account token_expired ");
-                    \Illuminate\Support\Facades\Log::info(print_r($response_timeline,true));
-                    //Redirect::to('/login');
+
+            $response_timeline = [];
+            //$companyID                  =   User::get_companyID();
+            $rules['iDisplayStart']     =   'required|numeric|Min:0';
+            $rules['iDisplayLength']    =   'required|numeric';
+            $rules['AccountID']         =   'required|numeric';
+
+            $validator = Validator::make($data, $rules);
+            if ($validator->fails()) {
+                return json_validator_response($validator);
+            }
+
+            $queryTicketType	= 0;
+            $SystemTicket  = TicketsTable::getTicketLicense();
+            if($SystemTicket){
+                $queryTicketType	= TicketsTable::$SystemTicket;
+            }
+
+                 if(!$queryTicketType){ //check system ticket enable . if not then check freshdesk tickets
+                    if($data['iDisplayStart']==0) {
+                        if(SiteIntegration::CheckIntegrationConfiguration(false,SiteIntegration::$freshdeskSlug)){
+                            $queryTicketType	= TicketsTable::$FreshdeskTicket;
+                            $freshsdesk = 	$this->FreshSDeskGetTickets($data['AccountID'],$data['GUID']);
+                            if($freshsdesk){
+                                //return generateResponse(array("freshsdesk"=>array(0=>$freshsdesk['errors'][0]->message)),true);
+                            }
+                        }
+                    }
                 }
-				$message = json_response_api($response_timeline,false,false);
-			}
+
+
+                $columns =  ['Timeline_type','ActivityTitle','ActivityDescription','ActivityDate','ActivityType','ActivityID','Emailfrom','EmailTo','EmailSubject','EmailMessage','AccountEmailLogID','NoteID','Note','CreatedBy','created_at','updated_at'];
+                $query = "call prc_getAccountTimeLine(" . $data['AccountID'] . "," . $companyID . ",".$queryTicketType.",'".$data['GUID']."','".date('Y-m-d H:i:00')."'," . $data['iDisplayStart'] . "," . $data['iDisplayLength'] . ")";
+                $response_timeline = DB::select($query);
+                //return generateResponse('',false,false,$result_array);
+
+            $response_timeline =  $response_timeline['data'];
+
+
+
+
+//			if($response_timeline['status']!='failed'){
+//				if(isset($response_timeline['data']))
+//				{
+//					$response_timeline =  $response_timeline['data'];
+//				}else{
+//					$response_timeline = array();
+//				}
+//			}else{
+//				if(isset($response_timeline['Code']) && ($response_timeline['Code']==400 || $response_timeline['Code']==401)){
+//                    \Illuminate\Support\Facades\Log::info("Account 401 ");
+//                    \Illuminate\Support\Facades\Log::info(print_r($response_timeline,true));
+//					//return	Redirect::to('/logout');
+//				}
+//				if(isset($response_timeline->error) && $response_timeline->error=='token_expired'){
+//                    \Illuminate\Support\Facades\Log::info("Account token_expired ");
+//                    \Illuminate\Support\Facades\Log::info(print_r($response_timeline,true));
+//                    //Redirect::to('/login');
+//                }
+//				$message = json_response_api($response_timeline,false,false);
+//			}
 			
 			$vendor   = $account->IsVendor?1:0;
 			$Customer = $account->IsCustomer?1:0;
@@ -519,7 +559,46 @@ class AccountsController extends \BaseController {
 		 	$data['iDisplayStart'] 	   =	$start;
             $data['iDisplayLength']    =    10;
             $data['AccountID']         =    $id;			
-			$response 				   = 	NeonAPI::request('account/GetTimeLine',$data,false);
+            //$response 				   = 	NeonAPI::request('account/GetTimeLine',$data,false);
+            
+            $companyID                  =   User::get_companyID();
+            $rules['iDisplayStart']     =   'required|numeric|Min:0';
+            $rules['iDisplayLength']    =   'required|numeric';
+            $rules['AccountID']         =   'required|numeric';
+            
+            $validator = Validator::make($data, $rules);
+            if ($validator->fails()) {
+                return generateResponse($validator->errors(),true);
+            }			
+            
+            $queryTicketType	= 0;
+            $SystemTicket  = TicketsTable::getTicketLicense();
+            if($SystemTicket){
+                $queryTicketType	= TicketsTable::$SystemTicket;
+            }
+                
+            
+            if(!$queryTicketType){ //check system ticket enable . if not then check freshdesk tickets
+                if($data['iDisplayStart']==0) {
+                    if(SiteIntegration::CheckIntegrationConfiguration(false,\App\SiteIntegration::$freshdeskSlug)){
+                        $queryTicketType	= TicketsTable::$FreshdeskTicket;
+                        $freshsdesk = 	$this->FreshSDeskGetTickets($data['AccountID'],$data['GUID']); 
+                        if($freshsdesk){
+                            //return generateResponse(array("freshsdesk"=>array(0=>$freshsdesk['errors'][0]->message)),true);
+                        }
+                    }
+                }
+            }
+            
+            
+            $columns =  ['Timeline_type','ActivityTitle','ActivityDescription','ActivityDate','ActivityType','ActivityID','Emailfrom','EmailTo','EmailSubject','EmailMessage','AccountEmailLogID','NoteID','Note','CreatedBy','created_at','updated_at'];
+            $query = "call prc_getAccountTimeLine(" . $data['AccountID'] . "," . $companyID . ",".$queryTicketType.",'".$data['GUID']."','".date('Y-m-d H:i:00')."'," . $data['iDisplayStart'] . "," . $data['iDisplayLength'] . ")";   
+            $response = $result_array = DB::select($query); 
+
+            //return generateResponse('',false,false,$result_array);
+        
+    
+
 			
 			if($response->status!='failed'){
 				if(!isset($response->data))
@@ -546,12 +625,26 @@ class AccountsController extends \BaseController {
 		}
 		 $data 			= 	Input::all();
 		 $data['id']	=	$id;
-		 $response 		= 	 NeonAPI::request('account/GetConversations',$data,true,true);  
-		  if($response['status']=='failed'){
-			return json_response_api($response,false,true);
-		}else{			
-			return View::make('accounts.conversations', compact("response","data"));
+         //$response 		= 	 NeonAPI::request('account/GetConversations',$data,true,true);  
+         
+         if(isset($data['conversations_type'])){
+			if($data['conversations_type']=='mail')
+			{
+				$response = $this->GetMailConversations();	
+			}
+			else if($data['conversations_type']=='ticket')
+			{
+			    $response = $this->GetTicketConversations();
+			}
 		}
+
+        return json_response_api($response,false,true);
+
+		// if($response['status']=='failed'){
+		// 	return json_response_api($response,false,true);
+		// }else{			
+		// 	return View::make('accounts.conversations', compact("response","data"));
+		// }
 	}
 	 
     public function edit($id) {
@@ -913,14 +1006,27 @@ class AccountsController extends \BaseController {
         $data["Note"] 			= 	nl2br($data["Note"]);
 		$key 					= 	$data['scrol']!=""?$data['scrol']:0;	
 		unset($data["scrol"]);		
- 		$response 				= 	NeonAPI::request('account/add_note',$data);
-		
-		if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{
-			$response = $response->data;
-			$response->type = Task::Note;
-		}
+         //$response 				= 	NeonAPI::request('account/add_note',$data);
+         
+         $data 	= 	Input::all();
+
+         $rules = array(
+              'CompanyID' => 'required',
+              'AccountID' => 'required',
+              'Note' => 'required',
+          );
+  
+          $validator = Validator::make($data, $rules);
+  
+          if ($validator->fails()) {
+              return json_validator_response($validator->errors());
+          }
+   
+        $data = cleanarray($data,[]);
+
+        $response = new stdClass;
+        $response->data =Note::create($data);
+        $response->type = Task::Note;
 				
 		$current_user_title = Auth::user()->FirstName.' '.Auth::user()->LastName;
 		return View::make('accounts.show_ajax_single', compact('response','current_user_title','key'));      
@@ -931,12 +1037,24 @@ class AccountsController extends \BaseController {
 	function get_note(){
 		$response				=	array();
 		$data 					= 	Input::all(); 
-		$response_note    		=   NeonAPI::request('account/get_note',$data,false,true);
-		if($response_note['status']=='failed'){
-			return json_response_api($response_note,false,true);
-		}else{
-			return json_encode($response_note['data']);
-		}
+        //$response_note    		=   NeonAPI::request('account/get_note',$data,false,true);
+
+         $rules['NoteID'] = 'required';
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator->errors());
+        }
+        
+        if(isset($data['note_type']) && $data['note_type'] == 'ContactNote'){
+            $Note = ContactNote::find($data['NoteID']); 
+        }else{
+            $Note = Note::find($data['NoteID']); 
+        } 
+    
+        $response_note = $Note;
+        
+		return json_encode($response_note);
+		
 	}
 	/**
      * Update a Note
@@ -950,16 +1068,44 @@ class AccountsController extends \BaseController {
         $data['updated_by'] 	=	$user_name;
         $data["Note"] 			= 	nl2br($data["Note"]);
 		unset($data['KeyID']);
- 		$response 				= 	NeonAPI::request('account/update_note',$data);
-		
-		if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{ 
-			$response = $response->data;
-			$response->type = Task::Note;
-		}
-			
-		$current_user_title = Auth::user()->FirstName.' '.Auth::user()->LastName;
+         //$response 				= 	NeonAPI::request('account/update_note',$data);
+         
+         $rules = array(
+            'NoteID' => 'required',
+            'Note' => 'required',
+        );
+
+        $validator = Validator::make($data, $rules);
+
+        if ($validator->fails()) {
+            return json_validator_response($validator->errors());
+        }
+
+    
+        $NoteType = $data['NoteType'];
+        $data = cleanarray($data,['NoteType']);
+
+        if(isset($NoteType) && $NoteType == 'ContactNote'){
+
+            ContactNote::find($data['NoteID'])->update($data);
+            $result = ContactNote::find($data['NoteID']);
+
+        }else{
+
+            Note::find($data['NoteID'])->update($data);
+            $result = Note::find($data['NoteID']);
+        } 
+        
+        //$result = Note::find($data['NoteID'])->update($data);
+        //$result = Note::find($data['NoteID']);
+
+        $response  = $result;
+        		
+        $response = new stdClass;
+        $response->data = $response;
+        $response->type = Task::Note;
+ 		 
+		$current_user_title = User::get_user_full_name();
 		return View::make('accounts.show_ajax_single_update', compact('response','current_user_title','key'));   
 	}
 
@@ -967,17 +1113,27 @@ class AccountsController extends \BaseController {
      * Delete a Note
      */
     public function delete_note($id) {
+
         ///$result = Note::find($id)->delete();
 		$postdata				= 	Input::all(); 
 		$data['NoteID']			=	$id;
 		$data['NoteType']		=	$postdata['note_type'];		 		
-		$response 				= 	NeonAPI::request('account/delete_note',$data);
-		
-		if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{ 
-			return Response::json(array("status" => "success", "message" => "Note Successfully Deleted", "NoteID" => $id));
-		}     
+        //$response 				= 	NeonAPI::request('account/delete_note',$data);
+        
+        $rules['NoteID'] = 'required';
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator->errors());
+        }
+
+        if(isset($data['NoteType']) && $data['NoteType'] == 'ContactNote'){
+                ContactNote::where(['NoteID'=>$data['NoteID']])->delete();
+        }else{
+                Note::where(['NoteID'=>$data['NoteID']])->delete();
+        }
+         
+        return Response::json(array("status" => "success", "message" => "Note Successfully Deleted", "NoteID" => $id));
+		    
     }
 
     public  function  upload($id){
@@ -1361,12 +1517,77 @@ insert into tblInvoiceCompany (InvoiceCompany,CompanyID,DubaiCompany,CustomerID,
     public function update_credit(){
         $data = Input::all();
         $postdata= $data;
-        $response =  NeonAPI::request('account/update_creditinfo',$postdata,true,false,false);
+
+        //$response =  NeonAPI::request('account/update_creditinfo',$postdata,true,false,false);
+
+        $post_data = Input::all();
+        $rules['AccountID'] = 'required';
+        $rules['BalanceThreshold'] = 'required';
+        $rules['PermanentCredit'] = 'required';
+        $validator = Validator::make($post_data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator);
+        }
+        $AccountBalancedata = $AccountBalance = array();
+        if (isset($post_data['PermanentCredit'])) {
+            $AccountBalancedata['PermanentCredit'] = $post_data['PermanentCredit'];
+        }
+        if (isset($post_data['TemporaryCredit'])) {
+            $AccountBalancedata['TemporaryCredit'] = $post_data['TemporaryCredit'];
+        }
+        if (isset($post_data['TemporaryCreditDateTime'])) {
+            $AccountBalancedata['TemporaryCreditDateTime'] = $post_data['TemporaryCreditDateTime'];
+        }
+        if (isset($post_data['BalanceThreshold'])) {
+            $AccountBalancedata['BalanceThreshold'] = $post_data['BalanceThreshold'];
+        }
+        
+        $AccountBalancedata['EmailToCustomer'] = isset($post_data['EmailToCustomer'])?1:0;
+
+        
+        if (!empty($AccountBalancedata) && AccountBalance::where('AccountID', $post_data['AccountID'])->count()) {
+            $AccountBalance = AccountBalance::where('AccountID', $post_data['AccountID'])->update($AccountBalancedata);
+            $AccountBalancedata['AccountID'] = $post_data['AccountID'];
+        } elseif (AccountBalance::where('AccountID', $post_data['AccountID'])->count() == 0) {
+            $AccountBalancedata['AccountID'] = $post_data['AccountID'];
+            AccountBalance::create($AccountBalancedata);
+        }
+        unset($AccountBalancedata['EmailToCustomer']);
+        AccountBalanceHistory::addHistory($AccountBalancedata);
+        $response = generateResponse('Account Successfully Updated');
+        
         return json_response_api($response);
     }
+
+
     public function ajax_datagrid_credit($type){
         $getdata = Input::all();
-        $response =  NeonAPI::request('account/get_credithistorygrid',$getdata,false,false,false);
+        //$response =  NeonAPI::request('account/get_credithistorygrid',$getdata,false,false,false);
+
+        $post_data = Input::all();
+        
+        $companyID = User::get_companyID();
+        $rules['iDisplayStart'] = 'required|Min:1';
+        $rules['iDisplayLength'] = 'required';
+        $rules['iDisplayLength'] = 'required';
+        $rules['sSortDir_0'] = 'required';
+        $rules['AccountID'] = 'required';
+        $validator = Validator::make($post_data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator);
+        }
+        $post_data['iDisplayStart'] += 1;
+        $columns = ['PermanentCredit', 'TemporaryCredit', 'Threshold', 'CreatedBy','created_at'];
+        $sort_column = $columns[$post_data['iSortCol_0']];
+        $query = "call prc_GetAccountBalanceHistory (" . $companyID . "," . $post_data['AccountID'] . "," . (ceil($post_data['iDisplayStart'] / $post_data['iDisplayLength'])) . " ," . $post_data['iDisplayLength'] . ",'" . $sort_column . "','" . $post_data['sSortDir_0'] . "'";
+        if (isset($post_data['Export']) && $post_data['Export'] == 1) {
+            $result = DB::select($query . ',1)');
+        } else {
+            $query .= ',0)';
+            $result = DataTableSql::of($query)->make();
+        }
+        $response = $result;
+      
         if(isset($getdata['Export']) && $getdata['Export'] == 1 && !empty($response) && $response->status == 'success') {
             $excel_data = json_decode(json_encode($response->data),true);
             if($type=='csv'){
@@ -1415,15 +1636,43 @@ insert into tblInvoiceCompany (InvoiceCompany,CompanyID,DubaiCompany,CustomerID,
 		if($data['parent_type']==Task::Note)
 		{
 			$data_send  	=  	array("NoteID" => $data['parent_id']);
-			$result 		=  	NeonAPI::request('account/delete_note',$data_send);
+            //$result 		=  	NeonAPI::request('account/delete_note',$data_send);
+            $data = Input::all();
+            $rules['NoteID'] = 'required';
+            $validator = Validator::make($data, $rules);
+            if ($validator->fails()) {
+                return json_validator_response($validator);
+            }
+     
+            if(isset($data['NoteType']) && $data['NoteType'] == 'ContactNote'){
+                    ContactNote::where(['NoteID'=>$data['NoteID']])->delete();
+            }else{
+                    Note::where(['NoteID'=>$data['NoteID']])->delete();
+            }
+
+            $result = 'successfull';
+
 		}
 		
 		if($data['parent_type']==Task::Mail)
 		{
 			$data_send  	=  array("AccountEmailLogID" => $data['parent_id']);
-			$result 		=  NeonAPI::request('account/delete_email',$data_send);
-			
-		}
+            //$result 		=  NeonAPI::request('account/delete_email',$data_send);
+            
+			$data  	=  array("AccountEmailLogID" => $data['parent_id']);
+
+            $rules['AccountEmailLogID'] = 'required';
+            $validator = Validator::make($data, $rules);
+            if ($validator->fails()) {
+                return json_validator_response($validator);
+            }
+    
+            AccountEmailLog::where(['AccountEmailLogID'=>$data['AccountEmailLogID']])->delete();
+             
+            $result = 'successfull';
+    			
+        }
+        
 		return  json_response_api($result);
 
 	}
@@ -2050,4 +2299,162 @@ insert into tblInvoiceCompany (InvoiceCompany,CompanyID,DubaiCompany,CustomerID,
         }
         return Response::json(array("status" => "success", "NextBillingDate" => $NextBillingDate,"NextChargedDate" => $NextChargedDate));
     }
+
+    function FreshSDeskGetTickets($AccountID,$GUID){
+        //date_default_timezone_set("Europe/London");
+        Ticket::where(['AccountID'=>$AccountID,"GUID"=>$GUID])->delete(); //delete old tickets
+        $companyID 		=	User::get_companyID();
+        /*$AccountEmails  =	Account::where("AccountID",$AccountID)->select(['Email','BillingEmail'])->first();
+        $AccountEmails  = 	json_decode(json_encode($AccountEmails),true);
+        $emails			=	array_unique($AccountEmails);*/
+
+
+        $email_array			 = 	array();
+        $billingemail_array 	 = 	array();
+        $allemail 				 =  array();
+        $Contacts_Email_array	 =	array();
+        $AccountEmails  		 =	Account::where("AccountID",$AccountID)->select(['Email'])->first();
+
+        if(count($AccountEmails)>0)
+        {
+            $email_array = explode(',',$AccountEmails['Email']);
+        }
+
+        $AccountEmails1  		=	Account::where("AccountID",$AccountID)->select(['BillingEmail'])->first();
+
+        if(count($AccountEmails1)>0)
+        {
+            $billingemail_array = explode(',', $AccountEmails1['BillingEmail']);
+        }
+
+        $AccountsContacts  	=DB::table('tblContact')->select(DB::raw("group_concat(DISTINCT Email separator ',') as ContactsEmails"))->where(array("AccountID"=>$AccountID))->pluck('ContactsEmails');
+
+        if(strlen($AccountsContacts)>0)
+        {
+            $Contacts_Email_array = explode(',', $AccountsContacts);
+        }
+
+        $allemail 				= 	array_merge($email_array,$billingemail_array,$Contacts_Email_array);
+        $emails					=	array_filter(array_unique($allemail));
+        $TicketsIDs				=	array();
+        $FreshDeskObj 			=  	new SiteIntegration();
+        $FreshDeskObj->SetSupportSettings();
+
+        if(count($emails)>0 && $FreshDeskObj->CheckSupportSettings())
+        {
+            foreach($emails as $UsersEmails)
+            {
+                $GetTickets 	= 		$FreshDeskObj->GetSupportTickets(array("email"=>trim($UsersEmails),"include"=>"requester"));
+
+                if(isset($GetTickets['StatusCode']) && $GetTickets['StatusCode'] == 200 && count($GetTickets['data'])>0)
+                {
+                    foreach($GetTickets['data'] as $GetTickets_data)
+                    {
+                        if(in_array($GetTickets_data->id,$TicketsIDs)){continue;}else{$TicketsIDs[] = $GetTickets_data->id;} //ticket duplication
+                        $TicketData['CompanyID']		=	$companyID;
+                        $TicketData['AccountID'] 		=   $AccountID;
+                        $TicketData['TicketID']			=   $GetTickets_data->id;
+                        $TicketData['Subject']			=	$GetTickets_data->subject;
+                        $TicketData['Description']		=	$GetTickets_data->description;
+                        //$TicketData['Description']		=	$GetTickets_data->description_text;
+                        $TicketData['Priority']			=	$FreshDeskObj->SupportSetPriority($GetTickets_data->priority);
+                        $TicketData['Status']			=	$FreshDeskObj->SupportSetStatus($GetTickets_data->status);
+                        $TicketData['Type']				=	$GetTickets_data->type;
+                        $TicketData['Group']			=	$FreshDeskObj->SupportSetGroup($GetTickets_data->group_id);
+                        $TicketData['RequestEmail']		=	$GetTickets_data->requester->email;
+                        $TicketData['ApiCreatedDate']	=   date("Y-m-d H:i:s",strtotime($GetTickets_data->created_at));
+                        $TicketData['ApiUpdateDate']	=   date("Y-m-d H:i:s",strtotime($GetTickets_data->updated_at));
+                        $TicketData['created_by']  		= 	User::get_user_full_name();
+                        $TicketData['GUID']  			= 	$GUID;
+                        if(!empty($GetTickets_data->to_emails) && $GetTickets_data->to_emails!='null'){
+                            if(is_array($GetTickets_data->to_emails)){
+                                $TicketData['to_emails']		=	implode(",",$GetTickets_data->to_emails);
+                            }
+                            else{
+                                $TicketData['to_emails']		=	$GetTickets_data->to_emails;
+                            }
+                        }
+                        $result 						= 	Ticket::create($TicketData);
+                        unset($TicketData);
+                    }
+                }
+                else
+                {
+                    //return $GetTickets;
+                    if(isset($GetTickets['StatusCode']) && $GetTickets['StatusCode']!='200' && $GetTickets['StatusCode']!='400'){
+                        return $GetTickets;
+                    }
+                }
+            }
+        }
+    }
+
+    function GetConversations(){
+		$data           	=   	Input::all();  
+	
+		if(isset($data['conversations_type'])){
+			if($data['conversations_type']=='mail')
+			{
+				return $this->GetMailConversations();	
+			}
+			else if($data['conversations_type']=='ticket')
+			{
+			    return 	$this->GetTicketConversations();
+			}
+		}
+	}
+	
+	function GetMailConversations(){
+		$companyID 			=	 	User::get_companyID();
+		$data           	=   	Input::all();  		
+		$Emails				= 		AccountEmailLog::where(['EmailParent'=>$data['id'],'CompanyID'=>$companyID])->get();
+		if($Emails)
+		{
+			return $Emails;
+		} 
+    
+        return null;
+	 	
+    }
+    
+	function GetTicketConversations(){
+
+		$companyID 			=	 	User::get_companyID();
+		$data           	=   	Input::all();  		
+		
+		$queryTicketType	= 0;
+		$SystemTicket  = TicketsTable::getTicketLicense();
+		if($SystemTicket){
+			$queryTicketType	= TicketsTable::$SystemTicket;
+		}
+			
+		if(!$queryTicketType){ //fresh desk ticket
+			$FreshDeskObj 		= 		new \App\SiteIntegration();
+			$FreshDeskObj->SetSupportSettings();		
+			
+			$GetTicketsCon 		= 		$FreshDeskObj->GetSupportTicketConversations($data['id']);  
+			if($GetTicketsCon['StatusCode'] == 200 && count($GetTicketsCon['data'])>0){ 
+				return $GetTicketsCon['data'];
+			}
+			 
+			return null ; // 'No Record Found.';
+			 	
+		}else{ //system ticket
+			$ticket = TicketsTable::find($data['id']);
+			
+			
+			
+			///$GetTicketsCon = AccountEmailLog::where(['EmailParent'=>$ticket->AccountEmailLogID,'CompanyID'=>$companyID])->select([DB::raw("Message AS body_text"), "created_at"])->orderBy('created_at', 'asc')->get();
+			$GetTicketsCon = AccountEmailLog::WhereRaw("EmailParent>0")->where(['CompanyID'=>$companyID,'TicketID'=>$data['id']])->select([DB::raw("Message AS body_text"), "created_at"])->orderBy('created_at', 'asc')->get();
+			if(count($ticket)>0 && count($GetTicketsCon)>0){
+				return $GetTicketsCon;
+            }
+            
+            return null ; // 'No Record Found.';
+
+		}
+		
+	}
+	
+
 }

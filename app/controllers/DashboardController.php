@@ -237,61 +237,448 @@ class DashboardController extends BaseController {
 		if(User::is('AccountManager')){
             $data['AccountOwner'] = User::get_userID();
         }
-        $response = NeonAPI::request('dashboard/GetUsersTasks',$data,true);
+        //$response = NeonAPI::request('dashboard/GetUsersTasks',$data,true);
+
+        $companyID = User::get_companyID();
+        if(!isset($data['fetchType'])){
+            $data['fetchType'] = 'Grid';
+        }
+
+        $data['AccountOwner'] 	= 	isset($data['AccountOwner'])?empty($data['AccountOwner'])?'':$data['AccountOwner']:'';
+        $data['taskClosed'] 	= 	isset($data['taskClosed'])?empty($data['taskClosed']) || $data['taskClosed']=='false'?0:$data['taskClosed']:0;
+		
+		if(isset($data['DueDateFilter']) && !empty($data['DueDateFilter'])){
+			if($data['DueDateFilter']=='duetoday'){
+					$data['DueDateFrom'] = date('Y-m-d')." 00:00:00";
+					$data['DueDateTo']   = date('Y-m-d')." 23:59:59";
+			}else if($data['DueDateFilter']=='duesoon'){
+					$data['DueDateFrom'] = Task::DueSoon;
+					$data['DueDateTo']   = Task::DueSoon;
+			}else if($data['DueDateFilter']=='overdue'){
+					$data['DueDateFrom'] = Task::Overdue;
+					$data['DueDateTo']   = Task::Overdue;
+			}else{
+					$data['DueDateFrom'] = Task::All;
+					$data['DueDateTo']   = Task::All;
+			}
+			
+		}
+       
+        $rules['iDisplayStart'] 	= 	'required|Min:1';
+        $rules['iDisplayLength'] 	= 	'required';
+        $rules['sSortDir_0'] 		= 	'required';
+        
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator);
+        }
+
+        $columns 		= 	['Subject', 'DueDate', 'Status','UserID','RelatedTo'];
+        $sort_column 	= 	$columns[$data['iSortCol_0']];
+        $query = "call prc_GetTasksGrid (" . $companyID . ",".$data['id'].",'','" . $data['AccountOwner']. "', '0', '0','".$data['DueDateFrom']."','".$data['DueDateTo']."','0','0',".(ceil($data['iDisplayStart'] / $data['iDisplayLength'])) . " ," . $data['iDisplayLength'] . ",'" . $sort_column . "','" . $data['sSortDir_0'] . "')"; 
+        
+        $response = DataTableSql::of($query)->make();
+        //return generateResponse('',false,false,$result);
+        
+
         return json_response_api($response,true,true,true);
     }
 	
 	function GetPipleLineData(){
 		 $data 			= 	 Input::all();			
-		 $response 		= 	 NeonAPI::request('dashboard/GetPipleLineData',$data,true);
-		  if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{
-			return $response->data;
-		}
+         //$response 		= 	 NeonAPI::request('dashboard/GetPipleLineData',$data,true);
+         
+         $companyID 			= 	User::get_companyID();
+         $userID 			= 	'';
+         $data 				= 	Input::all();
+         if(isset($data['UsersID'])){
+             if(is_array($data['UsersID'])){
+                 $UserID = 	implode(",",array_filter($data['UsersID']));
+             }else{
+                 $UserID = 	$data['UsersID'];
+             }			
+         }else{
+             $UserID = 	$data['UsersID'];
+         }
+         $CurrencyID			=	(isset($data['CurrencyID']) && !empty($data['CurrencyID']))?$data['CurrencyID']:0;
+         $array_return 		= 	array();
+         $array_users		=	array();
+         $array_worth		=	array();
+         $TotalOpportunites  =   0;
+         $TotalWorth			=	0;
+         $query  			= 	"call prc_GetCrmDashboardPipeLine (".$companyID.",'".$UserID."','".$CurrencyID."')";  
+         $result 			= 	DB::select($query);
+         
+         foreach($result as $result_data){
+             $array_return['data'][] = array("Worth"=>$result_data->TotalWorth,"Opportunites"=>$result_data->TotalOpportunites,'User'=>$result_data->AssignedUserText,'CurrencyCode'=>$result_data->v_CurrencyCode_);
+             $TotalOpportunites 			=   $result_data->TotalOpportunites+$TotalOpportunites;	
+             $TotalWorth					=	$TotalWorth+$result_data->TotalWorth;	
+         }
+         
+         foreach($result as $result_data){
+             $array_users[]		=	$result_data->AssignedUserText;
+             $array_worth[]		=	$result_data->TotalWorth;
+         }
+         
+         if(!isset($array_return['data'])){
+             $array_return['data']				= 	array('Worth'=>0,"Opportunites"=>0,'CurrencyCode'=>'');
+         }
+         $round								=	isset($result_data->RoundVal)?$result_data->RoundVal:0;
+         $array_return['CurrencyCode'] 		= 	isset($result_data->v_CurrencyCode_)?$result_data->v_CurrencyCode_:'';
+         $array_return['TotalOpportunites']	=	$TotalOpportunites;
+         $array_return['users']				=	implode(",",$array_users);
+         $array_return['worth']				=	implode(",",$array_worth);
+         $array_return['TotalWorth']			=	number_format((int)$TotalWorth,(int)$round);
+         //return generateResponse('',false,false,json_encode($array_return));
+ 
+         return $response = Response::json($array_return);
+
+
+
+		// if($response->status=='failed'){
+		// 	return json_response_api($response,false,true);
+		// }else{
+		// 	return $response->data;
+		// }
 		
      }
 	
 	public function getSalesdata(){ //crm dashboard
 		 $data 			= 	 Input::all();
-		 $response 		= 	 NeonAPI::request('dashboard/GetSalesdata',$data,true);
-		  if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{
-			return $response->data;
-		}
+         //$response 		= 	 NeonAPI::request('dashboard/GetSalesdata',$data,true);
+         
+
+         $companyID 			= 	User::get_companyID();
+         $userID 		    	= 	'';
+         //$data 				= 	Input::all();		
+         $rules = array(
+             'Closingdate' =>      'required',                 
+         );
+         $message	 = array("Closingdate.required"=> "Close Date field is required.");
+         $validator   = Validator::make($data, $rules,$message);
+         if ($validator->fails()) {
+             return json_validator_response($validator);
+             //return generateResponse($validator->errors(),true);
+         }
+         $UserID				=	(isset($data['UsersID']) && is_array($data['UsersID']))?implode(",",array_filter($data['UsersID'])):$data['UsersID'];
+         $CurrencyID			=	(isset($data['CurrencyID']) && !empty($data['CurrencyID']))?$data['CurrencyID']:0; 
+         $array_return 	    	= 	array();
+         $array_return1 		= 	array();
+         $array_date			=	array();
+         $worth				    =	0;
+         $array_dates		    =	array();	
+         $array_users		    =	array();
+         $array_worth		    =	array();				
+         $total_opp			    =	0;
+         $array_final 		    = 	array("count"=>0,"status"=>"success");
+         $Closingdate		    =	explode(' - ',$data['Closingdate']);
+         $StartDate			    =   $Closingdate[0]." 00:00:00";
+         $EndDate			    =	$Closingdate[1]." 23:59:59";		
+         $statusarray		    =	(isset($data['Status']) && !empty($data['Status']))?implode(",",$data['Status']):'';
+         $query  			    = 	"call prc_GetCrmDashboardSales (".$companyID.",'".$UserID."', '".$statusarray."','".$CurrencyID."','".$StartDate."','".$EndDate."')"; 
+         $result 			    = 	DB::select($query);
+         $TotalWorth			=	0;
+         
+         foreach($result as $result_data){
+             if(!in_array($result_data->AssignedUserText,$array_users)){			
+                 $array_users[]   = $result_data->AssignedUserText;
+             }
+             $total_opp = $total_opp+$result_data->Opportunitescount;
+             $array_worth[] = $result_data->TotalWorth;
+         }
+         
+         foreach($result as $result_data){			
+             if(!in_array($result_data->MonthName,$array_dates)){			
+                 $array_dates[]   = $result_data->MonthName;
+             }
+         }
+         
+         foreach($result as $result_data){
+             if(isset($array_date[$result_data->MonthName][$result_data->AssignedUserText])){
+                 $current_data = $array_date[$result_data->MonthName][$result_data->AssignedUserText];	
+                 $array_date[$result_data->MonthName][$result_data->AssignedUserText] 	 = 	$result_data->TotalWorth+$current_data;
+             }else{
+                 $array_date[$result_data->MonthName][$result_data->AssignedUserText] 	 = 	$result_data->TotalWorth;
+             }			
+             $worth = $worth+$result_data->TotalWorth;
+         }
+         
+         $array_data = array();
+         
+         foreach($array_users as $array_users_data){
+             foreach($array_dates as $array_dates_data){
+                 if(isset($array_date[$array_dates_data][$array_users_data])){
+                     $array_data[$array_users_data][] = $array_date[$array_dates_data][$array_users_data];
+                 }else{
+                     $array_data[$array_users_data][] = 0;
+                 }
+             }
+         }
+ 
+         
+         foreach($array_data as $key => $array_data_loop){
+             $array_return1[] = array("user"=>$key,"worth"=>implode(",",$array_data_loop));			
+         }
+         
+         if(count($array_users)>0){
+             $worth = number_format($worth,$result_data->round_number);
+             $array_final = array("data"=>$array_return1,"dates"=>implode(",",$array_dates),'TotalWorth'=>$worth,"count"=>count($array_users),"CurrencyCode"=>$result_data->v_CurrencyCode_,"TotalOpportunites"=>$total_opp,"worth"=>implode(",",$array_worth),"users"=>implode(",",$array_users),"status"=>"success");
+         }		
+         
+         return $response = Response::json($array_final);
+        // return generateResponse('',false,false,json_encode($array_final));
+ 
+        // if($response->status=='failed'){
+		// 	return json_response_api($response,false,true);
+		// }else{
+		// 	return $response->data;
+		// }
 	}
 	
 	function CrmDashboardSalesRevenue(){		
 		 $data 			= 	 Input::all();			
-		 $response 		= 	 NeonAPI::request('dashboard/CrmDashboardSalesRevenue',$data,true);
-		  if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{
-			return $response->data;
-		}
+		 //$response 		= 	 NeonAPI::request('dashboard/CrmDashboardSalesRevenue',$data,true);
+        
+         $companyID 			= 	User::get_companyID();
+         $userID 			    = 	'';
+         //$data 				= 	Input::all();		
+         $rules = array(
+             'Duedate' =>      'required',                 
+         );
+         $message	 = array("Duedate.required"=> "Date field is required.");
+         $validator   = Validator::make($data, $rules,$message);
+         if ($validator->fails()) {
+             return json_validator_response($validator); //generateResponse($validator->errors(),true);
+         }
+         $UserID				=	(isset($data['UsersID']) && is_array($data['UsersID']))?implode(",",array_filter($data['UsersID'])):$data['UsersID'];
+         $CurrencyID			=	(isset($data['CurrencyID']) && !empty($data['CurrencyID']))?$data['CurrencyID']:0;
+         $array_return 		= 	array();
+         $array_return1 		= 	array();
+         $array_date			=	array();
+         $worth				=	0;
+         $array_dates		=	array();	
+         $array_users		=	array();
+         $array_worth		=	array();				
+         $array_users_id		=	array();
+         $total_opp			=	0;
+         $array_final 		= 	array("count"=>0,"status"=>"success");
+         $Duedate			=	explode(' - ',$data['Duedate']);
+         $StartDate			=   $Duedate[0]." 00:00:00";
+         $EndDate			=	$Duedate[1]." 23:59:59";		
+         $query  			= 	"CALL `prc_GetCrmDashboardSalesManager`(".$companyID.",'".$UserID."','".$CurrencyID."','".$data['ListType']."','".$StartDate."','".$EndDate."') ";  	 
+         
+         $result 			= 	DB::select($query);
+         $TotalWorth			=	0;
+         
+         foreach($result as $result_data){
+             if(!in_array($result_data->AssignedUserText,$array_users)){			
+                 $array_users[]   = $result_data->AssignedUserText;
+                 $array_users_id[$result_data->AssignedUserText] = $result_data->AssignedUserID;
+             }
+             $array_worth[] = $result_data->Revenue;
+         }
+         
+         
+         if($data['ListType']=='Monthly'){
+             
+             foreach($result as $result_data){			
+                 if(!in_array($result_data->MonthName,$array_dates)){			
+                     $array_dates[]   = $result_data->MonthName;
+                 }
+             }
+             
+             foreach($result as $result_data){
+                 if(isset($array_date[$result_data->MonthName][$result_data->AssignedUserText])){
+                     $current_data = $array_date[$result_data->MonthName][$result_data->AssignedUserText];	
+                     $array_date[$result_data->MonthName][$result_data->AssignedUserText] 	 = 	$result_dataRevenue+$current_data;
+                 }else{
+                     $array_date[$result_data->MonthName][$result_data->AssignedUserText] 	 = 	$result_data->Revenue;
+                 }			
+                 $worth = $worth+$result_data->Revenue;
+             }
+         }
+         
+         if($data['ListType']=='Weekly'){
+             foreach($result as $result_data){			
+                 if(!in_array($result_data->Week,$array_dates)){			
+                     $array_dates[]   = $result_data->Week;
+                 }
+             }
+             
+             foreach($result as $result_data){
+                 if(isset($array_date[$result_data->Week][$result_data->AssignedUserText])){
+                     $current_data = $array_date[$result_data->Week][$result_data->AssignedUserText];	
+                     $array_date[$result_data->Week][$result_data->AssignedUserText] 	 = 	$result_dataRevenue+$current_data;
+                 }else{
+                     $array_date[$result_data->Week][$result_data->AssignedUserText] 	 = 	$result_data->Revenue;
+                 }			
+                 $worth = $worth+$result_data->Revenue;
+             }
+         
+         }
+         
+         
+         $array_data = array();
+         
+         foreach($array_users as $key => $array_users_data){  
+             foreach($array_dates as $array_dates_data){ 
+                 if(isset($array_date[$array_dates_data][$array_users_data])){
+                     $array_data[$array_users_data][] = $array_date[$array_dates_data][$array_users_data];
+                 }else{
+                     $array_data[$array_users_data][] = 0;
+                 }
+             }
+         }
+         foreach($array_data as $key => $array_data_loop){
+             $array_return1[] = array("user"=>$key,"worth"=>implode(",",$array_data_loop),"id"=>$array_users_id[$key]);			
+         }
+         
+         if(count($array_users)>0){
+             $worth = number_format($worth,$result_data->round_number);
+             $array_final = array("data"=>$array_return1,"dates"=>implode(",",$array_dates),'TotalWorth'=>$worth,"count"=>count($array_users),"CurrencyCode"=>$result_data->v_CurrencyCode_,"worth"=>implode(",",$array_worth),"status"=>"success");
+         }
+        // return generateResponse('',false,false,json_encode($array_final));
+ 
+        
+        return $response = Response::json($array_final);
+
+        //  if($response->status=='failed'){
+		// 	return json_response_api($response,false,true);
+		// }else{
+		// 	return $response->data;
+		// }
 	}
 	
 	function GetRevenueDrillDown(){
 		 $data 			= 	 Input::all();			
-		 $response 		= 	 NeonAPI::request('dashboard/CrmDashboardUserRevenue',$data,true);
-		  if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{
-			$data = json_decode($response->data);
-            return View::make('dashboard.RevenueDrillDown', compact('data'));
-		}
+         //$response 		= 	 NeonAPI::request('dashboard/CrmDashboardUserRevenue',$data,true);
+         
+
+
+         $companyID 			= 	User::get_companyID();
+         //$data 				= 	Input::all();
+         $Duedate			=	explode(' - ',$data['duedate']);
+         $StartDate			=   $Duedate[0]." 00:00:00";
+         $EndDate			=	$Duedate[1]." 23:59:59";
+         $split				=	$data['ListType']=='Weekly'?'-':'/';
+         $date_range		=	explode($split,$data['date_range']);
+         $WeekOrMonth		=	$date_range[0];
+         $Year				=	$date_range[1];
+         $CurrencyID			=	(isset($data['CurrencyID']) && !empty($data['CurrencyID']))?$data['CurrencyID']:0;
+         $array_return		=	array();
+         
+        $query  			= 	"CALL `prc_GetCrmDashboardSalesUser`(".$companyID.",'".$data['userid']."','".$CurrencyID."','".$data['ListType']."','".$StartDate."','".$EndDate."','".$WeekOrMonth."','".$Year."') ";
+        $result = DB::select($query); 
+        
+         foreach($result as $result_data){ 
+             $array_return[] = array("Account"=>$result_data->AssignedUserText,"Revenue"=>$result_data->Revenue,'round_number'=>$result_data->round_number,'CurrencyCode'=>$result_data->CurrencyCode,"User"=>$data['name_user'],"date_range"=>$data['date_range'],"ListType"=>$data['ListType']);			
+         }
+                   
+        //return generateResponse('',false,false,json_encode($array_return));
+
+             
+        $data = Response::json($array_return);
+        return View::make('dashboard.RevenueDrillDown', compact('data'));
+
+		// if($response->status=='failed'){
+		// 	return json_response_api($response,false,true);
+		// }else{
+		// 	$data = json_decode($response->data);
+        //     return View::make('dashboard.RevenueDrillDown', compact('data'));
+		// }
 	}
 	
 	
 	public function GetForecastData(){ //crm dashboard
 		 $data 			= 	 Input::all();			
-		 $response 		= 	 NeonAPI::request('dashboard/GetForecastData',$data,true);
-		  if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{
-			return $response->data;
-		}
+         //$response 		= 	 NeonAPI::request('dashboard/GetForecastData',$data,true);
+         
+
+         $companyID 			= 	User::get_companyID();
+         $userID 			= 	'';
+         //$data 				= 	Input::all();		
+         $rules = array(
+             'Closingdate' =>      'required',                 
+         );
+         $message	 = array("Closingdate.required"=> "Close Date field is required.");
+         $validator   = Validator::make($data, $rules,$message);
+         if ($validator->fails()) {
+             return json_validator_response($validator);
+             //return generateResponse($validator->errors(),true);
+         }
+         $UserID				=	(isset($data['UsersID']) && is_array($data['UsersID']))?implode(",",array_filter($data['UsersID'])):$data['UsersID'];
+         $CurrencyID			=	(isset($data['CurrencyID']) && !empty($data['CurrencyID']))?$data['CurrencyID']:0;
+         $array_return 		= 	array();
+         $array_return1 		= 	array();
+         $array_date			=	array();
+         $worth				=	0;
+         $total_opp			=	0;
+         $array_dates		=	array();	
+         $array_users		=	array();				
+         $array_final 		= 	array("count"=>0,"status"=>"success");
+         $Closingdate		=	explode(' - ',$data['Closingdate']);
+         $StartDate			=   $Closingdate[0]." 00:00:00";
+         $EndDate			=	$Closingdate[1]." 23:59:59";		
+         $statusarray		=	Opportunity::Open;
+         $query  			= 	"call prc_GetCrmDashboardForecast (".$companyID.",'".$UserID."', '".$statusarray."','".$CurrencyID."','".$StartDate."','".$EndDate."')";   
+         $result 			= 	DB::select($query);
+         $TotalWorth			=	0;
+         
+         foreach($result as $result_data){
+             if(!in_array($result_data->AssignedUserText,$array_users)){			
+                 $array_users[]   = $result_data->AssignedUserText;
+             }
+             $total_opp			=	$total_opp+$result_data->Opportunitescount;
+         }
+         
+         foreach($result as $result_data){			
+             if(!in_array($result_data->MonthName,$array_dates)){			
+                 $array_dates[]   = $result_data->MonthName;
+             }
+         }
+         
+         foreach($result as $result_data){
+             if(isset($array_date[$result_data->MonthName][$result_data->AssignedUserText])){
+                 $current_data = $array_date[$result_data->MonthName][$result_data->AssignedUserText];	
+                 $array_date[$result_data->MonthName][$result_data->AssignedUserText] 	 = 	$result_data->TotalWorth+$current_data;
+             }else{
+                 $array_date[$result_data->MonthName][$result_data->AssignedUserText] 	 = 	$result_data->TotalWorth;
+             }			
+             $worth = $worth+$result_data->TotalWorth;
+         }
+         
+         $array_data = array();
+         
+         foreach($array_users as $array_users_data){
+             foreach($array_dates as $array_dates_data){
+                 if(isset($array_date[$array_dates_data][$array_users_data])){
+                     $array_data[$array_users_data][] = $array_date[$array_dates_data][$array_users_data];
+                 }else{
+                     $array_data[$array_users_data][] = 0;
+                 }
+                 
+             }
+         }
+ 
+         
+         foreach($array_data as $key => $array_data_loop){
+             $array_return1[] = array("user"=>$key,"worth"=>implode(",",$array_data_loop));
+         }
+         
+         if(count($array_users)>0){
+             $worth = number_format($worth,$result_data->round_number);
+             $array_final = array("data"=>$array_return1,"dates"=>implode(",",$array_dates),'TotalWorth'=>$worth,"count"=>count($array_users),"CurrencyCode"=>$result_data->CurrencyCode,"TotalOpportunites"=>$total_opp,"status"=>"success");
+         }		
+         
+         //return generateResponse('',false,false,json_encode($array_final));
+         return json_encode($array_final);
+
+
+		// if($response->status=='failed'){
+		// 	return json_response_api($response,false,true);
+		// }else{
+		// 	return $response->data;
+		// }
 	}
 	
 	
@@ -302,7 +689,56 @@ class DashboardController extends BaseController {
         if(User::is('AccountManager')){
             $data['AccountOwner'] = User::get_userID();
         }
-        $response = NeonAPI::request('dashboard/get_opportunities_grid',$data,true);
+        //$response = NeonAPI::request('dashboard/get_opportunities_grid',$data,true);
+
+
+
+        $companyID 	    				= 	User::get_companyID();
+        //$data 						= 	Input::all();
+		if(isset($data['AccountOwner'])){
+			if(is_array($data['AccountOwner'])){
+				$UserID = 	implode(",",array_filter($data['AccountOwner']));
+			}else{
+				$UserID =	$data['AccountOwner'];
+				}			
+		}else{
+			$UserID = 	'';
+		}
+		
+        $data['CurrencyID'] 		= 	isset($data['CurrencyID'])?empty($data['CurrencyID'])?0:$data['CurrencyID']:0;
+	    $rules['iDisplayStart'] 	= 	'required|Min:1';
+        $rules['iDisplayLength'] 	= 	'required';
+        $rules['sSortDir_0'] 		= 	'required';
+		
+        $validator 					= 	Validator::make($data, $rules);
+		if ($validator->fails()) {
+            return json_validator_response($validator);
+			//return generateResponse($validator->errors(),true);
+		}
+
+         $columns 				= 	['OpportunityName', 'Status','UserID','RelatedTo','ExpectedClosing','Value','Rating'];
+         $sort_column 			= 	$columns[$data['iSortCol_0']];
+		 
+        $query = "call prc_GetOpportunityGrid (" . $companyID . ",'0', '','', '" . $UserID . "', 0,'1', ".$data['CurrencyID'].", '0',".(ceil($data['iDisplayStart'] / $data['iDisplayLength'])) . "," . $data['iDisplayLength'] . ",'" . $sort_column . "','" . $data['sSortDir_0'] . "')"; 
+
+        $response = DataTableSql::of($query)->make();
+
+
+        // try {
+        //     $result = DataTableSql::of($query)->make();
+        //     return generateResponse('',false,false,$result);
+        // }catch (\Exception $ex){
+        //     Log::info($ex);
+        //     return $this->response->errorInternal($ex->getMessage());
+        // }
+
+
+
+
+
+
+
+
         return json_response_api($response,true,true,true);
     }
 	
@@ -446,7 +882,49 @@ class DashboardController extends BaseController {
             $getdata['StartDate'] = date('Y-m-d', strtotime('-2 days'));
             $getdata['EndDate'] = $getdata['StartDate'] . ' 23:59:59';
         }
-        $response = NeonAPI::request('alert/history', $getdata, false, false, false);
+        //$response = NeonAPI::request('alert/history', $getdata, false, false, false);
+
+
+        //$post_data = Input::all();
+        $post_data = $getdata;
+        $CompanyID = User::get_companyID();
+        $rules['iDisplayStart'] = 'required|Min:1';
+        $rules['iDisplayLength'] = 'required';
+        $rules['iDisplayLength'] = 'required';
+        $rules['sSortDir_0'] = 'required';
+        $validator = Validator::make($post_data, $rules);
+        if ($validator->fails()) {
+            return generateResponse($validator->errors(),true);
+        }
+        $post_data['iDisplayStart'] += 1;
+        $columns = ['Name', 'CreatedBy', 'created_at'];
+        $AlertType = $AlertID = '0';
+        if (isset($post_data['AlertID'])) {
+            $AlertID = $post_data['AlertID'];
+        }
+        if (isset($post_data['AlertType'])) {
+            $AlertType = $post_data['AlertType'];
+        }
+        $post_data['StartDate'] = !empty($post_data['StartTime'])?$post_data['StartDate'].' '.$post_data['StartTime']:$post_data['StartDate'];
+        $post_data['EndDate'] = !empty($post_data['EndTime'])?$post_data['EndDate'].' '.$post_data['EndTime']:$post_data['EndDate'];
+        $post_data['Search'] = !empty($post_data['Search'])?$post_data['Search']:'';
+
+        $sort_column = $columns[$post_data['iSortCol_0']];
+        $query = "call prc_getAlertHistory(" . $CompanyID . ",'" . intval($AlertID) . "','" . $AlertType . "','".$post_data['StartDate']."','".$post_data['EndDate']."','".$post_data['Search']."'," . (ceil($post_data['iDisplayStart'] / $post_data['iDisplayLength'])) . " ," . $post_data['iDisplayLength'] . ",'" . $sort_column . "','" . $post_data['sSortDir_0'] . "'";
+        if (isset($post_data['Export']) && $post_data['Export'] == 1) {
+            $result = DB::select($query . ',1)');
+        } else {
+            $query .= ',0)';
+            $result = DataTableSql::of($query)->make();
+        }
+        //$response = $result;
+    
+        $response = new stdClass;
+        $response->data =$result;
+        $response->status = 'success';
+
+
+
         if(!empty($response) && $response->status == 'success') {
             $html = View::make('dashboard.alert_history', compact('response', 'alertType'))->render();
         }else{

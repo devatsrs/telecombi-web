@@ -329,5 +329,10 @@ class TicketsTable extends \Eloquent
 		return $row;
 	}
 
+	static function getTicketLicense(){
+		return CompanyConfiguration::get("TICKETING_SYSTEM");
+		//return false;
+	}
+
 
 }

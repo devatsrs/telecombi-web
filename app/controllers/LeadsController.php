@@ -172,7 +172,51 @@ class LeadsController extends \BaseController {
             $PageNumber                 =    ceil($data['iDisplayStart']/$data['iDisplayLength']);
             $RowsPerPage                =    $data['iDisplayLength'];
 			$message 					= 	 '';
-            $response_timeline 			= 	 NeonAPI::request('account/GetTimeLine',$data,false,true);
+            //$response_timeline 			= 	 NeonAPI::request('account/GetTimeLine',$data,false,true);
+
+
+            //$data                       =   Input::all();  
+            $companyID                  =   User::get_companyID();
+            $rules['iDisplayStart']     =   'required|numeric|Min:0';
+            $rules['iDisplayLength']    =   'required|numeric';
+            $rules['AccountID']         =   'required|numeric';
+            
+            $validator = Validator::make($data, $rules);
+            if ($validator->fails()) {
+                return json_validator_response($validator);
+            }			
+            
+            $queryTicketType	= 0;
+            $SystemTicket  = TicketsTable::getTicketLicense();
+            if($SystemTicket){
+                $queryTicketType	= TicketsTable::$SystemTicket;
+            }
+                
+                 if(!$queryTicketType){ //check system ticket enable . if not then check freshdesk tickets
+                    if($data['iDisplayStart']==0) {
+                        if(SiteIntegration::CheckIntegrationConfiguration(false,SiteIntegration::$freshdeskSlug)){
+                            $queryTicketType	= TicketsTable::$FreshdeskTicket;
+                         $freshsdesk = 	$this->FreshSDeskGetTickets($data['AccountID'],$data['GUID']); 
+                            if($freshsdesk){
+                                //return generateResponse(array("freshsdesk"=>array(0=>$freshsdesk['errors'][0]->message)),true);
+                            }
+                        }
+                    }
+                }
+                
+                
+                $columns =  ['Timeline_type','ActivityTitle','ActivityDescription','ActivityDate','ActivityType','ActivityID','Emailfrom','EmailTo','EmailSubject','EmailMessage','AccountEmailLogID','NoteID','Note','CreatedBy','created_at','updated_at'];
+                $query = "call prc_getAccountTimeLine(" . $data['AccountID'] . "," . $companyID . ",".$queryTicketType.",'".$data['GUID']."','".date('Y-m-d H:i:00')."'," . $data['iDisplayStart'] . "," . $data['iDisplayLength'] . ")";   
+                $result_array = DB::select($query); 
+                //return generateResponse('',false,false,$result_array);
+            
+                $response = [];
+                $response["data"] =$result_array;
+                $response["status"] = 'success';
+                $response_timeline = $response;
+
+            
+
 			
 			if($response_timeline['status']!='failed'){
 				if(isset($response_timeline['data']))

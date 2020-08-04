@@ -197,7 +197,131 @@ class AccountActivityController extends \BaseController {
 		
 		$data['address']		=    Auth::user()->EmailAddress; 
 	   
-		$response 				= 	NeonAPI::request('accounts/sendemail',$data,true,false,true);				
+        //$response 				= 	NeonAPI::request('accounts/sendemail',$data,true,false,true);				
+        
+
+        $usertype = 0;	 //acount by default	
+        $rules = array(
+			"email-to" =>'required',
+            'Subject'=>'required',
+            'Message'=>'required'			
+        );
+
+		if(isset($data['usertype'])  && $data['usertype']==Messages::UserTypeContact){
+			$Contact	 	=	Contact::find($data['ContactID']);	
+			$usertype 		  		 =    1;
+		}else{
+			$account	 	=    Account::find($data['AccountID']);	
+		}
+		
+ 	    $data['EmailTo']	= 	$data['email-to'];
+
+        $validator = Validator::make($data,$rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator);
+        }
+		$files = '';
+        if (isset($data['file']) && !empty($data['file'])) {
+            $data['AttachmentPaths'] = json_decode($data['file'],true);
+			$files = serialize(json_decode($data['file'],true));			
+        }
+		
+		if(isset($data['EmailParent'])){
+			$ParentEmail 		   =  AccountEmailLog::find($data['EmailParent']);
+			$data['In-Reply-To']   =  $ParentEmail->MessageID;
+		}
+
+        $JobLoggedUser = User::find(User::get_userID());
+		if($usertype){
+			$replace_array  = Contact::create_replace_array_contact($Contact,array(),$JobLoggedUser);
+		}else{
+       		 $replace_array = Account::create_replace_array($account,array(),$JobLoggedUser);
+		}
+        $data['Message'] = template_var_replace($data['Message'],$replace_array);
+		// image upload end
+		
+			
+		
+        $data['mandrill'] = 0;
+		$data = cleanarray($data,[]);	
+		//$data['CompanyName'] = $account->AccountName;
+		$data['CompanyName'] = User::get_user_full_name(); //logined user's name as from name
+		
+        try{
+			 DB::beginTransaction();
+        	 Contact::CheckEmailContact($data['EmailTo'],isset($data['AccountID'])?$data['AccountID']:0);
+			 Contact::CheckEmailContact($data['cc'],isset($data['AccountID'])?$data['AccountID']:0);
+			 Contact::CheckEmailContact($data['bcc'],isset($data['AccountID'])?$data['AccountID']:0);		
+			 
+			 if(isset($data['createticket']) && TicketsTable::getTicketLicense()){ //check and create ticket
+			 	$email_from_data   	= 	TicketGroups::where(["GroupReplyAddress"=>$data['email-from']])->select('GroupName','GroupID','GroupReplyAddress')->get();
+				$TicketData = array(
+					"CompanyID"=>User::get_companyID(),
+					"Requester"=>$data['EmailTo'],
+					"Subject"=>isset($data['Subject'])?$data['Subject']:'',
+					"Type"=>0,
+					"Group"=>isset($email_from_data[0])?$email_from_data[0]->GroupID:0,
+					"Status"=>TicketsTable::getDefaultStatus(),
+					"Priority"=>TicketPriority::getDefaultPriorityStatus(),					
+					"Description"=>isset($data['Message'])?$data['Message']:'',	 
+					"AttachmentPaths"=>$files,
+					"TicketType"=>TicketsTable::EMAIL,
+					"created_at"=>date("Y-m-d H:i:s"),
+					"created_by"=>User::get_user_full_name()
+				);
+			
+				$MatchArray  		  =     TicketsTable::SetEmailType($data['EmailTo']);
+				$TicketData 		  = 	array_merge($TicketData,$MatchArray);
+				
+				$TicketID = TicketsTable::insertGetId($TicketData);	
+				if(count($email_from_data)>0){
+				 	$data['EmailFrom']	   	  = 	$email_from_data[0]->GroupReplyAddress;
+				 	$data['CompanyName']  	  = 	$email_from_data[0]->GroupName;		
+				}else{
+				 	$data['EmailFrom']	   	  = 	$data['email-from'];
+				}
+			 }else{
+				 $data['EmailFrom']	   = 	$data['email-from'];
+			 }
+			 
+			if(isset($data['email_send'])&& $data['email_send']==1) {
+					  
+                $status = sendMail('emails.template', $data);
+            }else{$status = array("status"=>1);}
+			if($status['status']==0){
+				 return generateResponse($status['message'],true,true);
+			}
+			
+			$data['message_id'] 	=  isset($status['message_id'])?$status['message_id']:"";			
+            $result 				= 	email_log_data($data,'emails.template');
+           	$result->message 		= 	'Email Sent Successfully';
+			$multiple_addresses		= 	strpos($data['EmailTo'],',');
+
+			if($multiple_addresses == false){
+				$user_data 				= 	User::where(["EmailAddress" => $data['EmailTo']])->get();
+				if(count($user_data)>0) {
+					$result->EmailTo = $user_data[0]['FirstName'].' '.$user_data[0]['LastName'];
+				}
+			} 
+			 if(isset($data['createticket']) && TicketsTable::getTicketLicense()){ //check and create ticket
+			 	TicketsTable::find($TicketID)->update(array("AccountEmailLogID"=>$result->AccountEmailLogID));
+				 $TicketEmails1		=  new TicketEmails(array("TicketID"=>$TicketID,"TriggerType"=>array("RequesterNewTicketCreated")));				 
+				 $TicketEmails 		=  new TicketEmails(array("TicketID"=>$TicketID,"TriggerType"=>"CCNewTicketCreated"));
+				if(isset($email_from_data[0])){
+				  $TicketEmails 	=  new TicketEmails(array("TicketID"=>$TicketID,"TriggerType"=>array("AgentAssignedGroup")));					
+				}
+				 
+			 }
+			  DB::commit(); 
+            return generateResponse('',false,false,$result);
+        }catch (Exception $ex){ 	
+			 DB::rollback(); 
+        	 return $this->response->errorInternal($ex->getMessage());
+        }
+
+
+
+
 		
 		if($response->status=='failed'){
 				return  json_response_api($response);
@@ -238,11 +362,23 @@ class AccountActivityController extends \BaseController {
 			$AccountName 		= 	  Account::where(array('AccountID'=>$AccountID))->pluck('AccountName');
 			$AccountEmail 		= 	  Account::where(array('AccountID'=>$AccountID))->pluck('Email');
 		}
-		$response_email     =     NeonAPI::request('account/get_email',array('EmailID'=>$email_number),false,true);
-		
-		if($response_email['status']=='failed'){
-			return  json_response_api($response_email);
-		}else{	
+		//$response_email     =     NeonAPI::request('account/get_email',array('EmailID'=>$email_number),false,true);
+        $data = array('EmailID'=>$email_number);
+        $rules['EmailID'] = 'required';
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator);
+        }
+        try {
+            $response_email = AccountEmailLog::find($data['EmailID']);
+        } catch (\Exception $e) {
+            Log::info($e);
+            //return Response::json(array("status" => "failed", "message" =>  $e->getMessage()));
+            $response_email = [];
+        }
+
+
+
 			$response_data      =  	  $response_email['data'];	
 			$parent_id          =  	  $response_data['EmailParent'];	
 			if(!empty($parent_id)){
@@ -260,7 +396,7 @@ class AccountActivityController extends \BaseController {
 			}else{
 			return View::make('accounts.emailaction', compact('data','response_data','action_type','parent_data','emailTemplates','AccountName','AccountEmail','uploadtext','FromEmails'));  			
 			}
-		}
+
         
 	}	
 	
@@ -285,11 +421,17 @@ class AccountActivityController extends \BaseController {
     }
 
     public function getAttachment($emailID,$attachmentID){
-        $response = NeonAPI::request('emailattachment/'.$emailID.'/getattachment/'.$attachmentID,[],true,true,true);
+        //$response = NeonAPI::request('emailattachment/'.$emailID.'/getattachment/'.$attachmentID,[],true,true,true);
+        $response = [];
+        if(intval($emailID)>0) {
+            $email = AccountEmailLog::find($emailID);
+            $attachments = unserialize($email->AttachmentPaths);
+            $attachment = $attachments[$attachmentID];
+            if(!empty($attachment)){
+                $response = $attachment;
+            }
+        }
 
-        if($response['status']=='failed'){
-            return json_response_api($response,false);
-        }else{
             $Comment  = 	json_response_api($response,true,false,false);
             $FilePath =  	AmazonS3::preSignedUrl($Comment['filepath']);
             if(file_exists($FilePath)){
@@ -298,7 +440,7 @@ class AccountActivityController extends \BaseController {
                 header('Location: '.$FilePath);
             }
             exit;
-        }
+
     }
 	
 	 function GetReplyAttachment($emailID,$attachmentID)

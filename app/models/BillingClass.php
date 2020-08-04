@@ -59,4 +59,15 @@ class BillingClass extends \Eloquent
 		return $final;
     }
 
+    public static function checkForeignKeyById($id) {
+
+
+        $hasInAccountBilling = AccountBilling::where("BillingClassID",$id)->count();
+        if( intval($hasInAccountBilling) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

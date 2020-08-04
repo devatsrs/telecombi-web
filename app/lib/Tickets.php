@@ -5,7 +5,7 @@ class Tickets{
  protected $companyID;
  
  	public function __construct(){
-		$companyID = SiteIntegration::GetComapnyIdByKey();
+		$companyID = User::get_companyID();
 		$this->companyID = !empty($companyID)?$companyID:User::get_companyID();
 	 } 
 	 

@@ -148,28 +148,51 @@ class ContactsController extends \BaseController {
         $data["Note"] 			= 	nl2br($data["Note"]);
 		$key 					= 	$data['scrol']!=""?$data['scrol']:0;	
 		unset($data["scrol"]);		
- 		$response 				= 	NeonAPI::request('contact/add_note',$data);
-		
-		if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{
-			$response = $response->data;
-			$response->type = Task::Note;
-		}
-				
-		$current_user_title = Auth::user()->FirstName.' '.Auth::user()->LastName;
+ 		//$response 				= 	NeonAPI::request('contact/add_note',$data);
+        
+         $rules = array(
+            'CompanyID' => 'required',
+            'ContactID' => 'required',
+            'Note' => 'required',
+        );
+
+        $validator = Validator::make($data, $rules);
+
+        if ($validator->fails()) {
+            return json_validator_response($validator->errors());
+        }
+
+        $data = cleanarray($data,[]);
+        $result = ContactNote::create($data);
+
+        
+        $response = new stdClass;
+        $response->data = $result;
+        $response->type = Task::Note;
+
+		$current_user_title = User::get_user_full_name();
 		return View::make('contacts.timeline.show_ajax_single', compact('response','current_user_title','key'));      
 	}
 	
 	function get_note(){
 		$response				=	array();
 		$data 					= 	Input::all();
-		$response_note    		=   NeonAPI::request('contact/get_note',array('NoteID'=>$data['NoteID']),false,true);
-		if($response_note['status']=='failed'){
-			return json_response_api($response_note,false,true);
-		}else{
-			return json_encode($response_note['data']);
-		}
+        //$response_note    		=   NeonAPI::request('contact/get_note',array('NoteID'=>$data['NoteID']),false,true);
+        
+        $data = Input::all();
+
+        $rules['NoteID'] = 'required';
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator->errors());
+        }
+        
+        $Note = ContactNote::find($data['NoteID']);
+        
+        $response_note    		=$Note;
+
+        return json_encode($Note);
+	 
 	}
 
  	/**
@@ -184,16 +207,32 @@ class ContactsController extends \BaseController {
         $data['updated_by'] 	=	$user_name;
         $data["Note"] 			= 	nl2br($data["Note"]);
 		unset($data['KeyID']);
- 		$response 				= 	NeonAPI::request('contact/update_note',$data);
+         //$response 				= 	NeonAPI::request('contact/update_note',$data);
+         
+ 
+         $rules = array(
+              'NoteID' => 'required',
+              'Note' => 'required',
+          );
+  
+          $validator = Validator::make($data, $rules);
+  
+          if ($validator->fails()) {
+              return json_validator_response($validator);;
+          }
+   
+              $data = cleanarray($data,[]);
+              $result = ContactNote::find($data['NoteID'])->update($data);
+              $response  = $result = ContactNote::find($data['NoteID']);
+  
+              $response = new stdClass;
+              $response->data = $result;
+              $response->type = Task::Note;
+      
+      
 		
-		if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{ 
-			$response = $response->data;
-			$response->type = Task::Note;
-		}
-			
-		$current_user_title = Auth::user()->FirstName.' '.Auth::user()->LastName;
+ 			
+		$current_user_title = User::get_user_full_name();
 		return View::make('contacts.timeline.show_ajax_single_update', compact('response','current_user_title','key'));   
 	}
 
@@ -203,13 +242,20 @@ class ContactsController extends \BaseController {
     public function delete_note($id) {
         ///$result = Note::find($id)->delete();
 		$data['NoteID']			=	$id;		 
-		$response 				= 	NeonAPI::request('contact/delete_note',$data);
-		
-		if($response->status=='failed'){
-			return json_response_api($response,false,true);
-		}else{ 
-			return Response::json(array("status" => "success", "message" => "Note Successfully Deleted", "NoteID" => $id));
-		}     
+        //$response 				= 	NeonAPI::request('contact/delete_note',$data);
+        
+        $rules['NoteID'] = 'required';
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator);;
+        }
+
+        ContactNote::where(['NoteID'=>$data['NoteID']])->delete();
+    
+        $response  = 'successfull';
+
+        return Response::json(array("status" => "success", "message" => "Note Successfully Deleted", "NoteID" => $id));
+		      
     }
 
     /**
@@ -297,32 +343,57 @@ class ContactsController extends \BaseController {
             $PageNumber                 =    ceil($data['iDisplayStart']/$data['iDisplayLength']);
             $RowsPerPage                =    $data['iDisplayLength'];			
 			$message 					= 	 '';			
-            $response_timeline 			= 	 NeonAPI::request('contact/GetTimeLine',$data,false,true);
+            //$response_timeline 			= 	 NeonAPI::request('contact/GetTimeLine',$data,false,true);
+
+
+            
+        //$data                       =   Input::all();
+        $companyID                  =   User::get_companyID();
+        $rules['iDisplayStart']     =   'required|numeric|Min:0';
+        $rules['iDisplayLength']    =   'required|numeric';
+        $rules['ContactID']         =   'required|numeric';
+		
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return json_validator_response($validator);;
+        }			
+		
+		$queryTicketType	= 0;
+		$SystemTicket  = TicketsTable::getTicketLicense();
+		if($SystemTicket){
+			$queryTicketType	= TicketsTable::$SystemTicket;
+		}
+		$AccountID = 	Contact::where(["ContactID"=>$data['ContactID']])->pluck('AccountID');	
+				
+ 			if(!$queryTicketType){ //check system ticket enable . if not then check freshdesk tickets
+				if($data['iDisplayStart']==0) {
+					if(SiteIntegration::CheckIntegrationConfiguration(false,SiteIntegration::$freshdeskSlug)){
+						$queryTicketType	= TicketsTable::$FreshdeskTicket;
+					 $freshsdesk = 	$this->FreshSDeskGetTickets($data['ContactID'],$data['GUID']); 
+						if($freshsdesk){
+							//return generateResponse(array("freshsdesk"=>array(0=>$freshsdesk['errors'][0]->message)),true);
+						}
+					}
+				}
+			}
+			
+			
+            $columns =  ['Timeline_type','ActivityTitle','ActivityDescription','ActivityDate','ActivityType','ActivityID','Emailfrom','EmailTo','EmailSubject','EmailMessage','AccountEmailLogID','NoteID','Note','CreatedBy','created_at','updated_at'];
+            $query = "call prc_getContactTimeLine(" . $data['ContactID'] . "," . $companyID . ",".$queryTicketType.",'".$data['GUID']."'," . $data['iDisplayStart'] . "," . $data['iDisplayLength'] . ")";  
+            $response_timeline 			= $result_array = DB::select($query);
+            //return generateResponse('',false,false,$result_array);
+        
+
+            
+            //$response_timeline["data"] = $response_timeline;
+            $response_timeline = $response_timeline;
+    
+
 		/*		echo "<pre>";
 				print_r($response_timeline);		
 				exit;*/
 	
-			if($response_timeline['status']!='failed'){
-				if(isset($response_timeline['data']))
-				{
-					$response_timeline =  $response_timeline['data'];
-				}else{
-					$response_timeline = array();
-				}
-			}else{ 	
-				if(isset($response_timeline['Code']) && ($response_timeline['Code']==400 || $response_timeline['Code']==401)){
-                    \Illuminate\Support\Facades\Log::info("Contact 401 ");
-                    \Illuminate\Support\Facades\Log::info(print_r($response_timeline,true));
-                    //return	Redirect::to('/logout');
-				}		
-				if(isset($response_timeline->error) && $response_timeline->error=='token_expired'){
-                    \Illuminate\Support\Facades\Log::info("Contact token_expired ");
-                    \Illuminate\Support\Facades\Log::info(print_r($response_timeline,true));
-                    //Redirect::to('/login');
-                }
-				$message = json_response_api($response_timeline,false,false);
-			}
-			
+			 
 		
 			$emailTemplates 			= 	 $this->ajax_getEmailTemplate(EmailTemplate::PRIVACY_OFF,EmailTemplate::ACCOUNT_TEMPLATE);
 			$random_token				=	 get_random_number();
@@ -341,7 +412,7 @@ class ContactsController extends \BaseController {
 			$ShowTickets				=   SiteIntegration::CheckIntegrationConfiguration(true,SiteIntegration::$freshdeskSlug,$companyID); //freshdesk
 			$SystemTickets				=   Tickets::CheckTicketLicense();		
 	        return View::make('contacts.timeline.view', compact('response_timeline','account', 'contacts', 'verificationflag', 'outstanding','response','message','current_user_title','per_scroll','Account_card','account_owners','Board','emailTemplates','response_extensions','random_token','users','max_file_size','leadOrAccount','leadOrAccountCheck','opportunitytags','leadOrAccountID','accounts','boards','data','ShowTickets','SystemTickets')); 	
-		}
+	}
 	
 	  public function ajax_getEmailTemplate($privacy, $type){
         $filter = array();
@@ -363,8 +434,50 @@ class ContactsController extends \BaseController {
 		 	$data['iDisplayStart'] 	   =	$start;
             $data['iDisplayLength']    =    10;
             $data['ContactID']         =    $id;			
-			$response 				   = 	NeonAPI::request('contact/GetTimeLine',$data,false);
-			
+            //$response 				   = 	NeonAPI::request('contact/GetTimeLine',$data,false);
+            
+            $data                       =   Input::all();
+            $companyID                  =   User::get_companyID();
+            $rules['iDisplayStart']     =   'required|numeric|Min:0';
+            $rules['iDisplayLength']    =   'required|numeric';
+            $rules['ContactID']         =   'required|numeric';
+            
+            $validator = Validator::make($data, $rules);
+            if ($validator->fails()) {
+                return json_validator_response($validator);;
+            }			
+            
+            $queryTicketType	= 0;
+            $SystemTicket  = TicketsTable::getTicketLicense();
+            if($SystemTicket){
+                $queryTicketType	= TicketsTable::$SystemTicket;
+            }
+            $AccountID = 	Contact::where(["ContactID"=>$data['ContactID']])->pluck('AccountID');	
+                    
+            if(!$queryTicketType){ //check system ticket enable . if not then check freshdesk tickets
+                if($data['iDisplayStart']==0) {
+                    if(\App\SiteIntegration::CheckIntegrationConfiguration(false,\App\SiteIntegration::$freshdeskSlug)){
+                        $queryTicketType	= TicketsTable::$FreshdeskTicket;
+                        $freshsdesk = 	$this->FreshSDeskGetTickets($data['ContactID'],$data['GUID']); 
+                        if($freshsdesk){
+                            //return generateResponse(array("freshsdesk"=>array(0=>$freshsdesk['errors'][0]->message)),true);
+                        }
+                    }
+                }
+            }
+            
+            
+            $columns =  ['Timeline_type','ActivityTitle','ActivityDescription','ActivityDate','ActivityType','ActivityID','Emailfrom','EmailTo','EmailSubject','EmailMessage','AccountEmailLogID','NoteID','Note','CreatedBy','created_at','updated_at'];
+            $query = "call prc_getContactTimeLine(" . $data['ContactID'] . "," . $companyID . ",".$queryTicketType.",'".$data['GUID']."'," . $data['iDisplayStart'] . "," . $data['iDisplayLength'] . ")";  
+            $result_array = DB::select($query);
+            //return generateResponse('',false,false,$result_array);
+
+                
+            $response = new stdClass;
+            $response->data = $result_array;
+            $response->status = "success";
+
+    
 			if($response->status!='failed'){
 				if(!isset($response->data))
 				{
@@ -375,13 +488,99 @@ class ContactsController extends \BaseController {
 					$response =  $response->data;
 				}
 			}
-			else{
-				return json_response_api($response,false,true);
-			}
+			
 					
 			$key 					= 	$data['scrol'];
-			$current_user_title 	= 	Auth::user()->FirstName.' '.Auth::user()->LastName;
-			return View::make('contacts.timeline..show_ajax', compact('response','current_user_title','key'));
+			$current_user_title 	= 	User::get_user_full_name();
+			return View::make('contacts.timeline.show_ajax', compact('response','current_user_title','key'));
+	}
+	function FreshSDeskGetTickets($AccountID,$GUID){ 
+		//date_default_timezone_set("Europe/London");
+		Ticket::where(['AccountID'=>$AccountID,"GUID"=>$GUID])->delete(); //delete old tickets
+	    $companyID 		=	User::get_companyID();
+        /*$AccountEmails  =	Account::where("AccountID",$AccountID)->select(['Email','BillingEmail'])->first();
+        $AccountEmails  = 	json_decode(json_encode($AccountEmails),true);
+        $emails			=	array_unique($AccountEmails);*/
+ 
+		
+        $email_array			 = 	array();
+        $billingemail_array 	 = 	array();
+        $allemail 				 =  array();
+		$Contacts_Email_array	 =	array();
+        $AccountEmails  		 =	Account::where("AccountID",$AccountID)->select(['Email'])->first();
+		
+        if(count($AccountEmails)>0)
+		{
+            $email_array = explode(',',$AccountEmails['Email']);
+        }
+		
+        $AccountEmails1  		=	Account::where("AccountID",$AccountID)->select(['BillingEmail'])->first();
+		
+        if(count($AccountEmails1)>0)
+		{
+            $billingemail_array = explode(',', $AccountEmails1['BillingEmail']);
+        }
+		
+		$AccountsContacts  	=DB::table('tblContact')->select(DB::raw("group_concat(DISTINCT Email separator ',') as ContactsEmails"))->where(array("AccountID"=>$AccountID))->pluck('ContactsEmails');
+	
+		if(strlen($AccountsContacts)>0)
+		{
+            $Contacts_Email_array = explode(',', $AccountsContacts);
+        }
+		
+        $allemail 				= 	array_merge($email_array,$billingemail_array,$Contacts_Email_array);
+        $emails					=	array_filter(array_unique($allemail));
+		$TicketsIDs				=	array();  		
+		$FreshDeskObj 			=  	new SiteIntegration();
+		$FreshDeskObj->SetSupportSettings();	
+			
+		if(count($emails)>0 && $FreshDeskObj->CheckSupportSettings())
+		{ 
+			foreach($emails as $UsersEmails)
+			{				
+				$GetTickets 	= 		$FreshDeskObj->GetSupportTickets(array("email"=>trim($UsersEmails),"include"=>"requester"));				
+				
+				if(isset($GetTickets['StatusCode']) && $GetTickets['StatusCode'] == 200 && count($GetTickets['data'])>0)
+				{   
+					foreach($GetTickets['data'] as $GetTickets_data)
+					{   
+						if(in_array($GetTickets_data->id,$TicketsIDs)){continue;}else{$TicketsIDs[] = $GetTickets_data->id;} //ticket duplication						
+						$TicketData['CompanyID']		=	$companyID;
+						$TicketData['AccountID'] 		=   $AccountID;
+						$TicketData['TicketID']			=   $GetTickets_data->id;	
+						$TicketData['Subject']			=	$GetTickets_data->subject;
+						$TicketData['Description']		=	$GetTickets_data->description;
+						//$TicketData['Description']		=	$GetTickets_data->description_text;
+						$TicketData['Priority']			=	$FreshDeskObj->SupportSetPriority($GetTickets_data->priority);
+						$TicketData['Status']			=	$FreshDeskObj->SupportSetStatus($GetTickets_data->status);
+						$TicketData['Type']				=	$GetTickets_data->type;				
+						$TicketData['Group']			=	$FreshDeskObj->SupportSetGroup($GetTickets_data->group_id);
+						$TicketData['RequestEmail']		=	$GetTickets_data->requester->email;				
+						$TicketData['ApiCreatedDate']	=   date("Y-m-d H:i:s",strtotime($GetTickets_data->created_at));
+						$TicketData['ApiUpdateDate']	=   date("Y-m-d H:i:s",strtotime($GetTickets_data->updated_at));	
+						$TicketData['created_by']  		= 	User::get_user_full_name();
+						$TicketData['GUID']  			= 	$GUID; 
+						if(!empty($GetTickets_data->to_emails) && $GetTickets_data->to_emails!='null'){
+							if(is_array($GetTickets_data->to_emails)){
+								$TicketData['to_emails']		=	implode(",",$GetTickets_data->to_emails);	
+							}
+							else{
+								$TicketData['to_emails']		=	$GetTickets_data->to_emails;	
+							}
+						}
+						$result 						= 	Ticket::create($TicketData);		
+						unset($TicketData);
+					}	
+				}
+				else
+				{
+					//return $GetTickets;	
+					if(isset($GetTickets['StatusCode']) && $GetTickets['StatusCode']!='200' && $GetTickets['StatusCode']!='400'){
+						return $GetTickets;							
+					}
+				} 	    
+			}		
+		}
 	}
 	
 

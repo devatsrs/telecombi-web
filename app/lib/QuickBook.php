@@ -300,10 +300,7 @@ class QuickBook {
 				$dsn = 'mysqli://'.$dbconnection['username'].':'.$dbconnection['password'].'@'.$dbconnection['host'].'/'.$dbconnection['database'];
 
 				//$this->dsn = 'mysqli://root:root@localhost/LocalRatemanagement';
-				if(empty($CompanyID)){
-					$CompanyID = SiteIntegration::GetComapnyIdByKey();
-					$CompanyID = !empty($CompanyID)?$CompanyID:User::get_companyID();
-				}
+				
 
 				$this->dsn = $dsn;
 				$this->encryption_key = 'bcde1234';

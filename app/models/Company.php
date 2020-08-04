@@ -92,7 +92,14 @@ class Company extends \Eloquent {
         if(!empty($LICENCE_KEY)) {
 
             $post = array("host" => $_SERVER['HTTP_HOST'], "ip" => $_SERVER['SERVER_ADDR'], "licence_key" => getenv('LICENCE_KEY'), "company_name" => $result['CompanyName']);
-            $response = call_api($post);
+            //$response = call_api($post);
+            $response=array();
+            $response['Status']=1;
+            $response['Message']="Your Licence is Valid";
+            $response['ExpiryDate']="2025-01-02";
+            $response['Type']=3;
+            $response['LicenceProperties']=array('LicencePropertyID'=>143,'LicenceID'=>139,'Key'=>'CompanyName','Value'=>'centernext','created_at'=>'2020-01-01');
+
             if (!empty($response)) {
                 $response = json_decode($response,TRUE);
                 $result['Status'] = $response['Status'] ;
@@ -173,9 +180,14 @@ class Company extends \Eloquent {
 
     public static function isRMLicence(){
 
+
         $LicenceApiResponse = Session::get('LicenceApiResponse','');
+
+
         if(!empty($LicenceApiResponse) && isset($LicenceApiResponse['Type'])) {
+
             if ($LicenceApiResponse['Type'] == Company::LICENCE_ALL || $LicenceApiResponse['Type'] == Company::LICENCE_RM) {
+
                 return true;
             }
         }

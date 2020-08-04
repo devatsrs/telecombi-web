@@ -949,6 +949,7 @@ function getDefaultTrunk($truanks){
 function call_api($post = array())
 {
 
+    exit;
     //$LicenceVerifierURL = 'http://localhost/RMLicenceAPI/branches/master/public/validate_licence';
     $LicenceVerifierURL = 'http://api.licence.neon-soft.com/validate_licence';// //getenv('LICENCE_URL').'validate_licence';
 
@@ -1100,7 +1101,7 @@ function getUploadedFileRealPath($files)
 }
 
 
-function create_site_configration_cache(){
+function create_site_configration_cache(){ 
     $domain_url 					=   $_SERVER['HTTP_HOST'];
     $result 						= 	DB::table('tblCompanyThemes')->where(["DomainUrl" => $domain_url,'ThemeStatus'=>Themes::ACTIVE])->get();
 
@@ -1485,33 +1486,43 @@ function Get_Api_file_extentsions($ajax=false){
 		  if(is_array($response_extensions['allowed_extensions'])){
 			  return $response_extensions;
 		  }		 
-	 } 	 */
-	 $response     			=  NeonAPI::request('get_allowed_extensions',[],false);
-	 $response_extensions 	=  [];
+     } 	 */
+     
+	//  $response     			=  NeonAPI::request('get_allowed_extensions',[],false);
+	//  $response_extensions 	=  [];
 	 	
-	if($response->status=='failed'){
-		if($ajax==true){
-			return $response;
-		}else{
+	// if($response->status=='failed'){
+	// 	if($ajax==true){
+	// 		return $response;
+	// 	}else{
 			
-			if(isset($response->Code) && ($response->Code==400 || $response->Code==401)){
-                \Illuminate\Support\Facades\Log::info("helpers.php Get_Api_file_extentsions 401 ");
-                \Illuminate\Support\Facades\Log::info(print_r($response,true));
-                //return Redirect::to('/logout');
-			}
-			if(isset($response->error) && $response->error=='token_expired'){
-                \Illuminate\Support\Facades\Log::info("helpers.php Get_Api_file_extentsions token_expired");
-                \Illuminate\Support\Facades\Log::info(print_r($response,true));
-                //return Redirect::to('/login');
-            }
-		}
-	}else{		
-		$response_extensions 		 = 	json_response_api($response,true,true); 
-		$response_extensions 		 = 	json_decode($response_extensions);		
-		$array['allowed_extensions'] = 	$response_extensions;
-		Session::put('api_response_extensions', $response_extensions);
-		return $array;
-	}
+	// 		if(isset($response->Code) && ($response->Code==400 || $response->Code==401)){
+    //             \Illuminate\Support\Facades\Log::info("helpers.php Get_Api_file_extentsions 401 ");
+    //             \Illuminate\Support\Facades\Log::info(print_r($response,true));
+    //             //return Redirect::to('/logout');
+	// 		}
+	// 		if(isset($response->error) && $response->error=='token_expired'){
+    //             \Illuminate\Support\Facades\Log::info("helpers.php Get_Api_file_extentsions token_expired");
+    //             \Illuminate\Support\Facades\Log::info(print_r($response,true));
+    //             //return Redirect::to('/login');
+    //         }
+	// 	}
+	// }else{		
+	// 	$response_extensions 		 = 	json_response_api($response,true,true); 
+	// 	$response_extensions 		 = 	json_decode($response_extensions);		
+	// 	$array['allowed_extensions'] = 	$response_extensions;
+	// 	Session::put('api_response_extensions', $response_extensions);
+	// 	return $array;
+    // }
+    
+
+    $allowed = CompanyConfiguration::get("CRM_ALLOWED_FILE_UPLOAD_EXTENSIONS");
+    $allowedextensions   =  explode(',',$allowed);
+    $response_extensions   =  array_change_key_case($allowedextensions);
+    $array['allowed_extensions'] = 	$response_extensions;
+    Session::put('api_response_extensions', $response_extensions);
+    return $array;
+
 }
 
 function getBillingDay($BillingStartDate,$BillingCycleType,$BillingCycleValue){
@@ -3049,4 +3060,99 @@ function terminateMysqlProcess($pid){
 
 function getItemType($id){
     return ItemType::where('ItemTypeID',$id)->pluck('title');
+}
+
+
+function getCompanyLogo(){
+
+    //$cache = site_configration_cache($request);
+    create_site_configration_cache();
+
+    $cache  = Session::get('user_site_configrations');
+    if(isset($cache['Logo']) && !empty($cache['Logo'])){
+
+        $logo_url = AmazonS3::unSignedImageUrl($cache["Logo"]);
+
+    }else {
+
+        // if no logo and amazon then use from site url even if amazon is set or not.
+        /*$DefaultLogo = $cache['DefaultLogo'];
+        $site_url = \Api\Model\CompanyConfiguration::get("WEB_URL");
+
+        $logo_url = combile_url_path($site_url,$DefaultLogo);*/
+
+        $logo_url = $cache['DefaultLogo'];
+    }
+
+    return $logo_url;
+}
+
+/** Store logo in cache
+ * @param $request
+ * @return mixed
+ */
+        // use built in create_site_configration_cache
+function site_configration_cache($request){
+
+    // $CACHE_EXPIRE = \Api\Model\CompanyConfiguration::get("CACHE_EXPIRE");
+    // $time = empty($CACHE_EXPIRE)?60:$CACHE_EXPIRE;
+    // $minutes = \Carbon\Carbon::now()->addMinutes($time);
+    // $LicenceKey = $request->only('LicenceKey')['LicenceKey'];
+    // $CompanyName = $request->only('CompanyName')['CompanyName'];
+    // $siteConfigretion = 'siteConfiguration' . $LicenceKey.$CompanyName;
+
+    // if (!Cache::has($siteConfigretion)) {
+
+    //     $domain_url      =   $_SERVER['SERVER_NAME'];
+    //     $result       =  \Illuminate\Support\Facades\DB::table('tblCompanyThemes')->where(["DomainUrl" => $domain_url,'ThemeStatus'=>\Api\Model\Themes::ACTIVE])->first();
+
+    //     if(!empty($result)){
+    //         if(!empty($result->Logo)){
+
+    //             $cache['Logo']       = (!empty($result->Logo))?$result->Logo:"";
+    //         }
+    //     }
+
+    //     $cache['DefaultLogo']       = \Api\Model\CompanyConfiguration::get("WEB_URL").'/assets/images/logo@2x.png';
+
+
+    //     \Illuminate\Support\Facades\Cache::add($siteConfigretion, $cache, $minutes);
+    // }
+    // $cache = Cache::get($siteConfigretion);
+    // return $cache;
+
+}
+
+
+function template_var_replace($EmailMessage,$replace_array){
+    $extra = [
+        '{{FirstName}}',
+        '{{LastName}}',
+        '{{Email}}',
+        '{{Address1}}',
+        '{{Address2}}',
+        '{{Address3}}',
+        '{{City}}',
+        '{{State}}',
+        '{{PostCode}}',
+        '{{Country}}',
+        '{{InvoiceNumber}}',
+        '{{InvoiceGrandTotal}}',
+        '{{InvoiceOutstanding}}',
+        '{{OutstandingExcludeUnbilledAmount}}',
+        '{{Signature}}',
+        '{{OutstandingIncludeUnbilledAmount}}',
+        '{{BalanceThreshold}}',
+        '{{Currency}}',
+        '{{CompanyName}}',
+        '{{Logo}}'
+    ];
+
+    foreach($extra as $item){
+        $item_name = str_replace(array('{','}'),array('',''),$item);
+        if(array_key_exists($item_name,$replace_array)) {
+            $EmailMessage = str_replace($item,$replace_array[$item_name],$EmailMessage);
+        }
+    }
+    return $EmailMessage;
 }

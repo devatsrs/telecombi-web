@@ -5,15 +5,19 @@ class HomeController extends BaseController {
     var $dashboard_url = 'process_redirect';
 
     public function __construct() {
+
         $DefaultDashboard = '';
         if (!Auth::guest()){
-            $DefaultDashboard = CompanySetting::getKeyVal('DefaultDashboard')=='Invalid Key'?'':CompanySetting::getKeyVal('DefaultDashboard');
+
+             $DefaultDashboard = CompanySetting::getKeyVal('DefaultDashboard')=='Invalid Key'?'':CompanySetting::getKeyVal('DefaultDashboard');
         }
-        if(Company::isRMLicence()){
+         if(Company::isRMLicence()){
+
             $this->dashboard_url = '/monitor';
             if(!empty($DefaultDashboard)){
                 $this->dashboard_url = $DefaultDashboard;
             }
+
             if (!user::is_admin()) {
                 if(!empty($DefaultDashboard) && User::checkCategoryPermission(getDashBoardController($DefaultDashboard),'All')){
                     $this->dashboard_url = $DefaultDashboard;
@@ -40,6 +44,7 @@ class HomeController extends BaseController {
             }
 
         }elseif(Company::isBillingLicence()) {
+
             $this->dashboard_url = '/billingdashboard';
             if (!empty($DefaultDashboard) && User::checkCategoryPermission(getDashBoardController($DefaultDashboard), 'All')) {
                 $this->dashboard_url = $DefaultDashboard;
